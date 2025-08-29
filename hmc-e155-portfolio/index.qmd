@@ -1,0 +1,17 @@
+---
+title: "E155 Portfolio"
+image: images/IMG_2573.PNG
+about:
+    template: jolla
+    links:
+        - icon: linkedin
+          text: LinkedIn
+          href: https://www.linkedin.com/in/roman-de-santos/
+        - icon: github
+          text: Github
+          href: https://github.com/roman-de-santos
+---
+
+Hello, I'm Roman a student who is passionate about low-level systems. This includes C, Assembly, and IC/circuit design. I have been a TA for Computer Science, Physics, and Intro IC Lab. I am comfortable with many common Engineering software programs (Solidworks, ComSol, and Fusion) and computer languages (Matlab, Python, Java, Java Script, HTML, and C). So far, my favorite project I've worked on is my 32-bit CPU verification project.
+
+
