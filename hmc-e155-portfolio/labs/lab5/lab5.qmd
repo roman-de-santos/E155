@@ -1,0 +1,11 @@
+---
+title: "Lab 5: Interrupts"
+description: "In this lab you will use your MCU to determine the speed of a motor by reading from a quadrature encoder using interrupts."
+author: "Roman De Santos"
+date: "10/9/25"
+categories:
+  - labreport
+draft: false
+---
+
+## Introduction

@@ -1,0 +1,11 @@
+---
+title: "Lab 1: FPGA and MCU Setup and Testing"
+description: "In this lab you will familiarize yourself with the microcontroller unit (MCU) and field-programmable gate array (FPGA) development boards we will be using this semester."
+author: "Roman De Santos"
+date: "9/4/25"
+categories:
+  - labreport
+draft: false
+---
+
+## Introduction

@@ -1,10 +1,13 @@
 ---
-title: "Hello Quarto"
-description: "Welcome to my Quarto portfolio"
-author: "Josh Brake"
-date: "8/23/24"
+title: "Excited for Micro P's"
+description: "Initial reflection on the upcoming semester for Micro P's"
+author: "Roman De Santos"
+date: "8/29/25"
 categories:
   - reflection
-  - labreport
 draft: false
 ---
+
+## Initial Reflection
+
+I am excited to learn more about how Micro Processors are used to integrate computing with the real world. I have worked with fpgas and MCU devices before but most of the work has been very surface level. This class will allow me to interact with harware close to bare metal operations. I am excited to learn more about embedded engineering. I heard that lab 3 is more challenging than expected so I will try to start that lab extra early. Other than that I am excited to learn and design my own project at the end of this course. 😄

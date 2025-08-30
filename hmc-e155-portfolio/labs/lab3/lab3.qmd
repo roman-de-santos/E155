@@ -1,0 +1,11 @@
+---
+title: "Lab 3: Keypad Scanner"
+description: "In this lab you will learn how to use an FPGA to scan inputs from a keypad."
+author: "Roman De Santos"
+date: "9/18/25"
+categories:
+  - labreport
+draft: false
+---
+
+## Introduction

@@ -1,0 +1,12 @@
+---
+title: "Lab 6: The Internet of Things and Serial Peripheral Interface"
+description: "Internet-accessible device to control an onboard LED and measure ambient temperature"
+author: "Roman De Santos"
+date: "10/23/25"
+categories:
+  - labreport
+draft: false
+---
+
+## Introduction
+
