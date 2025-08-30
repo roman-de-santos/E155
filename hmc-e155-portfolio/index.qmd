@@ -1,6 +1,6 @@
 ---
 title: "E155 Portfolio"
-image: images/IMG_2573.PNG
+image: images/1720665932268.jpg
 about:
     template: jolla
     links:

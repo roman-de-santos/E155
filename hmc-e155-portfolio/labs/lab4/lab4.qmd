@@ -2,7 +2,7 @@
 title: "Lab 4: Digital Audio"
 description: "In this lab you will use your MCU to play music by using timers to generate square waves by toggling a GPIO pin at a specific frequency for specified durations."
 author: "Roman De Santos"
-date: "10/1/25"
+date: "10/2/25"
 categories:
   - labreport
 draft: false
