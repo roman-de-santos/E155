@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>labs – E155 Portfolio</title>
+<title>E155 Lab Reports – E155 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -68,7 +70,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -123,15 +183,211 @@ ul.task-list li input[type="checkbox"] {
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">E155 Lab Reports</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 
 
 
 
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="bGFicmVwb3J0" data-listing-date-sort="1761807600000" data-listing-file-modified-sort="1756516553764" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="thumbnail"><a href="./labs/lab7/lab7.html" class="no-external">
 
-</main> <!-- /main -->
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./labs/lab7/lab7.html" class="no-external">Lab 7: The Advanced Encryption Standard</a>
+</h3>
+<div class="delink listing-description"><a href="./labs/lab7/lab7.html" class="no-external">
+<p>Hardware accelerator to perform 128-bit AES encryption.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./labs/lab7/lab7.html" class="no-external">
+<div class="listing-date">
+Oct 30, 2025
+</div>
+<div class="listing-author">
+Roman De Santos
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="bGFicmVwb3J0" data-listing-date-sort="1761202800000" data-listing-file-modified-sort="1756516539750" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="thumbnail"><a href="./labs/lab6/lab6.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./labs/lab6/lab6.html" class="no-external">Lab 6: The Internet of Things and Serial Peripheral Interface</a>
+</h3>
+<div class="delink listing-description"><a href="./labs/lab6/lab6.html" class="no-external">
+<p>Internet-accessible device to control an onboard LED and measure ambient temperature</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./labs/lab6/lab6.html" class="no-external">
+<div class="listing-date">
+Oct 23, 2025
+</div>
+<div class="listing-author">
+Roman De Santos
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="bGFicmVwb3J0" data-listing-date-sort="1759993200000" data-listing-file-modified-sort="1756516559195" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="thumbnail"><a href="./labs/lab5/lab5.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./labs/lab5/lab5.html" class="no-external">Lab 5: Interrupts</a>
+</h3>
+<div class="delink listing-description"><a href="./labs/lab5/lab5.html" class="no-external">
+<p>In this lab you will use your MCU to determine the speed of a motor by reading from a quadrature encoder using interrupts.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./labs/lab5/lab5.html" class="no-external">
+<div class="listing-date">
+Oct 9, 2025
+</div>
+<div class="listing-author">
+Roman De Santos
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="bGFicmVwb3J0" data-listing-date-sort="1759302000000" data-listing-file-modified-sort="1756516563365" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="thumbnail"><a href="./labs/lab4/lab4.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./labs/lab4/lab4.html" class="no-external">Lab 4: Digital Audio</a>
+</h3>
+<div class="delink listing-description"><a href="./labs/lab4/lab4.html" class="no-external">
+<p>In this lab you will use your MCU to play music by using timers to generate square waves by toggling a GPIO pin at a specific frequency for specified durations.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./labs/lab4/lab4.html" class="no-external">
+<div class="listing-date">
+Oct 1, 2025
+</div>
+<div class="listing-author">
+Roman De Santos
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="bGFicmVwb3J0" data-listing-date-sort="1758178800000" data-listing-file-modified-sort="1756516568785" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="thumbnail"><a href="./labs/lab3/lab3.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./labs/lab3/lab3.html" class="no-external">Lab 3: Keypad Scanner</a>
+</h3>
+<div class="delink listing-description"><a href="./labs/lab3/lab3.html" class="no-external">
+<p>In this lab you will learn how to use an FPGA to scan inputs from a keypad.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./labs/lab3/lab3.html" class="no-external">
+<div class="listing-date">
+Sep 18, 2025
+</div>
+<div class="listing-author">
+Roman De Santos
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="bGFicmVwb3J0" data-listing-date-sort="1757574000000" data-listing-file-modified-sort="1756516572977" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="thumbnail"><a href="./labs/lab2/lab2.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./labs/lab2/lab2.html" class="no-external">Lab 2: Multiplexed 7-Segment Display</a>
+</h3>
+<div class="delink listing-description"><a href="./labs/lab2/lab2.html" class="no-external">
+<p>In this lab you will learn how to use time multiplexing to efficiently use the I/O on your FPGA.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./labs/lab2/lab2.html" class="no-external">
+<div class="listing-date">
+Sep 11, 2025
+</div>
+<div class="listing-author">
+Roman De Santos
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="bGFicmVwb3J0" data-listing-date-sort="1756969200000" data-listing-file-modified-sort="1756516579379" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="thumbnail"><a href="./labs/lab1/lab1.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./labs/lab1/lab1.html" class="no-external">Lab 1: FPGA and MCU Setup and Testing</a>
+</h3>
+<div class="delink listing-description"><a href="./labs/lab1/lab1.html" class="no-external">
+<p>In this lab you will familiarize yourself with the microcontroller unit (MCU) and field-programmable gate array (FPGA) development boards we will be using this semester.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./labs/lab1/lab1.html" class="no-external">
+<div class="listing-date">
+Sep 4, 2025
+</div>
+<div class="listing-author">
+Roman De Santos
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

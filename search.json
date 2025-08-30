@@ -1,10 +1,24 @@
 [
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "E155 Blog",
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "E155 Portfolio",
     "section": "",
-    "text": "Hello Quarto\n\n\nWelcome to my Quarto portfolio\n\n\n\n\n\nAug 23, 2024\n\n\nJosh Brake\n\n\n\n\n\nNo matching items"
+    "text": "E155 Course Page"
+  },
+  {
+    "objectID": "resources.html#links",
+    "href": "resources.html#links",
+    "title": "E155 Portfolio",
+    "section": "",
+    "text": "E155 Course Page"
+  },
+  {
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "E155 Lab Reports",
+    "section": "",
+    "text": "Lab 7: The Advanced Encryption Standard\n\n\nHardware accelerator to perform 128-bit AES encryption.\n\n\n\n\n\nOct 30, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 6: The Internet of Things and Serial Peripheral Interface\n\n\nInternet-accessible device to control an onboard LED and measure ambient temperature\n\n\n\n\n\nOct 23, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 5: Interrupts\n\n\nIn this lab you will use your MCU to determine the speed of a motor by reading from a quadrature encoder using interrupts.\n\n\n\n\n\nOct 9, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 4: Digital Audio\n\n\nIn this lab you will use your MCU to play music by using timers to generate square waves by toggling a GPIO pin at a specific frequency for specified durations.\n\n\n\n\n\nOct 1, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Keypad Scanner\n\n\nIn this lab you will learn how to use an FPGA to scan inputs from a keypad.\n\n\n\n\n\nSep 18, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 2: Multiplexed 7-Segment Display\n\n\nIn this lab you will learn how to use time multiplexing to efficiently use the I/O on your FPGA.\n\n\n\n\n\nSep 11, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 1: FPGA and MCU Setup and Testing\n\n\nIn this lab you will familiarize yourself with the microcontroller unit (MCU) and field-programmable gate array (FPGA) development boards we will be using this semester.\n\n\n\n\n\nSep 4, 2025\n\n\nRoman De Santos\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -12,5 +26,26 @@
     "title": "E155 Portfolio",
     "section": "",
     "text": "Hello, I’m Roman a student who is passionate about low-level systems. This includes C, Assembly, and IC/circuit design. I have been a TA for Computer Science, Physics, and Intro IC Lab. I am comfortable with many common Engineering software programs (Solidworks, ComSol, and Fusion) and computer languages (Matlab, Python, Java, Java Script, HTML, and C). So far, my favorite project I’ve worked on is my 32-bit CPU verification project."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "E155 Blog",
+    "section": "",
+    "text": "Excited for Micro P’s\n\n\nInitial reflection on the upcoming semester for Micro P’s\n\n\n\n\n\nAug 29, 2025\n\n\nRoman De Santos\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/first-post.html",
+    "href": "posts/first-post.html",
+    "title": "Excited for Micro P’s",
+    "section": "",
+    "text": "I am excited to learn more about how Micro Processors are used to integrate computing with the real world. I have worked with fpgas and MCU devices before but most of the work has been very surface level. This class will allow me to interact with harware close to bare metal operations. I am excited to learn more about embedded engineering. I heard that lab 3 is more challenging than expected so I will try to start that lab extra early. Other than that I am excited to learn and design my own project at the end of this course. 😄"
+  },
+  {
+    "objectID": "posts/first-post.html#initial-reflection",
+    "href": "posts/first-post.html#initial-reflection",
+    "title": "Excited for Micro P’s",
+    "section": "",
+    "text": "I am excited to learn more about how Micro Processors are used to integrate computing with the real world. I have worked with fpgas and MCU devices before but most of the work has been very surface level. This class will allow me to interact with harware close to bare metal operations. I am excited to learn more about embedded engineering. I heard that lab 3 is more challenging than expected so I will try to start that lab extra early. Other than that I am excited to learn and design my own project at the end of this course. 😄"
   }
 ]
