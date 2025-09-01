@@ -1,0 +1,87 @@
+m255
+K4
+z2
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/Sim
+vSegDisp
+Z1 2C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp.sv
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1756681220
+!i10b 1
+!s100 Dob[;>;[z>Z]1>k2egW;F0
+IRZ<j0]F::k2Aa_HX9TamM2
+S1
+R0
+w1756681041
+Z4 8C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp.sv
+Z5 FC:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp.sv
+!i122 4
+Z6 L0 1 165
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z9 !s108 1756681220.000000
+Z10 !s107 C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp.sv|
+Z11 !s90 -reportprogress|300|-work|work|C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp.sv|
+!i113 0
+Z12 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z13 tCvgOpt 0
+n@seg@disp
+vtestbench
+2C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp_tb.sv
+R2
+R3
+!i10b 1
+!s100 >OBkTJSRJl[X5[P9^K[EI3
+I8e3SGaezTIfjROQOTcER10
+S1
+R0
+w1756679819
+8C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp_tb.sv
+FC:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp_tb.sv
+!i122 5
+L0 1 70
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp_tb.sv|
+!s90 -reportprogress|300|-work|work|C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp_tb.sv|
+!i113 0
+R12
+R13
+vtop
+R1
+R2
+!s110 1756680283
+!i10b 1
+!s100 BiDl1GUS8CFODFO42aA:10
+I27ebmoRb0EI<^gLcOMgWM2
+S1
+R0
+w1756679727
+R4
+R5
+!i122 0
+R6
+R7
+R8
+r1
+!s85 0
+31
+!s108 1756680283.000000
+R10
+R11
+!i113 0
+R12
+R13

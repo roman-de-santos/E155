@@ -1,0 +1,76 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/Sim
+Tqrun_opt
+Z2 !s110 1756681186
+V`F<9L:AJJ@CPjG0zN1Enf1
+04 9 4 work testbench fast 0
+R0
+!s12f OEM25U2 
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-suppress vopt-7033 -L work +acc +noacc+pmi_work.* +noacc+ovi_ice40up.* -L pmi_work -L ovi_ice40up -work qrun.out/work
+Z3 tCvgOpt 0
+nqrun_opt
+OL;O;2024.2;79
+vSegDisp
+Z4 2C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp.sv|C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp_tb.sv
+Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R2
+!i10b 1
+!s100 Dob[;>;[z>Z]1>k2egW;F0
+I4;l9aTY30igo7AGQA1WXJ1
+S1
+R1
+w1756681041
+8C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp.sv
+FC:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp.sv
+!i122 0
+L0 1 165
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z8 !s108 1756681185.000000
+Z9 !s107 C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp_tb.sv|C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp.sv|
+Z10 !s90 -reportprogress|300|-L|work|-sv|+noacc+pmi_work.*|+noacc+ovi_ice40up.*|-L|pmi_work|-L|ovi_ice40up|C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp.sv|C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp_tb.sv|-work|qrun.out/work|-statslog|qrun.out/stats_log|-writesessionid|+qrun.out/top_dus|-csession=incr|
+!i113 0
+Z11 o-L work -sv +noacc+pmi_work.* +noacc+ovi_ice40up.* -L pmi_work -L ovi_ice40up -work qrun.out/work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+n@seg@disp
+vtestbench
+R4
+R5
+R2
+!i10b 1
+!s100 >OBkTJSRJl[X5[P9^K[EI3
+IB>57l`HDG<oZcN_Td8?m_0
+S1
+R1
+w1756679819
+8C:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp_tb.sv
+FC:/Users/rdesantos/Desktop/Radiant projects/Lab1RD/source/impl_1/SegDisp_tb.sv
+!i122 0
+L0 1 70
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R3
