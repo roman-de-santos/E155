@@ -5,12 +5,12 @@
 // This is the testbench for the top module
 
 module top_tb();
-	logic	     clk, reset;
+	logic	     Clk, Reset;
 	logic [3:0]  S;
 	logic [6:0]  Seg, ExSeg;
 	logic [2:0]  Led, ExLed;
-	logic [31:0] vectornum, errors;
-	logic [13:0] testvectors[15:0];
+	logic [31:0] VectorNum, Errors;
+	logic [13:0] TestVectors[15:0];
 	
 	// Initialize Device under Test
 	top dut(S, Seg, Led);
@@ -21,8 +21,8 @@ module top_tb();
 
 		begin
 		
-			clk=1; #5;
-			clk=0; #5;
+			Clk=1; #5;
+			Clk=0; #5;
 			
 		end
 	
@@ -31,31 +31,31 @@ module top_tb();
 		
 		begin
 			
-			$readmemb("top.tv", testvectors);
+			$readmemb("top.tv", TestVectors);
 			
-			vectornum=0;
-			errors=0;
+			VectorNum=0;
+			Errors=0;
 			
-			reset=1; #22;
-			reset=0;
+			Reset=1; #22;
+			Reset=0;
 			
 		end
 	
 	// Assign test vectors on positive edge
-	always @(posedge clk)
+	always @(posedge Clk)
 		
 		begin
 			
 			#1;
 			
-			{S, ExSeg, ExLed} = testvectors[vectornum];
+			{S, ExSeg, ExLed} = TestVectors[VectorNum];
 		
 		end
 		
 	// Check if DUT output matches expected output at the end of the clock	
-	always @(negedge clk)
+	always @(negedge Clk)
 		
-		if (~reset) begin
+		if (~Reset) begin
 		
 			if ((Seg !== ExSeg) | (Led[1:0] !== ExLed[1:0])) begin
 			
@@ -63,16 +63,16 @@ module top_tb();
 					
 					$display(" outputs = Seg: %b, Led: %b (Seg: %b, Led: %b expected)", Seg, Led, ExSeg, ExLed);
 						
-					errors = errors + 1;
+					Errors = Errors + 1;
 			end
 			
-			vectornum = vectornum + 1;
+			VectorNum = VectorNum + 1;
 			
 			
-			if (vectornum === 32'd16) begin
+			if (VectorNum === 32'd16) begin
 			
-				$display("%d tests completed with %d errors", vectornum, 
-					errors);
+				$display("%d tests completed with %d errors", VectorNum, 
+					Errors);
 					
 				$stop;
 				

@@ -5,11 +5,11 @@
 // This is the testbench for the SegDisp module
 
 module SegDisp_tb();
-	logic	     clk, reset;
+	logic	     Clk, Reset;
 	logic [3:0]  S;
 	logic [6:0]  Seg, ExSeg;
-	logic [31:0] vectornum, errors;
-	logic [10:0] testvectors[15:0];
+	logic [31:0] VectorNum, Errors;
+	logic [10:0] TestVectors[15:0];
 	
 	// Initialize Device under Test
 	SegDisp dut(S, Seg);
@@ -19,8 +19,8 @@ module SegDisp_tb();
 
 		begin
 		
-			clk=1; #5;
-			clk=0; #5;
+			Clk=1; #5;
+			Clk=0; #5;
 			
 		end
 	
@@ -29,48 +29,48 @@ module SegDisp_tb();
 		
 		begin
 			
-			$readmemb("SegDisp.tv", testvectors);
+			$readmemb("SegDisp.tv", TestVectors);
 			
-			vectornum=0;
-			errors=0;
+			VectorNum=0;
+			Errors=0;
 			
-			reset=1; #22;
-			reset=0;
+			Reset=1; #22;
+			Reset=0;
 			
 		end
 	
 	// Assign test vectors on positive edge
-	always @(posedge clk)
+	always @(posedge Clk)
 		
 		begin
 			
 			#1;
 			
-			{S, ExSeg} = testvectors[vectornum];
+			{S, ExSeg} = TestVectors[VectorNum];
 		
 		end
 		
 	// Check if DUT output matches expected output at the end of the clock	
-	always @(negedge clk)
+	always @(negedge Clk)
 		
-		if (~reset) begin
+		if (~Reset) begin
 		
-			if (Seg !== ExSeg) begin
+			if (Seg !== ExSeg) begin // check if output matches expectation
 			
 					$display("Error: inputs = %b", S);
 					
 					$display(" outputs = %b (%b expected)", Seg, ExSeg);
 						
-					errors = errors + 1;
+					Errors = Errors + 1;
 			end
 			
-			vectornum = vectornum + 1;
+			VectorNum = VectorNum + 1;
 			
 			
-			if (testvectors[vectornum] === 11'bx) begin
+			if (TestVectors[VectorNum] === 11'bx) begin
 			
-				$display("%d tests completed with %d errors", vectornum, 
-					errors);
+				$display("%d tests completed with %d errors", VectorNum, 
+					Errors);
 					
 				$stop;
 				
