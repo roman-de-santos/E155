@@ -81,7 +81,7 @@
     "href": "labs/lab1/lab1.html#conclusion",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "Conclusion",
-    "text": "Conclusion\n\n\n\nFigure 6: SegDisp_tb Run\n\n\nThe project successfully blinked an LED at 2.4Hz, the dip switches accurately controlled a hex 7-segment display, and two LEDs successfully represented the AND and XOR between pairs of dip switches. I spent around 20 hours on this lab."
+    "text": "Conclusion\n\n\n\nFigure 6: Completed Board\n\n\nThe project successfully blinked an LED at 2.4Hz, the dip switches accurately controlled a hex 7-segment display, and two LEDs successfully represented the AND and XOR between pairs of dip switches. I spent around 20 hours on this lab."
   },
   {
     "objectID": "posts/first-post.html",
