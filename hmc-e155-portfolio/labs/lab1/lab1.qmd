@@ -9,3 +9,45 @@ draft: false
 ---
 
 ## Introduction
+
+In this lab, we learned general soldering tips, including soldering removable components, pin-through, and SMD components onto a PCB. Using the board, we tested it to make sure that the FPGA and MCU were functioning properly and could communicate with each other as a demo. Our goal in this lab was to test the functionality of our internal High Speed Oscillator (HSOSC module) and divide the clock output to generate a 2.4Hz clock to blink an LED. Another goal was to test that our 4 dip input switches could be read, and with some combinational logic, it was converted to a hex figure on a 7-segment display. Another goal was to understand the truth table provided and convert it to an equivalent logic gate. The 4-dip input switch, while controlling the 7-segment display, also controlled the output to two separate LEDs that represented different logic operations on the dip switch.
+
+## Design and Testing Methodology
+
+The on-board high-speed oscillator (HSOSC) from the iCE40 UltraPlus primitive library was used to generate a clock signal at 24 MHz. Then, a clock divider was used to divide the high-frequency clock signal down to 2.4Hz.
+
+Four onboard dip switches were used to represent a binary number, where combinational logic was used to decode the input of the dip switches to the 7-segment display module. The XOR of the first two dip switches, [1:0], was computed and outputted to an LED. Similarly, the last two dip switches, [3:2], were ANDed together and outputted to another LED.
+
+## Technical Documentation:
+
+### Block Diagram
+
+![Figure 1: Block Diagram](images/Figure1.png)
+
+Figure 1 shows the Block Diagram for Lab 1 of the top Verilog module grouped by function.  There are two submodules in the top module. SegDisp for the 7-segment display decoder and the HSOSC for the built-in oscillator. The counter module is a representation of the RTL in the top module that has been functionally grouped for simplicity.
+
+## Schematic
+
+![Figure 2: Schematic](images/Figure2.png)
+
+![Figure 3: Calculations for 7-Seg Resitor Value](images/Figure3.png)
+
+Figure 2 shows the physical implementation of the design. All of the dip switches have an internal pull-up resistor (100kΩ). All of the output LEDs have a 1k limiting resistor to ensure that the FPGA I/O current draw does not exceed ~2.6mA (Calculations are shown in Figure 3)
+
+## Results and Discussion
+
+![Figure 4: top_tb Run](images/Figure4.png)
+
+Figure 3 shows the Testbench results for the seven segment hex display. From the waveforms and the console output we can see that all 16 unique inputs output the correct signals on the hex display
+
+![Figure 5: SegDisp_tb Run](images/Figure5.png)
+
+Figure 4 shows the testbench results for the 7-segment hex display and the logic LEDs. The blinking LED was omitted in the test, but can be visually inspected.
+
+The design met all design objectives requested. In the future, I would probably spend more time designing the clock divider to simplify the RTL, however, it might not be possible since the clock is being divided by a number that is not a power of two.
+
+## Conclusion
+
+![Figure 6: Completed Board](images/Figure6.jpg)
+
+The project successfully blinked an LED at 2.4Hz, the dip switches accurately controlled a hex 7-segment display, and two LEDs successfully represented the AND and XOR between pairs of dip switches. I spent around 20 hours on this lab.
