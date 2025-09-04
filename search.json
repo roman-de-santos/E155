@@ -60,28 +60,28 @@
     "href": "labs/lab1/lab1.html#technical-documentation",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "Technical Documentation:",
-    "text": "Technical Documentation:\n\nBlock Diagram\nInsert Image\nFigure 1 shows the Block Diagram for Lab 1 of the top Verilog module grouped by function. There are two submodules in the top module. SegDisp for the 7-segment display decoder and the HSOSC for the built-in oscillator. The counter module is a representation of the RTL in the top module that has been functionally grouped for simplicity."
+    "text": "Technical Documentation:\n\nBlock Diagram\n\n\n\nFigure 1: Block Diagram\n\n\nFigure 1 shows the Block Diagram for Lab 1 of the top Verilog module grouped by function. There are two submodules in the top module. SegDisp for the 7-segment display decoder and the HSOSC for the built-in oscillator. The counter module is a representation of the RTL in the top module that has been functionally grouped for simplicity."
   },
   {
     "objectID": "labs/lab1/lab1.html#schematic",
     "href": "labs/lab1/lab1.html#schematic",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "Schematic",
-    "text": "Schematic\n\n\n\nFigure 3: top_tb Run\n\n\nFigure 2 shows the physical implementation of the design. All of the dip switches have an internal pull-up resistor (100kΩ). All of the output LEDs have a 1k limiting resistor to ensure that the FPGA I/O current draw does not exceed ~2.6mA."
+    "text": "Schematic\n\n\n\nFigure 2: Schematic\n\n\n\n\n\nFigure 3: Calculations for 7-Seg Resitor Value\n\n\nFigure 2 shows the physical implementation of the design. All of the dip switches have an internal pull-up resistor (100kΩ). All of the output LEDs have a 1k limiting resistor to ensure that the FPGA I/O current draw does not exceed ~2.6mA (Calculations are shown in Figure 3)"
   },
   {
     "objectID": "labs/lab1/lab1.html#results-and-discussion",
     "href": "labs/lab1/lab1.html#results-and-discussion",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\nFigure 3 shows the Testbench results for the seven segment hex display. From the waveforms and the console output we can see that all 16 unique inputs output the correct signals on the hex display\n\n\n\nFigure 4: SegDisp_tb Run\n\n\nFigure 4 shows the testbench results for the 7-segment hex display and the logic LEDs. The blinking LED was omitted in the test, but can be visually inspected.\nThe design met all design objectives requested. In the future, I would probably spend more time designing the clock divider to simplify the RTL, however, it might not be possible since the clock is being divided by a number that is not a power of two."
+    "text": "Results and Discussion\n\n\n\nFigure 4: top_tb Run\n\n\nFigure 3 shows the Testbench results for the seven segment hex display. From the waveforms and the console output we can see that all 16 unique inputs output the correct signals on the hex display\n\n\n\nFigure 5: SegDisp_tb Run\n\n\nFigure 4 shows the testbench results for the 7-segment hex display and the logic LEDs. The blinking LED was omitted in the test, but can be visually inspected.\nThe design met all design objectives requested. In the future, I would probably spend more time designing the clock divider to simplify the RTL, however, it might not be possible since the clock is being divided by a number that is not a power of two."
   },
   {
     "objectID": "labs/lab1/lab1.html#conclusion",
     "href": "labs/lab1/lab1.html#conclusion",
     "title": "Lab 1: FPGA and MCU Setup and Testing",
     "section": "Conclusion",
-    "text": "Conclusion\nThe project successfully blinked an LED at 2.4Hz, the dip switches accurately controlled a hex 7-segment display, and two LEDs successfully represented the AND and XOR between pairs of dip switches. I spent around 20 hours on this lab."
+    "text": "Conclusion\n\n\n\nFigure 6: SegDisp_tb Run\n\n\nThe project successfully blinked an LED at 2.4Hz, the dip switches accurately controlled a hex 7-segment display, and two LEDs successfully represented the AND and XOR between pairs of dip switches. I spent around 20 hours on this lab."
   },
   {
     "objectID": "posts/first-post.html",
