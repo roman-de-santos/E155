@@ -21,6 +21,62 @@
     "text": "Lab 7: The Advanced Encryption Standard\n\n\nHardware accelerator to perform 128-bit AES encryption.\n\n\n\n\n\nOct 30, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 6: The Internet of Things and Serial Peripheral Interface\n\n\nInternet-accessible device to control an onboard LED and measure ambient temperature\n\n\n\n\n\nOct 23, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 5: Interrupts\n\n\nIn this lab you will use your MCU to determine the speed of a motor by reading from a quadrature encoder using interrupts.\n\n\n\n\n\nOct 9, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 4: Digital Audio\n\n\nIn this lab you will use your MCU to play music by using timers to generate square waves by toggling a GPIO pin at a specific frequency for specified durations.\n\n\n\n\n\nOct 2, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Keypad Scanner\n\n\nIn this lab you will learn how to use an FPGA to scan inputs from a keypad.\n\n\n\n\n\nSep 18, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 2: Multiplexed 7-Segment Display\n\n\nIn this lab you will learn how to use time multiplexing to efficiently use the I/O on your FPGA.\n\n\n\n\n\nSep 11, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 1: FPGA and MCU Setup and Testing\n\n\nIn this lab you will familiarize yourself with the microcontroller unit (MCU) and field-programmable gate array (FPGA) development boards we will be using this semester.\n\n\n\n\n\nSep 4, 2025\n\n\nRoman De Santos\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "labs/lab2/lab2.html",
+    "href": "labs/lab2/lab2.html",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "",
+    "text": "This report details the design and implementation of a time-multiplexed driver for a dual 7-segment display using a field-programmable gate array (FPGA). The primary objective was to efficiently utilize limited FPGA I/O resources by sharing a single Verilog 7-segment decoder module between two separate digits. This was achieved by rapidly alternating which digit’s common anode was energized, creating a persistent, flicker-free image for the observer. A critical component of the hardware design was a PNP transistor circuit, which served as a high-current switch for the display anodes, as the FPGA’s output pins were incapable of sourcing the required current directly. The final system successfully accepts two 4-bit hexadecimal inputs from DIP switches, displays them on the multiplexed display, and simultaneously calculates and shows their sum on a separate bank of five LEDs."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#introduction",
+    "href": "labs/lab2/lab2.html#introduction",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "",
+    "text": "This report details the design and implementation of a time-multiplexed driver for a dual 7-segment display using a field-programmable gate array (FPGA). The primary objective was to efficiently utilize limited FPGA I/O resources by sharing a single Verilog 7-segment decoder module between two separate digits. This was achieved by rapidly alternating which digit’s common anode was energized, creating a persistent, flicker-free image for the observer. A critical component of the hardware design was a PNP transistor circuit, which served as a high-current switch for the display anodes, as the FPGA’s output pins were incapable of sourcing the required current directly. The final system successfully accepts two 4-bit hexadecimal inputs from DIP switches, displays them on the multiplexed display, and simultaneously calculates and shows their sum on a separate bank of five LEDs."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#design-and-testing-methodology",
+    "href": "labs/lab2/lab2.html#design-and-testing-methodology",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nFour onboard dip switches were used to represent a binary number, where combinational logic was used to decode the input of the dip switches to the 7-segment display module.\nThe on-board high-speed oscillator (HSOSC) from the iCE40 UltraPlus primitive library was used to generate a clock signal at 6 MHz. Then, a clock divider was used to divide the high-frequency clock signal down to 60Hz.\nThe divided clock signal was used to control a Mux to switch between the two 4-pin dip switch inputs what was being passed through the 7 segment display. The clock was also used to generate Enable bits to control which of the two seven segment displays was on.\n5 LEDs were used to display the sum of the two hex numbers on the 4 dip switches."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#technical-documentation",
+    "href": "labs/lab2/lab2.html#technical-documentation",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "Technical Documentation:",
+    "text": "Technical Documentation:\nThe source code can be found on my GitHub\n\nBlock Diagram\n\n\n\nFigure 1: Lab 2 Block Diagram, By Roman De Santos, 9/11/25\n\n\nFigure 1 shows the Block Diagram for Lab 2 of the top Verilog module grouped by function. There are two submodules in the top module. SegDisp for the 7-segment display decoder and the DisplayMux."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#schematic",
+    "href": "labs/lab2/lab2.html#schematic",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "Schematic",
+    "text": "Schematic\n\n\n\nFigure 2: Lab 2 Schematic, By Roman De Santos, 9/11/25,\n\n\n\n\n\nFigure 3: Calculations for 7-Seg Resitor Value\n\n\n\n\n\nFigure 4: Calculations for PNP Transistor Limiting Resistor\n\n\nFigure 2 shows the physical implementation of the design. All of the dip switches have an internal pull-up resistor (100kΩ). All of the output LEDs have a 1k limiting resistor to ensure that the FPGA I/O current draw does not exceed ~2.6mA (Calculations are shown in Figure 3). The PNP transistor has a 2.6kΩ limiting resistor to be safe and put it well above the minimum of 300Ω. Figure 4 shows the derivation of the resistor value for the PNP transistor.\n\n\n\nFigure 5: Calculations for LEDs Resistor Values"
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#results-and-discussion",
+    "href": "labs/lab2/lab2.html#results-and-discussion",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\n \nFigure 6 shows the Testbench Wave output for the top module.\nFigure 7 shows the console output for the testbench, we can see all 256 unique tests pass with 0 errors.\n\n\n\nFigure 8: DispMux_tb Waves\n\n\nFigure 8 shows the testbench wave output for the DispMux. We can see that the clock succesfuly drives the clock divider and all of its dependent signals.\n\n\n\nFigure 9: SegDispTB\n\n\nFigure 9 shows the testbench wave output for the seven segment decoder and all of the testcases passed.\nThe design met all design objectives requested. In the future, I would probably spend more time designing the clock divider to simplify the RTL, however, it might not be possible since the clock is being divided by a number that is not a power of two."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#conclusion",
+    "href": "labs/lab2/lab2.html#conclusion",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "Conclusion",
+    "text": "Conclusion\n\n\n\nFigure 10: Completed Board\n\n\nThe project successfully timemultiplexed the inputs to drive the display, the dip switches accurately controlled a hex 7-segment display, and the LEDs successfully represented the sum of the dip switches. I spent around 20 hours on this lab."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#ai-prototype-reflection",
+    "href": "labs/lab2/lab2.html#ai-prototype-reflection",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "AI Prototype Reflection",
+    "text": "AI Prototype Reflection\nLLM prompt fed to Gemini:\n\nWrite SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits.\n\nThe output of the LLM can be found on GitHub\nI was surprised to see that it was able to effectivly seperate this logic into two modules. One module was for the timer,clock divider, and enable logic. The other module was for the seven segment display.\nHowever, there were some odd decisions in the logic. For example, Mux_15 could be optimised out by connecting existing nets to the output.\nOverall very good for a first pass.\nFor the next LLM prompt on Gemini\n\nUsing my files as reference, Write SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits. Use the seven segment decoder and oscillator provided in the attached files.\n\nThe output of the LLM can be found on GitHub\nThe LLM was not able to produce working code. I tried feeding the error outputs from radiant back into the LLM but this did not resolve the issue.\nThe syntaxed used by the LLM does not seem like what an actual person would use. I think the LLM also tried to insert citations for my project but failed to extract relevant context. This led there to being a lot of “[cite_start]” artifacts in the output code."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "E155 Portfolio",
