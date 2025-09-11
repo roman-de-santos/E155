@@ -9,3 +9,63 @@ draft: false
 ---
 
 ## Introduction
+
+This report details the design and implementation of a time-multiplexed driver for a dual 7-segment display using a field-programmable gate array (FPGA). The primary objective was to efficiently utilize limited FPGA I/O resources by sharing a single Verilog 7-segment decoder module between two separate digits. This was achieved by rapidly alternating which digit's common anode was energized, creating a persistent, flicker-free image for the observer. A critical component of the hardware design was a PNP transistor circuit, which served as a high-current switch for the display anodes, as the FPGA's output pins were incapable of sourcing the required current directly. The final system successfully accepts two 4-bit hexadecimal inputs from DIP switches, displays them on the multiplexed display, and simultaneously calculates and shows their sum on a separate bank of five LEDs.
+
+## Design and Testing Methodology
+
+Four onboard dip switches were used to represent a binary number, where combinational logic was used to decode the input of the dip switches to the 7-segment display module.
+
+The on-board high-speed oscillator (HSOSC) from the iCE40 UltraPlus primitive library was used to generate a clock signal at 6 MHz. Then, a clock divider was used to divide the high-frequency clock signal down to 60Hz.
+
+The divided clock signal was used to control a Mux to switch between the two 4-pin dip switch inputs what was being passed through the 7 segment display. The clock was also used to generate Enable bits to control which of the two seven segment displays was on. 
+
+5 LEDs were used to display the sum of the two hex numbers on the 4 dip switches.
+
+## Technical Documentation:
+
+The source code can be found on my [GitHub]()
+
+### Block Diagram
+
+![Figure 1: Lab 2 Block Diagram, By Roman De Santos, 9/11/25](images/BlockDiagram.png)
+
+Figure 1 shows the Block Diagram for Lab 2 of the top Verilog module grouped by function.  There are two submodules in the top module. SegDisp for the 7-segment display decoder and the DisplayMux.
+
+## Schematic
+
+![Figure 2: Lab 2 Schematic, By Roman De Santos, 9/11/25, ](images/Schematic.png)
+
+![Figure 3: Calculations for 7-Seg and LED Resitor Value](images/Calculation1.png)
+
+![Figure 4: Calculations for PNP Transistor Limiting Resistor](images/Calculations2.png)
+
+Figure 2 shows the physical implementation of the design. All of the dip switches have an internal pull-up resistor (100kΩ). All of the output LEDs have a 1k limiting resistor to ensure that the FPGA I/O current draw does not exceed ~2.6mA (Calculations are shown in Figure 3). The PNP transistor has a 2.6kΩ limiting resistor to be safe and put it well above the minimum of 300Ω. Figure 4 shows the derivation of the resistor value for the PNP transistor.
+
+## Results and Discussion
+
+![Figure 5: top_tb Waves](images/topTB1.png)
+![Figure 6: top_tb Output](images/topTB2.png)
+
+Figure 5 shows the Testbench Wave output for the top module.
+
+Figure 6 shows the console output for the testbench, we can see all 256 unique tests pass with 0 errors.
+
+![Figure 67: DispMux_tb Waves](images/DispMuxTB.png)
+
+Figure 7 shows the testbench wave output for the DispMux. We can see that the clock succesfuly drives the clock divider and all of its dependent signals.
+
+![Figure 8: SegDispTB](images/SegDispTB.png)
+
+Figure 8 shows the testbench wave output for the seven segment decoder and all of the testcases passed.
+
+The design met all design objectives requested. In the future, I would probably spend more time designing the clock divider to simplify the RTL, however, it might not be possible since the clock is being divided by a number that is not a power of two.
+
+## Conclusion
+
+![Figure 9: Completed Board](images/Board.jpg)
+
+The project successfully timemultiplexed the inputs to drive the display, the dip switches accurately controlled a hex 7-segment display, and the LEDs successfully represented the sum of the dip switches. I spent around 20 hours on this lab.
+
+
+## AI Prototype Reflection
