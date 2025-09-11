@@ -36,34 +36,36 @@ Figure 1 shows the Block Diagram for Lab 2 of the top Verilog module grouped by 
 
 ![Figure 2: Lab 2 Schematic, By Roman De Santos, 9/11/25, ](images/Schematic.png)
 
-![Figure 3: Calculations for 7-Seg and LED Resitor Value](images/Calculation1.png)
+![Figure 3: Calculations for 7-Seg Resitor Value](images/Calculation1.png)
 
 ![Figure 4: Calculations for PNP Transistor Limiting Resistor](images/Calculations2.png)
 
 Figure 2 shows the physical implementation of the design. All of the dip switches have an internal pull-up resistor (100kΩ). All of the output LEDs have a 1k limiting resistor to ensure that the FPGA I/O current draw does not exceed ~2.6mA (Calculations are shown in Figure 3). The PNP transistor has a 2.6kΩ limiting resistor to be safe and put it well above the minimum of 300Ω. Figure 4 shows the derivation of the resistor value for the PNP transistor.
 
+![Figure 5: Calculations for LEDs Resistor Values](images/Calculations3.png)
+
 ## Results and Discussion
 
-![Figure 5: top_tb Waves](images/topTB1.png)
-![Figure 6: top_tb Output](images/topTB2.png)
+![Figure 6: top_tb Waves](images/topTB1.png)
+![Figure 7: top_tb Output](images/topTB2.png)
 
-Figure 5 shows the Testbench Wave output for the top module.
+Figure 6 shows the Testbench Wave output for the top module.
 
-Figure 6 shows the console output for the testbench, we can see all 256 unique tests pass with 0 errors.
+Figure 7 shows the console output for the testbench, we can see all 256 unique tests pass with 0 errors.
 
-![Figure 67: DispMux_tb Waves](images/DispMuxTB.png)
+![Figure 8: DispMux_tb Waves](images/DispMuxTB.png)
 
-Figure 7 shows the testbench wave output for the DispMux. We can see that the clock succesfuly drives the clock divider and all of its dependent signals.
+Figure 8 shows the testbench wave output for the DispMux. We can see that the clock succesfuly drives the clock divider and all of its dependent signals.
 
-![Figure 8: SegDispTB](images/SegDispTB.png)
+![Figure 9: SegDispTB](images/SegDispTB.png)
 
-Figure 8 shows the testbench wave output for the seven segment decoder and all of the testcases passed.
+Figure 9 shows the testbench wave output for the seven segment decoder and all of the testcases passed.
 
 The design met all design objectives requested. In the future, I would probably spend more time designing the clock divider to simplify the RTL, however, it might not be possible since the clock is being divided by a number that is not a power of two.
 
 ## Conclusion
 
-![Figure 9: Completed Board](images/Board.jpg)
+![Figure 10: Completed Board](images/Board.jpg)
 
 The project successfully timemultiplexed the inputs to drive the display, the dip switches accurately controlled a hex 7-segment display, and the LEDs successfully represented the sum of the dip switches. I spent around 20 hours on this lab.
 
@@ -74,7 +76,7 @@ LLM prompt fed to Gemini:
 
 >Write SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits.
 
-The output of the LLM can be found on [GitHub]()
+The output of the LLM can be found on [GitHub](https://github.com/roman-de-santos/E155/tree/main/Lab2/fpga/src/AIPrototype/Prompt1)
 
 I was surprised to see that it was able to effectivly seperate this logic into two modules. One module was for the timer,clock divider, and enable logic. The other module was for the seven segment display.
 
@@ -86,7 +88,7 @@ For the next LLM prompt on Gemini
 
 >Using my files as reference, Write SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits. Use the seven segment decoder and oscillator provided in the attached files.
 
-The output of the LLM can be found on [GitHub]()
+The output of the LLM can be found on [GitHub](https://github.com/roman-de-santos/E155/tree/main/Lab2/fpga/src/AIPrototype/Prompts2)
 
 The LLM was not able to produce working code. I tried feeding the error outputs from radiant back into the LLM but this did not resolve the issue.
 
