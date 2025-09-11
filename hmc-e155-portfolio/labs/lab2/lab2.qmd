@@ -24,7 +24,7 @@ The divided clock signal was used to control a Mux to switch between the two 4-p
 
 ## Technical Documentation:
 
-The source code can be found on my [GitHub]()
+The source code can be found on my [GitHub](https://github.com/roman-de-santos/E155/tree/main/Lab2/fpga/src)
 
 ### Block Diagram
 
@@ -69,3 +69,25 @@ The project successfully timemultiplexed the inputs to drive the display, the di
 
 
 ## AI Prototype Reflection
+
+LLM prompt fed to Gemini: 
+
+>Write SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits.
+
+The output of the LLM can be found on [GitHub]()
+
+I was surprised to see that it was able to effectivly seperate this logic into two modules. One module was for the timer,clock divider, and enable logic. The other module was for the seven segment display.
+
+However, there were some odd decisions in the logic. For example, Mux_15 could be optimised out by connecting existing nets to the output.
+
+Overall very good for a first pass.
+
+For the next LLM prompt on Gemini
+
+>Using my files as reference, Write SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits. Use the seven segment decoder and oscillator provided in the attached files.
+
+The output of the LLM can be found on [GitHub]()
+
+The LLM was not able to produce working code. I tried feeding the error outputs from radiant back into the LLM but this did not resolve the issue.
+
+The syntaxed used by the LLM does not seem like what an actual person would use. I think the LLM also tried to insert citations for my project but failed to extract relevant context. This led there to being a lot of "[cite_start]" artifacts in the output code.
