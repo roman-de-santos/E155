@@ -1,3 +1,9 @@
+// Roman De Santos
+// rdesantos@hmc.edu
+// 9/11/25
+//
+// This is the testbench for the top module
+
 module top_tb();
 	logic	    clk, reset;
 	logic [3:0] Sw1, Sw2;
@@ -5,7 +11,7 @@ module top_tb();
 	logic       En1, En2;
 	logic [4:0] Sum, ExSum;
 	logic [7:0] Errors;
-	logic [7:0] Cur = 8'b0;
+	logic [7:0] Cur;
 	
 	// Initialize Device under Test
 	top dut(Sw1, Sw2, Seg, En1, En2, Sum);
@@ -18,6 +24,8 @@ module top_tb();
 			
 			reset=1; #22;
 			reset=0;
+			
+			Cur = 0;
 			
 		end
 	
