@@ -42,6 +42,7 @@ void configurePLL() {
     while ((RCC->CR >> 25 & 1) != 1);
 }
 
+// Scales PLL to 5MHz for TIM15 and TIM16
 void configureClock(){
     // Configure and turn on PLL
     configurePLL();
@@ -49,4 +50,16 @@ void configureClock(){
     // Select PLL as clock source
     RCC->CFGR |= (0b11 << 0);
     while(!((RCC->CFGR >> 2) & 0b11));
+    
+    // Set AHB prescaler
+    RCC->CFGR |= (0b1010 << 4);  // divide PLL clock by 8 (=10MHz)
+
+    // Set APB2 prescaler
+    RCC->CFGR |= (0b100 << 11); // divide by 2 (=5MHz)
+
+    //Enable APB2
+    RCC->APB2ENR |= (0b11 <<16); // enable TIM15 and TIM16
+
+    //Enable AHB
+    RCC->AHB2ENR |= 0b1;
 }
