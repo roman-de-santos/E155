@@ -79,14 +79,15 @@ typedef struct
   __IO uint32_t TIM15_OR2;           /*!< RCC APB2 peripheral clocks enable register,                              Address offset: 0x60 */
 } TIM16_TypeDef;
 
-#define TIM15 ((TIM15_TypeDef *) TIM15_BASE)
+#define TIM16 ((TIM16_TypeDef *) TIM16_BASE)
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
 
 void initTIM15(void);
-void initTIM16_freq(uint32_t freq);
-void Delay(uint32_t ms); // off of TIM15
+void initTIM16(void);
+void setTIM16_freq(uint32_t freq);
+void DelayTIM15(uint32_t ms);             // calculated off of TIM15
 
 #endif
