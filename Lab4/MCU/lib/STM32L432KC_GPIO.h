@@ -45,6 +45,7 @@ typedef struct {
 // Pointers to GPIO-sized chunks of memory for each peripheral
 #define GPIOB ((GPIO *) GPIOB_BASE)
 #define GPIOA ((GPIO *) GPIOA_BASE)
+#define GPIO GPIOA                  // Hotswap between banks here
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes
@@ -57,5 +58,7 @@ int digitalRead(int pin);
 void digitalWrite(int pin, int val);
 
 void togglePin(int pin);
+
+void PA6OutputPWM(void);
 
 #endif

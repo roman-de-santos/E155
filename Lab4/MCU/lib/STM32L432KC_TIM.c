@@ -1,4 +1,4 @@
-#include "STM32L432KC_TIM.h"
+#include <STM32L432KC_TIM.h>
 
 // Note the clock input from RCC is at 5MHz
 
@@ -85,7 +85,7 @@ void setTIM16_freq(uint32_t freq){
     
     if (freq > 0){
         // Calculate Auto Reload Register division factor
-        uint32_t ARR_Val = ((5000000*2)/freq);
+        uint32_t ARR_Val = ((5000000)/freq);
 
         TIM16->TIM16_ARR &= 0b0;                  // Clear
         TIM16->TIM16_ARR |= ARR_Val;

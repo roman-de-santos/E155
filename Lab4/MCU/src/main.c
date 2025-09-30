@@ -4,8 +4,11 @@
 
 int main(void) {
 
-    configureFlash()
-	
+    configureFlash();
+    initTIM15();
+    initTIM16();
+
+    song(notes);
 	
 }
 

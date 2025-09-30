@@ -42,16 +42,16 @@ void PA6OutputPWM(){
     pinModeGPIOA(6, GPIO_ALT);
 
     // Set which alternate function is connected
-    GPIOA->AFRH &= (~(0b1111<<20));   
-    GPIOA->AFRH |= (0b0001<<20);      
+    GPIOA->AFRH &= (~(0b1111<<24));   
+    GPIOA->AFRH |= (0b1110<<24);      
 
     // Select the type, pull-up/pull-down, and output speed respectively via GPIOA_OTYPER, GPIOA_PUPDR, GPIOA_OSPEEDER 
     // Make sure pin 6 is in push-pull configuration
     GPIOA->OTYPER &= (~(0b1<<6)); // Check this
 
     // Set speed to low
-    GPIOA->OSPEEDR &= (~(0b11<<10));
+    GPIOA->OSPEEDR &= (~(0b11<<12));
 
     // PWM should be setting our output, so turn off pin 5 PU and PD res's. GPIOA_PUPDR[11:10] clear to 00
-    GPIOA->PUPDR &= (~(0b11<<10));
+    GPIOA->PUPDR &= (~(0b11<<12));
 }
