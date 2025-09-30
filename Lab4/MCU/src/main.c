@@ -3,8 +3,20 @@
 // Updated Fall 2024
 
 int main(void) {
+
+    configureFlash()
 	
 	
+}
+
+void song(int songArray[][2]){
+    int i = 0;
+
+    while (!((songArray[i][1]==0)&(songArray[i][0]==0))){
+        setTIM16_freq(songArray[i][0]);                 // turn on PWM at given frequency "freq"
+        delayMillis(songArray[i][1]);          // leave the note on for time "milliseconds"
+        setTIM16_freq(0);                  // turn off PWM and TIM2 by passing in freq=0
+    }
 }
 
 // Pitch in Hz, duration in ms

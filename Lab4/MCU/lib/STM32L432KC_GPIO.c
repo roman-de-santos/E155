@@ -34,3 +34,24 @@ void togglePin(int pin) {
     // Use XOR to toggle
     GPIO->ODR ^= (1 << pin);
 }
+
+void PA6OutputPWM(){
+    // TIM16_CH1 comes out by AF1 through Port A PA16.
+
+    // To set pin PA6 to Alternate Function 1, connecting it to TIM2_CH1, the PWM output.
+    pinModeGPIOA(6, GPIO_ALT);
+
+    // Set which alternate function is connected
+    GPIOA->AFRH &= (~(0b1111<<20));   
+    GPIOA->AFRH |= (0b0001<<20);      
+
+    // Select the type, pull-up/pull-down, and output speed respectively via GPIOA_OTYPER, GPIOA_PUPDR, GPIOA_OSPEEDER 
+    // Make sure pin 6 is in push-pull configuration
+    GPIOA->OTYPER &= (~(0b1<<6)); // Check this
+
+    // Set speed to low
+    GPIOA->OSPEEDR &= (~(0b11<<10));
+
+    // PWM should be setting our output, so turn off pin 5 PU and PD res's. GPIOA_PUPDR[11:10] clear to 00
+    GPIOA->PUPDR &= (~(0b11<<10));
+}
