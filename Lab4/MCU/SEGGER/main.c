@@ -2,6 +2,14 @@
 // Fur Elise, E155 Lab 4
 // Updated Fall 2024
 
+#include "STM32L432KC_FLASH.h"
+
+#include "STM32L432KC_GPIO.h"
+
+#include "STM32L432KC_RCC.h"
+
+#include "STM32L432KC_TIM.h"
+
 int main(void) {
 
     configureFlash();
