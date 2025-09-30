@@ -1,11 +1,11 @@
-#include <STM32L432KC_TIM.h>
+#include "STM32L432KC_TIM.h"
 
 // Note the clock input from RCC is at 5MHz
 
-initTIM15(void){
+void initTIM15(void){
 
     // Disable counter
-    TIM15->CR1 &= ~(0b1);
+    TIM15->TIM15_CR1 &= ~(0b1);
 
     // Disable Auto Pre load register (constant value for counter)
     TIM15->TIM15_CR1  &= (~0b1 << 7);
@@ -27,7 +27,7 @@ initTIM15(void){
     TIM15->TIM15_ARR |= 0b0000000000000101;                // Set bits to intended counter top
     // Update and Enable counter
     TIM15->TIM15_EGR   |= (0b1); // Force update generatio (UG) bit to be 1
-    TIM15->CR1         |= (0b1);
+    TIM15->TIM15_CR1         |= (0b1);
 }
 
 void DelayTIM15(uint32_t ms){
@@ -48,7 +48,7 @@ void DelayTIM15(uint32_t ms){
 void initTIM16(){
 
     // Disable counter
-    TIM16->CR1 &= ~(0b1);
+    TIM16->TIM16_CR1 &= ~(0b1);
 
     // Enable PWM Mode 1 (Channel 1 is active as long as TIM16_CNT<TIM16_CCR1)
     TIM16->TIM16_CCMR1 &= ~(0b1111 << 4); // clear before writing
@@ -70,7 +70,7 @@ void initTIM16(){
 
 
     // Update counter registers
-    TIM16->TIM15_EGR   |= (0b1); // Force update generatio (UG) bit to be 1
+    TIM16->TIM16_EGR   |= (0b1); // Force update generatio (UG) bit to be 1
     
     // Enable in the setTIM16_freq function so that there are no floating values
     // in the duty cycle and freq registers
@@ -78,7 +78,7 @@ void initTIM16(){
 
 void setTIM16_freq(uint32_t freq){
     // Disable counter
-    TIM16->CR1 &= ~(0b1);
+    TIM16->TIM16_CR1 &= ~(0b1);
 
     // reset counter
     TIM15->TIM15_CNT  &= ~(0b1111111111111111);
@@ -95,8 +95,8 @@ void setTIM16_freq(uint32_t freq){
         TIM16->TIM16_CCR1 |= (ARR_Val/2);   // Find 50% of ARR value that
 
         // Update and Enable counter
-        TIM16->TIM15_EGR   |= (0b1); // Force update generatio (UG) bit to be 1
-        TIM16->CR1         |= (0b1);
+        TIM16->TIM16_EGR   |= (0b1); // Force update generatio (UG) bit to be 1
+        TIM16->TIM16_CR1   |= (0b1);
         
     } else{
         // From the reference manual " If the compare value is 0 then OC16Ref is held at ‘0"
@@ -104,8 +104,8 @@ void setTIM16_freq(uint32_t freq){
         TIM16->TIM16_CCR1 &= 0b0;                  // Clear
 
         // Update and Enable counter
-        TIM16->TIM15_EGR   |= (0b1); // Force update generatio (UG) bit to be 1
-        TIM16->CR1         |= (0b1);
+        TIM16->TIM16_EGR     |= (0b1); // Force update generatio (UG) bit to be 1
+        TIM16->TIM16_CR1     |= (0b1);
     }
 
 }
