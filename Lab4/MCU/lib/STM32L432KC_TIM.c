@@ -65,7 +65,7 @@ void initTIM16(){
 
     // Set CC1E and MOE to 1, to enable output of the PWM wave to OC1REF
     TIM16->TIM16_BDTR |= (0b1 << 15); // Main Output Enable (MOE)
-    TIM16->TIM16_CCER |= (0b1);       // CC1E on bit 1
+    TIM16->TIM16_CCER |= (0b1);       // CC1E on bit 0
 
 
 
