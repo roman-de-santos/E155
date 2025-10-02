@@ -19,7 +19,9 @@ The internal MSI clock was fed to the PLL clock module to generate an 80MHz syst
 ## Technical Documentation:
 
 The source code can be found on my [GitHub](https://github.com/roman-de-santos/E155/tree/main/Lab4/MCU/SRC%20Backup)
+
 The STM32L432KC Data sheet can be found [here](https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf)
+
 The STM32L432KC Reference manual can be found [here](https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf)
 
 ## Schematic
@@ -54,7 +56,7 @@ The design met all design objectives requested. In the future, I would prescale 
 
 The video of the working set up can be found below.
 
-[![Watch the video](https://img.youtube.com/vi/NYkI8_xGv9o.jpg)](https://www.youtube.com/watch?v=NYkI8_xGv9o)
+[![Watch the video](https://img.youtube.com/vi/NYkI8_xGv9o/maxresdefault.jpg)](https://www.youtube.com/watch?v=NYkI8_xGv9o)
 
 
 I spent around 17 hours on this lab.
