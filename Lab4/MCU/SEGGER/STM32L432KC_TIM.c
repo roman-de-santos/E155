@@ -24,8 +24,8 @@ void initTIM15(void){
 
     // Clear ARR since reset value is 0xFFFF
     TIM15->TIM15_ARR = 0;
-    // Set couter value to 9. Delay is now 1ms
-    TIM15->TIM15_ARR = 19;                // Set bits to intended counter top
+    // Set couter value to 9 (0-9 is 10 cycles). Delay is now 1ms
+    TIM15->TIM15_ARR = 0b0000000000010011;                // Set bits to intended counter top
     // Update and Enable counter
     TIM15->TIM15_EGR   |= (0b1); // Force update generatio (UG) bit to be 1
     TIM15->TIM15_CR1   |= (0b1);
