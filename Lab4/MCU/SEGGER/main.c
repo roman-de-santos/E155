@@ -10,6 +10,10 @@
 
 #include "STM32L432KC_TIM.h"
 
+#include "stdint.h"
+
+#include <stdio.h>
+
 // Pitch in Hz, duration in ms
 const int notes[][2] = {
 {659,	125},
@@ -133,12 +137,24 @@ void song(const int songArray[][2]){
     setTIM16_freq(0);                  // turn off PWM and TIM2 by passing in freq=0
 }
 
+void testDelay(){
+  while(1){
+    
+    printf("Hello, World!");
+    DelayTIM15(1000);
+  }
+}
+
 
 int main(void) {
 
+
     configureFlash();
+    configureClock();
     initTIM15();
+    //testDelay();
     initTIM16();
+    PA6OutputPWM();
 
     song(notes);
 	

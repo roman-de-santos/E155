@@ -36,14 +36,14 @@ void togglePin(int pin) {
 }
 
 void PA6OutputPWM(){
-    // TIM16_CH1 comes out by AF1 through Port A PA16.
+    // TIM16_CH1 comes out by AF14 through Port A PA16.
 
     // To set pin PA6 to Alternate Function 1, connecting it to TIM2_CH1, the PWM output.
     pinMode(6, GPIO_ALT);
 
     // Set which alternate function is connected
-    GPIO->AFRH &= (~(0b1111<<24));   
-    GPIO->AFRH |= (0b1110<<24);      
+    GPIO->AFRL &= (~(0b1111<<24));   
+    GPIO->AFRL |= (0b1110<<24);      
 
     // Select the type, pull-up/pull-down, and output speed respectively via GPIOA_OTYPER, GPIOA_PUPDR, GPIOA_OSPEEDER 
     // Make sure pin A6 is in push-pull configuration

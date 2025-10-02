@@ -60,6 +60,6 @@ void configureClock(){
     //Enable APB2
     RCC->APB2ENR |= (0b11 <<16); // enable TIM15 and TIM16
 
-    //Enable AHB (GPIO port B)
-    RCC->AHB2ENR |= (0b1 << 1);
+    //Enable AHB (GPIO port A)
+    RCC->AHB2ENR |= (0b1);
 }
