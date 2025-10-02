@@ -187,8 +187,8 @@ int main(void) {
     PA6OutputPWM();
 
     song(notes);
-
-    //song(mario);
+    DelayTIM15(500);
+    song(mario);
 	
 }
 
