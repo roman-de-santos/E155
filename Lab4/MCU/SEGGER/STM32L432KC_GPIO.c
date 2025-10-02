@@ -45,7 +45,6 @@ void PA6OutputPWM(){
     GPIO->AFRL &= (~(0b1111<<24));   
     GPIO->AFRL |= (0b1110<<24);      
 
-    // Select the type, pull-up/pull-down, and output speed respectively via GPIOA_OTYPER, GPIOA_PUPDR, GPIOA_OSPEEDER 
     // Make sure pin A6 is in push-pull configuration
     GPIO->OTYPER &= (~(0b1<<6)); // Check this
 

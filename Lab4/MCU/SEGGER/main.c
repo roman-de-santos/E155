@@ -184,12 +184,10 @@ int main(void) {
     configureClock();
     initTIM15();
     initTIM16();
-    testDelay();
-    //PA6OutputPWM();
+    PA6OutputPWM();
 
-    //song(notes);
-
-    //song(mario);
+    song(notes);
+    song(mario);
 	
 }
 
