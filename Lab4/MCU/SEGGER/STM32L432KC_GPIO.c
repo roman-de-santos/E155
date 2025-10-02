@@ -53,5 +53,5 @@ void PA6OutputPWM(){
     GPIO->OSPEEDR &= (~(0b11<<12));
 
     // PWM should be setting our output, so turn off pin A6 PU and PD res's. GPIOA_PUPDR[11:10] clear to 00
-    GPIO->PURPDR &= (~(0b11<<12));
+    GPIO->PUPDR &= (~(0b11<<12));
 }

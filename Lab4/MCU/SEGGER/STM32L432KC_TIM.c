@@ -24,10 +24,10 @@ void initTIM15(void){
     // Clear ARR since reset value is 0xFFFF
     TIM15->TIM15_ARR = 0;
     // Set couter value to 9. Delay is now 1ms
-    TIM15->TIM15_ARR = 9;                // Set bits to intended counter top
+    TIM15->TIM15_ARR = 19;                // Set bits to intended counter top
     // Update and Enable counter
     TIM15->TIM15_EGR   |= (0b1); // Force update generatio (UG) bit to be 1
-    TIM15->TIM15_CR1         |= (0b1);
+    TIM15->TIM15_CR1   |= (0b1);
 }
 
 void DelayTIM15(uint32_t ms){
@@ -62,6 +62,9 @@ void initTIM16(void) {
     // Active high polarity
     TIM16->TIM16_CCER &= ~(1 << 1);
 
+    //Set divider to 1
+    TIM16->TIM16_PSC = 0;
+
     // Enable output
     TIM16->TIM16_BDTR |= (1 << 15); // MOE
     TIM16->TIM16_CCER |= (1 << 0);  // CC1E
@@ -80,7 +83,7 @@ void setTIM16_freq(uint32_t freq) {
 
     if (freq > 0) {
         // Compute ARR (PSC=0)
-        uint32_t ARR_Val = (5000000 / freq) - 1;
+        uint32_t ARR_Val = ((5000000 * 2) / freq) - 1;
 
         // Update ARR and CCR1
         TIM16->TIM16_ARR  = ARR_Val;
