@@ -33,7 +33,7 @@ typedef struct {
     volatile uint32_t MODER;   // GPIO Offset 0x00 GPIO port mode register
     volatile uint32_t OTYPER;  // GPIO Offset 0x04
     volatile uint32_t OSPEEDR; // GPIO Offset 0x08
-    volatile uint32_t PURPDR;  // GPIO Offset 0x0C
+    volatile uint32_t PUPDR;  // GPIO Offset 0x0C
     volatile uint32_t IDR;     // GPIO Offset 0x10
     volatile uint32_t ODR;     // GPIO Offset 0x14
     volatile uint32_t BSRR;    // GPIO Offset 0x18

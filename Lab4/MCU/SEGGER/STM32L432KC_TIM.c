@@ -12,6 +12,7 @@ void initTIM15(void){
 
     // Disable Slave Master Select (SMS) to use internal clock from RCC
     TIM15->TIM15_SMCR &= ~(0b111);
+     TIM15->TIM15_SMCR &= ~(0b1 << 16);
 
     // Disable inturupts
     TIM15->TIM15_DIER &= ~(0b1);
