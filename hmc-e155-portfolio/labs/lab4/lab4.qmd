@@ -9,3 +9,65 @@ draft: false
 ---
 
 ## Introduction
+
+This report focuses on the fundamental principles of sound generation using a microcontroller unit (MCU). The primary goal is to play a musical piece, "Für Elise," by programming the MCU to produce a sequence of square waves with specific frequencies and durations. This is achieved by configuring an internal hardware timer to toggle a General-Purpose Input/Output (GPIO) pin at precise intervals corresponding to musical notes. Due to the MCU's limited current output, an LM386 audio amplifier is used to strengthen the signal before it drives an 8-ohm speaker. A core challenge of this lab is to develop the necessary C-language drivers from scratch, relying solely on the MCU's technical datasheet to understand and manipulate the memory-mapped registers for the timer and GPIO peripherals. This process provides practical experience in low-level hardware programming and interfacing.
+
+## Design and Testing Methodology
+
+The internal MSI clock was fed to the PLL clock module to generate an 80MHz system clock in the RCC module. The system clock was then divided by the APB2 and AHB prescalers and sent to TIM15 and TIM16. TIM15 was used to design an upcounter where the UIF flag was set to enable after 1ms to serve as a delay counter. TIM16 was enabled to generate a PWM wave using the capture/compare registers and ouputted to pin A6.
+
+## Technical Documentation:
+
+The source code can be found on my [GitHub](https://github.com/roman-de-santos/E155/tree/main/Lab4/MCU/SRC%20Backup)
+The STM32L432KC Data sheet can be found [here](https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf)
+The STM32L432KC Reference manual can be found [here](https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf)
+
+## Schematic
+
+![Figure 2: Lab 4 Schematic, By Roman De Santos, 10/2/25](images/Schematic.png)
+
+In addition to the Schematic I also calculated the minimum/maximum delay TIM15 supports (Figure 3), and the minimum/maximum frequency TIM16 supports (Figure 4).
+
+![Figure 3: Lab 4 Delay Calculations](images/DurationCalculations.png)
+
+![Figure 4: Lab 4 Frequency Calculations](images/FrequencyCalculations.png)
+
+Since only discrete values can be held by the counters this leads to some error in the frequency. The design implemented with a 5MHz clock, has less than a 0.01% error for each note, shown in Figure 5.
+
+![Figure 5: Lab 4 Frequency Error](images/FrequencyError.png)
+
+## Timer Set Up
+
+I sketched out the path for each timer on the BD to show how I implemented PWM and Upcounting at a high level.
+
+![Figure 6: Clock Tree Diagram](images/ClockTree.png)
+
+![Figure 7: TIM15 (Upcounting) Diagram](images/TIM15Diagram.png)
+
+![Figure 8: TIM16 (PWM) Diagram](images/TIM16Diagram.png)
+
+## Results and Discussion
+
+Overall, the design was able to play Für Elise with accurate pitches and delays. In addition I tried to transpose the Super Mario Bros theme from memory and it was able to play it but it sounded a little off.
+
+The design met all design objectives requested. In the future, I would prescale the clock entering TIM16 to lower the minimum HZ at the expense of the upper range since 2.5MHz is very high pitched.
+
+The video of the working set up can be found below.
+
+[![Watch the video](https://img.youtube.com/vi/NYkI8_xGv9o.jpg)](https://www.youtube.com/watch?v=NYkI8_xGv9o)
+
+
+I spent around 17 hours on this lab.
+
+
+## AI Prototype Reflection
+
+LLM prompt fed to Gemini: 
+
+>What timers should I use on the STM32L432KC to generate frequencies ranging from 220Hz to 1kHz? What’s the best choice of timer if I want to easily connect it to a GPIO pin? What formulae are relevant, and what registers need to be set to configure them properly?
+
+The output of the LLM can be found on [GitHub]()
+
+I expected AI to be good at this task since it invloives a lot of summarization of text. It chose TIM2,15,and 16 which all seem like great choices. The AI also correctly identified the necessary formulas and registers needed to set up the timer.
+
+Overall very good.

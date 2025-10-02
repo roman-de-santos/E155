@@ -187,7 +187,8 @@ int main(void) {
     PA6OutputPWM();
 
     song(notes);
-    song(mario);
+
+    //song(mario);
 	
 }
 

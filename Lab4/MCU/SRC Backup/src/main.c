@@ -10,26 +10,40 @@
 
 #include "STM32L432KC_TIM.h"
 
-int main(void) {
+#include "stdint.h"
 
-    configureFlash();
-    initTIM15();
-    initTIM16();
+#include <stdio.h>
 
-    song(notes);
-	
-}
+int mario[][2] = {
+  {660,100}, {660,100}, {0,100}, {660,100}, 
+  {0,150}, {523,100}, {660,100}, {0,150}, {784,100}, 
+  {0,300}, {392,100}, {0,300}, 
 
-void song(int songArray[][2]){
-    int i = 0;
+  {523,100}, {0,250}, {392,100}, {0,250}, {330,100}, 
+  {0,250}, {440,100}, {494,100}, {466,100}, {440,100}, 
+  {392,100}, {660,100}, {784,100}, {880,100}, {698,100}, {784,100}, 
+  {660,100}, {523,100}, {587,100}, {494,100}, {0,300}, 
 
-    while (!((songArray[i][1]==0)&(songArray[i][0]==0))){
-        setTIM16_freq(songArray[i][0]);                 // turn on PWM at given frequency "freq"
-        delayMillis(songArray[i][1]);          // leave the note on for time "milliseconds"
-        i++;
-    }
-    setTIM16_freq(0);                  // turn off PWM and TIM2 by passing in freq=0
-}
+  // second phrase
+  {523,100}, {0,150}, {392,100}, {0,150}, {330,100}, 
+  {0,150}, {440,100}, {494,100}, {466,100}, {440,100}, 
+  {392,100}, {660,100}, {784,100}, {880,100}, 
+  {698,100}, {784,100}, {660,100}, {523,100}, {587,100}, {494,100}, 
+  {0,300}, 
+
+  // rising sequence
+  {784,100}, {740,100}, {698,100}, {622,100}, {659,100}, 
+  {415,100}, {440,100}, {523,100}, {0,200}, {440,100}, {523,100}, 
+  {587,100}, {0,150}, {494,100}, {523,100}, {440,100}, {0,200}, 
+
+  {784,100}, {740,100}, {698,100}, {622,100}, {659,100}, 
+  {415,100}, {440,100}, {523,100}, {0,200}, {440,100}, {523,100}, 
+  {587,100}, {0,150}, {494,100}, {523,100}, {440,100}, {0,300}
+};
+
+
+
+
 
 // Pitch in Hz, duration in ms
 const int notes[][2] = {
@@ -142,5 +156,44 @@ const int notes[][2] = {
 {494,	125},
 {440,	500},
 {  0,	0}};
+
+void song(const int songArray[][2]){
+    int i = 0;
+
+    while (!((songArray[i][1]==0)&(songArray[i][0]==0))){
+        setTIM16_freq(songArray[i][0]);                 // turn on PWM at given frequency "freq"
+        DelayTIM15(songArray[i][1]);          // leave the note on for time "milliseconds"
+        i++;
+    }
+    setTIM16_freq(0);                  // turn off PWM and TIM2 by passing in freq=0
+}
+
+void testDelay(){
+  while(1){
+    
+    printf("Hello, World!");
+    DelayTIM15(1000);
+  }
+}
+
+
+int main(void) {
+
+
+    configureFlash();
+    configureClock();
+    initTIM15();
+    initTIM16();
+    testDelay();
+    //PA6OutputPWM();
+
+    //song(notes);
+
+    //song(mario);
+	
+}
+
+
+
 
 
