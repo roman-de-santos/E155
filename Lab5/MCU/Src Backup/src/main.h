@@ -13,8 +13,8 @@
 // Custom defines
 ///////////////////////////////////////////////////////////////////////////////
 
-#define LED_PIN PA5
-#define BUTTON_PIN PA4
+#define QEA_PIN PA6
+#define QEB_PIN PA8
 #define DELAY_TIM TIM2
 
 #endif // MAIN_H
