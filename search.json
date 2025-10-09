@@ -242,7 +242,7 @@
     "href": "labs/lab5/lab5.html#results-and-discussion",
     "title": "Lab 5: Interrupts",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\nOverall, the design was able to accuratly display the revs/sec of the motor. This is shown by the fact that at 10V input to the motor the design displays around 2 revs/sec which is accurate to this motor.\nThe design met all design objectives requested.\nThe video of the working set up can be found below.\n\n\n\nWatch the video\n\n\nI spent around 5 hours on this lab."
+    "text": "Results and Discussion\nOverall, the design was able to accuratly display the revs/sec of the motor. This is shown by the fact that at 10V input to the motor the design displays around 2 revs/sec which is accurate to this motor.\nThe design met all design objectives requested.\nThe video of the working set up can be found below.\n\n\n\nFigure 4: Final project\n\n\nI spent around 5 hours on this lab."
   },
   {
     "objectID": "labs/lab5/lab5.html#ai-prototype-reflection",
