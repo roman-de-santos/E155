@@ -44,7 +44,7 @@ The design met all design objectives requested.
 
 The video of the working set up can be found below.
 
-[![Watch the video](https://img.youtube.com/vi/NYkI8_xGv9o/maxresdefault.jpg)](https://www.youtube.com/watch?v=NYkI8_xGv9o)
+![Figure 4: Final project](images/Project.jpg)
 
 
 I spent around 5 hours on this lab.
