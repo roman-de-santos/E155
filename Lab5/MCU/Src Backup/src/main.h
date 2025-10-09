@@ -17,4 +17,6 @@
 #define QEB_PIN PA8
 #define DELAY_TIM TIM2
 
+void updateCount(void);
+
 #endif // MAIN_H
