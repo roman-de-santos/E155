@@ -9,3 +9,52 @@ draft: false
 ---
 
 ## Introduction
+
+Measuring the rotational speed and direction of a motor is a foundational task in control systems, robotics, and automation. This lab focuses on developing a system to determine the angular velocity of a brushed DC motor by interfacing an STM32L432KC microcontroller with a quadrature encoder. Quadrature encoders are sensors that use two output signals, commonly referred to as channels A and B, to track rotation. These signals are 90° out of phase, a crucial feature that allows for the determination of both the motor's speed and its direction of spin.
+
+
+To efficiently process the rapid pulses from the encoder, this system will be built around interrupts. An interrupt is a hardware signal that directs the microcontroller to pause its main program loop and execute a specialized function, known as an Interrupt Service Routine (ISR). Instead of continuously "polling" the encoder's output pins, which is computationally wasteful, interrupts allow the MCU to respond immediately to changes in the encoder signals. This interrupt-driven approach enables accurate pulse counting even at high motor speeds, while freeing the processor to perform other tasks, such as calculating velocity and updating a display. The goal is to build a robust system that accurately measures and displays the motor's angular velocity in revolutions per second (rev/s) across a wide range of speeds.
+
+## Technical Documentation:
+
+The source code can be found on my [GitHub](https://github.com/roman-de-santos/E155/tree/main/Lab5/MCU/Src%20Backup)
+
+The datasheet for the encoder can be found [here](https://hmc-e155.github.io/assets/lab/25GA370.pdf). Note that the PPR is 408 not 120.
+
+## Schematic
+
+![Figure 1: Lab 5 Schematic, By Roman De Santos, 10/9/25](images/Schematic.png)
+
+Apart from the schematic calculations are shown in Figure 2. These show the conversion between pulse counts of the encoder and revolutions per second.
+
+![Figure 2: Revs per Second Calculations](images/Calculations1.png)
+
+Inturrupting is more efficient and adaptable compared to manual highspeed polling. Interrups let you handle other tasks when not needed. For example in my code, I am able to calculate the revs/sec when an inturrupt is not taking up the processer's time. Manual high speed polling takes up a lot of the processor's compute time depending on how its designed. It is possible to context switch but it gets trickier if you are just running the polling in a while loop. You also need to be aware of the max frequency supported by manual polling which is 2*minimum_frequency (nyquist theorem). This means that for 2 rev's per second you need to poll for at least 480*4*2 (ppm * state changes * 2) = 3840 times in one seconds. This also limits your upper range to only 2 revs/second, so if you want to increase this range you have to update the code. As you can see Interrupts are more flexible since they are not fixed and are triggered only as needed. This reduces the amount of updates the processor has to handle and allows the processor to have a more dynamic range of frequencies in our motor/encoder context.
+
+
+## Diagram
+
+![Figure 3: Code Flow Diagram](images/Diagram.png)
+
+## Results and Discussion
+
+Overall, the design was able to accuratly display the revs/sec of the motor. This is shown by the fact that at 10V input to the motor the design displays around 2 revs/sec which is accurate to this motor.
+
+The design met all design objectives requested.
+
+The video of the working set up can be found below.
+
+[![Watch the video](https://img.youtube.com/vi/NYkI8_xGv9o/maxresdefault.jpg)](https://www.youtube.com/watch?v=NYkI8_xGv9o)
+
+
+I spent around 5 hours on this lab.
+
+## AI Prototype Reflection
+
+LLM prompt fed to Gemini: 
+
+>Write me interrupt handlers to interface with a quadrature encoder. I’m using the STM32L432KC, what pins should I connect the encoder to in order to allow it to easily trigger the interrupts?
+
+The output of the LLM can be found on [GitHub](https://github.com/roman-de-santos/E155/blob/main/Lab5/AIPrototype/GeminiOutput.pdf)
+
+I was surprised to see that Gemini offered a better alternative to using manual inturrupts like we did in this lab. The STM32L432KC has an encoder mode that can use the timers to offload computation from the cpu to these timers. It also took care in choosing the pins that were 5V tolerant and were connected to the correct channel inputs. On top of this it also wrote code for the manual interrupt method.

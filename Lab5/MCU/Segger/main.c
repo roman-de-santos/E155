@@ -99,11 +99,8 @@ int main(void) {
     while(1){   
         delay_millis(TIM2, 500);
         float revs_per_sec = count / (0.5 * (408*4));
-        printf("Revs/s: %.1f, count: %.1f \n", revs_per_sec, count);
+        printf("Revs/s: %.2f, count: %.1f \n", revs_per_sec, count);
         count = 0;
-
-        //printf("IMR1=0x%08lx  RTSR1=0x%08lx  FTSR1=0x%08lx\n",
-       //EXTI->IMR1, EXTI->RTSR1, EXTI->FTSR1);
     }
 
 }

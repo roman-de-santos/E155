@@ -68,7 +68,7 @@ LLM prompt fed to Gemini:
 
 >What timers should I use on the STM32L432KC to generate frequencies ranging from 220Hz to 1kHz? What’s the best choice of timer if I want to easily connect it to a GPIO pin? What formulae are relevant, and what registers need to be set to configure them properly?
 
-The output of the LLM can be found on [GitHub]()
+The output of the LLM can be found on [GitHub](https://github.com/roman-de-santos/E155/blob/main/Lab4/AIPrototype/Lab4Response.pdf)
 
 I expected AI to be good at this task since it invloives a lot of summarization of text. It chose TIM2,15,and 16 which all seem like great choices. The AI also correctly identified the necessary formulas and registers needed to set up the timer.
 
