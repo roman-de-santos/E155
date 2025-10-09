@@ -1,0 +1,20 @@
+// main.h
+// Josh Brake
+// jbrake@hmc.edu
+// 10/31/22 
+
+#ifndef MAIN_H
+#define MAIN_H
+
+#include "STM32L432KC.h"
+#include <stm32l432xx.h>
+
+///////////////////////////////////////////////////////////////////////////////
+// Custom defines
+///////////////////////////////////////////////////////////////////////////////
+
+#define QEA_PIN PA6
+#define QEB_PIN PA8
+#define DELAY_TIM TIM2
+
+#endif // MAIN_H

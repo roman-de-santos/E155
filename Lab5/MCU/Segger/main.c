@@ -39,8 +39,10 @@ int main(void) {
     __enable_irq();
 
     // Enable QEA and QEB as intrupts
-    for (int pin : {6, 8}) {
-        EXTI->IMR1 |= (1 << pin);
+    int pins[] = {6, 8};
+    for (int i = 0; i < 2; i++) {
+        int pin = pins[i];
+        EXTI->IMR1  |= (1 << pin);
         EXTI->RTSR1 |= (1 << pin);
         EXTI->FTSR1 |= (1 << pin);
     }
@@ -52,7 +54,7 @@ int main(void) {
     while(1){   
         delay_millis(TIM2, 500);
         float revs = count/(0.5);
-        fprint("Revs/s: %.1f", revs);
+        printf("Revs/s: %.1f", revs);
         count = 0;
     }
 
