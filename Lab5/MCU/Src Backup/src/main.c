@@ -1,4 +1,4 @@
-// button_interrupt.c
+// main.c
 // Josh Brake
 // jbrake@hmc.edu
 // 10/31/22
