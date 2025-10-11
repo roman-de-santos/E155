@@ -44,7 +44,7 @@ Global Variables A and B can only be used by this handler.
 */
 void EXTI9_5_IRQHandler(void)
 {
-    digitalWrite(PA9, 1);
+    digitalWrite(PA10, 1);
     if (EXTI->PR1 & (1 << 6)) {  // Check line 6
         EXTI->PR1 = (1 << 6);    // Clear pending bit
         
@@ -58,7 +58,7 @@ void EXTI9_5_IRQHandler(void)
         updateCount();
     }
 
-    digitalWrite(PA9,0);
+    digitalWrite(PA10, 0);
 }
 
 int main(void) {
@@ -75,6 +75,11 @@ int main(void) {
     pinMode(QEB_PIN, GPIO_INPUT); // USE PA8
     GPIOA->PUPDR &= ~_VAL2FLD(GPIO_PUPDR_PUPD8, 0b11);
     GPIOA->PUPDR |=  _VAL2FLD(GPIO_PUPDR_PUPD8, 0b01);
+
+    // enable timing test pins for polling and interrupt comparison
+    pinMode(PA10, GPIO_OUTPUT); // interrupt
+  
+    pinMode(PA5, GPIO_OUTPUT);  // polling
     
     // Initialize values
     count = 0;
@@ -110,11 +115,13 @@ int main(void) {
     NVIC_EnableIRQ(EXTI9_5_IRQn);
     
 
-    while(1){   
-        delay_millis(TIM2, 500);
-        float revs_per_sec = count / (0.5 * (408*4));
-        printf("Revs/s: %.2f, count: %.1f \n", revs_per_sec, count);
-        count = 0;
+    while(1){ 
+    
+    digitalWrite(PA5, 1);
+      printf("hello");
+
+    digitalWrite(PA5, 0);
+      
     }
 
 }
