@@ -13,6 +13,11 @@ volatile int B = 0;
 // revolutions count
 volatile double count = 0;
 
+/*
+Counts the number of pulses sent out by the encoder
+
+Used by the EXTI9_5_IRQHandler function to update based on interupts 
+*/
 void updateCount(void){
     int QEM [16] = {0,-1,1,2,1,0,2,-1,-1,2,0,1,2,1,-1,0};
     int index;
@@ -30,9 +35,16 @@ int _write(int file, char *ptr, int len) {
   return len;
 }
 
+/*
+External Interrupt Handler.
+
+Triggered by GPIO pins PA6 and PA8 on rising and falling edge of each.
+
+Global Variables A and B can only be used by this handler.
+*/
 void EXTI9_5_IRQHandler(void)
 {
-
+    digitalWrite(PA9, 1);
     if (EXTI->PR1 & (1 << 6)) {  // Check line 6
         EXTI->PR1 = (1 << 6);    // Clear pending bit
         
@@ -45,6 +57,8 @@ void EXTI9_5_IRQHandler(void)
         B = digitalRead(QEB_PIN);
         updateCount();
     }
+
+    digitalWrite(PA9,0);
 }
 
 int main(void) {
