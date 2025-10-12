@@ -31,7 +31,19 @@ Apart from the schematic calculations are shown in Figure 2. These show the conv
 
 Inturrupting is more efficient and adaptable compared to manual highspeed polling. Interrups let you handle other tasks when not needed. For example in my code, I am able to calculate the revs/sec when an inturrupt is not taking up the processer's time. Manual high speed polling takes up a lot of the processor's compute time depending on how its designed. It is possible to context switch but it gets trickier if you are just running the polling in a while loop. You also need to be aware of the max frequency supported by manual polling which is 2*minimum_frequency (nyquist theorem). This means that for 2 rev's per second you need to poll for at least 480*4*2 (ppm * state changes * 2) = 3840 times in one seconds. This also limits your upper range to only 2 revs/second, so if you want to increase this range you have to update the code. As you can see Interrupts are more flexible since they are not fixed and are triggered only as needed. This reduces the amount of updates the processor has to handle and allows the processor to have a more dynamic range of frequencies in our motor/encoder context.
 
+![Figure 3: Timing Scope for Interrupt routine, Polling, and encoder pulses](images/AllTime.png)
 
+Figure 3 shows the encoder pulses in yellow, the intterupt service in purple, and the polling in cyan. 
+
+![Figure 4: Timing Scope for Polling](images/PollingTime.png)
+
+Figure 4 shows the fastest polling with our current STM32L432KC configuration (Running the polling in a while loop). And from the scope, we can see it takes 484 µs. Thus this only supports a maximum encoder pulse frequency of $\frac{1}{T_polling} * 0.5 = 1033.06 Hz$ since you must sample twice as fast as your highest frequency (Nyquist theorem).
+
+![Figure 5: Timing Scope for Interrupts](images/InterrupTime.png)
+
+Figure 5 shows that the interrupt service time is 148 µs and since we only inturrupt when there is a rising or falling edge, this means that our theoretical maximum frequency of encoder pulses we can detect is  $\frac{1}{T_interrupt} = 3378.38 Hz$
+
+Thus we can see that the intterupt method supports a higher frequency of encoder pulses. 
 ## Diagram
 
 ![Figure 3: Code Flow Diagram](images/Diagram.png)
