@@ -1,0 +1,16 @@
+#Start recording tcl command: 9/13/2025 16:56:00
+#Project Location: C:/Users/roman/Downloads/Lab3; Project name: Lab3
+prj_create -name "Lab3" -impl "impl_1" -dev iCE40UP5K-SG48I -performance "High-Performance_1.2V" -synthesis "lse"
+prj_save 
+prj_add_source "C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/roman/Downloads/Lab2/source/impl_1/DualSevSeg_tb.sv" "C:/Users/roman/Downloads/Lab2/source/impl_1/DualSevSeg.sv" "C:/Users/roman/Downloads/Lab2/source/impl_1/SegDisp.sv" "C:/Users/roman/Downloads/Lab2/source/impl_1/SegDisp_tb.sv" "C:/Users/roman/Downloads/Lab2/source/impl_1/DispMux.sv" "C:/Users/roman/Downloads/Lab2/source/impl_1/DispMux_tb.sv"
+prj_remove_source "C:/Users/roman/Downloads/Lab2/source/impl_1/DualSevSeg_tb.sv" "C:/Users/roman/Downloads/Lab2/source/impl_1/DualSevSeg.sv" "C:/Users/roman/Downloads/Lab2/source/impl_1/SegDisp.sv" "C:/Users/roman/Downloads/Lab2/source/impl_1/SegDisp_tb.sv"
+prj_disable_source "C:/Users/roman/Downloads/Lab2/source/impl_1/DispMux.sv" "C:/Users/roman/Downloads/Lab2/source/impl_1/DispMux_tb.sv"
+prj_remove_source "C:/Users/roman/Downloads/Lab2/source/impl_1/DispMux.sv" "C:/Users/roman/Downloads/Lab2/source/impl_1/DispMux_tb.sv"
+prj_add_source "C:/Users/roman/Downloads/Lab3/source/impl_1/SegDisp_tb.sv" "C:/Users/roman/Downloads/Lab3/source/impl_1/DispMux.sv" "C:/Users/roman/Downloads/Lab3/source/impl_1/DispMux_tb.sv" "C:/Users/roman/Downloads/Lab3/source/impl_1/DualSevSeg_tb.sv" "C:/Users/roman/Downloads/Lab3/source/impl_1/DualSevSeg.sv" "C:/Users/roman/Downloads/Lab3/source/impl_1/SegDisp.sv"
+prj_disable_source "C:/Users/roman/Downloads/Lab3/source/impl_1/SegDisp_tb.sv"
+prj_disable_source "C:/Users/roman/Downloads/Lab3/source/impl_1/DispMux_tb.sv"
+prj_add_source "C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM.sv"
+#Stop recording: 9/13/2025 22:21:58

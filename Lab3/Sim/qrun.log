@@ -1,0 +1,800 @@
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run 100 ns" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 21:38:31 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (4) for port 'Sw'. The port definition is at: C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce.sv(3).
+#    Time: 0 ns  Iteration: 0  Instance: /DispMux_tb/dut File: C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (7) for port 'SwState'. The port definition is at: C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /DispMux_tb/dut File: C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv Line: 16
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run 100 ns
+restart
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (4) for port 'Sw'. The port definition is at: C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce.sv(3).
+#    Time: 0 ns  Iteration: 0  Instance: /DispMux_tb/dut File: C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (7) for port 'SwState'. The port definition is at: C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /DispMux_tb/dut File: C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv Line: 16
+run -all
+# Break key hit
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 41
+# End time: 21:42:19 on Sep 23,2025, Elapsed time: 0:03:48
+# Errors: 0, Warnings: 2
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 21:42:56 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(52)
+#    Time: 1000025 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 52
+# Causality operation skipped due to absence of debug database file
+add wave -position end  sim:/DispMux_tb/dut/counter
+restart -f
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(52)
+#    Time: 1000025 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 52
+restart -f
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(52)
+#    Time: 1000025 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 52
+compile -all
+# wrong # args: should be "compile w cmd ?arg ...?"
+compile
+# wrong # args: should be "compile w cmd ?arg ...?"
+compile C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce.sv
+# wrong # args: should be "compile w cmd ?arg ...?"
+compare update
+# End time: 21:50:44 on Sep 23,2025, Elapsed time: 0:07:48
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 21:51:25 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(52)
+#    Time: 1189305 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 52
+add wave -position end  sim:/DispMux_tb/dut/SwIdle
+add wave -position end  sim:/DispMux_tb/dut/SwMax
+add wave -position end  sim:/DispMux_tb/dut/SwSync0
+add wave -position end  sim:/DispMux_tb/dut/SwSync1
+restart -f
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(52)
+#    Time: 1189305 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 52
+add wave -position end  sim:/DispMux_tb/dut/counter
+restart -f
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(52)
+#    Time: 1189305 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 52
+# End time: 21:58:58 on Sep 23,2025, Elapsed time: 0:07:33
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 21:59:34 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(52)
+#    Time: 1189305 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 52
+# End time: 22:03:23 on Sep 23,2025, Elapsed time: 0:03:49
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:03:51 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(52)
+#    Time: 1189305 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 52
+# End time: 22:06:59 on Sep 23,2025, Elapsed time: 0:03:08
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:07:37 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(53)
+#    Time: 1189305 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 53
+# End time: 22:08:33 on Sep 23,2025, Elapsed time: 0:00:56
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:09:03 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(53)
+#    Time: 128585 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 53
+add wave -position end  sim:/DispMux_tb/dut/counter
+restart -f
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(53)
+#    Time: 128585 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 53
+# Causality operation skipped due to absence of debug database file
+# End time: 22:16:43 on Sep 23,2025, Elapsed time: 0:07:40
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:17:17 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(53)
+#    Time: 128585 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 53
+add wave -position end  sim:/DispMux_tb/dut/counter
+add wave -position end  sim:/DispMux_tb/dut/SwSync0
+add wave -position end  sim:/DispMux_tb/dut/SwSync1
+add wave -position end  sim:/DispMux_tb/dut/SwIdle
+add wave -position end  sim:/DispMux_tb/dut/SwMax
+restart -g
+restart -f
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(53)
+#    Time: 128585 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 53
+# End time: 22:20:45 on Sep 23,2025, Elapsed time: 0:03:28
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:21:27 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(53)
+#    Time: 67865 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 53
+# End time: 22:23:12 on Sep 23,2025, Elapsed time: 0:01:45
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:23:45 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(53)
+#    Time: 4000025 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 53
+# End time: 22:24:29 on Sep 23,2025, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:25:02 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(52)
+#    Time: 4000025 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 52
+# End time: 22:25:53 on Sep 23,2025, Elapsed time: 0:00:51
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:26:27 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(53)
+#    Time: 4000025 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 53
+# End time: 22:27:14 on Sep 23,2025, Elapsed time: 0:00:47
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:27:51 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(53)
+#    Time: 4000025 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 53
+# End time: 22:28:28 on Sep 23,2025, Elapsed time: 0:00:37
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:42:53 on Sep 23,2025
+# Loading sv_std.std
+# Loading work.DispMux_tb(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv(53)
+#    Time: 4000025 ns  Iteration: 1  Instance: /DispMux_tb
+# Break in Module DispMux_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Debounce_tb.sv line 53
+# End time: 22:45:54 on Sep 23,2025, Elapsed time: 0:03:01
+# Errors: 0, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 00:29:13 on Sep 24,2025
+# Loading sv_std.std
+# Loading work.keypad_tb(fast)
+# Loading work.Keypad(fast)
+# Loading work.Debounce(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# PASSED!: First key press -- got KeyVal=0000 expected expVal=0000 at time 3100072.
+# PASSED!: Second key press -- got KeyVal=0000 expected expVal=0000 at time 6200122.
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/Keypad_tb.sv(72)
+#    Time: 6200372 ns  Iteration: 0  Instance: /keypad_tb
+# Break in Module keypad_tb at C:/Users/roman/Downloads/Lab3/source/impl_1/Keypad_tb.sv line 72
+# Causality operation skipped due to absence of debug database file
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 16:15:13 on Sep 24,2025
+# Loading sv_std.std
+# Loading work.tb_DispFSM(fast)
+# Loading work.DispFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: roman  Hostname: ROMANSLAPTOP  ProcessID: 12436
+#           Attempting to use alternate WLF file "./wlfttqmwkh".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttqmwkh
+# run -all
+# PASS: Key 0 produced Sw2=0
+# ** Error: FAIL: Key 1 expected Sw2=1, got 0
+#    Time: 55 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 2 expected Sw2=2, got 1
+#    Time: 85 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 3 expected Sw2=3, got 2
+#    Time: 115 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 4 expected Sw2=4, got 3
+#    Time: 145 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 5 expected Sw2=5, got 4
+#    Time: 175 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 6 expected Sw2=6, got 5
+#    Time: 205 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 7 expected Sw2=7, got 6
+#    Time: 235 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 8 expected Sw2=8, got 7
+#    Time: 265 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 9 expected Sw2=9, got 8
+#    Time: 295 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 10 expected Sw2=a, got 9
+#    Time: 325 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 11 expected Sw2=b, got a
+#    Time: 355 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 12 expected Sw2=c, got b
+#    Time: 385 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 13 expected Sw2=d, got c
+#    Time: 415 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 14 expected Sw2=e, got d
+#    Time: 445 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 15 expected Sw2=f, got e
+#    Time: 475 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# All tests completed.
+# ** Note: $finish    : C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv(63)
+#    Time: 485 ns  Iteration: 1  Instance: /tb_DispFSM
+# End time: 16:15:46 on Sep 24,2025, Elapsed time: 0:00:33
+# Errors: 15, Warnings: 2
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 16:16:53 on Sep 24,2025
+# Loading sv_std.std
+# Loading work.tb_DispFSM(fast)
+# Loading work.DispFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: roman  Hostname: ROMANSLAPTOP  ProcessID: 12436
+#           Attempting to use alternate WLF file "./wlft73ht2h".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft73ht2h
+# run -all
+# PASS: Key 0 produced Sw2=0
+# ** Error: FAIL: Key 1 expected Sw2=1, got 0
+#    Time: 55 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 2 expected Sw2=2, got 1
+#    Time: 85 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 3 expected Sw2=3, got 2
+#    Time: 115 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 4 expected Sw2=4, got 3
+#    Time: 145 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 5 expected Sw2=5, got 4
+#    Time: 175 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 6 expected Sw2=6, got 5
+#    Time: 205 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 7 expected Sw2=7, got 6
+#    Time: 235 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 8 expected Sw2=8, got 7
+#    Time: 265 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 9 expected Sw2=9, got 8
+#    Time: 295 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 10 expected Sw2=a, got 9
+#    Time: 325 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 11 expected Sw2=b, got a
+#    Time: 355 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 12 expected Sw2=c, got b
+#    Time: 385 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 13 expected Sw2=d, got c
+#    Time: 415 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 14 expected Sw2=e, got d
+#    Time: 445 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 15 expected Sw2=f, got e
+#    Time: 475 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# All tests completed.
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv(63)
+#    Time: 485 ns  Iteration: 1  Instance: /tb_DispFSM
+# Break in Module tb_DispFSM at C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv line 63
+# End time: 16:20:35 on Sep 24,2025, Elapsed time: 0:03:42
+# Errors: 15, Warnings: 2
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 16:21:33 on Sep 24,2025
+# Loading sv_std.std
+# Loading work.tb_DispFSM(fast)
+# Loading work.DispFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: roman  Hostname: ROMANSLAPTOP  ProcessID: 12436
+#           Attempting to use alternate WLF file "./wlft013f96".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft013f96
+# run -all
+# PASS: Key 0 produced Sw2=0
+# ** Error: FAIL: Key 1 expected Sw2=1, got 0
+#    Time: 55 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 2 expected Sw2=2, got 0
+#    Time: 85 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 3 expected Sw2=3, got 1
+#    Time: 115 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 4 expected Sw2=4, got 2
+#    Time: 145 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 5 expected Sw2=5, got 3
+#    Time: 175 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 6 expected Sw2=6, got 4
+#    Time: 205 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 7 expected Sw2=7, got 5
+#    Time: 235 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 8 expected Sw2=8, got 6
+#    Time: 265 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 9 expected Sw2=9, got 7
+#    Time: 295 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 10 expected Sw2=a, got 8
+#    Time: 325 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 11 expected Sw2=b, got 9
+#    Time: 355 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 12 expected Sw2=c, got a
+#    Time: 385 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 13 expected Sw2=d, got b
+#    Time: 415 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 14 expected Sw2=e, got c
+#    Time: 445 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 15 expected Sw2=f, got d
+#    Time: 475 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# All tests completed.
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv(63)
+#    Time: 485 ns  Iteration: 1  Instance: /tb_DispFSM
+# Break in Module tb_DispFSM at C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv line 63
+# End time: 16:22:32 on Sep 24,2025, Elapsed time: 0:00:59
+# Errors: 15, Warnings: 2
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 16:25:33 on Sep 24,2025
+# Loading sv_std.std
+# Loading work.tb_DispFSM(fast)
+# Loading work.DispFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: roman  Hostname: ROMANSLAPTOP  ProcessID: 12436
+#           Attempting to use alternate WLF file "./wlft4v3kbe".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft4v3kbe
+# run -all
+# PASS: Key 0 produced Sw2=0
+# ** Error: FAIL: Key 1 expected Sw2=1, got 0
+#    Time: 55 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 2 expected Sw2=2, got 1
+#    Time: 85 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 3 expected Sw2=3, got 2
+#    Time: 115 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 4 expected Sw2=4, got 3
+#    Time: 145 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 5 expected Sw2=5, got 4
+#    Time: 175 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 6 expected Sw2=6, got 5
+#    Time: 205 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 7 expected Sw2=7, got 6
+#    Time: 235 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 8 expected Sw2=8, got 7
+#    Time: 265 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 9 expected Sw2=9, got 8
+#    Time: 295 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 10 expected Sw2=a, got 9
+#    Time: 325 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 11 expected Sw2=b, got a
+#    Time: 355 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 12 expected Sw2=c, got b
+#    Time: 385 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 13 expected Sw2=d, got c
+#    Time: 415 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 14 expected Sw2=e, got d
+#    Time: 445 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# ** Error: FAIL: Key 15 expected Sw2=f, got e
+#    Time: 475 ns  Scope: tb_DispFSM.press_key File: C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv Line: 42
+# All tests completed.
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv(63)
+#    Time: 485 ns  Iteration: 1  Instance: /tb_DispFSM
+# Break in Module tb_DispFSM at C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv line 63
+# End time: 16:28:07 on Sep 24,2025, Elapsed time: 0:02:34
+# Errors: 15, Warnings: 2
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 16:28:44 on Sep 24,2025
+# Loading sv_std.std
+# Loading work.tb_DispFSM(fast)
+# Loading work.DispFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: roman  Hostname: ROMANSLAPTOP  ProcessID: 12436
+#           Attempting to use alternate WLF file "./wlft24dm1a".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft24dm1a
+# run -all
+# PASS: Key 0 produced Sw2=0
+# PASS: Key 1 produced Sw2=1
+# PASS: Key 2 produced Sw2=2
+# PASS: Key 3 produced Sw2=3
+# PASS: Key 4 produced Sw2=4
+# PASS: Key 5 produced Sw2=5
+# PASS: Key 6 produced Sw2=6
+# PASS: Key 7 produced Sw2=7
+# PASS: Key 8 produced Sw2=8
+# PASS: Key 9 produced Sw2=9
+# PASS: Key 10 produced Sw2=a
+# PASS: Key 11 produced Sw2=b
+# PASS: Key 12 produced Sw2=c
+# PASS: Key 13 produced Sw2=d
+# PASS: Key 14 produced Sw2=e
+# PASS: Key 15 produced Sw2=f
+# All tests completed.
+# ** Note: $stop    : C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv(64)
+#    Time: 645 ns  Iteration: 1  Instance: /tb_DispFSM
+# Break in Module tb_DispFSM at C:/Users/roman/Downloads/Lab3/source/impl_1/DispFSM_tb.sv line 64
+# End time: 16:32:59 on Sep 24,2025, Elapsed time: 0:04:15
+# Errors: 0, Warnings: 2
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:09:55 on Sep 24,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.Keypad(fast)
+# Loading work.Debounce(fast)
+# Loading work.DispFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv Line: 17
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: roman  Hostname: ROMANSLAPTOP  ProcessID: 12436
+#           Attempting to use alternate WLF file "./wlft408g9d".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft408g9d
+# run -all
+# ** Note: $stop    : C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv(39)
+#    Time: 4000025 ps  Iteration: 1  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv line 39
+add wave -position end  sim:/top_tb/dut/DSevSeg/Clk
+add wave -position end  sim:/top_tb/dut/DSevSeg/Reset
+add wave -position end  sim:/top_tb/dut/DSevSeg/Sw1
+add wave -position end  sim:/top_tb/dut/DSevSeg/Sw2
+add wave -position end  sim:/top_tb/dut/DSevSeg/Seg
+add wave -position end  sim:/top_tb/dut/DSevSeg/En1
+add wave -position end  sim:/top_tb/dut/DSevSeg/En2
+add wave -position end  sim:/top_tb/dut/DSevSeg/SegInput
+add wave -position end  sim:/top_tb/dut/keypad1/Clk
+add wave -position end  sim:/top_tb/dut/keypad1/Reset
+add wave -position end  sim:/top_tb/dut/keypad1/Rows
+add wave -position end  sim:/top_tb/dut/keypad1/Cols
+add wave -position end  sim:/top_tb/dut/keypad1/KeyVal
+add wave -position end  sim:/top_tb/dut/keypad1/NextKey
+add wave -position end  sim:/top_tb/dut/keypad1/ir0
+add wave -position end  sim:/top_tb/dut/keypad1/ir1
+add wave -position end  sim:/top_tb/dut/keypad1/ir2
+add wave -position end  sim:/top_tb/dut/keypad1/ir3
+add wave -position end  sim:/top_tb/dut/keypad1/KeyScan
+add wave -position end  sim:/top_tb/dut/keypad1/KeyS0
+add wave -position end  sim:/top_tb/dut/keypad1/State
+add wave -position end  sim:/top_tb/dut/keypad1/NextState
+add wave -position end  sim:/top_tb/dut/keypad1/count
+add wave -position end sim:/top_tb/dut/FSM1/*
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.Keypad(fast)
+# Loading work.Debounce(fast)
+# Loading work.DispFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv Line: 17
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv(39)
+#    Time: 4000025 ps  Iteration: 1  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv line 39
+# End time: 22:21:27 on Sep 24,2025, Elapsed time: 0:11:32
+# Errors: 0, Warnings: 1
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:22:34 on Sep 24,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.Keypad(fast)
+# Loading work.Debounce(fast)
+# Loading work.DispFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv Line: 17
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: roman  Hostname: ROMANSLAPTOP  ProcessID: 12436
+#           Attempting to use alternate WLF file "./wlft60c4vn".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft60c4vn
+# run -all
+# ** Note: $stop    : C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv(41)
+#    Time: 4000025 ps  Iteration: 1  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv line 41
+# End time: 22:23:44 on Sep 24,2025, Elapsed time: 0:01:10
+# Errors: 0, Warnings: 3
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:24:26 on Sep 24,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.Keypad(fast)
+# Loading work.Debounce(fast)
+# Loading work.DispFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: roman  Hostname: ROMANSLAPTOP  ProcessID: 12436
+#           Attempting to use alternate WLF file "./wlft2mrmi5".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft2mrmi5
+# run -all
+# ** Note: $stop    : C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv(41)
+#    Time: 4000025 ps  Iteration: 1  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv line 41
+add wave -position end sim:/top_tb/dut/DSevSeg/*
+add wave -position end sim:/top_tb/dut/keypad1/*
+add wave -position end sim:/top_tb/dut/FSM1/*
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.Keypad(fast)
+# Loading work.Debounce(fast)
+# Loading work.DispFSM(fast)
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv(41)
+#    Time: 4000025 ps  Iteration: 1  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv line 41
+add wave -position end sim:/top_tb/dut/keypad1/Db1/*
+restart -f
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.Keypad(fast)
+# Loading work.Debounce(fast)
+# Loading work.DispFSM(fast)
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv(41)
+#    Time: 4000025 ps  Iteration: 1  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top_tb.sv line 41
+# End time: 22:33:35 on Sep 24,2025, Elapsed time: 0:09:09
+# Errors: 0, Warnings: 0

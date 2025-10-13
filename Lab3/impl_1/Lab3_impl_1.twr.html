@@ -1,0 +1,6281 @@
+<HTML>
+<HEAD>
+<TITLE>Timing Report</TITLE>
+<link href="" rel="stylesheet" type="text/css" media="screen"/>
+<link href="" rel="stylesheet" type="text/css" media="print"/>
+<style type="text/css">
+#toc {
+  position: fixed;
+  right: 2px;
+  top: 2px;
+  padding: 2px 5px 2px 5px;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+}
+#toc_list {
+  display: none;
+  }
+tapath {
+  display: none;
+}
+</style>
+
+<script type="text/javascript">
+<!--
+function showTocList() {
+var a = document.getElementById("toc_list");
+a.style.display = "block";
+}
+
+function hideTocList() {
+var a = document.getElementById("toc_list");
+if (a)
+    a.style.display = "none";
+}
+
+//-->
+</script>
+
+</HEAD>
+
+<BODY>
+
+<DIV id="content" class="Child" onclick="hideTocList()"><PRE>
+<A name="Timing_rpt_top">Timing Report</A><B><U><big></big></U></B>
+Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.2.0.3.0
+
+Wed Sep 24 23:25:17 2025
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+Command line:    timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt Lab3_impl_1.twr Lab3_impl_1.udb -gui -msgset C:/Users/rdesantos/Downloads/Lab3/promote.xml
+
+-----------------------------------------
+Design:          top
+Family:          iCE40UP
+Device:          iCE40UP5K
+Package:         SG48
+Performance:     High-Performance_1.2V
+Package Status:                     Preliminary    Version 1.5
+**Performance Hardware Data Status :   Advanced Version 1.0
+-----------------------------------------
+
+
+=====================================================================
+                    Table of Contents
+=====================================================================
+<LI>    <A href=#Timing_rpt_DesignChecking>1  Timing Overview</A></LI>
+<LI>        <A href=#Timing_rpt_SDCConstraints>1.1  SDC Constraints</A></LI>
+<LI>        <A href=#Timing_rpt_ConstraintCoverage>1.2  Constraint Coverage</A></LI>
+<LI>        <A href=#Timing_rpt_OverallSummary>1.3  Overall Summary</A></LI>
+<LI>        <A href=#Timing_rpt_UnconstrainedReport>1.4  Unconstrained Report</A></LI>
+<LI>        <A href=#Timing_rpt_CombinationalLoop>1.5  Combinational Loop</A></LI>
+<LI>    <A href=#Timing_rpt_SetupSlowCornerMaxDegree>2  Setup at Speed Grade High-Performance_1.2V Corner at 100 Degrees</A></LI>
+<LI>        <A href=#Timing_rpt_ClockSummarySetupSlowCornerMaxDegree>2.1  Clock Summary</A></LI>
+<LI>        <A href=#Timing_rpt_EndpointSlackSetupSlowCornerMaxDegree>2.2  Endpoint slacks</A></LI>
+<LI>        <A href=#Timing_rpt_DetailReportSetupSlowCornerMaxDegree>2.3  Detailed Report</A></LI>
+<LI>    <A href=#Timing_rpt_HoldFastCornerMinDegreeNoAV>3  Hold at Speed Grade m Corner at -40 Degrees</A></LI>
+<LI>        <A href=#Timing_rpt_EndpointSlackHoldFastCornerMinDegreeNoAV>3.1  Endpoint slacks</A></LI>
+<LI>        <A href=#Timing_rpt_DetailReportHoldFastCornerMinDegreeNoAV>3.2  Detailed Report</A></LI>
+
+=====================================================================
+                    End of Table of Contents
+=====================================================================
+
+
+<A name="Timing_rpt_DesignChecking"></A><B><U><big>1  Timing Overview</big></U></B>
+
+<A name="Timing_rpt_SDCConstraints"></A><B><U><big>1.1  SDC Constraints</big></U></B>
+
+create_clock -name {IntOsc} -period 166.667 [get_pins {hf_osc.osc_inst/CLKHF }] 
+
+<A name="Timing_rpt_ConstraintCoverage"></A><B><U><big>1.2  Constraint Coverage</big></U></B>
+
+Constraint Coverage: 89.0569%
+
+<A name="Timing_rpt_OverallSummary"></A><B><U><big>1.3  Overall Summary</big></U></B>
+
+ Setup at Speed Grade High-Performance_1.2V Corner at 100 Degrees     Timing Errors: 0 endpoints;  Total Negative Slack: 0.000 ns 
+ Hold at Speed Grade m Corner at -40 Degrees                          Timing Errors: 0 endpoints;  Total Negative Slack: 0.000 ns 
+
+<A name="Timing_rpt_UnconstrainedReport"></A><B><U><big>1.4  Unconstrained Report</big></U></B>
+
+<A name="Timing_rpt_UnconstrainedEndpoints"></A><B><U><big>1.4.1  Unconstrained Start/End Points</big></U></B>
+
+Clocked but unconstrained timing start points
+-------------------------------------------------------------------
+         Listing 4 Start Points         |           Type           
+-------------------------------------------------------------------
+FSM1/Sw1_i0_i3/Q                        |          No required time
+FSM1/Sw1_i0_i2/Q                        |          No required time
+FSM1/Sw1_i0_i1/Q                        |          No required time
+FSM1/Sw1_i0_i0/Q                        |          No required time
+-------------------------------------------------------------------
+                                        |                          
+Number of unconstrained timing start po |                          
+ints                                    |                         4
+                                        |                          
+-------------------------------------------------------------------
+
+Clocked but unconstrained timing end points
+-------------------------------------------------------------------
+         Listing 10 End Points          |           Type           
+-------------------------------------------------------------------
+{FSM1/State_FSM_i0/SR   FSM1/State_FSM_i2/SR}                           
+                                        |           No arrival time
+{FSM1/State_FSM_i15/SR   FSM1/State_FSM_i13/SR}                           
+                                        |           No arrival time
+{FSM1/Sw2_i0/SR   FSM1/Sw2_i1/SR}       |           No arrival time
+{FSM1/State_FSM_i14/SR   FSM1/State_FSM_i12/SR}                           
+                                        |           No arrival time
+{FSM1/State_FSM_i11/SR   FSM1/State_FSM_i10/SR}                           
+                                        |           No arrival time
+{FSM1/State_FSM_i9/SR   FSM1/State_FSM_i1/SR}                           
+                                        |           No arrival time
+{FSM1/State_FSM_i8/SR   FSM1/State_FSM_i7/SR}                           
+                                        |           No arrival time
+{FSM1/State_FSM_i6/SR   FSM1/State_FSM_i5/SR}                           
+                                        |           No arrival time
+{FSM1/State_FSM_i4/SR   FSM1/State_FSM_i3/SR}                           
+                                        |           No arrival time
+{FSM1/Sw1_i0_i3/SR   FSM1/Sw1_i0_i2/SR} |           No arrival time
+-------------------------------------------------------------------
+                                        |                          
+Number of unconstrained timing end poin |                          
+ts                                      |                        41
+                                        |                          
+-------------------------------------------------------------------
+
+<A name="Timing_rpt_StartEndPointsWithoutTimingConstraints"></A><B><U><big>1.4.2  Start/End Points Without Timing Constraints</big></U></B>
+
+I/O ports without constraint
+----------------------------
+Possible constraints to use on I/O ports are:
+set_input_delay,
+set_output_delay,
+set_max_delay,
+create_clock,
+create_generated_clock,
+...
+
+-------------------------------------------------------------------
+     Listing 10 Start or End Points     |           Type           
+-------------------------------------------------------------------
+Rows[0]                                 |                     input
+Rows[1]                                 |                     input
+Rows[2]                                 |                     input
+Rows[3]                                 |                     input
+Reset                                   |                     input
+En2                                     |                    output
+En1                                     |                    output
+Seg[0]                                  |                    output
+Seg[1]                                  |                    output
+Seg[2]                                  |                    output
+-------------------------------------------------------------------
+                                        |                          
+Number of I/O ports without constraint  |                        18
+                                        |                          
+-------------------------------------------------------------------
+
+Nets without clock definition
+Define a clock on a top level port or a generated clock on a clock divider pin associated with this net(s).
+--------------------------------------------------
+There is no instance satisfying reporting criteria
+
+
+
+<A name="Timing_rpt_CombinationalLoop"></A><B><U><big>1.5  Combinational Loop</big></U></B>
+
+None
+
+
+<A name="Timing_rpt_SetupSlowCornerMaxDegree"></A><B><U><big>2  Setup at Speed Grade High-Performance_1.2V Corner at 100 Degrees</big></U></B>
+<A name="Timing_rpt_ClockSummarySetupSlowCornerMaxDegree"></A><B><U><big>2.1  Clock Summary</big></U></B>
+<A name="Timing_rpt_Clk_1"></A><B><U><big>2.1.1 Clock "IntOsc"</big></U></B>
+
+create_clock -name {IntOsc} -period 166.667 [get_pins {hf_osc.osc_inst/CLKHF }] 
+
+Single Clock Domain
+-------------------------------------------------------------------------------------------------------
+              Clock IntOsc              |                    |       Period       |     Frequency      
+-------------------------------------------------------------------------------------------------------
+ From IntOsc                            |             Target |         166.667 ns |          6.000 MHz 
+                                        | Actual (all paths) |          20.792 ns |         48.095 MHz 
+hf_osc.osc_inst/CLKHF (MPW)             |   (50% duty cycle) |          20.792 ns |         48.095 MHz 
+-------------------------------------------------------------------------------------------------------
+
+Clock Domain Crossing
+
+<A name="Timing_rpt_EndpointSlackSetupSlowCornerMaxDegree"></A><B><U><big>2.2  Endpoint slacks</big></U></B>
+-------------------------------------------------------
+          Listing 10 End Points          |    Slack    
+-------------------------------------------------------
+keypad1/KeyVal__i3/D                     |  149.669 ns 
+keypad1/KeyVal__i10/D                    |  151.004 ns 
+FSM1/State_FSM_i6/D                      |  151.189 ns 
+{keypad1/KeyVal__i6/SP   keypad1/KeyVal__i7/SP}              
+                                         |  151.374 ns 
+{keypad1/KeyVal__i3/SP   keypad1/KeyVal__i2/SP}              
+                                         |  151.374 ns 
+{keypad1/KeyVal__i1/SP   keypad1/KeyVal__i0/SP}              
+                                         |  151.374 ns 
+{keypad1/KeyVal__i4/SP   keypad1/KeyVal__i5/SP}              
+                                         |  151.374 ns 
+{keypad1/KeyVal__i11/SP   keypad1/KeyVal__i10/SP}              
+                                         |  151.374 ns 
+FSM1/State_FSM_i5/D                      |  151.453 ns 
+FSM1/State_FSM_i4/D                      |  151.969 ns 
+-------------------------------------------------------
+                                         |             
+Setup # of endpoints with negative slack:|           0 
+                                         |             
+-------------------------------------------------------
+
+<A name="Timing_rpt_DetailReportSetupSlowCornerMaxDegree"></A><B><U><big>2.3  Detailed Report</big></U></B>
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Detail report of critical paths
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    Detailed Report for timing paths 
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin       : keypad1/count_255__i4/Q  (SLICE_R15C5B)
+Path End         : keypad1/KeyVal__i3/D  (SLICE_R15C9B)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 7
+Delay Ratio      : 75.2% (route), 24.8% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 166.666 ns 
+Path Slack       : 149.668 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i5/CK",
+        "phy_name":"keypad1.SLICE_110/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  87      
+{keypad1/count_255__i5/CK   keypad1/count_255__i4/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i4/Q",
+        "phy_name":"keypad1.SLICE_110/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i3/D",
+        "phy_name":"keypad1.SLICE_83/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/count_255__i4/CK",
+            "phy_name":"keypad1.SLICE_110/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/count_255__i4/Q",
+            "phy_name":"keypad1.SLICE_110/Q1"
+        },
+        "arrive":6.887,
+        "delay":1.388
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/count[4]",
+            "phy_name":"keypad1.count[4]"
+        },
+        "arrive":10.218,
+        "delay":3.331
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2285_4_lut/A",
+            "phy_name":"keypad1.SLICE_157/A0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2285_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F0"
+        },
+        "arrive":10.694,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n2803",
+            "phy_name":"keypad1.n2803"
+        },
+        "arrive":10.998,
+        "delay":0.304
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i9_4_lut/D",
+            "phy_name":"keypad1.SLICE_157/C1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i9_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F1"
+        },
+        "arrive":11.447,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n21",
+            "phy_name":"keypad1.n21"
+        },
+        "arrive":13.615,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2592_4_lut/B",
+            "phy_name":"keypad1.SLICE_151/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2592_4_lut/Z",
+            "phy_name":"keypad1.SLICE_151/F0"
+        },
+        "arrive":14.091,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n33",
+            "phy_name":"keypad1.n33"
+        },
+        "arrive":14.395,
+        "delay":0.304
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2_3_lut/B",
+            "phy_name":"keypad1.SLICE_151/C1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2_3_lut/Z",
+            "phy_name":"keypad1.SLICE_151/F1"
+        },
+        "arrive":14.844,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/Db1/n2",
+            "phy_name":"keypad1.n2"
+        },
+        "arrive":17.871,
+        "delay":3.027
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/Db1/i1_3_lut_4_lut/D",
+            "phy_name":"keypad1.Db1.SLICE_152/C0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/Db1/i1_3_lut_4_lut/Z",
+            "phy_name":"keypad1.Db1.SLICE_152/F0"
+        },
+        "arrive":18.320,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/Db1/n2615",
+            "phy_name":"keypad1.n2615"
+        },
+        "arrive":21.823,
+        "delay":3.503
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i1_2_lut_3_lut_adj_13/C",
+            "phy_name":"keypad1.SLICE_83/C0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i1_2_lut_3_lut_adj_13/Z",
+            "phy_name":"keypad1.SLICE_83/F0"
+        },
+        "arrive":22.299,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n2617",
+            "phy_name":"keypad1.n2617"
+        },
+        "arrive":22.299,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":22.299,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+keypad1/count_255__i4/CK->keypad1/count_255__i4/Q
+                                          SLICE_R15C5B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+keypad1/count[4]                                             NET DELAY           3.331                 10.218  2       
+keypad1/i2285_4_lut/A->keypad1/i2285_4_lut/Z
+                                          SLICE_R14C7D       A0_TO_F0_DELAY      0.476                 10.694  1       
+keypad1/n2803                                                NET DELAY           0.304                 10.998  1       
+keypad1/i9_4_lut/D->keypad1/i9_4_lut/Z    SLICE_R14C7D       C1_TO_F1_DELAY      0.449                 11.447  1       
+keypad1/n21                                                  NET DELAY           2.168                 13.615  1       
+keypad1/i2592_4_lut/B->keypad1/i2592_4_lut/Z
+                                          SLICE_R15C7B       D0_TO_F0_DELAY      0.476                 14.091  24      
+keypad1/n33                                                  NET DELAY           0.304                 14.395  24      
+keypad1/i2_3_lut/B->keypad1/i2_3_lut/Z    SLICE_R15C7B       C1_TO_F1_DELAY      0.449                 14.844  11      
+keypad1/Db1/n2                                               NET DELAY           3.027                 17.871  11      
+keypad1/Db1/i1_3_lut_4_lut/D->keypad1/Db1/i1_3_lut_4_lut/Z
+                                          SLICE_R16C9B       C0_TO_F0_DELAY      0.449                 18.320  2       
+keypad1/Db1/n2615                                            NET DELAY           3.503                 21.823  2       
+keypad1/i1_2_lut_3_lut_adj_13/C->keypad1/i1_2_lut_3_lut_adj_13/Z
+                                          SLICE_R15C9B       C0_TO_F0_DELAY      0.476                 22.299  1       
+keypad1/n2617                                                NET DELAY           0.000                 22.299  1       
+keypad1/KeyVal__i3/D                                         ENDPOINT            0.000                 22.299  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i3/CK",
+        "phy_name":"keypad1.SLICE_83/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":166.666,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":172.165,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":172.165,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  87      
+{keypad1/KeyVal__i3/CK   keypad1/KeyVal__i2/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.198)                171.967  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.967  
+Arrival Time                                                                                        -(22.298)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  149.668  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/count_255__i4/Q  (SLICE_R15C5B)
+Path End         : keypad1/KeyVal__i10/D  (SLICE_R16C9A)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 7
+Delay Ratio      : 73.1% (route), 26.9% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 166.666 ns 
+Path Slack       : 151.003 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i5/CK",
+        "phy_name":"keypad1.SLICE_110/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  87      
+{keypad1/count_255__i5/CK   keypad1/count_255__i4/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i4/Q",
+        "phy_name":"keypad1.SLICE_110/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i10/D",
+        "phy_name":"keypad1.SLICE_78/DI1"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/count_255__i4/CK",
+            "phy_name":"keypad1.SLICE_110/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/count_255__i4/Q",
+            "phy_name":"keypad1.SLICE_110/Q1"
+        },
+        "arrive":6.887,
+        "delay":1.388
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/count[4]",
+            "phy_name":"keypad1.count[4]"
+        },
+        "arrive":10.218,
+        "delay":3.331
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2285_4_lut/A",
+            "phy_name":"keypad1.SLICE_157/A0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2285_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F0"
+        },
+        "arrive":10.694,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n2803",
+            "phy_name":"keypad1.n2803"
+        },
+        "arrive":10.998,
+        "delay":0.304
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i9_4_lut/D",
+            "phy_name":"keypad1.SLICE_157/C1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i9_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F1"
+        },
+        "arrive":11.447,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n21",
+            "phy_name":"keypad1.n21"
+        },
+        "arrive":13.615,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2592_4_lut/B",
+            "phy_name":"keypad1.SLICE_151/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2592_4_lut/Z",
+            "phy_name":"keypad1.SLICE_151/F0"
+        },
+        "arrive":14.091,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n33",
+            "phy_name":"keypad1.n33"
+        },
+        "arrive":14.395,
+        "delay":0.304
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2_3_lut/B",
+            "phy_name":"keypad1.SLICE_151/C1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2_3_lut/Z",
+            "phy_name":"keypad1.SLICE_151/F1"
+        },
+        "arrive":14.844,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/Db1/n2",
+            "phy_name":"keypad1.n2"
+        },
+        "arrive":17.871,
+        "delay":3.027
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/Db1/i1_3_lut_4_lut/D",
+            "phy_name":"keypad1.Db1.SLICE_152/C0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/Db1/i1_3_lut_4_lut/Z",
+            "phy_name":"keypad1.Db1.SLICE_152/F0"
+        },
+        "arrive":18.320,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/Db1/n2615",
+            "phy_name":"keypad1.n2615"
+        },
+        "arrive":20.488,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i1_2_lut_adj_5/B",
+            "phy_name":"keypad1.SLICE_78/D1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i1_2_lut_adj_5/Z",
+            "phy_name":"keypad1.SLICE_78/F1"
+        },
+        "arrive":20.964,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n2616",
+            "phy_name":"keypad1.n2616"
+        },
+        "arrive":20.964,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.964,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+keypad1/count_255__i4/CK->keypad1/count_255__i4/Q
+                                          SLICE_R15C5B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+keypad1/count[4]                                             NET DELAY           3.331                 10.218  2       
+keypad1/i2285_4_lut/A->keypad1/i2285_4_lut/Z
+                                          SLICE_R14C7D       A0_TO_F0_DELAY      0.476                 10.694  1       
+keypad1/n2803                                                NET DELAY           0.304                 10.998  1       
+keypad1/i9_4_lut/D->keypad1/i9_4_lut/Z    SLICE_R14C7D       C1_TO_F1_DELAY      0.449                 11.447  1       
+keypad1/n21                                                  NET DELAY           2.168                 13.615  1       
+keypad1/i2592_4_lut/B->keypad1/i2592_4_lut/Z
+                                          SLICE_R15C7B       D0_TO_F0_DELAY      0.476                 14.091  24      
+keypad1/n33                                                  NET DELAY           0.304                 14.395  24      
+keypad1/i2_3_lut/B->keypad1/i2_3_lut/Z    SLICE_R15C7B       C1_TO_F1_DELAY      0.449                 14.844  11      
+keypad1/Db1/n2                                               NET DELAY           3.027                 17.871  11      
+keypad1/Db1/i1_3_lut_4_lut/D->keypad1/Db1/i1_3_lut_4_lut/Z
+                                          SLICE_R16C9B       C0_TO_F0_DELAY      0.449                 18.320  2       
+keypad1/Db1/n2615                                            NET DELAY           2.168                 20.488  2       
+keypad1/i1_2_lut_adj_5/B->keypad1/i1_2_lut_adj_5/Z
+                                          SLICE_R16C9A       D1_TO_F1_DELAY      0.476                 20.964  1       
+keypad1/n2616                                                NET DELAY           0.000                 20.964  1       
+keypad1/KeyVal__i10/D                                        ENDPOINT            0.000                 20.964  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i11/CK",
+        "phy_name":"keypad1.SLICE_78/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":166.666,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":172.165,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":172.165,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  87      
+{keypad1/KeyVal__i11/CK   keypad1/KeyVal__i10/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.198)                171.967  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.967  
+Arrival Time                                                                                        -(20.963)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  151.003  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/KeyVal__i4/Q  (SLICE_R15C9A)
+Path End         : FSM1/State_FSM_i6/D  (SLICE_R19C8C)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 6
+Delay Ratio      : 75.9% (route), 24.1% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 166.666 ns 
+Path Slack       : 151.188 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i4/CK",
+        "phy_name":"keypad1.SLICE_81/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  87      
+{keypad1/KeyVal__i4/CK   keypad1/KeyVal__i5/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i4/Q",
+        "phy_name":"keypad1.SLICE_81/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/State_FSM_i6/D",
+        "phy_name":"FSM1.SLICE_65/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/KeyVal__i4/CK",
+            "phy_name":"keypad1.SLICE_81/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/KeyVal__i4/Q",
+            "phy_name":"keypad1.SLICE_81/Q0"
+        },
+        "arrive":6.887,
+        "delay":1.388
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/KeyVal[4]",
+            "phy_name":"KeyVal[4]"
+        },
+        "arrive":10.813,
+        "delay":3.926
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/equal_19_i22_2_lut_4_lut/A",
+            "phy_name":"FSM1.SLICE_129/A0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/equal_19_i22_2_lut_4_lut/Z",
+            "phy_name":"FSM1.SLICE_129/F0"
+        },
+        "arrive":11.262,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n22",
+            "phy_name":"n22"
+        },
+        "arrive":13.430,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i1_2_lut/A",
+            "phy_name":"keypad1.SLICE_144/D1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i1_2_lut/Z",
+            "phy_name":"keypad1.SLICE_144/F1"
+        },
+        "arrive":13.906,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n7",
+            "phy_name":"n7"
+        },
+        "arrive":14.210,
+        "delay":0.304
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1.i1258_2_lut_3_lut/D",
+            "phy_name":"keypad1.SLICE_150/C0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1.i1258_2_lut_3_lut/Z",
+            "phy_name":"keypad1.SLICE_150/F0"
+        },
+        "arrive":14.659,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n1515",
+            "phy_name":"keypad1.n1515"
+        },
+        "arrive":16.827,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i1_3_lut_4_lut_adj_16/C",
+            "phy_name":"FSM1.SLICE_215/D1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i1_3_lut_4_lut_adj_16/Z",
+            "phy_name":"FSM1.SLICE_215/F1"
+        },
+        "arrive":17.276,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n2627",
+            "phy_name":"n2627"
+        },
+        "arrive":20.303,
+        "delay":3.027
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"FSM1/i2_3_lut_adj_23/A",
+            "phy_name":"FSM1.SLICE_65/C0"
+        },
+        "pin1":
+        {
+            "log_name":"FSM1/i2_3_lut_adj_23/Z",
+            "phy_name":"FSM1.SLICE_65/F0"
+        },
+        "arrive":20.779,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"FSM1/n2628",
+            "phy_name":"FSM1.n2628"
+        },
+        "arrive":20.779,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.779,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+keypad1/KeyVal__i4/CK->keypad1/KeyVal__i4/Q
+                                          SLICE_R15C9A       CLK_TO_Q0_DELAY     1.388                  6.887  6       
+keypad1/KeyVal[4]                                            NET DELAY           3.926                 10.813  6       
+keypad1/equal_19_i22_2_lut_4_lut/A->keypad1/equal_19_i22_2_lut_4_lut/Z
+                                          SLICE_R18C8A       A0_TO_F0_DELAY      0.449                 11.262  3       
+keypad1/n22                                                  NET DELAY           2.168                 13.430  3       
+keypad1/i1_2_lut/A->keypad1/i1_2_lut/Z    SLICE_R17C8A       D1_TO_F1_DELAY      0.476                 13.906  3       
+keypad1/n7                                                   NET DELAY           0.304                 14.210  3       
+keypad1.i1258_2_lut_3_lut/D->keypad1.i1258_2_lut_3_lut/Z
+                                          SLICE_R17C8B       C0_TO_F0_DELAY      0.449                 14.659  2       
+keypad1/n1515                                                NET DELAY           2.168                 16.827  2       
+keypad1/i1_3_lut_4_lut_adj_16/C->keypad1/i1_3_lut_4_lut_adj_16/Z
+                                          SLICE_R17C8C       D1_TO_F1_DELAY      0.449                 17.276  2       
+keypad1/n2627                                                NET DELAY           3.027                 20.303  2       
+FSM1/i2_3_lut_adj_23/A->FSM1/i2_3_lut_adj_23/Z
+                                          SLICE_R19C8C       C0_TO_F0_DELAY      0.476                 20.779  1       
+FSM1/n2628                                                   NET DELAY           0.000                 20.779  1       
+FSM1/State_FSM_i6/D                                          ENDPOINT            0.000                 20.779  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/State_FSM_i6/CK",
+        "phy_name":"FSM1.SLICE_65/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":166.666,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":172.165,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":172.165,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  87      
+{FSM1/State_FSM_i6/CK   FSM1/State_FSM_i5/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.198)                171.967  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.967  
+Arrival Time                                                                                        -(20.778)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  151.188  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/count_255__i4/Q  (SLICE_R15C5B)
+Path End         : {keypad1/KeyVal__i6/SP   keypad1/KeyVal__i7/SP}  (SLICE_R16C9C)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 5
+Delay Ratio      : 78.7% (route), 21.3% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 166.666 ns 
+Path Slack       : 151.373 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i5/CK",
+        "phy_name":"keypad1.SLICE_110/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  87      
+{keypad1/count_255__i5/CK   keypad1/count_255__i4/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i4/Q",
+        "phy_name":"keypad1.SLICE_110/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"{keypad1/KeyVal__i6/SP   keypad1/KeyVal__i7/SP}",
+        "phy_name":"keypad1.SLICE_84/CE"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/count_255__i4/CK",
+            "phy_name":"keypad1.SLICE_110/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/count_255__i4/Q",
+            "phy_name":"keypad1.SLICE_110/Q1"
+        },
+        "arrive":6.887,
+        "delay":1.388
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/count[4]",
+            "phy_name":"keypad1.count[4]"
+        },
+        "arrive":10.218,
+        "delay":3.331
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2285_4_lut/A",
+            "phy_name":"keypad1.SLICE_157/A0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2285_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F0"
+        },
+        "arrive":10.694,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n2803",
+            "phy_name":"keypad1.n2803"
+        },
+        "arrive":10.998,
+        "delay":0.304
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i9_4_lut/D",
+            "phy_name":"keypad1.SLICE_157/C1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i9_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F1"
+        },
+        "arrive":11.447,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n21",
+            "phy_name":"keypad1.n21"
+        },
+        "arrive":13.615,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2592_4_lut/B",
+            "phy_name":"keypad1.SLICE_151/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2592_4_lut/Z",
+            "phy_name":"keypad1.SLICE_151/F0"
+        },
+        "arrive":14.064,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n33",
+            "phy_name":"keypad1.n33"
+        },
+        "arrive":16.232,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2559_4_lut/A",
+            "phy_name":"keypad1.SLICE_153/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2559_4_lut/Z",
+            "phy_name":"keypad1.SLICE_153/F0"
+        },
+        "arrive":16.681,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n463",
+            "phy_name":"keypad1.n463"
+        },
+        "arrive":20.594,
+        "delay":3.913
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.594,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+keypad1/count_255__i4/CK->keypad1/count_255__i4/Q
+                                          SLICE_R15C5B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+keypad1/count[4]                                             NET DELAY           3.331                 10.218  2       
+keypad1/i2285_4_lut/A->keypad1/i2285_4_lut/Z
+                                          SLICE_R14C7D       A0_TO_F0_DELAY      0.476                 10.694  1       
+keypad1/n2803                                                NET DELAY           0.304                 10.998  1       
+keypad1/i9_4_lut/D->keypad1/i9_4_lut/Z    SLICE_R14C7D       C1_TO_F1_DELAY      0.449                 11.447  1       
+keypad1/n21                                                  NET DELAY           2.168                 13.615  1       
+keypad1/i2592_4_lut/B->keypad1/i2592_4_lut/Z
+                                          SLICE_R15C7B       D0_TO_F0_DELAY      0.449                 14.064  24      
+keypad1/n33                                                  NET DELAY           2.168                 16.232  24      
+keypad1/i2559_4_lut/A->keypad1/i2559_4_lut/Z
+                                          SLICE_R16C8C       D0_TO_F0_DELAY      0.449                 16.681  8       
+keypad1/n463                                                 NET DELAY           3.913                 20.594  8       
+{keypad1/KeyVal__i6/SP   keypad1/KeyVal__i7/SP}
+                                                             ENDPOINT            0.000                 20.594  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i6/CK",
+        "phy_name":"keypad1.SLICE_84/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":166.666,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":172.165,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":172.165,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  87      
+{keypad1/KeyVal__i6/CK   keypad1/KeyVal__i7/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.198)                171.967  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.967  
+Arrival Time                                                                                        -(20.593)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  151.373  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/count_255__i4/Q  (SLICE_R15C5B)
+Path End         : {keypad1/KeyVal__i3/SP   keypad1/KeyVal__i2/SP}  (SLICE_R15C9B)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 5
+Delay Ratio      : 78.7% (route), 21.3% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 166.666 ns 
+Path Slack       : 151.373 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i5/CK",
+        "phy_name":"keypad1.SLICE_110/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  87      
+{keypad1/count_255__i5/CK   keypad1/count_255__i4/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i4/Q",
+        "phy_name":"keypad1.SLICE_110/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"{keypad1/KeyVal__i3/SP   keypad1/KeyVal__i2/SP}",
+        "phy_name":"keypad1.SLICE_83/CE"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/count_255__i4/CK",
+            "phy_name":"keypad1.SLICE_110/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/count_255__i4/Q",
+            "phy_name":"keypad1.SLICE_110/Q1"
+        },
+        "arrive":6.887,
+        "delay":1.388
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/count[4]",
+            "phy_name":"keypad1.count[4]"
+        },
+        "arrive":10.218,
+        "delay":3.331
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2285_4_lut/A",
+            "phy_name":"keypad1.SLICE_157/A0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2285_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F0"
+        },
+        "arrive":10.694,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n2803",
+            "phy_name":"keypad1.n2803"
+        },
+        "arrive":10.998,
+        "delay":0.304
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i9_4_lut/D",
+            "phy_name":"keypad1.SLICE_157/C1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i9_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F1"
+        },
+        "arrive":11.447,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n21",
+            "phy_name":"keypad1.n21"
+        },
+        "arrive":13.615,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2592_4_lut/B",
+            "phy_name":"keypad1.SLICE_151/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2592_4_lut/Z",
+            "phy_name":"keypad1.SLICE_151/F0"
+        },
+        "arrive":14.064,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n33",
+            "phy_name":"keypad1.n33"
+        },
+        "arrive":16.232,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2559_4_lut/A",
+            "phy_name":"keypad1.SLICE_153/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2559_4_lut/Z",
+            "phy_name":"keypad1.SLICE_153/F0"
+        },
+        "arrive":16.681,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n463",
+            "phy_name":"keypad1.n463"
+        },
+        "arrive":20.594,
+        "delay":3.913
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.594,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+keypad1/count_255__i4/CK->keypad1/count_255__i4/Q
+                                          SLICE_R15C5B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+keypad1/count[4]                                             NET DELAY           3.331                 10.218  2       
+keypad1/i2285_4_lut/A->keypad1/i2285_4_lut/Z
+                                          SLICE_R14C7D       A0_TO_F0_DELAY      0.476                 10.694  1       
+keypad1/n2803                                                NET DELAY           0.304                 10.998  1       
+keypad1/i9_4_lut/D->keypad1/i9_4_lut/Z    SLICE_R14C7D       C1_TO_F1_DELAY      0.449                 11.447  1       
+keypad1/n21                                                  NET DELAY           2.168                 13.615  1       
+keypad1/i2592_4_lut/B->keypad1/i2592_4_lut/Z
+                                          SLICE_R15C7B       D0_TO_F0_DELAY      0.449                 14.064  24      
+keypad1/n33                                                  NET DELAY           2.168                 16.232  24      
+keypad1/i2559_4_lut/A->keypad1/i2559_4_lut/Z
+                                          SLICE_R16C8C       D0_TO_F0_DELAY      0.449                 16.681  8       
+keypad1/n463                                                 NET DELAY           3.913                 20.594  8       
+{keypad1/KeyVal__i3/SP   keypad1/KeyVal__i2/SP}
+                                                             ENDPOINT            0.000                 20.594  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i3/CK",
+        "phy_name":"keypad1.SLICE_83/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":166.666,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":172.165,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":172.165,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  87      
+{keypad1/KeyVal__i3/CK   keypad1/KeyVal__i2/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.198)                171.967  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.967  
+Arrival Time                                                                                        -(20.593)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  151.373  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/count_255__i4/Q  (SLICE_R15C5B)
+Path End         : {keypad1/KeyVal__i1/SP   keypad1/KeyVal__i0/SP}  (SLICE_R15C9C)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 5
+Delay Ratio      : 78.7% (route), 21.3% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 166.666 ns 
+Path Slack       : 151.373 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i5/CK",
+        "phy_name":"keypad1.SLICE_110/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  87      
+{keypad1/count_255__i5/CK   keypad1/count_255__i4/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i4/Q",
+        "phy_name":"keypad1.SLICE_110/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"{keypad1/KeyVal__i1/SP   keypad1/KeyVal__i0/SP}",
+        "phy_name":"keypad1.SLICE_82/CE"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/count_255__i4/CK",
+            "phy_name":"keypad1.SLICE_110/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/count_255__i4/Q",
+            "phy_name":"keypad1.SLICE_110/Q1"
+        },
+        "arrive":6.887,
+        "delay":1.388
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/count[4]",
+            "phy_name":"keypad1.count[4]"
+        },
+        "arrive":10.218,
+        "delay":3.331
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2285_4_lut/A",
+            "phy_name":"keypad1.SLICE_157/A0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2285_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F0"
+        },
+        "arrive":10.694,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n2803",
+            "phy_name":"keypad1.n2803"
+        },
+        "arrive":10.998,
+        "delay":0.304
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i9_4_lut/D",
+            "phy_name":"keypad1.SLICE_157/C1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i9_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F1"
+        },
+        "arrive":11.447,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n21",
+            "phy_name":"keypad1.n21"
+        },
+        "arrive":13.615,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2592_4_lut/B",
+            "phy_name":"keypad1.SLICE_151/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2592_4_lut/Z",
+            "phy_name":"keypad1.SLICE_151/F0"
+        },
+        "arrive":14.064,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n33",
+            "phy_name":"keypad1.n33"
+        },
+        "arrive":16.232,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2559_4_lut/A",
+            "phy_name":"keypad1.SLICE_153/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2559_4_lut/Z",
+            "phy_name":"keypad1.SLICE_153/F0"
+        },
+        "arrive":16.681,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n463",
+            "phy_name":"keypad1.n463"
+        },
+        "arrive":20.594,
+        "delay":3.913
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.594,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+keypad1/count_255__i4/CK->keypad1/count_255__i4/Q
+                                          SLICE_R15C5B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+keypad1/count[4]                                             NET DELAY           3.331                 10.218  2       
+keypad1/i2285_4_lut/A->keypad1/i2285_4_lut/Z
+                                          SLICE_R14C7D       A0_TO_F0_DELAY      0.476                 10.694  1       
+keypad1/n2803                                                NET DELAY           0.304                 10.998  1       
+keypad1/i9_4_lut/D->keypad1/i9_4_lut/Z    SLICE_R14C7D       C1_TO_F1_DELAY      0.449                 11.447  1       
+keypad1/n21                                                  NET DELAY           2.168                 13.615  1       
+keypad1/i2592_4_lut/B->keypad1/i2592_4_lut/Z
+                                          SLICE_R15C7B       D0_TO_F0_DELAY      0.449                 14.064  24      
+keypad1/n33                                                  NET DELAY           2.168                 16.232  24      
+keypad1/i2559_4_lut/A->keypad1/i2559_4_lut/Z
+                                          SLICE_R16C8C       D0_TO_F0_DELAY      0.449                 16.681  8       
+keypad1/n463                                                 NET DELAY           3.913                 20.594  8       
+{keypad1/KeyVal__i1/SP   keypad1/KeyVal__i0/SP}
+                                                             ENDPOINT            0.000                 20.594  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i1/CK",
+        "phy_name":"keypad1.SLICE_82/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":166.666,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":172.165,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":172.165,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  87      
+{keypad1/KeyVal__i1/CK   keypad1/KeyVal__i0/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.198)                171.967  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.967  
+Arrival Time                                                                                        -(20.593)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  151.373  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/count_255__i4/Q  (SLICE_R15C5B)
+Path End         : {keypad1/KeyVal__i4/SP   keypad1/KeyVal__i5/SP}  (SLICE_R15C9A)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 5
+Delay Ratio      : 78.7% (route), 21.3% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 166.666 ns 
+Path Slack       : 151.373 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i5/CK",
+        "phy_name":"keypad1.SLICE_110/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  87      
+{keypad1/count_255__i5/CK   keypad1/count_255__i4/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i4/Q",
+        "phy_name":"keypad1.SLICE_110/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"{keypad1/KeyVal__i4/SP   keypad1/KeyVal__i5/SP}",
+        "phy_name":"keypad1.SLICE_81/CE"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/count_255__i4/CK",
+            "phy_name":"keypad1.SLICE_110/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/count_255__i4/Q",
+            "phy_name":"keypad1.SLICE_110/Q1"
+        },
+        "arrive":6.887,
+        "delay":1.388
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/count[4]",
+            "phy_name":"keypad1.count[4]"
+        },
+        "arrive":10.218,
+        "delay":3.331
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2285_4_lut/A",
+            "phy_name":"keypad1.SLICE_157/A0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2285_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F0"
+        },
+        "arrive":10.694,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n2803",
+            "phy_name":"keypad1.n2803"
+        },
+        "arrive":10.998,
+        "delay":0.304
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i9_4_lut/D",
+            "phy_name":"keypad1.SLICE_157/C1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i9_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F1"
+        },
+        "arrive":11.447,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n21",
+            "phy_name":"keypad1.n21"
+        },
+        "arrive":13.615,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2592_4_lut/B",
+            "phy_name":"keypad1.SLICE_151/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2592_4_lut/Z",
+            "phy_name":"keypad1.SLICE_151/F0"
+        },
+        "arrive":14.064,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n33",
+            "phy_name":"keypad1.n33"
+        },
+        "arrive":16.232,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2559_4_lut/A",
+            "phy_name":"keypad1.SLICE_153/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2559_4_lut/Z",
+            "phy_name":"keypad1.SLICE_153/F0"
+        },
+        "arrive":16.681,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n463",
+            "phy_name":"keypad1.n463"
+        },
+        "arrive":20.594,
+        "delay":3.913
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.594,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+keypad1/count_255__i4/CK->keypad1/count_255__i4/Q
+                                          SLICE_R15C5B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+keypad1/count[4]                                             NET DELAY           3.331                 10.218  2       
+keypad1/i2285_4_lut/A->keypad1/i2285_4_lut/Z
+                                          SLICE_R14C7D       A0_TO_F0_DELAY      0.476                 10.694  1       
+keypad1/n2803                                                NET DELAY           0.304                 10.998  1       
+keypad1/i9_4_lut/D->keypad1/i9_4_lut/Z    SLICE_R14C7D       C1_TO_F1_DELAY      0.449                 11.447  1       
+keypad1/n21                                                  NET DELAY           2.168                 13.615  1       
+keypad1/i2592_4_lut/B->keypad1/i2592_4_lut/Z
+                                          SLICE_R15C7B       D0_TO_F0_DELAY      0.449                 14.064  24      
+keypad1/n33                                                  NET DELAY           2.168                 16.232  24      
+keypad1/i2559_4_lut/A->keypad1/i2559_4_lut/Z
+                                          SLICE_R16C8C       D0_TO_F0_DELAY      0.449                 16.681  8       
+keypad1/n463                                                 NET DELAY           3.913                 20.594  8       
+{keypad1/KeyVal__i4/SP   keypad1/KeyVal__i5/SP}
+                                                             ENDPOINT            0.000                 20.594  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i4/CK",
+        "phy_name":"keypad1.SLICE_81/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":166.666,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":172.165,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":172.165,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  87      
+{keypad1/KeyVal__i4/CK   keypad1/KeyVal__i5/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.198)                171.967  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.967  
+Arrival Time                                                                                        -(20.593)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  151.373  
+
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/count_255__i4/Q  (SLICE_R15C5B)
+Path End         : {keypad1/KeyVal__i11/SP   keypad1/KeyVal__i10/SP}  (SLICE_R16C9A)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 5
+Delay Ratio      : 78.7% (route), 21.3% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 166.666 ns 
+Path Slack       : 151.373 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i5/CK",
+        "phy_name":"keypad1.SLICE_110/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  87      
+{keypad1/count_255__i5/CK   keypad1/count_255__i4/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/count_255__i4/Q",
+        "phy_name":"keypad1.SLICE_110/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"{keypad1/KeyVal__i11/SP   keypad1/KeyVal__i10/SP}",
+        "phy_name":"keypad1.SLICE_78/CE"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/count_255__i4/CK",
+            "phy_name":"keypad1.SLICE_110/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/count_255__i4/Q",
+            "phy_name":"keypad1.SLICE_110/Q1"
+        },
+        "arrive":6.887,
+        "delay":1.388
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/count[4]",
+            "phy_name":"keypad1.count[4]"
+        },
+        "arrive":10.218,
+        "delay":3.331
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2285_4_lut/A",
+            "phy_name":"keypad1.SLICE_157/A0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2285_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F0"
+        },
+        "arrive":10.694,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n2803",
+            "phy_name":"keypad1.n2803"
+        },
+        "arrive":10.998,
+        "delay":0.304
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i9_4_lut/D",
+            "phy_name":"keypad1.SLICE_157/C1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i9_4_lut/Z",
+            "phy_name":"keypad1.SLICE_157/F1"
+        },
+        "arrive":11.447,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n21",
+            "phy_name":"keypad1.n21"
+        },
+        "arrive":13.615,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2592_4_lut/B",
+            "phy_name":"keypad1.SLICE_151/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2592_4_lut/Z",
+            "phy_name":"keypad1.SLICE_151/F0"
+        },
+        "arrive":14.064,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n33",
+            "phy_name":"keypad1.n33"
+        },
+        "arrive":16.232,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i2559_4_lut/A",
+            "phy_name":"keypad1.SLICE_153/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i2559_4_lut/Z",
+            "phy_name":"keypad1.SLICE_153/F0"
+        },
+        "arrive":16.681,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n463",
+            "phy_name":"keypad1.n463"
+        },
+        "arrive":20.594,
+        "delay":3.913
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.594,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+keypad1/count_255__i4/CK->keypad1/count_255__i4/Q
+                                          SLICE_R15C5B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+keypad1/count[4]                                             NET DELAY           3.331                 10.218  2       
+keypad1/i2285_4_lut/A->keypad1/i2285_4_lut/Z
+                                          SLICE_R14C7D       A0_TO_F0_DELAY      0.476                 10.694  1       
+keypad1/n2803                                                NET DELAY           0.304                 10.998  1       
+keypad1/i9_4_lut/D->keypad1/i9_4_lut/Z    SLICE_R14C7D       C1_TO_F1_DELAY      0.449                 11.447  1       
+keypad1/n21                                                  NET DELAY           2.168                 13.615  1       
+keypad1/i2592_4_lut/B->keypad1/i2592_4_lut/Z
+                                          SLICE_R15C7B       D0_TO_F0_DELAY      0.449                 14.064  24      
+keypad1/n33                                                  NET DELAY           2.168                 16.232  24      
+keypad1/i2559_4_lut/A->keypad1/i2559_4_lut/Z
+                                          SLICE_R16C8C       D0_TO_F0_DELAY      0.449                 16.681  8       
+keypad1/n463                                                 NET DELAY           3.913                 20.594  8       
+{keypad1/KeyVal__i11/SP   keypad1/KeyVal__i10/SP}
+                                                             ENDPOINT            0.000                 20.594  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i11/CK",
+        "phy_name":"keypad1.SLICE_78/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":166.666,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":172.165,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":172.165,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  87      
+{keypad1/KeyVal__i11/CK   keypad1/KeyVal__i10/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.198)                171.967  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.967  
+Arrival Time                                                                                        -(20.593)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  151.373  
+
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/KeyVal__i4/Q  (SLICE_R15C9A)
+Path End         : FSM1/State_FSM_i5/D  (SLICE_R19C8C)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 6
+Delay Ratio      : 75.4% (route), 24.6% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 166.666 ns 
+Path Slack       : 151.452 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i4/CK",
+        "phy_name":"keypad1.SLICE_81/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  87      
+{keypad1/KeyVal__i4/CK   keypad1/KeyVal__i5/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i4/Q",
+        "phy_name":"keypad1.SLICE_81/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/State_FSM_i5/D",
+        "phy_name":"FSM1.SLICE_65/DI1"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/KeyVal__i4/CK",
+            "phy_name":"keypad1.SLICE_81/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/KeyVal__i4/Q",
+            "phy_name":"keypad1.SLICE_81/Q0"
+        },
+        "arrive":6.887,
+        "delay":1.388
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/KeyVal[4]",
+            "phy_name":"KeyVal[4]"
+        },
+        "arrive":10.813,
+        "delay":3.926
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/equal_19_i22_2_lut_4_lut/A",
+            "phy_name":"FSM1.SLICE_129/A0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/equal_19_i22_2_lut_4_lut/Z",
+            "phy_name":"FSM1.SLICE_129/F0"
+        },
+        "arrive":11.262,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n22",
+            "phy_name":"n22"
+        },
+        "arrive":13.430,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i1_2_lut/A",
+            "phy_name":"keypad1.SLICE_144/D1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i1_2_lut/Z",
+            "phy_name":"keypad1.SLICE_144/F1"
+        },
+        "arrive":13.906,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n7",
+            "phy_name":"n7"
+        },
+        "arrive":14.210,
+        "delay":0.304
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1.i1258_2_lut_3_lut/D",
+            "phy_name":"keypad1.SLICE_150/C0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1.i1258_2_lut_3_lut/Z",
+            "phy_name":"keypad1.SLICE_150/F0"
+        },
+        "arrive":14.659,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n1515",
+            "phy_name":"keypad1.n1515"
+        },
+        "arrive":16.827,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i1_3_lut_4_lut_adj_16/C",
+            "phy_name":"FSM1.SLICE_215/D1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i1_3_lut_4_lut_adj_16/Z",
+            "phy_name":"FSM1.SLICE_215/F1"
+        },
+        "arrive":17.276,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n2627",
+            "phy_name":"n2627"
+        },
+        "arrive":20.039,
+        "delay":2.763
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"FSM1/i2_3_lut_adj_22/A",
+            "phy_name":"FSM1.SLICE_65/D1"
+        },
+        "pin1":
+        {
+            "log_name":"FSM1/i2_3_lut_adj_22/Z",
+            "phy_name":"FSM1.SLICE_65/F1"
+        },
+        "arrive":20.515,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"FSM1/n2629",
+            "phy_name":"FSM1.n2629"
+        },
+        "arrive":20.515,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":20.515,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+keypad1/KeyVal__i4/CK->keypad1/KeyVal__i4/Q
+                                          SLICE_R15C9A       CLK_TO_Q0_DELAY     1.388                  6.887  6       
+keypad1/KeyVal[4]                                            NET DELAY           3.926                 10.813  6       
+keypad1/equal_19_i22_2_lut_4_lut/A->keypad1/equal_19_i22_2_lut_4_lut/Z
+                                          SLICE_R18C8A       A0_TO_F0_DELAY      0.449                 11.262  3       
+keypad1/n22                                                  NET DELAY           2.168                 13.430  3       
+keypad1/i1_2_lut/A->keypad1/i1_2_lut/Z    SLICE_R17C8A       D1_TO_F1_DELAY      0.476                 13.906  3       
+keypad1/n7                                                   NET DELAY           0.304                 14.210  3       
+keypad1.i1258_2_lut_3_lut/D->keypad1.i1258_2_lut_3_lut/Z
+                                          SLICE_R17C8B       C0_TO_F0_DELAY      0.449                 14.659  2       
+keypad1/n1515                                                NET DELAY           2.168                 16.827  2       
+keypad1/i1_3_lut_4_lut_adj_16/C->keypad1/i1_3_lut_4_lut_adj_16/Z
+                                          SLICE_R17C8C       D1_TO_F1_DELAY      0.449                 17.276  2       
+keypad1/n2627                                                NET DELAY           2.763                 20.039  2       
+FSM1/i2_3_lut_adj_22/A->FSM1/i2_3_lut_adj_22/Z
+                                          SLICE_R19C8C       D1_TO_F1_DELAY      0.476                 20.515  1       
+FSM1/n2629                                                   NET DELAY           0.000                 20.515  1       
+FSM1/State_FSM_i5/D                                          ENDPOINT            0.000                 20.515  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/State_FSM_i6/CK",
+        "phy_name":"FSM1.SLICE_65/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":166.666,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":172.165,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":172.165,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  87      
+{FSM1/State_FSM_i6/CK   FSM1/State_FSM_i5/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.198)                171.967  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.967  
+Arrival Time                                                                                        -(20.514)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  151.452  
+
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/KeyVal__i4/Q  (SLICE_R15C9A)
+Path End         : FSM1/State_FSM_i4/D  (SLICE_R16C5A)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 5
+Delay Ratio      : 77.9% (route), 22.1% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 166.666 ns 
+Path Slack       : 151.968 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i4/CK",
+        "phy_name":"keypad1.SLICE_81/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":5.499,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":5.499,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  87      
+{keypad1/KeyVal__i4/CK   keypad1/KeyVal__i5/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i4/Q",
+        "phy_name":"keypad1.SLICE_81/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/State_FSM_i4/D",
+        "phy_name":"FSM1.SLICE_67/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/KeyVal__i4/CK",
+            "phy_name":"keypad1.SLICE_81/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/KeyVal__i4/Q",
+            "phy_name":"keypad1.SLICE_81/Q0"
+        },
+        "arrive":6.887,
+        "delay":1.388
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/KeyVal[4]",
+            "phy_name":"KeyVal[4]"
+        },
+        "arrive":10.813,
+        "delay":3.926
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/equal_19_i22_2_lut_4_lut/A",
+            "phy_name":"FSM1.SLICE_129/A0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/equal_19_i22_2_lut_4_lut/Z",
+            "phy_name":"FSM1.SLICE_129/F0"
+        },
+        "arrive":11.262,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n22",
+            "phy_name":"n22"
+        },
+        "arrive":13.430,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i1_2_lut/A",
+            "phy_name":"keypad1.SLICE_144/D1"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i1_2_lut/Z",
+            "phy_name":"keypad1.SLICE_144/F1"
+        },
+        "arrive":13.879,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n7",
+            "phy_name":"n7"
+        },
+        "arrive":16.047,
+        "delay":2.168
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"FSM1/i1_3_lut_4_lut_adj_42/A",
+            "phy_name":"FSM1.SLICE_143/D1"
+        },
+        "pin1":
+        {
+            "log_name":"FSM1/i1_3_lut_4_lut_adj_42/Z",
+            "phy_name":"FSM1.SLICE_143/F1"
+        },
+        "arrive":16.496,
+        "delay":0.449
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"FSM1/n2624",
+            "phy_name":"FSM1.n2624"
+        },
+        "arrive":19.523,
+        "delay":3.027
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"FSM1/i2_3_lut_adj_21/A",
+            "phy_name":"FSM1.SLICE_67/C0"
+        },
+        "pin1":
+        {
+            "log_name":"FSM1/i2_3_lut_adj_21/Z",
+            "phy_name":"FSM1.SLICE_67/F0"
+        },
+        "arrive":19.999,
+        "delay":0.476
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"FSM1/n2626",
+            "phy_name":"FSM1.n2626"
+        },
+        "arrive":19.999,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":19.999,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+keypad1/KeyVal__i4/CK->keypad1/KeyVal__i4/Q
+                                          SLICE_R15C9A       CLK_TO_Q0_DELAY     1.388                  6.887  6       
+keypad1/KeyVal[4]                                            NET DELAY           3.926                 10.813  6       
+keypad1/equal_19_i22_2_lut_4_lut/A->keypad1/equal_19_i22_2_lut_4_lut/Z
+                                          SLICE_R18C8A       A0_TO_F0_DELAY      0.449                 11.262  3       
+keypad1/n22                                                  NET DELAY           2.168                 13.430  3       
+keypad1/i1_2_lut/A->keypad1/i1_2_lut/Z    SLICE_R17C8A       D1_TO_F1_DELAY      0.449                 13.879  3       
+keypad1/n7                                                   NET DELAY           2.168                 16.047  3       
+FSM1/i1_3_lut_4_lut_adj_42/A->FSM1/i1_3_lut_4_lut_adj_42/Z
+                                          SLICE_R17C7C       D1_TO_F1_DELAY      0.449                 16.496  2       
+FSM1/n2624                                                   NET DELAY           3.027                 19.523  2       
+FSM1/i2_3_lut_adj_21/A->FSM1/i2_3_lut_adj_21/Z
+                                          SLICE_R16C5A       C0_TO_F0_DELAY      0.476                 19.999  1       
+FSM1/n2626                                                   NET DELAY           0.000                 19.999  1       
+FSM1/State_FSM_i4/D                                          ENDPOINT            0.000                 19.999  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/State_FSM_i4/CK",
+        "phy_name":"FSM1.SLICE_67/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":166.666,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":172.165,
+        "delay":5.499
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":172.165,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  87      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  87      
+{FSM1/State_FSM_i4/CK   FSM1/State_FSM_i3/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.198)                171.967  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.967  
+Arrival Time                                                                                        -(19.998)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  151.968  
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+
+##########################################################
+
+
+
+<A name="Timing_rpt_HoldFastCornerMinDegreeNoAV"></A><B><U><big>3  Hold at Speed Grade m Corner at -40 Degrees</big></U></B>
+<A name="Timing_rpt_EndpointSlackHoldFastCornerMinDegreeNoAV"></A><B><U><big>3.1  Endpoint slacks</big></U></B>
+-------------------------------------------------------
+          Listing 10 End Points          |    Slack    
+-------------------------------------------------------
+keypad1/State_FSM_i0_i1/D                |    1.743 ns 
+keypad1/State_FSM_i0_i3/D                |    1.743 ns 
+keypad1/KeyVal__i8/D                     |    1.743 ns 
+keypad1/KeyVal__i1/D                     |    1.743 ns 
+FSM1/Sw1_i0_i1/D                         |    1.743 ns 
+FSM1/Sw1_i0_i0/D                         |    1.743 ns 
+FSM1/Sw1_i0_i3/D                         |    1.743 ns 
+FSM1/Sw1_i0_i2/D                         |    1.743 ns 
+FSM1/State_FSM_i8/D                      |    1.743 ns 
+FSM1/State_FSM_i0/D                      |    1.743 ns 
+-------------------------------------------------------
+                                         |             
+Hold # of endpoints with negative slack: |           0 
+                                         |             
+-------------------------------------------------------
+
+<A name="Timing_rpt_DetailReportHoldFastCornerMinDegreeNoAV"></A><B><U><big>3.2  Detailed Report</big></U></B>
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Detail report of critical paths
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    Detailed Report for timing paths 
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin       : keypad1/State_FSM_i0_i0/Q  (SLICE_R15C8B)
+Path End         : keypad1/State_FSM_i0_i1/D  (SLICE_R15C8B)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 40.8% (route), 59.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.743 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/State_FSM_i0_i1/CK",
+        "phy_name":"keypad1.SLICE_98/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{keypad1/State_FSM_i0_i1/CK   keypad1/State_FSM_i0_i0/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/State_FSM_i0_i0/Q",
+        "phy_name":"keypad1.SLICE_98/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/State_FSM_i0_i1/D",
+        "phy_name":"keypad1.SLICE_98/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/State_FSM_i0_i0/CK",
+            "phy_name":"keypad1.SLICE_98/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/State_FSM_i0_i0/Q",
+            "phy_name":"keypad1.SLICE_98/Q1"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/Cols_c_2_N_126[0]",
+            "phy_name":"keypad1.Cols_c_2_N_126[0]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1.SLICE_98/D0",
+            "phy_name":"keypad1.SLICE_98/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1.SLICE_98/F0",
+            "phy_name":"keypad1.SLICE_98/F0"
+        },
+        "arrive":4.827,
+        "delay":0.252
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1.Cols_c_2_N_126[0].sig_006.FeedThruLUT",
+            "phy_name":"keypad1.Cols_c_2_N_126[0].sig_006.FeedThruLUT"
+        },
+        "arrive":4.827,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.827,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+keypad1/State_FSM_i0_i0/CK->keypad1/State_FSM_i0_i0/Q
+                                          SLICE_R15C8B       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+keypad1/Cols_c_2_N_126[0]                                    NET DELAY        0.712                  4.575  2       
+keypad1.SLICE_98/D0->keypad1.SLICE_98/F0  SLICE_R15C8B       D0_TO_F0_DELAY   0.252                  4.827  1       
+keypad1.Cols_c_2_N_126[0].sig_006.FeedThruLUT
+                                                             NET DELAY        0.000                  4.827  1       
+keypad1/State_FSM_i0_i1/D                                    ENDPOINT         0.000                  4.827  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/State_FSM_i0_i1/CK",
+        "phy_name":"keypad1.SLICE_98/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{keypad1/State_FSM_i0_i1/CK   keypad1/State_FSM_i0_i0/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.827  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.743  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/State_FSM_i0_i2/Q  (SLICE_R16C6D)
+Path End         : keypad1/State_FSM_i0_i3/D  (SLICE_R16C6D)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 40.8% (route), 59.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.743 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/State_FSM_i0_i3/CK",
+        "phy_name":"keypad1.SLICE_96/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{keypad1/State_FSM_i0_i3/CK   keypad1/State_FSM_i0_i2/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/State_FSM_i0_i2/Q",
+        "phy_name":"keypad1.SLICE_96/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/State_FSM_i0_i3/D",
+        "phy_name":"keypad1.SLICE_96/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/State_FSM_i0_i2/CK",
+            "phy_name":"keypad1.SLICE_96/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/State_FSM_i0_i2/Q",
+            "phy_name":"keypad1.SLICE_96/Q1"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/Cols_c_2_N_126[2]",
+            "phy_name":"keypad1.Cols_c_2_N_126[2]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1.SLICE_96/D0",
+            "phy_name":"keypad1.SLICE_96/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1.SLICE_96/F0",
+            "phy_name":"keypad1.SLICE_96/F0"
+        },
+        "arrive":4.827,
+        "delay":0.252
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1.Cols_c_2_N_126[2].sig_004.FeedThruLUT",
+            "phy_name":"keypad1.Cols_c_2_N_126[2].sig_004.FeedThruLUT"
+        },
+        "arrive":4.827,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.827,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+keypad1/State_FSM_i0_i2/CK->keypad1/State_FSM_i0_i2/Q
+                                          SLICE_R16C6D       CLK_TO_Q1_DELAY  0.779                  3.863  12      
+keypad1/Cols_c_2_N_126[2]                                    NET DELAY        0.712                  4.575  12      
+keypad1.SLICE_96/D0->keypad1.SLICE_96/F0  SLICE_R16C6D       D0_TO_F0_DELAY   0.252                  4.827  1       
+keypad1.Cols_c_2_N_126[2].sig_004.FeedThruLUT
+                                                             NET DELAY        0.000                  4.827  1       
+keypad1/State_FSM_i0_i3/D                                    ENDPOINT         0.000                  4.827  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/State_FSM_i0_i3/CK",
+        "phy_name":"keypad1.SLICE_96/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{keypad1/State_FSM_i0_i3/CK   keypad1/State_FSM_i0_i2/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.827  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.743  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/State_FSM_i0_i3/Q  (SLICE_R16C6D)
+Path End         : keypad1/KeyVal__i8/D  (SLICE_R16C7A)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 40.8% (route), 59.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.743 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/State_FSM_i0_i3/CK",
+        "phy_name":"keypad1.SLICE_96/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{keypad1/State_FSM_i0_i3/CK   keypad1/State_FSM_i0_i2/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/State_FSM_i0_i3/Q",
+        "phy_name":"keypad1.SLICE_96/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i8/D",
+        "phy_name":"keypad1.SLICE_87/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/State_FSM_i0_i3/CK",
+            "phy_name":"keypad1.SLICE_96/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/State_FSM_i0_i3/Q",
+            "phy_name":"keypad1.SLICE_96/Q0"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/Db1/Cols_c_2_N_126[3]",
+            "phy_name":"keypad1.Cols_c_2_N_126[3]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i1_2_lut_3_lut_4_lut_adj_10/B",
+            "phy_name":"keypad1.SLICE_87/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i1_2_lut_3_lut_4_lut_adj_10/Z",
+            "phy_name":"keypad1.SLICE_87/F0"
+        },
+        "arrive":4.827,
+        "delay":0.252
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n1108",
+            "phy_name":"keypad1.n1108"
+        },
+        "arrive":4.827,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.827,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+keypad1/State_FSM_i0_i3/CK->keypad1/State_FSM_i0_i3/Q
+                                          SLICE_R16C6D       CLK_TO_Q0_DELAY  0.779                  3.863  20      
+keypad1/Db1/Cols_c_2_N_126[3]                                NET DELAY        0.712                  4.575  20      
+keypad1/i1_2_lut_3_lut_4_lut_adj_10/B->keypad1/i1_2_lut_3_lut_4_lut_adj_10/Z
+                                          SLICE_R16C7A       D0_TO_F0_DELAY   0.252                  4.827  1       
+keypad1/n1108                                                NET DELAY        0.000                  4.827  1       
+keypad1/KeyVal__i8/D                                         ENDPOINT         0.000                  4.827  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i8/CK",
+        "phy_name":"keypad1.SLICE_87/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{keypad1/KeyVal__i8/CK   keypad1/KeyVal__i9/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.827  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.743  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/State_FSM_i0_i1/Q  (SLICE_R15C8B)
+Path End         : keypad1/KeyVal__i1/D  (SLICE_R15C9C)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 40.8% (route), 59.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.743 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/State_FSM_i0_i1/CK",
+        "phy_name":"keypad1.SLICE_98/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{keypad1/State_FSM_i0_i1/CK   keypad1/State_FSM_i0_i0/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/State_FSM_i0_i1/Q",
+        "phy_name":"keypad1.SLICE_98/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i1/D",
+        "phy_name":"keypad1.SLICE_82/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/State_FSM_i0_i1/CK",
+            "phy_name":"keypad1.SLICE_98/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/State_FSM_i0_i1/Q",
+            "phy_name":"keypad1.SLICE_98/Q0"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/Db3/Cols_c_2_N_126[1]",
+            "phy_name":"keypad1.Cols_c_2_N_126[1]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/i1_2_lut_3_lut/B",
+            "phy_name":"keypad1.SLICE_82/D0"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/i1_2_lut_3_lut/Z",
+            "phy_name":"keypad1.SLICE_82/F0"
+        },
+        "arrive":4.827,
+        "delay":0.252
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/n2601",
+            "phy_name":"keypad1.n2601"
+        },
+        "arrive":4.827,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.827,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+keypad1/State_FSM_i0_i1/CK->keypad1/State_FSM_i0_i1/Q
+                                          SLICE_R15C8B       CLK_TO_Q0_DELAY  0.779                  3.863  10      
+keypad1/Db3/Cols_c_2_N_126[1]                                NET DELAY        0.712                  4.575  10      
+keypad1/i1_2_lut_3_lut/B->keypad1/i1_2_lut_3_lut/Z
+                                          SLICE_R15C9C       D0_TO_F0_DELAY   0.252                  4.827  1       
+keypad1/n2601                                                NET DELAY        0.000                  4.827  1       
+keypad1/KeyVal__i1/D                                         ENDPOINT         0.000                  4.827  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i1/CK",
+        "phy_name":"keypad1.SLICE_82/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{keypad1/KeyVal__i1/CK   keypad1/KeyVal__i0/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.827  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.743  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : FSM1/Sw2_i1/Q  (SLICE_R18C5D)
+Path End         : FSM1/Sw1_i0_i1/D  (SLICE_R19C5A)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 40.8% (route), 59.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.743 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw2_i0/CK",
+        "phy_name":"FSM1.SLICE_56/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{FSM1/Sw2_i0/CK   FSM1/Sw2_i1/CK}                            CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw2_i1/Q",
+        "phy_name":"FSM1.SLICE_56/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw1_i0_i1/D",
+        "phy_name":"SLICE_73/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"FSM1/Sw2_i1/CK",
+            "phy_name":"FSM1.SLICE_56/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"FSM1/Sw2_i1/Q",
+            "phy_name":"FSM1.SLICE_56/Q1"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/Sw2[1]",
+            "phy_name":"Sw2[1]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"SLICE_73/D0",
+            "phy_name":"SLICE_73/D0"
+        },
+        "pin1":
+        {
+            "log_name":"SLICE_73/F0",
+            "phy_name":"SLICE_73/F0"
+        },
+        "arrive":4.827,
+        "delay":0.252
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"Sw2[1].sig_002.FeedThruLUT",
+            "phy_name":"Sw2[1].sig_002.FeedThruLUT"
+        },
+        "arrive":4.827,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.827,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+FSM1/Sw2_i1/CK->FSM1/Sw2_i1/Q             SLICE_R18C5D       CLK_TO_Q1_DELAY  0.779                  3.863  3       
+DSevSeg/DispMux1/Sw2[1]                                      NET DELAY        0.712                  4.575  3       
+SLICE_73/D0->SLICE_73/F0                  SLICE_R19C5A       D0_TO_F0_DELAY   0.252                  4.827  1       
+Sw2[1].sig_002.FeedThruLUT                                   NET DELAY        0.000                  4.827  1       
+FSM1/Sw1_i0_i1/D                                             ENDPOINT         0.000                  4.827  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw1_i0_i1/CK",
+        "phy_name":"SLICE_73/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{FSM1/Sw1_i0_i1/CK   FSM1/Sw1_i0_i0/CK}                      CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.827  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.743  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : FSM1/Sw2_i0/Q  (SLICE_R18C5D)
+Path End         : FSM1/Sw1_i0_i0/D  (SLICE_R19C5A)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 40.8% (route), 59.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.743 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw2_i0/CK",
+        "phy_name":"FSM1.SLICE_56/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{FSM1/Sw2_i0/CK   FSM1/Sw2_i1/CK}                            CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw2_i0/Q",
+        "phy_name":"FSM1.SLICE_56/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw1_i0_i0/D",
+        "phy_name":"SLICE_73/DI1"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"FSM1/Sw2_i0/CK",
+            "phy_name":"FSM1.SLICE_56/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"FSM1/Sw2_i0/Q",
+            "phy_name":"FSM1.SLICE_56/Q0"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/Sw2[0]",
+            "phy_name":"Sw2[0]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"SLICE_73/D1",
+            "phy_name":"SLICE_73/D1"
+        },
+        "pin1":
+        {
+            "log_name":"SLICE_73/F1",
+            "phy_name":"SLICE_73/F1"
+        },
+        "arrive":4.827,
+        "delay":0.252
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"Sw2[0].sig_003.FeedThruLUT",
+            "phy_name":"Sw2[0].sig_003.FeedThruLUT"
+        },
+        "arrive":4.827,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.827,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+FSM1/Sw2_i0/CK->FSM1/Sw2_i0/Q             SLICE_R18C5D       CLK_TO_Q0_DELAY  0.779                  3.863  3       
+DSevSeg/DispMux1/Sw2[0]                                      NET DELAY        0.712                  4.575  3       
+SLICE_73/D1->SLICE_73/F1                  SLICE_R19C5A       D1_TO_F1_DELAY   0.252                  4.827  1       
+Sw2[0].sig_003.FeedThruLUT                                   NET DELAY        0.000                  4.827  1       
+FSM1/Sw1_i0_i0/D                                             ENDPOINT         0.000                  4.827  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw1_i0_i1/CK",
+        "phy_name":"SLICE_73/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{FSM1/Sw1_i0_i1/CK   FSM1/Sw1_i0_i0/CK}                      CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.827  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.743  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : FSM1/Sw2_i3/Q  (SLICE_R17C5D)
+Path End         : FSM1/Sw1_i0_i3/D  (SLICE_R17C6A)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 40.8% (route), 59.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.743 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw2_i3/CK",
+        "phy_name":"FSM1.SLICE_74/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{FSM1/Sw2_i3/CK   FSM1/Sw2_i2/CK}                            CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw2_i3/Q",
+        "phy_name":"FSM1.SLICE_74/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw1_i0_i3/D",
+        "phy_name":"SLICE_71/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"FSM1/Sw2_i3/CK",
+            "phy_name":"FSM1.SLICE_74/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"FSM1/Sw2_i3/Q",
+            "phy_name":"FSM1.SLICE_74/Q0"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/Sw2[3]",
+            "phy_name":"Sw2[3]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"SLICE_71/D0",
+            "phy_name":"SLICE_71/D0"
+        },
+        "pin1":
+        {
+            "log_name":"SLICE_71/F0",
+            "phy_name":"SLICE_71/F0"
+        },
+        "arrive":4.827,
+        "delay":0.252
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"Sw2[3].sig_000.FeedThruLUT",
+            "phy_name":"Sw2[3].sig_000.FeedThruLUT"
+        },
+        "arrive":4.827,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.827,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+FSM1/Sw2_i3/CK->FSM1/Sw2_i3/Q             SLICE_R17C5D       CLK_TO_Q0_DELAY  0.779                  3.863  3       
+DSevSeg/DispMux1/Sw2[3]                                      NET DELAY        0.712                  4.575  3       
+SLICE_71/D0->SLICE_71/F0                  SLICE_R17C6A       D0_TO_F0_DELAY   0.252                  4.827  1       
+Sw2[3].sig_000.FeedThruLUT                                   NET DELAY        0.000                  4.827  1       
+FSM1/Sw1_i0_i3/D                                             ENDPOINT         0.000                  4.827  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw1_i0_i3/CK",
+        "phy_name":"SLICE_71/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{FSM1/Sw1_i0_i3/CK   FSM1/Sw1_i0_i2/CK}                      CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.827  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.743  
+
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : FSM1/Sw2_i2/Q  (SLICE_R17C5D)
+Path End         : FSM1/Sw1_i0_i2/D  (SLICE_R17C6A)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 40.8% (route), 59.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.743 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw2_i3/CK",
+        "phy_name":"FSM1.SLICE_74/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{FSM1/Sw2_i3/CK   FSM1/Sw2_i2/CK}                            CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw2_i2/Q",
+        "phy_name":"FSM1.SLICE_74/Q1"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw1_i0_i2/D",
+        "phy_name":"SLICE_71/DI1"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"FSM1/Sw2_i2/CK",
+            "phy_name":"FSM1.SLICE_74/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"FSM1/Sw2_i2/Q",
+            "phy_name":"FSM1.SLICE_74/Q1"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/Sw2[2]",
+            "phy_name":"Sw2[2]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"SLICE_71/D1",
+            "phy_name":"SLICE_71/D1"
+        },
+        "pin1":
+        {
+            "log_name":"SLICE_71/F1",
+            "phy_name":"SLICE_71/F1"
+        },
+        "arrive":4.827,
+        "delay":0.252
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"Sw2[2].sig_001.FeedThruLUT",
+            "phy_name":"Sw2[2].sig_001.FeedThruLUT"
+        },
+        "arrive":4.827,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.827,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+FSM1/Sw2_i2/CK->FSM1/Sw2_i2/Q             SLICE_R17C5D       CLK_TO_Q1_DELAY  0.779                  3.863  3       
+DSevSeg/DispMux1/Sw2[2]                                      NET DELAY        0.712                  4.575  3       
+SLICE_71/D1->SLICE_71/F1                  SLICE_R17C6A       D1_TO_F1_DELAY   0.252                  4.827  1       
+Sw2[2].sig_001.FeedThruLUT                                   NET DELAY        0.000                  4.827  1       
+FSM1/Sw1_i0_i2/D                                             ENDPOINT         0.000                  4.827  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/Sw1_i0_i3/CK",
+        "phy_name":"SLICE_71/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{FSM1/Sw1_i0_i3/CK   FSM1/Sw1_i0_i2/CK}                      CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.827  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.743  
+
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : keypad1/KeyVal__i8/Q  (SLICE_R16C7A)
+Path End         : FSM1/State_FSM_i8/D  (SLICE_R17C7D)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 40.8% (route), 59.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.743 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i8/CK",
+        "phy_name":"keypad1.SLICE_87/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{keypad1/KeyVal__i8/CK   keypad1/KeyVal__i9/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"keypad1/KeyVal__i8/Q",
+        "phy_name":"keypad1.SLICE_87/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/State_FSM_i8/D",
+        "phy_name":"FSM1.SLICE_63/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"keypad1/KeyVal__i8/CK",
+            "phy_name":"keypad1.SLICE_87/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"keypad1/KeyVal__i8/Q",
+            "phy_name":"keypad1.SLICE_87/Q0"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"keypad1/KeyVal[8]",
+            "phy_name":"KeyVal[8]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"FSM1/i2_3_lut_adj_25/B",
+            "phy_name":"FSM1.SLICE_63/D0"
+        },
+        "pin1":
+        {
+            "log_name":"FSM1/i2_3_lut_adj_25/Z",
+            "phy_name":"FSM1.SLICE_63/F0"
+        },
+        "arrive":4.827,
+        "delay":0.252
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"FSM1/n2610",
+            "phy_name":"FSM1.n2610"
+        },
+        "arrive":4.827,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.827,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+keypad1/KeyVal__i8/CK->keypad1/KeyVal__i8/Q
+                                          SLICE_R16C7A       CLK_TO_Q0_DELAY  0.779                  3.863  6       
+keypad1/KeyVal[8]                                            NET DELAY        0.712                  4.575  6       
+FSM1/i2_3_lut_adj_25/B->FSM1/i2_3_lut_adj_25/Z
+                                          SLICE_R17C7D       D0_TO_F0_DELAY   0.252                  4.827  1       
+FSM1/n2610                                                   NET DELAY        0.000                  4.827  1       
+FSM1/State_FSM_i8/D                                          ENDPOINT         0.000                  4.827  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/State_FSM_i8/CK",
+        "phy_name":"FSM1.SLICE_63/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{FSM1/State_FSM_i8/CK   FSM1/State_FSM_i7/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.827  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.743  
+
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : FSM1/State_FSM_i0/Q  (SLICE_R18C7C)
+Path End         : FSM1/State_FSM_i0/D  (SLICE_R18C7C)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 40.8% (route), 59.2% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.743 ns  (Passed)
+
+
+Source Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/State_FSM_i0/CK",
+        "phy_name":"FSM1.SLICE_53/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{FSM1/State_FSM_i0/CK   FSM1/State_FSM_i2/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"FSM1/State_FSM_i0/Q",
+        "phy_name":"FSM1.SLICE_53/Q0"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/State_FSM_i0/D",
+        "phy_name":"FSM1.SLICE_53/DI0"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"FSM1/State_FSM_i0/CK",
+            "phy_name":"FSM1.SLICE_53/CLK"
+        },
+        "pin1":
+        {
+            "log_name":"FSM1/State_FSM_i0/Q",
+            "phy_name":"FSM1.SLICE_53/Q0"
+        },
+        "arrive":3.863,
+        "delay":0.779
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"FSM1/n195[17]",
+            "phy_name":"FSM1.n195[17]"
+        },
+        "arrive":4.575,
+        "delay":0.712
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"FSM1/i443_3_lut_3_lut/A",
+            "phy_name":"FSM1.SLICE_53/D0"
+        },
+        "pin1":
+        {
+            "log_name":"FSM1/i443_3_lut_3_lut/Z",
+            "phy_name":"FSM1.SLICE_53/F0"
+        },
+        "arrive":4.827,
+        "delay":0.252
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"FSM1/n699",
+            "phy_name":"FSM1.n699"
+        },
+        "arrive":4.827,
+        "delay":0.000
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":4.827,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+FSM1/State_FSM_i0/CK->FSM1/State_FSM_i0/Q
+                                          SLICE_R18C7C       CLK_TO_Q0_DELAY  0.779                  3.863  3       
+FSM1/n195[17]                                                NET DELAY        0.712                  4.575  3       
+FSM1/i443_3_lut_3_lut/A->FSM1/i443_3_lut_3_lut/Z
+                                          SLICE_R18C7C       D0_TO_F0_DELAY   0.252                  4.827  1       
+FSM1/n699                                                    NET DELAY        0.000                  4.827  1       
+FSM1/State_FSM_i0/D                                          ENDPOINT         0.000                  4.827  1       
+
+
+Destination Clock Path
+<tapath class="path_info">
+<xmp>
+{
+    "path_begin":
+    {
+        "type":"pin",
+        "log_name":"hf_osc.osc_inst/CLKHF",
+        "phy_name":"hf_osc.osc_inst/CLKHF"
+    },
+    "path_end":
+    {
+        "type":"pin",
+        "log_name":"FSM1/State_FSM_i0/CK",
+        "phy_name":"FSM1.SLICE_53/CLK"
+    },
+    "path_sections":[
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":0.000,
+        "delay":0.000
+    },
+    {
+        "type":"net_delay",
+        "net":
+        {
+            "log_name":"DSevSeg/DispMux1/IntOsc",
+            "phy_name":"IntOsc"
+        },
+        "arrive":3.084,
+        "delay":3.084
+    },
+    {
+        "type":"site_delay",
+        "pin0":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "pin1":
+        {
+            "log_name":"",
+            "phy_name":""
+        },
+        "arrive":3.084,
+        "delay":0.000
+    }
+    ]
+}
+</xmp>
+</tapath>
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  88      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  88      
+{FSM1/State_FSM_i0/CK   FSM1/State_FSM_i2/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.827  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.743  
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+
+##########################################################
+
+
+
+
+
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></DIV>
+
+<DIV id="toc" class="radiant"<span onmousemove="showTocList()">Contents</span>
+<UL id="toc_list">
+<LI><A href=#Timing_rpt_top>Timing Report</A></LI>
+<LI><A href=#Timing_rpt_DesignChecking>1  Timing Overview</A></LI>
+<UL>
+<LI><A href=#Timing_rpt_SDCConstraints>1.1  SDC Constraints</A></LI>
+<LI><A href=#Timing_rpt_ConstraintCoverage>1.2  Constraint Coverage</A></LI>
+<LI><A href=#Timing_rpt_OverallSummary>1.3  Overall Summary</A></LI>
+<LI><A href=#Timing_rpt_UnconstrainedReport>1.4  Unconstrained Report</A></LI>
+<LI><A href=#Timing_rpt_CombinationalLoop>1.5  Combinational Loop</A></LI>
+</UL>
+<LI><A href=#Timing_rpt_SetupSlowCornerMaxDegree>2  Setup at User Specified Speed Grade Corner at User Specified Degrees</A></LI>
+<UL>
+<LI><A href=#Timing_rpt_ClockSummarySetupSlowCornerMaxDegree>2.1  Clock Summary</A></LI>
+<LI><A href=#Timing_rpt_EndpointSlackSetupSlowCornerMaxDegree>2.2  Endpoint slacks</A></LI>
+<LI><A href=#Timing_rpt_DetailReportSetupSlowCornerMaxDegree>2.3  Detailed Report</A></LI>
+</UL>
+<LI><A href=#Timing_rpt_HoldFastCornerMinDegreeNoAV>3  Hold at User Specified Speed Grade Corner at Minimum Degrees</A></LI>
+<UL>
+<LI><A href=#Timing_rpt_EndpointSlackHoldFastCornerMinDegreeNoAV>3.1  Endpoint slacks</A></LI>
+<LI><A href=#Timing_rpt_DetailReportHoldFastCornerMinDegreeNoAV>3.2  Detailed Report</A></LI>
+</UL>
+</UL>
+</DIV>
+
+<button id="back_to_top" class="radiant" onclick="scrollToTop()">&lt;</button>
+<script type="text/javascript">
+<!--
+var scrollStep = 0;
+function scrollToTop(){
+   var funScroll = function() {
+      var top = document.body.scrollTop;
+      if (top == 0) {
+         scrollStep = 0;
+         return;
+      }
+      if (scrollStep == 0)
+         scrollStep = top/20 + 1;
+      top -= scrollStep;
+      if (top < 0)
+         top = 0;
+      document.body.scrollTop = top;
+      requestAnimationFrame(funScroll);
+   };
+   funScroll();
+}
+
+window.addEventListener('scroll', function(e) {
+   var backToTop = document.getElementById('back_to_top')
+   if (document.body.scrollTop > 0) {
+      backToTop.style.display = 'block';
+   } else {    backToTop.style.display = 'none'  }});
+
+//-->
+</script>
+
+<style type="text/css">
+#back_to_top {
+   bottom:20px; right:20px;
+   width:30px; height:30px;
+   font-size: 20px;
+   padding: 2px 5px 2px 5px;
+   position:fixed;
+   background-color:rgba(210,210,210,0.1);
+   border-style: solid;
+   border-color: rgba(192,192,192,0.8);
+   border-width:1px;
+   display:none;
+   -webkit-transform: rotate(90deg);
+   -webkit-transform-origin:50% 50%;
+}
+#back_to_top:focus {
+   outline-width:0px;
+}
+</style>
+
+</BODY>

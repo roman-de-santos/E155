@@ -1,0 +1,109 @@
+----------------------------------------------------------------------
+Report for cell top.TECH
+Register bits:  155 of 5280 (2.936%)
+I/O cells:      18
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               CCU2        53          100.0
+                            FD1P3XZ       155          100.0
+                              HSOSC         1          100.0
+                                 IB         5          100.0
+                               LUT4       172          100.0
+                                 OB        13          100.0
+SUB MODULES
+                           Debounce         1
+                        Debounce_U0         1
+                        Debounce_U1         1
+                        Debounce_U2         1
+                            DispFSM         1
+                            DispMux         1
+                         DualSevSeg         1
+                             Keypad         1
+                            SegDisp         1
+                              TOTAL       408
+----------------------------------------------------------------------
+Report for cell DispFSM.v1
+Instance Path : FSM1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ        25           16.1
+                               LUT4        45           26.2
+                              TOTAL        70
+----------------------------------------------------------------------
+Report for cell Keypad.v1
+Instance Path : keypad1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        41           77.4
+                            FD1P3XZ       106           68.4
+                               LUT4       107           62.2
+SUB MODULES
+                           Debounce         1
+                        Debounce_U0         1
+                        Debounce_U1         1
+                        Debounce_U2         1
+                              TOTAL       258
+----------------------------------------------------------------------
+Report for cell Debounce.v1
+Instance Path : keypad1.Db4
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         8           15.1
+                            FD1P3XZ        17           11.0
+                               LUT4         9            5.2
+                              TOTAL        34
+----------------------------------------------------------------------
+Report for cell Debounce_U0.v1
+Instance Path : keypad1.Db3
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         8           15.1
+                            FD1P3XZ        17           11.0
+                               LUT4        11            6.4
+                              TOTAL        36
+----------------------------------------------------------------------
+Report for cell Debounce_U1.v1
+Instance Path : keypad1.Db2
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         8           15.1
+                            FD1P3XZ        17           11.0
+                               LUT4         9            5.2
+                              TOTAL        34
+----------------------------------------------------------------------
+Report for cell Debounce_U2.v1
+Instance Path : keypad1.Db1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         8           15.1
+                            FD1P3XZ        17           11.0
+                               LUT4        16            9.3
+                              TOTAL        41
+----------------------------------------------------------------------
+Report for cell DualSevSeg.v1
+Instance Path : DSevSeg
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        12           22.6
+                            FD1P3XZ        24           15.5
+                               LUT4        19           11.0
+SUB MODULES
+                            DispMux         1
+                            SegDisp         1
+                              TOTAL        57
+----------------------------------------------------------------------
+Report for cell DispMux.v1
+Instance Path : DSevSeg.DispMux1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        12           22.6
+                            FD1P3XZ        24           15.5
+                               LUT4        12            7.0
+                              TOTAL        48
+----------------------------------------------------------------------
+Report for cell SegDisp.v1
+Instance Path : DSevSeg.DispDecoder
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4         7            4.1
+                              TOTAL         7
