@@ -39,19 +39,19 @@
 -use_io_insertion 1
 
 -resolve_mixed_drivers 0
--path "C:/lscc/radiant/2024.2/ispfpga/ice40tp/data" "C:/Users/rdesantos/Downloads/Lab3/impl_1" "C:/Users/rdesantos/Downloads/Lab3"
+-path "C:/lscc/radiant/2024.2/ispfpga/ice40tp/data" "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt1/impl_1" "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt1"
 -ver "C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.v"
 -lib pmi -vhd "C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd"
--sver "C:/Users/rdesantos/Downloads/Lab3/source/impl_1/Debounce.sv"
-"C:/Users/rdesantos/Downloads/Lab3/source/impl_1/DispMux.sv"
-"C:/Users/rdesantos/Downloads/Lab3/source/impl_1/DualSevSeg.sv"
-"C:/Users/rdesantos/Downloads/Lab3/source/impl_1/SegDisp.sv"
-"C:/Users/rdesantos/Downloads/Lab3/source/impl_1/DispFSM.sv"
-"C:/Users/rdesantos/Downloads/Lab3/source/impl_1/top.sv"
-"C:/Users/rdesantos/Downloads/Lab3/source/impl_1/Keypad.sv"
+-sver "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt1/source/impl_1/Debounce.sv"
+"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt1/source/impl_1/DispMux.sv"
+"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt1/source/impl_1/DualSevSeg.sv"
+"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt1/source/impl_1/SegDisp.sv"
+"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt1/source/impl_1/DispFSM.sv"
+"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt1/source/impl_1/top.sv"
+"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt1/source/impl_1/Keypad.sv"
 
 
--path "C:/Users/rdesantos/Downloads/Lab3"
+-path "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt1"
 -top top
 -udb "Lab3_impl_1_rtl.udb"
 -output_hdl "Lab3_impl_1.vm"
