@@ -1,0 +1,145 @@
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   1
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   4
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 17:05:25 on Oct 13,2025
+# Loading sv_std.std
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Error: FAILED!: First key press -- got d0=0 d1=0 expected d0=6 d1=0 at time 60122.
+#    Time: 60122 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(69)
+#    Time: 120272 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 69
+add wave -position end  sim:/KeypadFSM_tb/dut/Rows
+add wave -position end  sim:/KeypadFSM_tb/dut/Cols
+add wave -position end  sim:/KeypadFSM_tb/dut/Sw1
+add wave -position end  sim:/KeypadFSM_tb/dut/Sw2
+add wave -position end  sim:/KeypadFSM_tb/dut/State
+add wave -position end  sim:/KeypadFSM_tb/dut/NextState
+add wave -position end  sim:/KeypadFSM_tb/dut/count
+add wave -position end  sim:/KeypadFSM_tb/dut/next_count
+add wave -position end  sim:/KeypadFSM_tb/dut/NextSw1
+add wave -position end  sim:/KeypadFSM_tb/dut/NextSw2
+add wave -position end  sim:/KeypadFSM_tb/dut/NextCols
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+run -all
+# ** Error: FAILED!: First key press -- got d0=0 d1=0 expected d0=6 d1=0 at time 60122.
+#    Time: 60122 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(69)
+#    Time: 120272 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 69
+# End time: 17:14:47 on Oct 13,2025, Elapsed time: 0:09:22
+# Errors: 1, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 17:17:28 on Oct 13,2025
+# Loading sv_std.std
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Error: FAILED!: First key press -- got d0=0 d1=8 expected d0=6 d1=0 at time 120122.
+#    Time: 120122 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(69)
+#    Time: 240272 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 69
+add wave -position end  sim:/KeypadFSM_tb/dut/Rows
+add wave -position end  sim:/KeypadFSM_tb/dut/Cols
+add wave -position end  sim:/KeypadFSM_tb/dut/Sw1
+add wave -position end  sim:/KeypadFSM_tb/dut/Sw2
+add wave -position end  sim:/KeypadFSM_tb/dut/State
+add wave -position end  sim:/KeypadFSM_tb/dut/NextState
+add wave -position end  sim:/KeypadFSM_tb/dut/count
+add wave -position end  sim:/KeypadFSM_tb/dut/next_count
+add wave -position end  sim:/KeypadFSM_tb/dut/NextSw1
+add wave -position end  sim:/KeypadFSM_tb/dut/NextSw2
+add wave -position end  sim:/KeypadFSM_tb/dut/NextCols
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+run -all
+# ** Error: FAILED!: First key press -- got d0=0 d1=8 expected d0=6 d1=0 at time 120122.
+#    Time: 120122 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(69)
+#    Time: 240272 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 69
+# End time: 17:23:53 on Oct 13,2025, Elapsed time: 0:06:25
+# Errors: 1, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 17:27:27 on Oct 13,2025
+# Loading sv_std.std
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# run -all
+# ** Error: FAILED!: First key press -- got d0=0 d1=6 expected d0=6 d1=0 at time 120122.
+#    Time: 120122 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(69)
+#    Time: 240272 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 69
+add wave -position end  sim:/KeypadFSM_tb/dut/Rows
+add wave -position end  sim:/KeypadFSM_tb/dut/Cols
+add wave -position end  sim:/KeypadFSM_tb/dut/Sw1
+add wave -position end  sim:/KeypadFSM_tb/dut/Sw2
+add wave -position end  sim:/KeypadFSM_tb/dut/State
+add wave -position end  sim:/KeypadFSM_tb/dut/NextState
+add wave -position end  sim:/KeypadFSM_tb/dut/count
+add wave -position end  sim:/KeypadFSM_tb/dut/next_count
+add wave -position end  sim:/KeypadFSM_tb/dut/NextSw1
+add wave -position end  sim:/KeypadFSM_tb/dut/NextSw2
+add wave -position end  sim:/KeypadFSM_tb/dut/NextCols
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+run -all
+# ** Error: FAILED!: First key press -- got d0=0 d1=6 expected d0=6 d1=0 at time 120122.
+#    Time: 120122 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(69)
+#    Time: 240272 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 69
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+run -all
+# ** Error: FAILED!: First key press -- got d0=0 d1=6 expected d0=6 d1=0 at time 120122.
+#    Time: 120122 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(69)
+#    Time: 240272 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 69
+compile w cmd source_files.lst
+# couldn't execute "C:\lscc\radiant\2024.2\questasim\win64\cmd": no such file or directory
+compile
+# wrong # args: should be "compile w cmd ?arg ...?"
+# End time: 17:42:54 on Oct 13,2025, Elapsed time: 0:15:27
+# Errors: 1, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3

@@ -3,50 +3,57 @@ Report for cell top
    Instance path: top
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        130        100.0
-                               LUTGATE	         88        100.0
-                                LUTCCU	         42        100.0
+                                  LUT4	        117        100.0
+                               LUTGATE	         83        100.0
+                                LUTCCU	         34        100.0
                                  IOBUF	         18        100.0
-                                PFUREG	         61        100.0
+                                PFUREG	         56        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                            DualSevSeg	          1        33.1
-                             KeypadFSM	          1        62.3
----------------------------------------------------
-Report for cell DualSevSeg
-   Instance path: top/DSevSeg
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	         43        33.1
-                               LUTGATE	         19        21.6
-                                LUTCCU	         24        57.1
-                                PFUREG	         24        39.3
-SUB MODULES
-                                  cell	      count    LUT4 Usage(%)
-                               DispMux	          1        27.7
-                               SegDisp	          1         5.4
----------------------------------------------------
-Report for cell DispMux
-   Instance path: top/DSevSeg/DispMux1
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	         36        27.7
-                               LUTGATE	         12        13.6
-                                LUTCCU	         24        57.1
-                                PFUREG	         24        39.3
----------------------------------------------------
-Report for cell SegDisp
-   Instance path: top/DSevSeg/DispDecoder
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	          7         5.4
-                               LUTGATE	          7         8.0
+                            DualSevSeg	          1        36.8
+                             KeypadFSM	          1        54.7
+                                  Sync	          1         0.0
 ---------------------------------------------------
 Report for cell KeypadFSM
    Instance path: top/keypad1
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         81        62.3
-                               LUTGATE	         63        71.6
-                                LUTCCU	         18        42.9
-                                PFUREG	         37        60.7
+                                  LUT4	         64        54.7
+                               LUTGATE	         54        65.1
+                                LUTCCU	         10        29.4
+                                PFUREG	         28        50.0
+---------------------------------------------------
+Report for cell Sync
+   Instance path: top/sync1
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                PFUREG	          4         7.1
+---------------------------------------------------
+Report for cell DualSevSeg
+   Instance path: top/DSevSeg
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         43        36.8
+                               LUTGATE	         19        22.9
+                                LUTCCU	         24        70.6
+                                PFUREG	         24        42.9
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                               DispMux	          1        30.8
+                               SegDisp	          1         6.0
+---------------------------------------------------
+Report for cell DispMux
+   Instance path: top/DSevSeg/DispMux1
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         36        30.8
+                               LUTGATE	         12        14.5
+                                LUTCCU	         24        70.6
+                                PFUREG	         24        42.9
+---------------------------------------------------
+Report for cell SegDisp
+   Instance path: top/DSevSeg/DispDecoder
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	          7         6.0
+                               LUTGATE	          7         8.4

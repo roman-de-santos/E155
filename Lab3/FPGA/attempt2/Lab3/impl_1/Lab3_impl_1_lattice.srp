@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Oct 13 15:26:49 2025
+Mon Oct 13 17:25:51 2025
 
 
 Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/impl_1/Lab3_impl_1_lattice.synproj -logfile Lab3_impl_1_lattice.srp -gui -msgset C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/promote.xml 
@@ -118,6 +118,7 @@ Verilog design file: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2
 Verilog design file: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv
 Verilog design file: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv
 Verilog design file: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv
+Verilog design file: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv
 VHDL library: pmi
 VHDL design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd
 WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050
@@ -173,7 +174,7 @@ Analyzing Verilog file c:/users/rdesantos/documents/github/e155/lab3/fpga/attemp
 Analyzing Verilog file c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/dualsevseg.sv. VERI-1482
 Analyzing Verilog file c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/segdisp.sv. VERI-1482
 Analyzing Verilog file c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv. VERI-1482
-WARNING <35901208> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(30): literal value truncated to fit in -1028076080 bits. VERI-1208
+Analyzing Verilog file c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/sync.sv. VERI-1482
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd
 
@@ -183,13 +184,14 @@ Top module language type = Verilog.
 Top module name (Verilog, mixed language): top
 INFO <35901018> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/top.sv(1): compiling module top. VERI-1018
 INFO <35901018> - synthesis: C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC(CLKHF_DIV=2'b11). VERI-1018
+INFO <35901018> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/sync.sv(1): compiling module Sync. VERI-1018
 INFO <35901018> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/dualsevseg.sv(12): compiling module DualSevSeg. VERI-1018
 INFO <35901018> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/dispmux.sv(14): compiling module DispMux. VERI-1018
 WARNING <35901209> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/dispmux.sv(39): expression size 32 truncated to fit in target size 23. VERI-1209
 INFO <35901018> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/segdisp.sv(10): compiling module SegDisp. VERI-1018
 INFO <35901018> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(1): compiling module KeypadFSM. VERI-1018
-WARNING <35901209> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(102): expression size 32 truncated to fit in target size 17. VERI-1209
-WARNING <35901209> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(156): expression size 32 truncated to fit in target size 17. VERI-1209
+WARNING <35901209> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(105): expression size 32 truncated to fit in target size 8. VERI-1209
+WARNING <35901209> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(160): expression size 32 truncated to fit in target size 8. VERI-1209
 [Parameter Setting Section Start]
 
 	[Parameter Settings for Instance(s): hf_osc]
@@ -239,16 +241,16 @@ original encoding -> new encoding (one-hot encoding)
 
 
 ################### Begin Area Report (top)######################
-Number of register bits => 61 of 5280 (1 % )
-CCU2 => 21
-FD1P3XZ => 61
+Number of register bits => 56 of 5280 (1 % )
+CCU2 => 17
+FD1P3XZ => 56
 HSOSC => 1
 IB => 5
-LUT4 => 83
+LUT4 => 74
 OB => 13
 ################### End Area Report ##################
-Number of odd-length carry chains : 2
-Number of even-length carry chains : 0
+Number of odd-length carry chains : 1
+Number of even-length carry chains : 1
 
 ################### Begin Clock Report ######################
 Clock Nets
@@ -258,16 +260,16 @@ Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : Reset_c_N_64, loads : 37
   Net : DSevSeg/DispMux1/n68, loads : 36
-  Net : keypad1/count[16], loads : 23
-  Net : keypad1/n69[0], loads : 20
-  Net : keypad1/n667, loads : 19
-  Net : keypad1/n138, loads : 19
-  Net : keypad1/n40, loads : 15
-  Net : DSevSeg/DispMux1/n1046, loads : 14
+  Net : Reset_c_N_52, loads : 32
+  Net : keypad1/n31, loads : 14
+  Net : keypad1/count[7], loads : 14
+  Net : DSevSeg/DispMux1/n1017, loads : 14
   Net : DSevSeg/DispMux1/n97[22], loads : 13
   Net : DSevSeg/DispMux1/n97[21], loads : 13
+  Net : DSevSeg/DispMux1/n877, loads : 13
+  Net : keypad1/n74[4], loads : 12
+  Net : keypad1/n74[7], loads : 12
 ################### End Clock Report ##################
 
 ################### Begin Constraint Report ######################
@@ -282,4 +284,4 @@ Peak Memory Usage: 97 MB
 Total CPU Time: 5 secs 
 Total REAL Time: 8 secs 
 --------------------------------------------------------------
-Checksum -- synthesis -- netlist: 29b9f0b3de1838364a2b0265c349d5bc4e8af6da
+Checksum -- synthesis -- netlist: 2b2bd69cf7d6024e7a4a3c2b939d37951feaa48e

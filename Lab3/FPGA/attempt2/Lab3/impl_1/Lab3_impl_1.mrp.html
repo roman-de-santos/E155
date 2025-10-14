@@ -49,7 +49,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
-Mapped on: Mon Oct 13 15:32:51 2025
+Mapped on: Mon Oct 13 17:26:04 2025
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
 
@@ -60,12 +60,12 @@ Command line:   map -pdc C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/atte
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
 
-   Number of slice registers:  61 out of  5280 (1%)
+   Number of slice registers:  56 out of  5280 (1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           130 out of  5280 (2%)
-      Number of logic LUT4s:              84
-      Number of inserted feedthru LUT4s:   4
-      Number of ripple logic:             21 (42 LUT4s)
+   Number of LUT4s:           117 out of  5280 (2%)
+      Number of logic LUT4s:              75
+      Number of inserted feedthru LUT4s:   8
+      Number of ripple logic:             17 (34 LUT4s)
    Number of IO sites used:   18 out of 39 (46%)
       Number of IO sites used for general PIO: 18
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -88,27 +88,27 @@ Command line:   map -pdc C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/atte
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  1
-      Net IntOsc: 50 loads, 50 rising, 0 falling (Driver: Pin
+      Net IntOsc: 45 loads, 45 rising, 0 falling (Driver: Pin
      hf_osc.osc_inst/CLKHF)
    Number of Clock Enables:  4
       Net VCC_net: 1 loads, 0 SLICEs
-      Net keypad1.n69[5]: 8 loads, 8 SLICEs
-      Net keypad1.n667: 17 loads, 17 SLICEs
-      Net keypad1.n631: 4 loads, 4 SLICEs
+      Net keypad1.n563: 8 loads, 8 SLICEs
+      Net keypad1.n74[5]: 8 loads, 8 SLICEs
+      Net keypad1.n560: 4 loads, 4 SLICEs
    Number of LSRs:  2
-      Net Reset_c_N_64: 37 loads, 37 SLICEs
+      Net Reset_c_N_52: 32 loads, 32 SLICEs
       Net DSevSeg.DispMux1.n68: 12 loads, 12 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net Reset_c_N_64: 37 loads
-      Net keypad1.count[16]: 23 loads
-      Net keypad1.n69[0]: 20 loads
-      Net keypad1.n138: 18 loads
-      Net keypad1.n667: 17 loads
+      Net Reset_c_N_52: 32 loads
+      Net keypad1.count[7]: 14 loads
       Net DSevSeg.DispMux1.n68: 13 loads
-      Net keypad1.n40: 13 loads
-      Net keypad1.n69[5]: 10 loads
-      Net DSevSeg.SegInput[0]: 7 loads
-      Net DSevSeg.SegInput[1]: 7 loads
+      Net keypad1.n31: 12 loads
+      Net keypad1.n74[4]: 12 loads
+      Net keypad1.n74[7]: 12 loads
+      Net keypad1.n74[5]: 11 loads
+      Net keypad1.n563: 8 loads
+      Net En2_c: 7 loads
+      Net keypad1.n11: 7 loads
 
    Number of warnings:  0
    Number of criticals: 0
@@ -181,7 +181,7 @@ Instance Name: hf_osc.osc_inst
 
 <A name="mrp_consum"></A><B><U><big>Constraint Summary</big></U></B>
 
-   Total number of constraints: 18
+   Total number of constraints: 19
    Total number of constraints dropped: 0
 
 <A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
@@ -189,7 +189,7 @@ Instance Name: hf_osc.osc_inst
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
    Peak Memory Usage: 69 MB
-Checksum -- map: 30f8472c6c3510018ff89ac5b22c4a763b1c9d9a
+Checksum -- map: a376ef0bee9a19da21bf48abf685578c13599a2
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995
      AT&amp;T Corp.   All rights reserved.

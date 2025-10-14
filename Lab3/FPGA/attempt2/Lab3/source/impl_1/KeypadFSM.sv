@@ -15,7 +15,7 @@ module KeypadFSM (
     statetype State, NextState;
 
     // Delay counter for debouncing
-    logic [16:0] count, next_count;
+    logic [7:0] count, next_count;
 
     // FSM Sw logic
     logic [3:0] NextSw1, NextSw2;
@@ -27,7 +27,7 @@ module KeypadFSM (
             State     <= s0;
             Sw1       <= 4'd0;
             Sw2       <= 4'd0;
-            Cols      <= 4'd0111;
+            Cols      <= 4'b0111;
             count     <= 17'd0;
         end else begin
             State     <= NextState;
@@ -48,54 +48,57 @@ module KeypadFSM (
         next_count = count;
 
         case (State)
-            s0: begin
-                next_count = 0;
-                if (~(&Rows))begin
-                    NextState = s1;
-					NextCols   = 4'b1011;
-                end else begin
-                    NextState = s4;
+			s0: begin
+				next_count = 0;
+				if (~(&Rows)) begin       // Key pressed
+					NextState = s4;
 					NextCols   = 4'b0111;
-				end
-            end
-
-            s1: begin
-                if (~(&Rows)) begin
-                    NextState = s2;
-					NextCols   = 4'b1101;
-                end else begin
-                    NextState = s4;
+				end else begin
+					NextState = s1;
 					NextCols   = 4'b1011;
 				end
-            end
+			end
 
-            s2: begin
-
-                if (~(&Rows)) begin
-                    NextState = s3;
-					NextCols   = 4'b1110;
-                end else begin
-                    NextState = s4;
+			s1: begin
+				
+				next_count = 0;
+				if (~(&Rows)) begin
+					NextState = s4;
+					NextCols   = 4'b1011;
+				end else begin
+					NextState = s2;
 					NextCols   = 4'b1101;
 				end
-            end
+			end
 
-            s3: begin
-                if (~(&Rows)) begin
-                    NextState = s0;
-					NextCols   = 4'b0111;
-                end else begin
-                    NextState = s4;
+			s2: begin
+				next_count = 0;
+				if (~(&Rows)) begin
+					NextState = s4;
+					NextCols   = 4'b1101;
+				end else begin
+					NextState = s3;
 					NextCols   = 4'b1110;
 				end
-            end
+			end
+
+			s3: begin
+				next_count = 0;
+				if (~(&Rows)) begin
+					NextState = s4;
+					NextCols   = 4'b1110;
+				end else begin
+					NextState = s0;
+					NextCols   = 4'b0111;
+				end
+			end
 
             s4: begin
                 // Debounce state
-                if (count[16] && ~(&Rows)) begin // Button pressed
+                if (count[7] && ~(&Rows)) begin // Button pressed
                     next_count = 0;
                     NextState  = s5;
-                end else if (count[16] && (&Rows)) begin // Button released
+                end else if (count[7] && (&Rows)) begin // Button released
                     next_count = 0;
                     NextState  = s0;
                 end else begin
@@ -109,33 +112,34 @@ module KeypadFSM (
                 NextState  = s6;
 
                 // Decode key based on Row/Col
-                case ({Rows, Cols})
-                    // Row 0 (1110): Keys 1, 2, 3, A
-                    8'b1110_0111: NextSw2 = 4'h1;
-                    8'b1110_1011: NextSw2 = 4'h2;
-                    8'b1110_1101: NextSw2 = 4'h3;
-                    8'b1110_1110: NextSw2 = 4'hA;
+				// Decode key based on Row/Col (active-low: 0 means selected)
+				case ({Rows, Cols})
+					// Row 0 (0111): Keys 1, 2, 3, A
+					8'b1110_1110: NextSw2 = 4'h1;
+					8'b1110_1101: NextSw2 = 4'h2;
+					8'b1110_1011: NextSw2 = 4'h3;
+					8'b1110_0111: NextSw2 = 4'hA;
 
-                    // Row 1 (1101): Keys 4, 5, 6, B
-                    8'b1101_0111: NextSw2 = 4'h4;
-                    8'b1101_1011: NextSw2 = 4'h5;
-                    8'b1101_1101: NextSw2 = 4'h6;
-                    8'b1101_1110: NextSw2 = 4'hB;
+					// Row 1 (1101): Keys 4, 5, 6, B
+					8'b1101_1110: NextSw2 = 4'h4;
+					8'b1101_1101: NextSw2 = 4'h5;
+					8'b1101_1011: NextSw2 = 4'h6;
+					8'b1101_0111: NextSw2 = 4'hB;
 
-                    // Row 2 (1011): Keys 7, 8, 9, C
-                    8'b1011_0111: NextSw2 = 4'h7;
-                    8'b1011_1011: NextSw2 = 4'h8;
-                    8'b1011_1101: NextSw2 = 4'h9;
-                    8'b1011_1110: NextSw2 = 4'hC;
+					// Row 2 (1011): Keys 7, 8, 9, C
+					8'b1011_1110: NextSw2 = 4'h7;
+					8'b1011_1101: NextSw2 = 4'h8;
+					8'b1011_1011: NextSw2 = 4'h9;
+					8'b1011_0111: NextSw2 = 4'hC;
 
-                    // Row 3 (0111): Keys E, 0, F, D
-                    8'b0111_0111: NextSw2 = 4'hE;
-                    8'b0111_1011: NextSw2 = 4'h0;
-                    8'b0111_1101: NextSw2 = 4'hF;
-                    8'b0111_1110: NextSw2 = 4'hD;
+					// Row 3 (0111): Keys E, 0, F, D
+					8'b0111_1110: NextSw2 = 4'hE;
+					8'b0111_1101: NextSw2 = 4'h0;
+					8'b0111_1011: NextSw2 = 4'hF;
+					8'b0111_0111: NextSw2 = 4'hD;
 
-                    default: NextSw2 = 4'h0;
-                endcase
+					default: NextSw2 = 4'h0;
+				endcase
             end
 
             s6: begin // Wait for button release
@@ -146,10 +150,10 @@ module KeypadFSM (
             end
 
             s7: begin // Final debounce release
-                if (count[16] && ~(&Rows)) begin
+                if (count[7] && ~(&Rows)) begin
                     next_count = 0;
                     NextState  = s6;
-                end else if (count[16] && (&Rows)) begin
+                end else if (count[7] && (&Rows)) begin
                     next_count = 0;
                     NextState  = s0;
                 end else begin

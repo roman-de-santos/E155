@@ -328,14 +328,6 @@
             <Navigation>17</Navigation>
         </Message>
         <Message>
-            <ID>35901208</ID>
-            <Severity>16</Severity>
-            <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(30): </Dynamic>
-            <Dynamic>-1028076080</Dynamic>
-            <Navigation>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv</Navigation>
-            <Navigation>30</Navigation>
-        </Message>
-        <Message>
             <ID>35921014</ID>
             <Severity>1</Severity>
             <Dynamic>c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd(4): </Dynamic>
@@ -364,6 +356,14 @@
             <Dynamic>HSOSC(CLKHF_DIV=2'b11)</Dynamic>
             <Navigation>C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>756</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/sync.sv(1): </Dynamic>
+            <Dynamic>Sync</Dynamic>
+            <Navigation>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/sync.sv</Navigation>
+            <Navigation>1</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
@@ -409,20 +409,20 @@
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(102): </Dynamic>
+            <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(105): </Dynamic>
             <Dynamic>32</Dynamic>
-            <Dynamic>17</Dynamic>
+            <Dynamic>8</Dynamic>
             <Navigation>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv</Navigation>
-            <Navigation>102</Navigation>
+            <Navigation>105</Navigation>
         </Message>
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(156): </Dynamic>
+            <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(160): </Dynamic>
             <Dynamic>32</Dynamic>
-            <Dynamic>17</Dynamic>
+            <Dynamic>8</Dynamic>
             <Navigation>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv</Navigation>
-            <Navigation>156</Navigation>
+            <Navigation>160</Navigation>
         </Message>
         <Message>
             <ID>35001774</ID>
