@@ -404,3 +404,124 @@ C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/K
 -- Analyzing VHDL file C:/lscc/radiant/2024.2/cae_library/synthesis/vhdl/iCE40UP.vhd
 -- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv' (VERI-1482)
 -- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv' (VERI-1482)
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/standard.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/standard.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/std_1164.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/std_1164.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/mgc_qsim.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/mgc_qsim.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/numeric_bit.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/numeric_bit.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/numeric_std.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/numeric_std.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/textio.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/textio.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/std_logic_textio.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/std_logic_textio.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_attr.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_attr.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_misc.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_misc.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/math_real.vhd' (VHDL-1481)
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/mixed_lang_vltype.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/mixed_lang_vltype.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_arit.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_arit.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_sign.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_sign.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_unsi.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_unsi.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/synattr.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/synattr.vhd
+-- Analyzing Verilog file 'C:/lscc/radiant/2024.2/cae_library/synthesis/verilog/iCE40UP.v' (VERI-1482)
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/cae_library/synthesis/vhdl/iCE40UP.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/cae_library/synthesis/vhdl/iCE40UP.vhd
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv' (VERI-1482)
+C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(42): ERROR: 'sw1' is not declared (VERI-1128)
+C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(42): ERROR: 'sw2' is not declared (VERI-1128)
+C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(84): ERROR: module 'KeypadFSM_tb' is ignored due to previous errors (VERI-1072)
+-- Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv' ignored due to errors (VERI-1483)
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/standard.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/standard.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/std_1164.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/std_1164.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/mgc_qsim.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/mgc_qsim.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/numeric_bit.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/numeric_bit.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/numeric_std.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/numeric_std.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/textio.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/textio.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/std_logic_textio.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/std_logic_textio.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_attr.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_attr.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_misc.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_misc.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/math_real.vhd' (VHDL-1481)
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/mixed_lang_vltype.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/mixed_lang_vltype.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_arit.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_arit.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_sign.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_sign.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_unsi.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_unsi.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/synattr.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/synattr.vhd
+-- Analyzing Verilog file 'C:/lscc/radiant/2024.2/cae_library/synthesis/verilog/iCE40UP.v' (VERI-1482)
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/cae_library/synthesis/vhdl/iCE40UP.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/cae_library/synthesis/vhdl/iCE40UP.vhd
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv' (VERI-1482)
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/standard.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/standard.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/std_1164.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/std_1164.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/mgc_qsim.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/mgc_qsim.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/numeric_bit.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/numeric_bit.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/numeric_std.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/numeric_std.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/textio.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/textio.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/std_logic_textio.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/std_logic_textio.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_attr.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_attr.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_misc.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_misc.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/math_real.vhd' (VHDL-1481)
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/mixed_lang_vltype.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/mixed_lang_vltype.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_arit.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_arit.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_sign.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_sign.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_unsi.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/syn_unsi.vhd
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/synattr.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/ispfpga/vhdl_packages/synattr.vhd
+-- Analyzing Verilog file 'C:/lscc/radiant/2024.2/cae_library/synthesis/verilog/iCE40UP.v' (VERI-1482)
+-- Analyzing VHDL file 'C:/lscc/radiant/2024.2/cae_library/synthesis/vhdl/iCE40UP.vhd' (VHDL-1481)
+-- Analyzing VHDL file C:/lscc/radiant/2024.2/cae_library/synthesis/vhdl/iCE40UP.vhd
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv' (VERI-1482)
+-- Analyzing Verilog file 'C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv' (VERI-1482)

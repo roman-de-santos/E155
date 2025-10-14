@@ -3,8 +3,13 @@
 -reflib ovi_ice40up
 
 
+"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv" 
+"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv" 
+"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv" 
+"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv" 
 "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv" 
-"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv" 
+"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv" 
+"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv" 
 -sv
 -optionset VOPTDEBUG
 +noacc+pmi_work.*
