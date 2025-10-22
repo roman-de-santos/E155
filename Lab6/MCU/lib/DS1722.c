@@ -1,5 +1,6 @@
 // DS1722.c
-// TODO: <YOUR NAME>
-// TODO: <YOUR EMAIL>
-// TODO: <DATE>
-// TODO: <SHORT DESCRIPTION OF WHAT THIS FILE DOES>
+// TODO: Roman De Santos
+// rdesantos@hmc.edu
+// 10/21/25
+// Set up file for the DS1722 temp sensor
+

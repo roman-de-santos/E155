@@ -1,5 +1,5 @@
 // DS1722.h
-// TODO: <YOUR NAME>
-// TODO: <YOUR EMAIL>
-// TODO: <DATE>
-// TODO: <SHORT DESCRIPTION OF WHAT THIS FILE DOES>
+// Roman De Santos
+// rdesantos@hmc.edu
+// 10/21/25
+// Header file for the DS1722 temp sensor

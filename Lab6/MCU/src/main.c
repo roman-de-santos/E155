@@ -66,6 +66,7 @@ int main(void) {
   USART_TypeDef * USART = initUSART(USART1_ID, 125000);
 
   // TODO: Add SPI initialization code
+  void initSPI(10000, 0, 1);
 
   while(1) {
     /* Wait for ESP8266 to send a request.
