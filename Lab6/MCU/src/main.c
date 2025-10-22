@@ -22,6 +22,13 @@ char* webpageStart = "<!DOCTYPE html><html><head><title>E155 Web Server Demo Web
 	<body><h1>E155 Web Server Demo Webpage</h1>";
 char* ledStr = "<p>LED Control:</p><form action=\"ledon\"><input type=\"submit\" value=\"Turn the LED on!\"></form>\
 	<form action=\"ledoff\"><input type=\"submit\" value=\"Turn the LED off!\"></form>";
+
+char* tempStr = "<p>Temperature Resolution Control:</p><form action=\"8bit\"><input type=\"submit\" value=\"8 Bit!\"></form>\
+	<form action=\"9bit\"><input type=\"submit\" value=\"9 Bit!\"></form>\
+        <form action=\"10bit\"><input type=\"submit\" value=\"10 Bit!\"></form>\
+        <form action=\"11bit\"><input type=\"submit\" value=\"11 Bit!\"></form>\
+        <form action=\"12bit\"><input type=\"submit\" value=\"12 Bit!\"></form>";
+
 char* webpageEnd   = "</body></html>";
 
 //determines whether a given character sequence is in a char array request, returning 1 if present, -1 if not present
@@ -86,9 +93,10 @@ int main(void) {
     }
 
     // TODO: Add SPI code here for reading temperature
-  
+    float temp = 0;
+    temp = sendResGetTemp(char request[], int SPI_CE);
+    
     // Update string with current LED state
-  
     int led_status = updateLEDStatus(request);
 
     char ledStatusStr[20];
@@ -108,6 +116,10 @@ int main(void) {
     sendString(USART, ledStatusStr);
     sendString(USART, "</p>");
 
+    // Bit resolution buttons 
+    sendString(USART, tempStr);
+
+    sendString(USART, "<h2>Temperature</h2>");
   
     sendString(USART, webpageEnd);
   }
