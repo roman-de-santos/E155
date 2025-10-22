@@ -93,8 +93,11 @@ int main(void) {
     }
 
     // TODO: Add SPI code here for reading temperature
+    char tempStatusStr[20];
     float temp = 0;
-    temp = sendResGetTemp(char request[], int SPI_CE);
+    temp = sendResGetTemp(request, SPI_CE);
+
+    sprintf(tempStatusStr, "Temp: %.4f C", temp);
     
     // Update string with current LED state
     int led_status = updateLEDStatus(request);
@@ -120,6 +123,10 @@ int main(void) {
     sendString(USART, tempStr);
 
     sendString(USART, "<h2>Temperature</h2>");
+
+    sendString(USART, "<p>");
+    sendString(USART, tempStatusStr); // Update to be the formatted temperature
+    sendString(USART, "</p>");
   
     sendString(USART, webpageEnd);
   }
