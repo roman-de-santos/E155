@@ -37,16 +37,16 @@ int inString(char request[], char des[]) {
 	return -1;
 }
 
-int updateLEDStatus(char request[])
+int updateLEDStatus(char request[], int old_ledStatus)
 {
-	int led_status = 0;
+	int led_status = old_ledStatus;
 	// The request has been received. now process to determine whether to turn the LED on or off
 	if (inString(request, "ledoff")==1) {
-		digitalWrite(LED_PIN, PIO_LOW);
+		digitalWrite(LED_PIN, PIO_HIGH);
 		led_status = 0;
 	}
 	else if (inString(request, "ledon")==1) {
-		digitalWrite(LED_PIN, PIO_HIGH);
+		digitalWrite(LED_PIN, PIO_LOW);
 		led_status = 1;
 	}
 
@@ -82,7 +82,7 @@ int main(void) {
   USART_TypeDef * USART = initUSART(USART1_ID, 125000);
 
   // TODO: Add SPI initialization code
-  initSPI(10000, 0, 1);
+  initSPI(0b111, 0, 0);
 
   while(1) {
     /* Wait for ESP8266 to send a request.
@@ -109,7 +109,10 @@ int main(void) {
     sprintf(tempStatusStr, "Temp: %.4f C", temp);
     
     // Update string with current LED state
-    int led_status = updateLEDStatus(request);
+    int old_ledStatus;
+    int led_status = updateLEDStatus(request, old_ledStatus);
+
+    old_ledStatus = led_status;
 
     char ledStatusStr[20];
     if (led_status == 1)
@@ -128,7 +131,7 @@ int main(void) {
     sendString(USART, ledStatusStr);
     sendString(USART, "</p>");
 
-    // Bit resolution buttons 
+    //Bit resolution buttons 
     sendString(USART, tempStr);
 
     sendString(USART, "<h2>Temperature</h2>");

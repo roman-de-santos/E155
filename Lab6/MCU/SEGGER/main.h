@@ -12,10 +12,10 @@
 // Definitions
 ///////////////////////////////////////////////////////////////////////////////
 
-#define LED_PIN PA8 // LED pin for blinking
+#define LED_PIN PB7 // LED pin for blinking
 #define BUFF_LEN 32
 
-#define SPI_CE PA11
+#define SPI_CE PA5
 #define SPI_SCK PB3   // AF5
 #define SPI_MOSI PB5  // AF5
 #define SPI_MISO PB4  // AF5
@@ -25,6 +25,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 int inString(char request[], char des[]);
-int updateLEDStatus(char request[]);
+int updateLEDStatus(char request[], int old_ledStatus);
 
 #endif // MAIN_H

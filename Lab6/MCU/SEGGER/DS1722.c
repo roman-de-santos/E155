@@ -12,11 +12,11 @@ void CR_WriteResOnly(int res, int CE) {
     int normRes = res - 8;
     
     // Shift the bits into position (bits 4, 3, 2)
-    int shifted_res = res << 1;
+    int shifted_res = normRes << 1;
 
     // Combine with the base byte.
     // This sets Bit {1,1,1,0,res[2:0],0}
-    uint8_t data_byte = 0xE0 | shifted_res;
+    uint8_t data_byte = 0b11100000 | shifted_res;
     
     // Send the 16-bit command
     digitalWrite(CE, 1);       // CE Active-HIGH
@@ -60,19 +60,19 @@ float sendResGetTemp(char request[], int CE) {
     uint8_t msbTemp = 0;
 
     if (inString(request, "8bit")==1) {
-        CR_WriteResOnly(8, SPI_CE);
+        CR_WriteResOnly(8, CE);
     }
     else if (inString(request, "9bit")==1) {
-        CR_WriteResOnly(9, SPI_CE);
+        CR_WriteResOnly(9, CE);
     }
     else if (inString(request, "10bit")==1) {
-        CR_WriteResOnly(10, SPI_CE);
+        CR_WriteResOnly(10, CE);
     }
     else if (inString(request, "11bit")==1) {
-        CR_WriteResOnly(11, SPI_CE);
+        CR_WriteResOnly(11, CE);
     }
     else if (inString(request, "12bit")==1) {
-        CR_WriteResOnly(12, SPI_CE);
+        CR_WriteResOnly(12, CE);
     }
 
     // Read LSB and MSB registers after proper resolution has been set
@@ -81,12 +81,14 @@ float sendResGetTemp(char request[], int CE) {
     lsbTemp = spiSendReceive(0x00);
     digitalWrite(CE, 0);
 
-    digitalWrite(SPI_CE, 1);
-    spiSendReceive(0x00);
+    digitalWrite(CE, 1);
+    spiSendReceive(DS1722_MSB);
     msbTemp = spiSendReceive(0x00);
     digitalWrite(CE, 0);
 
     // Convert binary float to a decimal float
+    printf("Raw MSB=0x%02X, LSB=0x%02X\n", msbTemp, lsbTemp);
+
     return convertB2D(msbTemp, lsbTemp);
 }
 
