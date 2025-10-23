@@ -241,14 +241,14 @@ window.Quarto = {
 <p>Figure 3 shows the encoder pulses in yellow, the intterupt service in purple, and the polling in cyan.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PollingTime.png" class="img-fluid figure-img"></p>
+<p><img src="images/PollingTiming.png" class="img-fluid figure-img"></p>
 <figcaption>Figure 4: Timing Scope for Polling</figcaption>
 </figure>
 </div>
 <p>Figure 4 shows the fastest polling with our current STM32L432KC configuration (Running the polling in a while loop). And from the scope, we can see it takes 484 µs. Thus this only supports a maximum encoder pulse frequency of <span class="math inline">\(\frac{1}{T_polling} * 0.5 = 1033.06 Hz\)</span> since you must sample twice as fast as your highest frequency (Nyquist theorem).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/InterrupTime.png" class="img-fluid figure-img"></p>
+<p><img src="images/InterruptTime.png" class="img-fluid figure-img"></p>
 <figcaption>Figure 5: Timing Scope for Interrupts</figcaption>
 </figure>
 </div>
