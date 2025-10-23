@@ -72,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -130,7 +159,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation:</a></li>
   <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
-  <li><a href="#diagram" id="toc-diagram" class="nav-link" data-scroll-target="#diagram">Diagram</a></li>
   <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a></li>
   <li><a href="#ai-prototype-reflection" id="toc-ai-prototype-reflection" class="nav-link" data-scroll-target="#ai-prototype-reflection">AI Prototype Reflection</a></li>
   </ul>
@@ -204,9 +232,28 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>Inturrupting is more efficient and adaptable compared to manual highspeed polling. Interrups let you handle other tasks when not needed. For example in my code, I am able to calculate the revs/sec when an inturrupt is not taking up the processer’s time. Manual high speed polling takes up a lot of the processor’s compute time depending on how its designed. It is possible to context switch but it gets trickier if you are just running the polling in a while loop. You also need to be aware of the max frequency supported by manual polling which is 2<em>minimum_frequency (nyquist theorem). This means that for 2 rev’s per second you need to poll for at least 480</em>4<em>2 (ppm </em> state changes * 2) = 3840 times in one seconds. This also limits your upper range to only 2 revs/second, so if you want to increase this range you have to update the code. As you can see Interrupts are more flexible since they are not fixed and are triggered only as needed. This reduces the amount of updates the processor has to handle and allows the processor to have a more dynamic range of frequencies in our motor/encoder context.</p>
-</section>
-<section id="diagram" class="level2">
-<h2 class="anchored" data-anchor-id="diagram">Diagram</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/AllTime.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 3: Timing Scope for Interrupt routine, Polling, and encoder pulses</figcaption>
+</figure>
+</div>
+<p>Figure 3 shows the encoder pulses in yellow, the intterupt service in purple, and the polling in cyan.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/PollingTime.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 4: Timing Scope for Polling</figcaption>
+</figure>
+</div>
+<p>Figure 4 shows the fastest polling with our current STM32L432KC configuration (Running the polling in a while loop). And from the scope, we can see it takes 484 µs. Thus this only supports a maximum encoder pulse frequency of <span class="math inline">\(\frac{1}{T_polling} * 0.5 = 1033.06 Hz\)</span> since you must sample twice as fast as your highest frequency (Nyquist theorem).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/InterrupTime.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 5: Timing Scope for Interrupts</figcaption>
+</figure>
+</div>
+<p>Figure 5 shows that the interrupt service time is 148 µs and since we only inturrupt when there is a rising or falling edge, this means that our theoretical maximum frequency of encoder pulses we can detect is <span class="math inline">\(\frac{1}{T_interrupt} = 3378.38 Hz\)</span></p>
+<p>Thus we can see that the intterupt method supports a higher frequency of encoder pulses. ## Diagram</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Diagram.png" class="img-fluid figure-img"></p>
