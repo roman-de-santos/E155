@@ -6,7 +6,7 @@
 
 #include "DS1722.h"
 
-// Helper function to set the resolution of the thermometer and record the outputs in the MSB and LSB register
+// Helper function to set the resolution of the thermometer
 void CR_WriteResOnly(int res, int CE) {
     // Calculate the 3-bit resolution value (0-4)
     int normRes = res - 8;

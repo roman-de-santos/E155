@@ -28,9 +28,9 @@ void initSPI(int br, int cpol, int cpha) {
     GPIOB->OSPEEDR |= (GPIO_OSPEEDR_OSPEED3);
 
     // Set to AF05 for SPI alternate functions
-    GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL3, 5);
-    GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL4, 5);
-    GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL5, 5);
+    GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL3, 5U);
+    GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL4, 5U);
+    GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL5, 5U);
     
     SPI1->CR1 |= _VAL2FLD(SPI_CR1_BR, br); // Set baud rate divider
 

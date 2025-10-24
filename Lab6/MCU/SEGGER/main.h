@@ -12,13 +12,13 @@
 // Definitions
 ///////////////////////////////////////////////////////////////////////////////
 
-#define LED_PIN PB7 // LED pin for blinking
+#define LED_PIN PB0 // LED pin for blinking
 #define BUFF_LEN 32
 
-#define SPI_CE PA5
-#define SPI_SCK PB3   // AF5
-#define SPI_MOSI PB5  // AF5
-#define SPI_MISO PB4  // AF5
+#define SPI_CE PA5                //D9
+#define SPI_SCK PB3   // AF5      //D10
+#define SPI_MOSI PB5  // AF5      //D12
+#define SPI_MISO PB4  // AF5      //D13
 
 ///////////////////////////////////////////////////////////////////////////////
 // Function prototypes

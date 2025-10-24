@@ -35,11 +35,11 @@ Inturrupting is more efficient and adaptable compared to manual highspeed pollin
 
 Figure 3 shows the encoder pulses in yellow, the intterupt service in purple, and the polling in cyan. 
 
-![Figure 4: Timing Scope for Polling](images/PollingTime.png)
+![Figure 4: Timing Scope for Polling](images/PollingTiming.png)
 
 Figure 4 shows the fastest polling with our current STM32L432KC configuration (Running the polling in a while loop). And from the scope, we can see it takes 484 µs. Thus this only supports a maximum encoder pulse frequency of $\frac{1}{T_polling} * 0.5 = 1033.06 Hz$ since you must sample twice as fast as your highest frequency (Nyquist theorem).
 
-![Figure 5: Timing Scope for Interrupts](images/InterrupTime.png)
+![Figure 5: Timing Scope for Interrupts](images/InterruptTime.png)
 
 Figure 5 shows that the interrupt service time is 148 µs and since we only inturrupt when there is a rising or falling edge, this means that our theoretical maximum frequency of encoder pulses we can detect is  $\frac{1}{T_interrupt} = 3378.38 Hz$
 

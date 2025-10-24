@@ -68,13 +68,13 @@ int main(void) {
 
   pinMode(SPI_CE, GPIO_OUTPUT);
   pinMode(SPI_SCK, GPIO_ALT);
-  GPIOA->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL3, 5U);
+  GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL3, 5U);
 
   pinMode(SPI_MOSI, GPIO_ALT);
-  GPIOA->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL5, 5U);
+  GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL5, 5U);
 
   pinMode(SPI_MISO, GPIO_ALT);
-  GPIOA->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL4, 5U);
+  GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL4, 5U);
 
   RCC->APB2ENR |= (RCC_APB2ENR_TIM15EN);
   initTIM(TIM15);
@@ -82,7 +82,7 @@ int main(void) {
   USART_TypeDef * USART = initUSART(USART1_ID, 125000);
 
   // TODO: Add SPI initialization code
-  initSPI(0b111, 0, 0);
+  initSPI(0b111, 0, 1);
 
   while(1) {
     /* Wait for ESP8266 to send a request.
