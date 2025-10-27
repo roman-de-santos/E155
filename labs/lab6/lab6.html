@@ -128,6 +128,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation:</a></li>
+  <li><a href="#schematic" id="toc-schematic" class="nav-link" data-scroll-target="#schematic">Schematic</a></li>
+  <li><a href="#website" id="toc-website" class="nav-link" data-scroll-target="#website">Website</a></li>
+  <li><a href="#ai-prototype-reflection" id="toc-ai-prototype-reflection" class="nav-link" data-scroll-target="#ai-prototype-reflection">AI Prototype Reflection</a></li>
+  <li><a href="#results-and-discussion" id="toc-results-and-discussion" class="nav-link" data-scroll-target="#results-and-discussion">Results and Discussion</a></li>
   </ul>
 </nav>
     </div>
@@ -175,6 +180,57 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The goal of this lab is to to build a functional, internet-accessible Internet of Things (IoT) device. The main objective is to create a system where a user can remotely control an onboard LED and view ambient temperature via a custom webpage. To accomplish this, a C library was written using CMSIS device templates to implement the MCU’s Serial Peripheral Interface (SPI), which will be used to interface with a DS1722 temperature sensor. Concurrently, the MCU must communicate with an ESP8266 Wi-Fi module over a UART link to host and serve a dynamically generated HTML webpage. Finally, a logic analyzer was used to capture and analyze the SPI communication signals for debugging and documentation.</p>
+</section>
+<section id="technical-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation:</h2>
+<p>The source code can be found on my <a href="https://github.com/roman-de-santos/E155/tree/main/Lab6/MCU">GitHub</a></p>
+<p>The datasheet for the temperature sensor (DS1722) can be found <a href="https://hmc-e155.github.io/assets/doc/ds1722.pdf">here</a>.</p>
+</section>
+<section id="schematic" class="level2">
+<h2 class="anchored" data-anchor-id="schematic">Schematic</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Schematic.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 1: Lab 6 Schematic, By Roman De Santos, 10/26/25</figcaption>
+</figure>
+</div>
+</section>
+<section id="website" class="level2">
+<h2 class="anchored" data-anchor-id="website">Website</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Website.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 2: Lab 6 Website</figcaption>
+</figure>
+</div>
+<p>Above the website is shown. It allows the user to toggle the LED and change the resolution of the temperature sensor.</p>
+</section>
+<section id="ai-prototype-reflection" class="level2">
+<h2 class="anchored" data-anchor-id="ai-prototype-reflection">AI Prototype Reflection</h2>
+</section>
+<section id="results-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-discussion">Results and Discussion</h2>
+<p>OVERALL …</p>
+<p>The design met all design objectives requested.</p>
+<p>The image of the working set up can be found below.</p>
+<p>LLM prompt 1 fed to Gemini:</p>
+<blockquote class="blockquote">
+<p>I’m making a web portal to interface with a temperature sensor. Create a HTML page that looks good and is intuitive to show the temperature, control an LED, and change the precision of the readout.</p>
+</blockquote>
+<p>The HTML produced a very nice asthetic since it used some CSS to define a slider and card widget. The output can be seen below. The HTML generated is currently not functional since its using static values but it would be easy to update and integrate this html with our project.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/AIPrototypeWebsite.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 2: Lab 6 AI Prototype Website</figcaption>
+</figure>
+</div>
+<p>LLM prompt 2 fed to Gemini:</p>
+<blockquote class="blockquote">
+<p>Write me a C function to carry out a SPI transaction to retrieve a temperature reading from a DS1722 sensor. Make use of CMSIS libraries for the STM32L432KC.</p>
+</blockquote>
+<p>It got mostly there since the process is outlined pretty well online, but it forgot to write an initialization function for the SPI. The SPI temp read funciton also used the SPI busy bits in the control register but the LLM already added a waiting feature by checking flags in the spi_send_recieve function so it was a little redundant. But overall a good first pass.</p>
+<p>The output of both prompts from the LLM can be found on <a href="https://github.com/roman-de-santos/E155/blob/main/Lab6/AIPrototype">GitHub</a></p>
 
 
 </section>

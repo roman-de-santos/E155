@@ -21,6 +21,55 @@
     "text": "Lab 7: The Advanced Encryption Standard\n\n\nHardware accelerator to perform 128-bit AES encryption.\n\n\n\n\n\nOct 30, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 6: The Internet of Things and Serial Peripheral Interface\n\n\nInternet-accessible device to control an onboard LED and measure ambient temperature\n\n\n\n\n\nOct 23, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 5: Interrupts\n\n\nIn this lab you will use your MCU to determine the speed of a motor by reading from a quadrature encoder using interrupts.\n\n\n\n\n\nOct 9, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 4: Digital Audio\n\n\nIn this lab you will use your MCU to play music by using timers to generate square waves by toggling a GPIO pin at a specific frequency for specified durations.\n\n\n\n\n\nOct 2, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Keypad Scanner\n\n\nIn this lab you will learn how to use an FPGA to scan inputs from a keypad.\n\n\n\n\n\nSep 18, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 2: Multiplexed 7-Segment Display\n\n\nIn this lab you will learn how to use time multiplexing to efficiently use the I/O on your FPGA.\n\n\n\n\n\nSep 11, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 1: FPGA and MCU Setup and Testing\n\n\nIn this lab you will familiarize yourself with the microcontroller unit (MCU) and field-programmable gate array (FPGA) development boards we will be using this semester.\n\n\n\n\n\nSep 4, 2025\n\n\nRoman De Santos\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "labs/lab6/lab6.html",
+    "href": "labs/lab6/lab6.html",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
+    "section": "",
+    "text": "The goal of this lab is to to build a functional, internet-accessible Internet of Things (IoT) device. The main objective is to create a system where a user can remotely control an onboard LED and view ambient temperature via a custom webpage. To accomplish this, a C library was written using CMSIS device templates to implement the MCU’s Serial Peripheral Interface (SPI), which will be used to interface with a DS1722 temperature sensor. Concurrently, the MCU must communicate with an ESP8266 Wi-Fi module over a UART link to host and serve a dynamically generated HTML webpage. Finally, a logic analyzer was used to capture and analyze the SPI communication signals for debugging and documentation."
+  },
+  {
+    "objectID": "labs/lab6/lab6.html#introduction",
+    "href": "labs/lab6/lab6.html#introduction",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
+    "section": "",
+    "text": "The goal of this lab is to to build a functional, internet-accessible Internet of Things (IoT) device. The main objective is to create a system where a user can remotely control an onboard LED and view ambient temperature via a custom webpage. To accomplish this, a C library was written using CMSIS device templates to implement the MCU’s Serial Peripheral Interface (SPI), which will be used to interface with a DS1722 temperature sensor. Concurrently, the MCU must communicate with an ESP8266 Wi-Fi module over a UART link to host and serve a dynamically generated HTML webpage. Finally, a logic analyzer was used to capture and analyze the SPI communication signals for debugging and documentation."
+  },
+  {
+    "objectID": "labs/lab6/lab6.html#technical-documentation",
+    "href": "labs/lab6/lab6.html#technical-documentation",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
+    "section": "Technical Documentation:",
+    "text": "Technical Documentation:\nThe source code can be found on my GitHub\nThe datasheet for the temperature sensor (DS1722) can be found here."
+  },
+  {
+    "objectID": "labs/lab6/lab6.html#schematic",
+    "href": "labs/lab6/lab6.html#schematic",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
+    "section": "Schematic",
+    "text": "Schematic\n\n\n\nFigure 1: Lab 6 Schematic, By Roman De Santos, 10/26/25"
+  },
+  {
+    "objectID": "labs/lab6/lab6.html#website",
+    "href": "labs/lab6/lab6.html#website",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
+    "section": "Website",
+    "text": "Website\n\n\n\nFigure 2: Lab 6 Website\n\n\nAbove the website is shown. It allows the user to toggle the LED and change the resolution of the temperature sensor."
+  },
+  {
+    "objectID": "labs/lab6/lab6.html#ai-prototype-reflection",
+    "href": "labs/lab6/lab6.html#ai-prototype-reflection",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
+    "section": "AI Prototype Reflection",
+    "text": "AI Prototype Reflection"
+  },
+  {
+    "objectID": "labs/lab6/lab6.html#results-and-discussion",
+    "href": "labs/lab6/lab6.html#results-and-discussion",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nOVERALL …\nThe design met all design objectives requested.\nThe image of the working set up can be found below.\nLLM prompt 1 fed to Gemini:\n\nI’m making a web portal to interface with a temperature sensor. Create a HTML page that looks good and is intuitive to show the temperature, control an LED, and change the precision of the readout.\n\nThe HTML produced a very nice asthetic since it used some CSS to define a slider and card widget. The output can be seen below. The HTML generated is currently not functional since its using static values but it would be easy to update and integrate this html with our project.\n\n\n\nFigure 2: Lab 6 AI Prototype Website\n\n\nLLM prompt 2 fed to Gemini:\n\nWrite me a C function to carry out a SPI transaction to retrieve a temperature reading from a DS1722 sensor. Make use of CMSIS libraries for the STM32L432KC.\n\nIt got mostly there since the process is outlined pretty well online, but it forgot to write an initialization function for the SPI. The SPI temp read funciton also used the SPI busy bits in the control register but the LLM already added a waiting feature by checking flags in the spi_send_recieve function so it was a little redundant. But overall a good first pass.\nThe output of both prompts from the LLM can be found on GitHub"
+  },
+  {
     "objectID": "labs/lab4/lab4.html",
     "href": "labs/lab4/lab4.html",
     "title": "Lab 4: Digital Audio",
@@ -235,7 +284,7 @@
     "href": "labs/lab5/lab5.html#results-and-discussion",
     "title": "Lab 5: Interrupts",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\nOverall, the design was able to accuratly display the revs/sec of the motor. This is shown by the fact that at 10V input to the motor the design displays around 2 revs/sec which is accurate to this motor.\nThe design met all design objectives requested.\nThe video of the working set up can be found below.\n\n\n\nFigure 4: Final project\n\n\nI spent around 5 hours on this lab."
+    "text": "Results and Discussion\nOverall, the design was able to accuratly display the revs/sec of the motor. This is shown by the fact that at 10V input to the motor the design displays around 2 revs/sec which is accurate to this motor.\nThe design met all design objectives requested.\nThe image of the working set up can be found below.\n\n\n\nFigure 4: Final project\n\n\nI spent around 5 hours on this lab."
   },
   {
     "objectID": "labs/lab5/lab5.html#ai-prototype-reflection",
