@@ -54,7 +54,7 @@ Overall, the design was able to accuratly display the revs/sec of the motor. Thi
 
 The design met all design objectives requested.
 
-The video of the working set up can be found below.
+The image of the working set up can be found below.
 
 ![Figure 4: Final project](images/Project.jpg)
 
