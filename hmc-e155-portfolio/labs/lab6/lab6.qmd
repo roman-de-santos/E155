@@ -30,7 +30,7 @@ Above the website is shown. It allows the user to toggle the LED and change the 
 
 ## Logic Analyzer for SPI traces
 
-![Figure 3: Logic Analyzer for SPI traces](images/LogicAnalyzer.png)
+![Figure 3: Logic Analyzer for SPI traces](images/Logic.png)
 
 ## Results and Discussion
 
