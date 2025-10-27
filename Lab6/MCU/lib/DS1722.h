@@ -4,7 +4,10 @@
 // 10/21/25
 // Header file for the DS1722 temp sensor
 
-#include <stdint.h> // Include stdint header
+#ifndef DS1722_H
+#define DS1722_H
+
+#include "STM32L432KC.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 // Definitions
@@ -18,6 +21,8 @@
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
 
-float sendResGetTemp(char request[]);
+float sendResGetTemp(char request[], int CE);
 float convertB2D(uint8_t lsb, uint8_t msb);
-void CR_WriteResOnly(int res, int SPI_CE);
+void CR_WriteResOnly(int res, int CE);
+
+#endif // DS1722_H

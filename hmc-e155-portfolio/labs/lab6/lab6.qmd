@@ -10,3 +10,28 @@ draft: false
 
 ## Introduction
 
+The goal of this lab is to to build a functional, internet-accessible Internet of Things (IoT) device. The main objective is to create a system where a user can remotely control an onboard LED and view ambient temperature via a custom webpage. To accomplish this, a C library was written using CMSIS device templates to implement the MCU's Serial Peripheral Interface (SPI), which will be used to interface with a DS1722 temperature sensor. Concurrently, the MCU must communicate with an ESP8266 Wi-Fi module over a UART link to host and serve a dynamically generated HTML webpage. Finally, a logic analyzer was used to capture and analyze the SPI communication signals for debugging and documentation.
+
+## Technical Documentation:
+
+The source code can be found on my [GitHub](https://github.com/roman-de-santos/E155/tree/main/Lab6/MCU)
+
+The datasheet for the temperature sensor (DS1722) can be found [here](https://hmc-e155.github.io/assets/doc/ds1722.pdf).
+
+## Schematic
+
+![Figure 1: Lab 6 Schematic, By Roman De Santos, 10/26/25](images/Schematic.png)
+
+## Website
+
+## AI Prototype Reflection
+
+LLM prompt 1 fed to Gemini: 
+
+>I’m making a web portal to interface with a temperature sensor. Create a HTML page that looks good and is intuitive to show the temperature, control an LED, and change the precision of the readout.
+
+LLM prompt 2 fed to Gemini:
+
+>
+
+The output of the LLM can be found on [GitHub](https://github.com/roman-de-santos/E155/blob/main/Lab5/AIPrototype/GeminiOutput.pdf)

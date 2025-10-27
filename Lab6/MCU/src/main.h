@@ -8,14 +8,23 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include "STM32L432KC.h"
+///////////////////////////////////////////////////////////////////////////////
+// Definitions
+///////////////////////////////////////////////////////////////////////////////
 
-#define LED_PIN PA3 // LED pin for blinking on Port B pin 3
+#define LED_PIN PB0 // LED pin for blinking
 #define BUFF_LEN 32
 
-#define SPI_CE PA11
-#define SPI_SCK PB3
-#define SPI_MOSI PB5
-#define SPI_MISO PB4
+#define SPI_CE PA5                //D9
+#define SPI_SCK PB3   // AF5      //D10
+#define SPI_MOSI PB5  // AF5      //D12
+#define SPI_MISO PB4  // AF5      //D13
+
+///////////////////////////////////////////////////////////////////////////////
+// Function prototypes
+///////////////////////////////////////////////////////////////////////////////
+
+int inString(char request[], char des[]);
+int updateLEDStatus(char request[], int old_ledStatus);
 
 #endif // MAIN_H
