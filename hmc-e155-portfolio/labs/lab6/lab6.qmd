@@ -28,11 +28,13 @@ The datasheet for the temperature sensor (DS1722) can be found [here](https://hm
 
 Above the website is shown. It allows the user to toggle the LED and change the resolution of the temperature sensor.
 
-## AI Prototype Reflection
-
 ## Results and Discussion
 
-OVERALL ...
+The design implemented meets all the design constraints requested. The STM is able to communicate via UART with the ESP to host the webserver. The webpage correctly toggles the LED and shows the correct status of the LED. The STM also correctly communicates with the DS1722 temperature sensor via SPI. The design correctly toggles and displays the different temperature resolutions.
+
+I spent 12 hours on this lab.
+
+## AI Prototype Reflection
 
 The design met all design objectives requested.
 
