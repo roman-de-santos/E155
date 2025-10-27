@@ -56,18 +56,18 @@
     "text": "Website\n\n\n\nFigure 2: Lab 6 Website\n\n\nAbove the website is shown. It allows the user to toggle the LED and change the resolution of the temperature sensor."
   },
   {
-    "objectID": "labs/lab6/lab6.html#ai-prototype-reflection",
-    "href": "labs/lab6/lab6.html#ai-prototype-reflection",
-    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
-    "section": "AI Prototype Reflection",
-    "text": "AI Prototype Reflection"
-  },
-  {
     "objectID": "labs/lab6/lab6.html#results-and-discussion",
     "href": "labs/lab6/lab6.html#results-and-discussion",
     "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\nOVERALL …\nThe design met all design objectives requested.\nThe image of the working set up can be found below.\nLLM prompt 1 fed to Gemini:\n\nI’m making a web portal to interface with a temperature sensor. Create a HTML page that looks good and is intuitive to show the temperature, control an LED, and change the precision of the readout.\n\nThe HTML produced a very nice asthetic since it used some CSS to define a slider and card widget. The output can be seen below. The HTML generated is currently not functional since its using static values but it would be easy to update and integrate this html with our project.\n\n\n\nFigure 2: Lab 6 AI Prototype Website\n\n\nLLM prompt 2 fed to Gemini:\n\nWrite me a C function to carry out a SPI transaction to retrieve a temperature reading from a DS1722 sensor. Make use of CMSIS libraries for the STM32L432KC.\n\nIt got mostly there since the process is outlined pretty well online, but it forgot to write an initialization function for the SPI. The SPI temp read funciton also used the SPI busy bits in the control register but the LLM already added a waiting feature by checking flags in the spi_send_recieve function so it was a little redundant. But overall a good first pass.\nThe output of both prompts from the LLM can be found on GitHub"
+    "text": "Results and Discussion\nThe design implemented meets all the design constraints requested. The STM is able to communicate via UART with the ESP to host the webserver. The webpage correctly toggles the LED and shows the correct status of the LED. The STM also correctly communicates with the DS1722 temperature sensor via SPI. The design correctly toggles and displays the different temperature resolutions.\nI spent 12 hours on this lab."
+  },
+  {
+    "objectID": "labs/lab6/lab6.html#ai-prototype-reflection",
+    "href": "labs/lab6/lab6.html#ai-prototype-reflection",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
+    "section": "AI Prototype Reflection",
+    "text": "AI Prototype Reflection\nThe design met all design objectives requested.\nThe image of the working set up can be found below.\nLLM prompt 1 fed to Gemini:\n\nI’m making a web portal to interface with a temperature sensor. Create a HTML page that looks good and is intuitive to show the temperature, control an LED, and change the precision of the readout.\n\nThe HTML produced a very nice asthetic since it used some CSS to define a slider and card widget. The output can be seen below. The HTML generated is currently not functional since its using static values but it would be easy to update and integrate this html with our project.\n\n\n\nFigure 2: Lab 6 AI Prototype Website\n\n\nLLM prompt 2 fed to Gemini:\n\nWrite me a C function to carry out a SPI transaction to retrieve a temperature reading from a DS1722 sensor. Make use of CMSIS libraries for the STM32L432KC.\n\nIt got mostly there since the process is outlined pretty well online, but it forgot to write an initialization function for the SPI. The SPI temp read funciton also used the SPI busy bits in the control register but the LLM already added a waiting feature by checking flags in the spi_send_recieve function so it was a little redundant. But overall a good first pass.\nThe output of both prompts from the LLM can be found on GitHub"
   },
   {
     "objectID": "labs/lab4/lab4.html",
