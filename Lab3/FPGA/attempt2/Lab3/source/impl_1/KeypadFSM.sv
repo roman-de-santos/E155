@@ -27,7 +27,7 @@ module KeypadFSM (
             State     <= s0;
             Sw1       <= 4'd0;
             Sw2       <= 4'd0;
-            Cols      <= 4'b0111;
+            Cols      <= 4'b1000; //inv
             count     <= 17'd0;
         end else begin
             State     <= NextState;
@@ -52,10 +52,10 @@ module KeypadFSM (
 				next_count = 0;
 				if (~(&Rows)) begin       // Key pressed
 					NextState = s4;
-					NextCols   = 4'b0111;
+					NextCols   = 4'b1000; // inv
 				end else begin
 					NextState = s1;
-					NextCols   = 4'b1011;
+					NextCols   = 4'b0100; // inv
 				end
 			end
 
@@ -64,10 +64,10 @@ module KeypadFSM (
 				next_count = 0;
 				if (~(&Rows)) begin
 					NextState = s4;
-					NextCols   = 4'b1011;
+					NextCols   = 4'b0100; //inv
 				end else begin
 					NextState = s2;
-					NextCols   = 4'b1101;
+					NextCols   = 4'b0010; // inv
 				end
 			end
 
@@ -75,10 +75,10 @@ module KeypadFSM (
 				next_count = 0;
 				if (~(&Rows)) begin
 					NextState = s4;
-					NextCols   = 4'b1101;
+					NextCols   = 4'b0010; // inv
 				end else begin
 					NextState = s3;
-					NextCols   = 4'b1110;
+					NextCols   = 4'b0001; //inv
 				end
 			end
 
@@ -86,10 +86,10 @@ module KeypadFSM (
 				next_count = 0;
 				if (~(&Rows)) begin
 					NextState = s4;
-					NextCols   = 4'b1110;
+					NextCols   = 4'b0001;
 				end else begin
 					NextState = s0;
-					NextCols   = 4'b0111;
+					NextCols   = 4'b1000;
 				end
 			end
 
@@ -113,7 +113,7 @@ module KeypadFSM (
 
                 // Decode key based on Row/Col
 				// Decode key based on Row/Col (active-low: 0 means selected)
-				case ({Rows, Cols})
+				case ({~Rows, ~Cols})
 					// Row 0 (0111): Keys 1, 2, 3, A
 					8'b1110_1110: NextSw2 = 4'h1;
 					8'b1110_1101: NextSw2 = 4'h2;

@@ -6,9 +6,9 @@ I/O cells:      18
                                cell     count   Res Usage(%)
                                CCU2        17          100.0
                             FD1P3XZ        56          100.0
-                              HSOSC         1          100.0
+                         HSOSC_CORE         1          100.0
                                  IB         5          100.0
-                               LUT4        74          100.0
+                               LUT4        73          100.0
                                  OB        13          100.0
 SUB MODULES
                             DispMux         1
@@ -16,7 +16,7 @@ SUB MODULES
                           KeypadFSM         1
                             SegDisp         1
                                Sync         1
-                              TOTAL       171
+                              TOTAL       170
 ----------------------------------------------------------------------
 Report for cell KeypadFSM.v1
 Instance Path : keypad1
@@ -24,8 +24,8 @@ Instance Path : keypad1
                                cell     count   Res Usage(%)
                                 FA2         5           29.4
                             FD1P3XZ        28           50.0
-                               LUT4        54           73.0
-                              TOTAL        87
+                               LUT4        53           72.6
+                              TOTAL        86
 ----------------------------------------------------------------------
 Report for cell Sync.v1
 Instance Path : sync1
@@ -40,7 +40,7 @@ Instance Path : DSevSeg
                                cell     count   Res Usage(%)
                                 FA2        12           70.6
                             FD1P3XZ        24           42.9
-                               LUT4        19           25.7
+                               LUT4        19           26.0
 SUB MODULES
                             DispMux         1
                             SegDisp         1
@@ -52,12 +52,12 @@ Instance Path : DSevSeg.DispMux1
                                cell     count   Res Usage(%)
                                 FA2        12           70.6
                             FD1P3XZ        24           42.9
-                               LUT4        12           16.2
+                               LUT4        12           16.4
                               TOTAL        48
 ----------------------------------------------------------------------
 Report for cell SegDisp.v1
 Instance Path : DSevSeg.DispDecoder
                                   Cell usage:
                                cell     count   Res Usage(%)
-                               LUT4         7            9.5
+                               LUT4         7            9.6
                               TOTAL         7

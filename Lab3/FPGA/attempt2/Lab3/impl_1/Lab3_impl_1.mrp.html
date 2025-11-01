@@ -48,22 +48,22 @@ Device:  iCE40UP5K
 Package: SG48
 Performance Grade:  High-Performance_1.2V
 
-Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
-Mapped on: Mon Oct 13 17:54:46 2025
+Mapper:    version Radiant Software (64-bit) 2025.1.0.39.0
+Mapped on: Thu Oct 30 13:04:16 2025
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
 
-Command line:   map -pdc C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/atte
-     mpt2/Lab3/source/impl_1/FPGApins.pdc -i Lab3_impl_1_syn.udb -o
-     Lab3_impl_1_map.udb -mp Lab3_impl_1.mrp -hierrpt -gui -msgset C:/Users/rdes
-     antos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/promote.xml
+Command line:   map -pdc C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/L
+     ab3/source/impl_1/FPGApins.pdc -i Lab3_impl_1_syn.udb -o
+     Lab3_impl_1_map.udb -mp Lab3_impl_1.mrp -hierrpt -gui -msgset
+     C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/promote.xml
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
 
    Number of slice registers:  56 out of  5280 (1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           117 out of  5280 (2%)
-      Number of logic LUT4s:              75
+   Number of LUT4s:           116 out of  5280 (2%)
+      Number of logic LUT4s:              74
       Number of inserted feedthru LUT4s:   8
       Number of ripple logic:             17 (34 LUT4s)
    Number of IO sites used:   18 out of 39 (46%)
@@ -88,13 +88,12 @@ Command line:   map -pdc C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/atte
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  1
-      Net IntOsc: 45 loads, 45 rising, 0 falling (Driver: Pin
-     hf_osc.osc_inst/CLKHF)
+      Net IntOsc: 45 loads, 45 rising, 0 falling (Driver: Pin hf_osc/CLKHF)
    Number of Clock Enables:  4
       Net VCC_net: 1 loads, 0 SLICEs
-      Net keypad1.n563: 8 loads, 8 SLICEs
       Net keypad1.n74[5]: 8 loads, 8 SLICEs
-      Net keypad1.n560: 4 loads, 4 SLICEs
+      Net keypad1.n578: 4 loads, 4 SLICEs
+      Net keypad1.n575: 8 loads, 8 SLICEs
    Number of LSRs:  2
       Net Reset_c_N_52: 32 loads, 32 SLICEs
       Net DSevSeg.DispMux1.n68: 12 loads, 12 SLICEs
@@ -106,9 +105,9 @@ Command line:   map -pdc C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/atte
       Net keypad1.n74[4]: 12 loads
       Net keypad1.n74[7]: 12 loads
       Net keypad1.n74[5]: 11 loads
-      Net keypad1.n563: 8 loads
+      Net keypad1.n575: 8 loads
+      Net DSevSeg.SegInput[2]: 7 loads
       Net En2_c: 7 loads
-      Net keypad1.n11: 7 loads
 
    Number of warnings:  0
    Number of criticals: 0
@@ -163,12 +162,12 @@ Command line:   map -pdc C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/atte
 
 <A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
 
-Block hf_osc.vlo_inst was optimized away.
+Block i1 was optimized away.
 
 <A name="mrp_osc"></A><B><U><big>OSC Summary</big></U></B>
 
 OSC 1:                                 Pin/Node Value
-  OSC Instance Name:                            hf_osc.osc_inst
+  OSC Instance Name:                            hf_osc
   Power UP:                            NODE     VCC_net
   Enable Signal:                       NODE     VCC_net
   OSC Output:                          NODE     IntOsc
@@ -176,7 +175,7 @@ OSC 1:                                 Pin/Node Value
 
 <A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
 
-Instance Name: hf_osc.osc_inst
+Instance Name: hf_osc
          Type: HFOSC
 
 <A name="mrp_consum"></A><B><U><big>Constraint Summary</big></U></B>
@@ -189,7 +188,7 @@ Instance Name: hf_osc.osc_inst
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
    Peak Memory Usage: 69 MB
-Checksum -- map: f63e2d28a76a6efa75f9f3672101b6103b825955
+Checksum -- map: ec7ae20bc85a2df0b5e6b482d6e1d12971040e0c
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995
      AT&amp;T Corp.   All rights reserved.
@@ -197,7 +196,7 @@ Copyright (c) 1995-2001 Lucent
      Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems
      All rights reserved.
-Copyright (c) 2002-2024 Lattice Semiconductor
+Copyright (c) 2002-2025 Lattice Semiconductor
      Corporation,  All rights reserved.
 </PRE></DIV>
 <DIV id="toc" class="radiant"><span onmousemove="showTocList()">Contents</span>

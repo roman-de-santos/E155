@@ -1,0 +1,8 @@
+#Start recording tcl command: 10/30/2025 12:38:54
+#Project Location: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3; Project name: Lab3
+prj_open "C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Lab3.rdf"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+rvl_new_project -stage presyn
+rvl_close_project -force
+#Stop recording: 10/30/2025 20:29:10
