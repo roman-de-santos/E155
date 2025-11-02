@@ -1,0 +1,127 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/rdesantos/Downloads/Lab2/Sim
+vClockDiv
+Z2 2C:/Users/rdesantos/Downloads/Lab2/source/impl_1/SegDisp.sv|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top.sv|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/ClockDiv.sv|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top_tb.sv
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1757453670
+!i10b 1
+!s100 :`Bcif4eRiQ=fifmYFPFV3
+IS?a[?5?8_KWH1R9^fB]:X3
+S1
+R1
+Z5 w1757450771
+8C:/Users/rdesantos/Downloads/Lab2/source/impl_1/ClockDiv.sv
+FC:/Users/rdesantos/Downloads/Lab2/source/impl_1/ClockDiv.sv
+!i122 0
+L0 1 20
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z8 !s108 1757453670.000000
+Z9 !s107 C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top_tb.sv|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/ClockDiv.sv|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top.sv|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/SegDisp.sv|
+Z10 !s90 -reportprogress|300|-L|work|-sv|+noacc+pmi_work.*|+noacc+ovi_ice40up.*|-L|pmi_work|-L|ovi_ice40up|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/SegDisp.sv|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top.sv|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/ClockDiv.sv|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top_tb.sv|-work|qrun.out/work|-statslog|qrun.out/stats_log|-writesessionid|+qrun.out/top_dus|-csession=incr|
+!i113 0
+Z11 o-L work -sv +noacc+pmi_work.* +noacc+ovi_ice40up.* -L pmi_work -L ovi_ice40up -work qrun.out/work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 tCvgOpt 0
+n@clock@div
+Tqrun_opt
+R4
+VSo>coFC2;T8=AK6X`P^Df1
+04 6 4 work top_tb fast 0
+R0
+!s12f OEM25U4 
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-suppress vopt-7033 -L work +acc +noacc+pmi_work.* +noacc+ovi_ice40up.* -L pmi_work -L ovi_ice40up -work qrun.out/work
+R12
+nqrun_opt
+OL;O;2024.2;79
+vSegDisp
+R2
+R3
+R4
+!i10b 1
+!s100 6`5nk`bCIZIWXPc@[ilmz2
+I98J];zM7cf@j`clUV<3c:0
+S1
+R1
+R5
+8C:/Users/rdesantos/Downloads/Lab2/source/impl_1/SegDisp.sv
+FC:/Users/rdesantos/Downloads/Lab2/source/impl_1/SegDisp.sv
+!i122 0
+L0 10 27
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+n@seg@disp
+vtop
+R2
+R3
+R4
+!i10b 1
+!s100 5=]5]@H;[l0G[iYh9SEnB3
+IDDPHXT8Fmcdem;b_a_Q1]3
+S1
+R1
+w1757452794
+8C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top.sv
+FC:/Users/rdesantos/Downloads/Lab2/source/impl_1/top.sv
+!i122 0
+L0 1 25
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+vtop_tb
+R2
+R3
+R4
+!i10b 1
+!s100 K_XHKHG?fKB4`0GnkAVUh2
+InebRRaU[JKmNj^a4h03O=3
+S1
+R1
+w1757453610
+8C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top_tb.sv
+FC:/Users/rdesantos/Downloads/Lab2/source/impl_1/top_tb.sv
+!i122 0
+L0 1 78
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12

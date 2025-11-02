@@ -1,0 +1,113 @@
+m255
+K4
+z2
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/rdesantos/Downloads/Lab2/Sim
+vClockDiv
+2C:/Users/rdesantos/Downloads/Lab2/source/impl_1/ClockDiv.sv
+Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z2 !s110 1757452538
+!i10b 1
+!s100 :`Bcif4eRiQ=fifmYFPFV3
+I5hTkU5VF;9@7Y=E82ZD0M3
+S1
+R0
+Z3 w1757450771
+8C:/Users/rdesantos/Downloads/Lab2/source/impl_1/ClockDiv.sv
+FC:/Users/rdesantos/Downloads/Lab2/source/impl_1/ClockDiv.sv
+!i122 1
+L0 1 20
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z6 !s108 1757452538.000000
+!s107 C:/Users/rdesantos/Downloads/Lab2/source/impl_1/ClockDiv.sv|
+!s90 -reportprogress|300|-work|work|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/ClockDiv.sv|
+!i113 0
+Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+n@clock@div
+vSegDisp
+2C:/Users/rdesantos/Downloads/Lab2/source/impl_1/SegDisp.sv
+R1
+R2
+!i10b 1
+!s100 6`5nk`bCIZIWXPc@[ilmz2
+I[bY[;29WP<BaM[VHbzBaS1
+S1
+R0
+R3
+8C:/Users/rdesantos/Downloads/Lab2/source/impl_1/SegDisp.sv
+FC:/Users/rdesantos/Downloads/Lab2/source/impl_1/SegDisp.sv
+!i122 2
+L0 10 27
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/rdesantos/Downloads/Lab2/source/impl_1/SegDisp.sv|
+!s90 -reportprogress|300|-work|work|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/SegDisp.sv|
+!i113 0
+R7
+R8
+n@seg@disp
+vtop
+2C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top.sv
+R1
+R2
+!i10b 1
+!s100 CK222SA0UiNXhlNzcHdP93
+I?P`j_9iiW]lhgm1?NMiaH1
+S1
+R0
+R3
+8C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top.sv
+FC:/Users/rdesantos/Downloads/Lab2/source/impl_1/top.sv
+!i122 3
+L0 1 25
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top.sv|
+!s90 -reportprogress|300|-work|work|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top.sv|
+!i113 0
+R7
+R8
+vtop_tb
+2C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top_tb.sv
+R1
+R2
+!i10b 1
+!s100 97fDc:Kl7nJAhPlZ<WhWX1
+Id=:Bn;QPfdLgSXGXNoY]l0
+S1
+R0
+w1757452430
+8C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top_tb.sv
+FC:/Users/rdesantos/Downloads/Lab2/source/impl_1/top_tb.sv
+!i122 0
+L0 1 67
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top_tb.sv|
+!s90 -reportprogress|300|-work|work|C:/Users/rdesantos/Downloads/Lab2/source/impl_1/top_tb.sv|
+!i113 0
+R7
+R8
