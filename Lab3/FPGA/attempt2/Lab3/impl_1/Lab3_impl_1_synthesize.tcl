@@ -13,6 +13,8 @@ cd {C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/impl_1}
 # synthesize IPs
 # synthesize VMs
 # synthesize top design
+file delete -force -- Lab3_impl_1.vm Lab3_impl_1.ldc
+::radiant::runengine::run_engine_newmsg synthesis -f "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/impl_1/Lab3_impl_1_lattice.synproj" -logfile "Lab3_impl_1_lattice.srp"
 ::radiant::runengine::run_postsyn [list -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o Lab3_impl_1_syn.udb Lab3_impl_1.vm] [list Lab3_impl_1.ldc]
 
 } out]} {

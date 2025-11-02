@@ -1,63 +1,55 @@
 ----------------------------------------------------------------------
 Report for cell top.TECH
-Register bits:  56 of 5280 (1.061%)
-I/O cells:      18
+Register bits:  45 of 5280 (0.852%)
+I/O cells:      19
                                   Cell usage:
                                cell     count   Res Usage(%)
                                CCU2        17          100.0
-                            FD1P3XZ        56          100.0
-                         HSOSC_CORE         1          100.0
+                            FD1P3XZ        45          100.0
+                              HSOSC         1          100.0
                                  IB         5          100.0
-                               LUT4        73          100.0
-                                 OB        13          100.0
+                               LUT4        31          100.0
+                                 OB        14          100.0
 SUB MODULES
                             DispMux         1
                          DualSevSeg         1
                           KeypadFSM         1
-                            SegDisp         1
                                Sync         1
-                              TOTAL       170
+                              TOTAL       117
 ----------------------------------------------------------------------
 Report for cell KeypadFSM.v1
 Instance Path : keypad1
                                   Cell usage:
                                cell     count   Res Usage(%)
                                 FA2         5           29.4
-                            FD1P3XZ        28           50.0
-                               LUT4        53           72.6
-                              TOTAL        86
+                            FD1P3XZ        17           37.8
+                               LUT4        20           64.5
+                              TOTAL        42
 ----------------------------------------------------------------------
 Report for cell Sync.v1
 Instance Path : sync1
                                   Cell usage:
                                cell     count   Res Usage(%)
-                            FD1P3XZ         4            7.1
-                              TOTAL         4
+                            FD1P3XZ         4            8.9
+                               LUT4         1            3.2
+                              TOTAL         5
 ----------------------------------------------------------------------
 Report for cell DualSevSeg.v1
 Instance Path : DSevSeg
                                   Cell usage:
                                cell     count   Res Usage(%)
                                 FA2        12           70.6
-                            FD1P3XZ        24           42.9
-                               LUT4        19           26.0
+                            FD1P3XZ        24           53.3
+                               LUT4         9           29.0
 SUB MODULES
                             DispMux         1
-                            SegDisp         1
-                              TOTAL        57
+                              TOTAL        46
 ----------------------------------------------------------------------
 Report for cell DispMux.v1
 Instance Path : DSevSeg.DispMux1
                                   Cell usage:
                                cell     count   Res Usage(%)
                                 FA2        12           70.6
-                            FD1P3XZ        24           42.9
-                               LUT4        12           16.4
-                              TOTAL        48
-----------------------------------------------------------------------
-Report for cell SegDisp.v1
-Instance Path : DSevSeg.DispDecoder
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                               LUT4         7            9.6
-                              TOTAL         7
+                            FD1P3XZ        24           53.3
+                               LUT4         9           29.0
+                              TOTAL        45

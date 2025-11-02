@@ -4,7 +4,8 @@ module KeypadFSM (
     input  logic [3:0] Rows,
     output logic [3:0] Cols,
     output logic [3:0] Sw1,
-    output logic [3:0] Sw2
+    output logic [3:0] Sw2,
+	output logic       debug //remove debug
 );
 
     // FSM for scanning columns
@@ -15,7 +16,7 @@ module KeypadFSM (
     statetype State, NextState;
 
     // Delay counter for debouncing
-    logic [7:0] count, next_count;
+    logic [17:0] count, next_count;
 
     // FSM Sw logic
     logic [3:0] NextSw1, NextSw2;
@@ -28,7 +29,7 @@ module KeypadFSM (
             Sw1       <= 4'd0;
             Sw2       <= 4'd0;
             Cols      <= 4'b1000; //inv
-            count     <= 17'd0;
+            count     <= 18'd0;
         end else begin
             State     <= NextState;
             Sw1       <= NextSw1;
@@ -46,11 +47,13 @@ module KeypadFSM (
         NextSw2    = Sw2;
         NextCols   = Cols;
         next_count = count;
+		
+		debug <= (State == s0);
 
         case (State)
 			s0: begin
 				next_count = 0;
-				if (~(&Rows)) begin       // Key pressed
+				if (|Rows) begin       // Key pressed
 					NextState = s4;
 					NextCols   = 4'b1000; // inv
 				end else begin
@@ -62,7 +65,7 @@ module KeypadFSM (
 			s1: begin
 				
 				next_count = 0;
-				if (~(&Rows)) begin
+				if (|Rows) begin
 					NextState = s4;
 					NextCols   = 4'b0100; //inv
 				end else begin
@@ -73,7 +76,7 @@ module KeypadFSM (
 
 			s2: begin
 				next_count = 0;
-				if (~(&Rows)) begin
+				if (|Rows) begin
 					NextState = s4;
 					NextCols   = 4'b0010; // inv
 				end else begin
@@ -84,7 +87,7 @@ module KeypadFSM (
 
 			s3: begin
 				next_count = 0;
-				if (~(&Rows)) begin
+				if (|Rows) begin
 					NextState = s4;
 					NextCols   = 4'b0001;
 				end else begin
@@ -95,10 +98,10 @@ module KeypadFSM (
 
             s4: begin
                 // Debounce state
-                if (count[7] && ~(&Rows)) begin // Button pressed
+                if (count[18] && (|Rows)) begin // Button pressed
                     next_count = 0;
                     NextState  = s5;
-                end else if (count[7] && (&Rows)) begin // Button released
+                end else if (count[7] && ~(|Rows)) begin // Button released
                     next_count = 0;
                     NextState  = s0;
                 end else begin
@@ -143,17 +146,17 @@ module KeypadFSM (
             end
 
             s6: begin // Wait for button release
-                if (~(&Rows))
+                if (|Rows)
                     NextState = s6;
                 else
                     NextState = s7;
             end
 
             s7: begin // Final debounce release
-                if (count[7] && ~(&Rows)) begin
+                if (count[18] && (|Rows)) begin
                     next_count = 0;
                     NextState  = s6;
-                end else if (count[7] && (&Rows)) begin
+                end else if (count[7] && ~(|Rows)) begin
                     next_count = 0;
                     NextState  = s0;
                 end else begin

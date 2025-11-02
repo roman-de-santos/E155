@@ -3,7 +3,7 @@ module top(
 	input  logic [3:0] Rows,
 	output logic [3:0] Cols,
 	output logic [6:0] Seg,
-	output logic       En1, En2);
+	output logic       En1, En2, debug); // remove debug
 	
 	// Internal Nets
 	logic       IntOsc;
@@ -20,6 +20,6 @@ module top(
 	 DualSevSeg DSevSeg(IntOsc, ~Reset, Sw1, Sw2, Seg, En1, En2);
 	 
 	//Initialize keypad
-	KeypadFSM keypad1(IntOsc, ~Reset, dRows, Cols, Sw1, Sw2);
-
+	KeypadFSM keypad1(IntOsc, ~Reset, dRows, Cols, Sw1, Sw2, debug); //remove debug after
+ 
 endmodule

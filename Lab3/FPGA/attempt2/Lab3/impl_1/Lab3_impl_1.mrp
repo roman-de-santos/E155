@@ -8,7 +8,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
-Mapped on: Sat Nov  1 17:34:45 2025
+Mapped on: Sat Nov  1 23:27:21 2025
 
 Design Information
 ------------------
@@ -21,21 +21,21 @@ Command line:   map -pdc C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/atte
 Design Summary
 --------------
 
-   Number of slice registers:  56 out of  5280 (1%)
+   Number of slice registers:  45 out of  5280 (1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           116 out of  5280 (2%)
-      Number of logic LUT4s:              74
-      Number of inserted feedthru LUT4s:   8
+   Number of LUT4s:            71 out of  5280 (1%)
+      Number of logic LUT4s:              33
+      Number of inserted feedthru LUT4s:   4
       Number of ripple logic:             17 (34 LUT4s)
-   Number of IO sites used:   18 out of 39 (46%)
-      Number of IO sites used for general PIO: 18
+   Number of IO sites used:   19 out of 39 (49%)
+      Number of IO sites used for general PIO: 19
       Number of IO sites used for I3C: 0 out of 2 (0%)
       (note: If I3C is not used, its site can be used as general PIO)
-      Number of IO sites used for PIO+I3C: 18 out of 36 (50%)
+      Number of IO sites used for PIO+I3C: 19 out of 36 (53%)
       Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
       (note: If RGB LED drivers are not used, sites can be used as OD outputs,
        see TN1288 iCE40 LED Driver Usage Guide)
-      Number of IO sites used for PIO+I3C+OD+RGB: 18 out of 39 (46%)
+      Number of IO sites used for PIO+I3C+OD+RGB: 19 out of 39 (49%)
    Number of DSPs:             0 out of 8 (0%)
    Number of I2Cs:             0 out of 2 (0%)
    Number of High Speed OSCs:  1 out of 1 (100%)
@@ -49,17 +49,17 @@ Design Summary
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  1
-      Net IntOsc: 45 loads, 45 rising, 0 falling (Driver: Pin hf_osc/CLKHF)
-   Number of Clock Enables:  4
+      Net IntOsc: 34 loads, 34 rising, 0 falling (Driver: Pin
+     hf_osc.osc_inst/CLKHF)
+   Number of Clock Enables:  2
       Net VCC_net: 1 loads, 0 SLICEs
-      Net keypad1.n74[5]: 8 loads, 8 SLICEs
-      Net keypad1.n578: 4 loads, 4 SLICEs
-      Net keypad1.n575: 8 loads, 8 SLICEs
+      Net keypad1.n197: 4 loads, 4 SLICEs
    Number of LSRs:  2
-      Net Reset_c_N_52: 32 loads, 32 SLICEs
-      Net DSevSeg.DispMux1.n68: 12 loads, 12 SLICEs
+      Net Reset_c_N_45: 21 loads, 21 SLICEs
+      Net DSevSeg.DispMux1.n195: 12 loads, 12 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net Reset_c_N_52: 32 loads
+      Net Reset_c_N_45: 21 loads
+      Net n434: 18 loads
 
                                     Page 1
 
@@ -69,15 +69,14 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net keypad1.count[7]: 14 loads
-      Net DSevSeg.DispMux1.n68: 13 loads
-      Net keypad1.n31: 12 loads
-      Net keypad1.n74[4]: 12 loads
-      Net keypad1.n74[7]: 12 loads
-      Net keypad1.n74[5]: 11 loads
-      Net keypad1.n575: 8 loads
-      Net DSevSeg.SegInput[2]: 7 loads
-      Net En2_c: 7 loads
+      Net DSevSeg.DispMux1.n195: 12 loads
+      Net keypad1.count[7]: 11 loads
+      Net keypad1.n77[4]: 11 loads
+      Net keypad1.n77[2]: 6 loads
+      Net keypad1.n77[3]: 6 loads
+      Net keypad1.n77[1]: 5 loads
+      Net VCC_net: 5 loads
+      Net keypad1.n197: 4 loads
 
 
 
@@ -107,7 +106,9 @@ IO (PIO) Attributes
 +---------------------+-----------+-----------+-------+-------+-----------+
 | Rows[3]             | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| Reset               | INPUT     |           |       |       |           |
+| Reset               | INPUT     | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| debug               | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | En2                 | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
@@ -126,7 +127,6 @@ IO (PIO) Attributes
 | Seg[5]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | Seg[6]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 
                                     Page 2
 
@@ -136,6 +136,7 @@ IO (PIO) Attributes
 
 IO (PIO) Attributes (cont)
 --------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
 | Cols[0]             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | Cols[1]             | OUTPUT    |           |       |       |           |
@@ -145,16 +146,11 @@ IO (PIO) Attributes (cont)
 | Cols[3]             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
-Removed logic
--------------
-
-Block i1 was optimized away.
-
 OSC Summary
 -----------
 
 OSC 1:                                 Pin/Node Value
-  OSC Instance Name:                            hf_osc
+  OSC Instance Name:                            hf_osc.osc_inst
   Power UP:                            NODE     VCC_net
   Enable Signal:                       NODE     VCC_net
   OSC Output:                          NODE     IntOsc
@@ -163,13 +159,13 @@ OSC 1:                                 Pin/Node Value
 ASIC Components
 ---------------
 
-Instance Name: hf_osc
+Instance Name: hf_osc.osc_inst
          Type: HFOSC
 
 Constraint Summary
 ------------------
 
-   Total number of constraints: 23
+   Total number of constraints: 26
    Total number of constraints dropped: 0
 
 Run Time and Memory Usage
@@ -177,8 +173,12 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 68 MB
-Checksum -- map: e1c90dfbaa037d7b463371954246b17c34996d9
+   Peak Memory Usage: 67 MB
+Checksum -- map: 3f5080ddc130b6d0d6e017291ba55b7dcc7abec
+
+
+
+
 
 
 

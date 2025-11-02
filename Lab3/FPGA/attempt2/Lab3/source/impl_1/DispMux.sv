@@ -33,10 +33,9 @@ module DispMux(
 		if (Reset) begin
 			DivClk  <= 0;
 			counter <= 0;
-		end
-			
-			
+		end else begin
 		counter <= counter + 1;
+		end
 		
 		if (counter >= 23'd60000) begin
 			DivClk  <= ~DivClk;

@@ -15,10 +15,10 @@ module KeypadFSM_tb();
     KeypadFSM dut(clk, reset, rows, cols, sw1, sw2);
 
     // ensures rows = 4'b1111 when no key is pressed
-    pullup(rows[0]);
-    pullup(rows[1]);
-    pullup(rows[2]);
-    pullup(rows[3]);
+    pulldown(rows[0]);
+    pulldown(rows[1]);
+    pulldown(rows[2]);
+    pulldown(rows[3]);
 
     // keypad model using tranif
     genvar r, c;
@@ -68,7 +68,7 @@ module KeypadFSM_tb();
 		// press key at row=1, col=2
         keys[2][1] = 1;
 		#50000
-        check_key(4'h0, 4'h8, "Second key press");
+        check_key(4'h6, 4'h8, "Second key press");
 		
 		// release button
         keys[1][2] = 0;

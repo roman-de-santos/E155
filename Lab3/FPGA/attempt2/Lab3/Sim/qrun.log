@@ -261,3 +261,161 @@ run -all
 # ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(65)
 #    Time: 200122 ns  Iteration: 0  Instance: /KeypadFSM_tb
 # Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 65
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 21:38:38 on Nov 01,2025
+# Loading sv_std.std
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftajx13d".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftajx13d
+# run -all
+# Break key hit
+# Break at an unknown location
+# End time: 21:40:05 on Nov 01,2025, Elapsed time: 0:01:27
+# Errors: 0, Warnings: 2
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 21:40:55 on Nov 01,2025
+# Loading sv_std.std
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftqeke0f".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftqeke0f
+# run -all
+# ** Error: FAILED!: First key press -- got sw1=0 sw2=0 expected sw1=0 sw2=6 at time 50122.
+#    Time: 50122 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Error: FAILED!: Second key press -- got sw1=0 sw2=0 expected sw1=0 sw2=8 at time 150272.
+#    Time: 150272 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(78)
+#    Time: 200422 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 78
+add wave -position end  sim:/KeypadFSM_tb/dut/Clk
+add wave -position end  sim:/KeypadFSM_tb/dut/Reset
+add wave -position end  sim:/KeypadFSM_tb/dut/Rows
+add wave -position end  sim:/KeypadFSM_tb/dut/Cols
+add wave -position end  sim:/KeypadFSM_tb/dut/Sw1
+add wave -position end  sim:/KeypadFSM_tb/dut/Sw2
+add wave -position end  sim:/KeypadFSM_tb/dut/State
+add wave -position end  sim:/KeypadFSM_tb/dut/NextState
+add wave -position end  sim:/KeypadFSM_tb/dut/count
+add wave -position end  sim:/KeypadFSM_tb/dut/next_count
+add wave -position end  sim:/KeypadFSM_tb/dut/NextSw1
+add wave -position end  sim:/KeypadFSM_tb/dut/NextSw2
+add wave -position end  sim:/KeypadFSM_tb/dut/NextCols
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+run -all
+# ** Error: FAILED!: First key press -- got sw1=0 sw2=0 expected sw1=0 sw2=6 at time 50122.
+#    Time: 50122 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Error: FAILED!: Second key press -- got sw1=0 sw2=0 expected sw1=0 sw2=8 at time 150272.
+#    Time: 150272 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(78)
+#    Time: 200422 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 78
+# End time: 21:53:07 on Nov 01,2025, Elapsed time: 0:12:12
+# Errors: 2, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 21:54:03 on Nov 01,2025
+# Loading sv_std.std
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftg5hawq".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftg5hawq
+# run -all
+# ** Error: FAILED!: First key press -- got sw1=0 sw2=0 expected sw1=0 sw2=6 at time 50122.
+#    Time: 50122 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Error: FAILED!: Second key press -- got sw1=0 sw2=0 expected sw1=0 sw2=8 at time 150272.
+#    Time: 150272 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(78)
+#    Time: 200422 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 78
+# End time: 22:00:58 on Nov 01,2025, Elapsed time: 0:06:55
+# Errors: 2, Warnings: 2
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 22:01:49 on Nov 01,2025
+# Loading sv_std.std
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftkqbyxx".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftkqbyxx
+# run -all
+# PASSED!: First key press -- got sw1=0 sw2=6 expected sw1=0 Sw2=6 at time 50122.
+# ** Error: FAILED!: Second key press -- got sw1=6 sw2=8 expected sw1=0 sw2=8 at time 150272.
+#    Time: 150272 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(78)
+#    Time: 200422 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 78
+add wave -position end  sim:/KeypadFSM_tb/dut/Clk
+add wave -position end  sim:/KeypadFSM_tb/dut/Reset
+add wave -position end  sim:/KeypadFSM_tb/dut/Rows
+add wave -position end  sim:/KeypadFSM_tb/dut/Cols
+add wave -position end  sim:/KeypadFSM_tb/dut/Sw1
+add wave -position end  sim:/KeypadFSM_tb/dut/Sw2
+add wave -position end  sim:/KeypadFSM_tb/dut/State
+add wave -position end  sim:/KeypadFSM_tb/dut/NextState
+add wave -position end  sim:/KeypadFSM_tb/dut/count
+add wave -position end  sim:/KeypadFSM_tb/dut/next_count
+add wave -position end  sim:/KeypadFSM_tb/dut/NextSw1
+add wave -position end  sim:/KeypadFSM_tb/dut/NextSw2
+add wave -position end  sim:/KeypadFSM_tb/dut/NextCols
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+run -all
+# PASSED!: First key press -- got sw1=0 sw2=6 expected sw1=0 Sw2=6 at time 50122.
+# ** Error: FAILED!: Second key press -- got sw1=6 sw2=8 expected sw1=0 sw2=8 at time 150272.
+#    Time: 150272 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 46
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(78)
+#    Time: 200422 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 78
