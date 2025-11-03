@@ -1,5 +1,5 @@
-POSTSYN: Post Synthesis Process Radiant Software (64-bit) 2024.2.0.3.0
-Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o Lab3_impl_1_syn.udb -gui -msgset C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/promote.xml Lab3_impl_1.vm 
+POSTSYN: Post Synthesis Process Radiant Software (64-bit) 2025.1.0.39.0
+Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o Lab3_impl_1_syn.udb -gui -msgset C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/promote.xml Lab3_impl_1.vm 
    Architecture:     iCE40UP
    Device:           iCE40UP5K
    Package:          SG48
@@ -16,5 +16,5 @@ Writing output file 'Lab3_impl_1_syn.udb'.
 POSTSYN finished successfully.
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 43 MB
+Peak Memory Usage: 45 MB
 Checksum -- postsyn: a0fb50376761dc4d5780b23695d2885ad1e0c890
