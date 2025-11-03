@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Sat Nov  1 23:27:07 2025
+Sun Nov  2 16:24:32 2025
 
 
 Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/impl_1/Lab3_impl_1_lattice.synproj -logfile Lab3_impl_1_lattice.srp -gui -msgset C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/promote.xml 
@@ -184,16 +184,15 @@ Top module language type = Verilog.
 Top module name (Verilog, mixed language): top
 INFO <35901018> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/top.sv(1): compiling module top. VERI-1018
 INFO <35901018> - synthesis: C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC(CLKHF_DIV=2'b11). VERI-1018
+WARNING <35901209> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/top.sv(31): expression size 32 truncated to fit in target size 16. VERI-1209
 INFO <35901018> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/sync.sv(1): compiling module Sync. VERI-1018
 INFO <35901018> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/dualsevseg.sv(12): compiling module DualSevSeg. VERI-1018
 INFO <35901018> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/dispmux.sv(14): compiling module DispMux. VERI-1018
 WARNING <35901209> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/dispmux.sv(37): expression size 32 truncated to fit in target size 23. VERI-1209
 INFO <35901018> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/segdisp.sv(10): compiling module SegDisp. VERI-1018
 INFO <35901018> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(1): compiling module KeypadFSM. VERI-1018
-WARNING <35908216> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(101): index 18 is out of range [17:0] for count. VERI-1216
 WARNING <35901209> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(108): expression size 32 truncated to fit in target size 18. VERI-1209
-WARNING <35908216> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(156): index 18 is out of range [17:0] for count. VERI-1216
-WARNING <35901209> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(163): expression size 32 truncated to fit in target size 18. VERI-1209
+WARNING <35901209> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(175): expression size 32 truncated to fit in target size 18. VERI-1209
 [Parameter Setting Section Start]
 
 	[Parameter Settings for Instance(s): hf_osc]
@@ -202,7 +201,7 @@ WARNING <35901209> - synthesis: c:/users/rdesantos/documents/github/e155/lab3/fp
 
 [Parameter Setting Section End]
 INFO <35001774> - synthesis: Extracted state machine for register '\keypad1/State' with one-hot encoding
-State machine has 5 reachable states with original encodings of:
+State machine has 8 reachable states with original encodings of:
 
  000 
 
@@ -214,62 +213,65 @@ State machine has 5 reachable states with original encodings of:
 
  100 
 
+ 101 
+
+ 110 
+
+ 111 
+
 original encoding -> new encoding (one-hot encoding)
 
- 000 -> 00001
+ 000 -> 00000001
 
- 001 -> 00010
+ 001 -> 00000010
 
- 010 -> 00100
+ 010 -> 00000100
 
- 011 -> 01000
+ 011 -> 00001000
 
- 100 -> 10000
+ 100 -> 00010000
+
+ 101 -> 00100000
+
+ 110 -> 01000000
+
+ 111 -> 10000000
 
 
 
 
-CRITICAL <35001747> - synthesis: Bit(s) of register \keypad1/State_FSM stuck at '0': 7, 5
-CRITICAL <35001747> - synthesis: Bit(s) of register \keypad1/State_FSM stuck at '0': 6
-WARNING <35935040> - synthesis: Register \keypad1/Sw1_i0 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \keypad1/Sw2_i0 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \keypad1/Sw2_i3 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \keypad1/Sw2_i2 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \keypad1/Sw2_i1 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \keypad1/Sw1_i3 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \keypad1/Sw1_i2 clock is stuck at Zero. VDB-5040
-WARNING <35935040> - synthesis: Register \keypad1/Sw1_i1 clock is stuck at Zero. VDB-5040
 
 ################### Begin Area Report (top)######################
-Number of register bits => 45 of 5280 (0 % )
-CCU2 => 17
-FD1P3XZ => 45
+Number of register bits => 73 of 5280 (1 % )
+CCU2 => 26
+FD1P3XZ => 73
 HSOSC => 1
 IB => 5
-LUT4 => 31
+LUT4 => 91
 OB => 14
 ################### End Area Report ##################
 Number of odd-length carry chains : 1
-Number of even-length carry chains : 1
+Number of even-length carry chains : 2
 
 ################### Begin Clock Report ######################
 Clock Nets
-Number of Clocks: 1
+Number of Clocks: 2
   Net : IntOsc, loads : 0
+  Net : ce_100hz, loads : 1
 Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : DSevSeg/DispMux1/n195, loads : 36
-  Net : Reset_c_N_45, loads : 21
-  Net : DSevSeg/DispMux1/n408, loads : 16
+  Net : DSevSeg/DispMux1/n352, loads : 36
+  Net : Reset_c_N_69, loads : 33
+  Net : n347, loads : 24
+  Net : DSevSeg/DispMux1/n724, loads : 16
+  Net : keypad1/count[7], loads : 14
   Net : DSevSeg/DispMux1/n68, loads : 14
-  Net : DSevSeg/DispMux1/n635, loads : 13
-  Net : DSevSeg/DispMux1/n97[21], loads : 13
   Net : DSevSeg/DispMux1/n97[22], loads : 13
-  Net : keypad1/n436, loads : 12
-  Net : DSevSeg/DispMux1/n633, loads : 12
-  Net : DSevSeg/DispMux1/n97[19], loads : 12
+  Net : DSevSeg/DispMux1/n97[21], loads : 13
+  Net : DSevSeg/DispMux1/n1248, loads : 13
+  Net : keypad1/debug_c, loads : 12
 ################### End Clock Report ##################
 
 ################### Begin Constraint Report ######################
@@ -278,10 +280,10 @@ Constraint Summary:
   Total number of constraints dropped: 0
 ###################  End Constraint Report  ######################
 
-Peak Memory Usage: 94 MB
+Peak Memory Usage: 96 MB
 
 --------------------------------------------------------------
 Total CPU Time: 6 secs 
 Total REAL Time: 8 secs 
 --------------------------------------------------------------
-Checksum -- synthesis -- netlist: 50f4a5f38bd4d7a062f7b15e8d130e0d8693d83c
+Checksum -- synthesis -- netlist: 1d85f56692b38021c03fcdcecc3b97fa22966a0

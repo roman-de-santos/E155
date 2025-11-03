@@ -1,5 +1,3 @@
-`timescale 1 ns/1 ns
-
 module KeypadFSM_tb();
     logic           clk;    // system clock
     logic           reset;  // active high reset

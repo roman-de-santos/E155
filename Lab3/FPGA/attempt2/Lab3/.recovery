@@ -27,6 +27,9 @@
         <Source name="source/impl_1/top_tb.sv" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options VerilogStandard="System Verilog"/>
         </Source>
+        <Source name="source/impl_1/Sync_tb.sv" type="Verilog" type_short="Verilog" excluded="TRUE">
+            <Options VerilogStandard="System Verilog"/>
+        </Source>
         <Source name="Sim/Sim.spf" type="Simulation Project File" type_short="SPF">
             <Options/>
         </Source>

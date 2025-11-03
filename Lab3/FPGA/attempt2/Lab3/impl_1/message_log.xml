@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
-    <Task name="Export">
-        <Message>
-            <ID>1081100</ID>
-            <Severity>1</Severity>
-            <Dynamic>Bitstream authenticated.</Dynamic>
-        </Message>
-    </Task>
     <Task name="Synthesis">
         <Message>
             <ID>35935050</ID>
@@ -358,6 +351,15 @@
             <Navigation>756</Navigation>
         </Message>
         <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/top.sv(31): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>16</Dynamic>
+            <Navigation>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/top.sv</Navigation>
+            <Navigation>31</Navigation>
+        </Message>
+        <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
             <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/sync.sv(1): </Dynamic>
@@ -407,17 +409,6 @@
             <Navigation>1</Navigation>
         </Message>
         <Message>
-            <ID>35908216</ID>
-            <Severity>16</Severity>
-            <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(101): </Dynamic>
-            <Dynamic>18</Dynamic>
-            <Dynamic>17</Dynamic>
-            <Dynamic>0</Dynamic>
-            <Dynamic>count</Dynamic>
-            <Navigation>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv</Navigation>
-            <Navigation>101</Navigation>
-        </Message>
-        <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
             <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(108): </Dynamic>
@@ -427,24 +418,13 @@
             <Navigation>108</Navigation>
         </Message>
         <Message>
-            <ID>35908216</ID>
-            <Severity>16</Severity>
-            <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(156): </Dynamic>
-            <Dynamic>18</Dynamic>
-            <Dynamic>17</Dynamic>
-            <Dynamic>0</Dynamic>
-            <Dynamic>count</Dynamic>
-            <Navigation>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv</Navigation>
-            <Navigation>156</Navigation>
-        </Message>
-        <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(163): </Dynamic>
+            <Dynamic>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv(175): </Dynamic>
             <Dynamic>32</Dynamic>
             <Dynamic>18</Dynamic>
             <Navigation>c:/users/rdesantos/documents/github/e155/lab3/fpga/attempt2/lab3/source/impl_1/keypadfsm.sv</Navigation>
-            <Navigation>163</Navigation>
+            <Navigation>175</Navigation>
         </Message>
         <Message>
             <ID>35001774</ID>
@@ -452,65 +432,12 @@
             <Dynamic>\keypad1/State</Dynamic>
             <Dynamic>one-hot</Dynamic>
         </Message>
+    </Task>
+    <Task name="Export">
         <Message>
-            <ID>35001747</ID>
-            <Severity>256</Severity>
-            <Dynamic>\keypad1/State_FSM</Dynamic>
-            <Dynamic>7, 5</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>256</Severity>
-            <Dynamic>\keypad1/State_FSM</Dynamic>
-            <Dynamic>6</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\keypad1/Sw1_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\keypad1/Sw2_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\keypad1/Sw2_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\keypad1/Sw2_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\keypad1/Sw2_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\keypad1/Sw1_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\keypad1/Sw1_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\keypad1/Sw1_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
         </Message>
     </Task>
 </BaliMessageLog>

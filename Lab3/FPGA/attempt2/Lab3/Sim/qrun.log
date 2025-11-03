@@ -419,3 +419,704 @@ run -all
 # ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(78)
 #    Time: 200422 ns  Iteration: 0  Instance: /KeypadFSM_tb
 # Break in Module KeypadFSM_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 78
+# End time: 23:30:28 on Nov 01,2025, Elapsed time: 1:28:39
+# Errors: 1, Warnings: 0
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 12:58:10 on Nov 02,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3722) C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(14): [TFMPC] - Missing connection for port 'debug'.
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlft9w3wm8".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft9w3wm8
+# run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(65)
+#    Time: 200122 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 65
+add wave -position end  sim:/top_tb/dut/Reset
+add wave -position end  sim:/top_tb/dut/Rows
+add wave -position end  sim:/top_tb/dut/Cols
+add wave -position end  sim:/top_tb/dut/Seg
+add wave -position end  sim:/top_tb/dut/En1
+add wave -position end  sim:/top_tb/dut/En2
+add wave -position end  sim:/top_tb/dut/debug
+add wave -position end  sim:/top_tb/dut/IntOsc
+add wave -position end  sim:/top_tb/dut/Sw1
+add wave -position end  sim:/top_tb/dut/Sw2
+add wave -position end  sim:/top_tb/dut/dRows
+add wave -position end  sim:/top_tb/dut/sync1/Clk
+add wave -position end  sim:/top_tb/dut/sync1/Reset
+add wave -position end  sim:/top_tb/dut/sync1/Rows
+add wave -position end  sim:/top_tb/dut/sync1/dRows
+add wave -position end  sim:/top_tb/dut/sync1/Sync0
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3722) C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(14): [TFMPC] - Missing connection for port 'debug'.
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(65)
+#    Time: 200122 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 65
+add wave -position end  sim:/top_tb/dut/DSevSeg/Reset
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3722) C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(14): [TFMPC] - Missing connection for port 'debug'.
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(65)
+#    Time: 200122 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 65
+# End time: 13:03:49 on Nov 02,2025, Elapsed time: 0:05:39
+# Errors: 0, Warnings: 3
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 13:04:39 on Nov 02,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3722) C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(14): [TFMPC] - Missing connection for port 'debug'.
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftdang80".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftdang80
+# run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(66)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 66
+add wave -position end  sim:/top_tb/dut/sync1/Clk
+add wave -position end  sim:/top_tb/dut/sync1/Reset
+add wave -position end  sim:/top_tb/dut/sync1/Rows
+add wave -position end  sim:/top_tb/dut/sync1/dRows
+add wave -position end  sim:/top_tb/dut/sync1/Sync0
+add wave -position end  sim:/top_tb/dut/keypad1/Clk
+add wave -position end  sim:/top_tb/dut/keypad1/Reset
+add wave -position end  sim:/top_tb/dut/keypad1/Rows
+add wave -position end  sim:/top_tb/dut/keypad1/Cols
+add wave -position end  sim:/top_tb/dut/keypad1/Sw1
+add wave -position end  sim:/top_tb/dut/keypad1/Sw2
+add wave -position end  sim:/top_tb/dut/keypad1/debug
+add wave -position end  sim:/top_tb/dut/keypad1/State
+add wave -position end  sim:/top_tb/dut/keypad1/NextState
+add wave -position end  sim:/top_tb/dut/keypad1/count
+add wave -position end  sim:/top_tb/dut/keypad1/next_count
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw1
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw2
+add wave -position end  sim:/top_tb/dut/keypad1/NextCols
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3722) C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(14): [TFMPC] - Missing connection for port 'debug'.
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(66)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 66
+# End time: 13:08:13 on Nov 02,2025, Elapsed time: 0:03:34
+# Errors: 0, Warnings: 3
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 13:08:58 on Nov 02,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3722) C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(14): [TFMPC] - Missing connection for port 'debug'.
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftf2a4gz".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftf2a4gz
+# run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(66)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 66
+add wave -position end  sim:/top_tb/dut/Reset
+add wave -position end  sim:/top_tb/dut/Rows
+add wave -position end  sim:/top_tb/dut/Cols
+add wave -position end  sim:/top_tb/dut/Seg
+add wave -position end  sim:/top_tb/dut/En1
+add wave -position end  sim:/top_tb/dut/En2
+add wave -position end  sim:/top_tb/dut/debug
+add wave -position end  sim:/top_tb/dut/IntOsc
+add wave -position end  sim:/top_tb/dut/Sw1
+add wave -position end  sim:/top_tb/dut/Sw2
+add wave -position end  sim:/top_tb/dut/dRows
+add wave -position end  sim:/top_tb/dut/sync1/Clk
+add wave -position end  sim:/top_tb/dut/sync1/Reset
+add wave -position end  sim:/top_tb/dut/sync1/Rows
+add wave -position end  sim:/top_tb/dut/sync1/dRows
+add wave -position end  sim:/top_tb/dut/sync1/Sync0
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3722) C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(14): [TFMPC] - Missing connection for port 'debug'.
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(66)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 66
+add wave -position end  sim:/top_tb/dut/keypad1/Clk
+add wave -position end  sim:/top_tb/dut/keypad1/Reset
+add wave -position end  sim:/top_tb/dut/keypad1/Rows
+add wave -position end  sim:/top_tb/dut/keypad1/Cols
+add wave -position end  sim:/top_tb/dut/keypad1/Sw1
+add wave -position end  sim:/top_tb/dut/keypad1/Sw2
+add wave -position end  sim:/top_tb/dut/keypad1/debug
+add wave -position end  sim:/top_tb/dut/keypad1/State
+add wave -position end  sim:/top_tb/dut/keypad1/NextState
+add wave -position end  sim:/top_tb/dut/keypad1/count
+add wave -position end  sim:/top_tb/dut/keypad1/next_count
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw1
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw2
+add wave -position end  sim:/top_tb/dut/keypad1/NextCols
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3722) C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(14): [TFMPC] - Missing connection for port 'debug'.
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(66)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 66
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 14
+# ** Warning: (vsim-3722) C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(14): [TFMPC] - Missing connection for port 'debug'.
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(66)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 66
+# End time: 14:24:46 on Nov 02,2025, Elapsed time: 1:15:48
+# Errors: 0, Warnings: 3
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 14:26:10 on Nov 02,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 15
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftz9csg1".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftz9csg1
+# run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(61)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 61
+add wave -position end  sim:/top_tb/dut/Reset
+add wave -position end  sim:/top_tb/dut/Rows
+add wave -position end  sim:/top_tb/dut/Cols
+add wave -position end  sim:/top_tb/dut/Seg
+add wave -position end  sim:/top_tb/dut/En1
+add wave -position end  sim:/top_tb/dut/En2
+add wave -position end  sim:/top_tb/dut/debug
+add wave -position end  sim:/top_tb/dut/IntOsc
+add wave -position end  sim:/top_tb/dut/Sw1
+add wave -position end  sim:/top_tb/dut/Sw2
+add wave -position end  sim:/top_tb/dut/dRows
+add wave -position end  sim:/top_tb/dut/keypad1/Clk
+add wave -position end  sim:/top_tb/dut/keypad1/Reset
+add wave -position end  sim:/top_tb/dut/keypad1/Rows
+add wave -position end  sim:/top_tb/dut/keypad1/Cols
+add wave -position end  sim:/top_tb/dut/keypad1/Sw1
+add wave -position end  sim:/top_tb/dut/keypad1/Sw2
+add wave -position end  sim:/top_tb/dut/keypad1/debug
+add wave -position end  sim:/top_tb/dut/keypad1/State
+add wave -position end  sim:/top_tb/dut/keypad1/NextState
+add wave -position end  sim:/top_tb/dut/keypad1/count
+add wave -position end  sim:/top_tb/dut/keypad1/next_count
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw1
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw2
+add wave -position end  sim:/top_tb/dut/keypad1/NextCols
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 15
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(61)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 61
+# End time: 14:36:43 on Nov 02,2025, Elapsed time: 0:10:33
+# Errors: 0, Warnings: 1
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 14:37:48 on Nov 02,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 15
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'Cols'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut/sync1 File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv Line: 17
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'Cols'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut/keypad1 File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv Line: 23
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftqqvzm0".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftqqvzm0
+# run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(61)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 61
+add wave -position end  sim:/top_tb/dut/keypad1/Clk
+add wave -position end  sim:/top_tb/dut/keypad1/Reset
+add wave -position end  sim:/top_tb/dut/keypad1/Rows
+add wave -position end  sim:/top_tb/dut/keypad1/Cols
+add wave -position end  sim:/top_tb/dut/keypad1/Sw1
+add wave -position end  sim:/top_tb/dut/keypad1/Sw2
+add wave -position end  sim:/top_tb/dut/keypad1/debug
+add wave -position end  sim:/top_tb/dut/keypad1/State
+add wave -position end  sim:/top_tb/dut/keypad1/NextState
+add wave -position end  sim:/top_tb/dut/keypad1/count
+add wave -position end  sim:/top_tb/dut/keypad1/next_count
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw1
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw2
+add wave -position end  sim:/top_tb/dut/keypad1/NextCols
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 15
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'Cols'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut/sync1 File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv Line: 17
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'Cols'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut/keypad1 File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv Line: 23
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(61)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 61
+add wave -position end  sim:/top_tb/dut/dCols
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 15
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'Cols'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut/sync1 File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv Line: 17
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'Cols'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut/keypad1 File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv Line: 23
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(61)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 61
+# End time: 14:51:23 on Nov 02,2025, Elapsed time: 0:13:35
+# Errors: 0, Warnings: 3
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 15:12:09 on Nov 02,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 15
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlfti9zkm0".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfti9zkm0
+# run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(61)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 61
+add wave -position end  sim:/top_tb/dut/Reset
+add wave -position end  sim:/top_tb/dut/Rows
+add wave -position end  sim:/top_tb/dut/Cols
+add wave -position end  sim:/top_tb/dut/Seg
+add wave -position end  sim:/top_tb/dut/En1
+add wave -position end  sim:/top_tb/dut/En2
+add wave -position end  sim:/top_tb/dut/debug
+add wave -position end  sim:/top_tb/dut/IntOsc
+add wave -position end  sim:/top_tb/dut/Sw1
+add wave -position end  sim:/top_tb/dut/Sw2
+add wave -position end  sim:/top_tb/dut/dRows
+add wave -position end  sim:/top_tb/dut/ce_counter
+add wave -position end  sim:/top_tb/dut/ce_100hz
+add wave -position end  sim:/top_tb/dut/keypad1/Clk
+add wave -position end  sim:/top_tb/dut/keypad1/Reset
+add wave -position end  sim:/top_tb/dut/keypad1/Rows
+add wave -position end  sim:/top_tb/dut/keypad1/Cols
+add wave -position end  sim:/top_tb/dut/keypad1/Sw1
+add wave -position end  sim:/top_tb/dut/keypad1/Sw2
+add wave -position end  sim:/top_tb/dut/keypad1/debug
+add wave -position end  sim:/top_tb/dut/keypad1/State
+add wave -position end  sim:/top_tb/dut/keypad1/NextState
+add wave -position end  sim:/top_tb/dut/keypad1/count
+add wave -position end  sim:/top_tb/dut/keypad1/next_count
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw1
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw2
+add wave -position end  sim:/top_tb/dut/keypad1/NextCols
+add wave -position end  sim:/top_tb/dut/sync1/Clk
+add wave -position end  sim:/top_tb/dut/sync1/Reset
+add wave -position end  sim:/top_tb/dut/sync1/Rows
+add wave -position end  sim:/top_tb/dut/sync1/dRows
+add wave -position end  sim:/top_tb/dut/sync1/Sync0
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 15
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(61)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 61
+# End time: 15:15:08 on Nov 02,2025, Elapsed time: 0:02:59
+# Errors: 0, Warnings: 1
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 15:15:56 on Nov 02,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 15
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlft3ft783".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft3ft783
+# run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(61)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 61
+add wave -position end  sim:/top_tb/dut/keypad1/Clk
+add wave -position end  sim:/top_tb/dut/keypad1/Reset
+add wave -position end  sim:/top_tb/dut/keypad1/Rows
+add wave -position end  sim:/top_tb/dut/keypad1/Cols
+add wave -position end  sim:/top_tb/dut/keypad1/Sw1
+add wave -position end  sim:/top_tb/dut/keypad1/Sw2
+add wave -position end  sim:/top_tb/dut/keypad1/debug
+add wave -position end  sim:/top_tb/dut/keypad1/State
+add wave -position end  sim:/top_tb/dut/keypad1/NextState
+add wave -position end  sim:/top_tb/dut/keypad1/count
+add wave -position end  sim:/top_tb/dut/keypad1/next_count
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw1
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw2
+add wave -position end  sim:/top_tb/dut/keypad1/NextCols
+add wave -position end  sim:/top_tb/dut/sync1/Clk
+add wave -position end  sim:/top_tb/dut/sync1/Reset
+add wave -position end  sim:/top_tb/dut/sync1/Rows
+add wave -position end  sim:/top_tb/dut/sync1/dRows
+add wave -position end  sim:/top_tb/dut/sync1/Sync0
+add wave -position end  sim:/top_tb/dut/ce_counter
+add wave -position end  sim:/top_tb/dut/ce_100hz
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 15
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(61)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 61
+# End time: 15:23:17 on Nov 02,2025, Elapsed time: 0:07:21
+# Errors: 0, Warnings: 1
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 15:24:15 on Nov 02,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 15
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftiszy8e".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftiszy8e
+# run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(61)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 61
+add wave -position end  sim:/top_tb/dut/keypad1/Clk
+add wave -position end  sim:/top_tb/dut/keypad1/Reset
+add wave -position end  sim:/top_tb/dut/keypad1/Rows
+add wave -position end  sim:/top_tb/dut/keypad1/Cols
+add wave -position end  sim:/top_tb/dut/keypad1/Sw1
+add wave -position end  sim:/top_tb/dut/keypad1/Sw2
+add wave -position end  sim:/top_tb/dut/keypad1/debug
+add wave -position end  sim:/top_tb/dut/keypad1/State
+add wave -position end  sim:/top_tb/dut/keypad1/NextState
+add wave -position end  sim:/top_tb/dut/keypad1/count
+add wave -position end  sim:/top_tb/dut/keypad1/next_count
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw1
+add wave -position end  sim:/top_tb/dut/keypad1/NextSw2
+add wave -position end  sim:/top_tb/dut/keypad1/NextCols
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 15
+run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(61)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 61
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   7
+#   Totals: Errors:   0, Warnings:   7
+# Error 31: Unable to unlink file "qrun.out/work/qrun_opt/_lib.qdb".
+# Error 31: Unable to unlink file "qrun.out/work/qrun_opt/_lib3_0.qdb".
+# Error 31: Unable to unlink file "qrun.out/work/qrun_opt/_lib3_0.qpg".
+# Error 31: Unable to unlink file "qrun.out/work/qrun_opt/_lib3_0.qtl".
+# Error 133: Unable to remove directory "qrun.out/work/qrun_opt".
+# Error 133: Unable to remove directory "qrun.out/work".
+# Error 133: Unable to remove directory "qrun.out".
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 15:41:26 on Nov 02,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 15
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftaeczsq".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftaeczsq
+# run -all
+# ** Note: $stop    : C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(61)
+#    Time: 200127 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 61
+# End time: 15:47:26 on Nov 02,2025, Elapsed time: 0:23:11
+# Errors: 0, Warnings: 1
+# End time: 15:47:51 on Nov 02,2025, Elapsed time: 0:06:25
+# Errors: 0, Warnings: 3

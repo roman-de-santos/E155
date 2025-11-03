@@ -1,23 +1,22 @@
-`timescale 1 ns/1 ns
-
-module KeypadFSM_tb();
+module top_tb();
     logic           clk;       // system clock
     logic           reset;     // active high reset
     tri     [3:0]   rows;      // 4-bit row input
     tri     [3:0]   cols;      // 4-bit column output
 	logic			en1, en2;  //display enable logic
+	logic           debug;
 
     // matrix of key presses: keys[row][col]
     logic [3:0][3:0] keys;
 
     // dut
-    top dut( reset, rows, cols, seg, en1, en2);
+    top dut( reset, rows, cols, seg, en1, en2, debug);
 
     // ensures rows = 4'b1111 when no key is pressed
-    pullup(rows[0]);
-    pullup(rows[1]);
-    pullup(rows[2]);
-    pullup(rows[3]);
+    pulldown(rows[0]);
+    pulldown(rows[1]);
+    pulldown(rows[2]);
+    pulldown(rows[3]);
 
     // keypad model using tranif
     genvar r, c;
@@ -30,20 +29,15 @@ module KeypadFSM_tb();
         end
     endgenerate
 
-    // generate clock
-    always begin
-        clk = 0; #5;
-        clk = 1; #5;
-    end
-
     // apply stimuli and check outputs
     initial begin
-        reset = 5;
+        reset = 0;
+		#5
 
         // no key pressed
         keys = '{default:0};
 
-        #22 reset = 0;
+        #22 reset = 1; //active high
 
         // press key at row=1, col=2
         keys[1][2] = 1;
@@ -65,10 +59,5 @@ module KeypadFSM_tb();
         #100 $stop;
     end
 
-    // add a timeout
-    initial begin
-        #260000; // wait 130 us
-        $error("Simulation did not complete in time.");
-        $stop;
-    end
+
 endmodule

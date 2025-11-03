@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.2.0.3.0
 
-Sat Nov  1 23:27:31 2025
+Sun Nov  2 16:24:57 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -52,7 +52,7 @@ create_clock -name {IntOsc} -period 166.667 [get_pins {hf_osc.osc_inst/CLKHF }]
 
 1.2  Constraint Coverage
 ---------------------------
-Constraint Coverage: 87.3646%
+Constraint Coverage: 36.9028%
 
 
 1.3  Overall Summary
@@ -70,10 +70,10 @@ Clocked but unconstrained timing start points
 -------------------------------------------------------------------
          Listing 4 Start Points         |           Type           
 -------------------------------------------------------------------
-keypad1/Cols_i0_i3/Q                    |          No required time
-keypad1/Cols_i0_i4/Q                    |          No required time
-keypad1/Cols_i0_i2/Q                    |          No required time
-keypad1/Cols_i0_i1/Q                    |          No required time
+sync1/dRows__i3/Q                       |          No required time
+sync1/dRows__i2/Q                       |          No required time
+sync1/dRows__i1/Q                       |          No required time
+sync1/dRows__i0/Q                       |          No required time
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing start po |                          
@@ -83,30 +83,21 @@ ints                                    |                         4
 
 Clocked but unconstrained timing end points
 -------------------------------------------------------------------
-         Listing 10 End Points          |           Type           
+          Listing 7 End Points          |           Type           
 -------------------------------------------------------------------
-{keypad1/State_FSM_i2/SR   keypad1/State_FSM_i3/SR}                           
-                                        |           No arrival time
-{keypad1/State_FSM_i4/SR   keypad1/State_FSM_i5/SR}                           
-                                        |           No arrival time
-{keypad1/count_120_127__i1/SR   keypad1/count_120_127__i2/SR}                           
-                                        |           No arrival time
-{keypad1/count_120_127__i8/SR   keypad1/count_120_127__i5/SR}                           
-                                        |           No arrival time
-{keypad1/count_120_127__i7/SR   keypad1/count_120_127__i6/SR}                           
-                                        |           No arrival time
-{keypad1/count_120_127__i4/SR   keypad1/count_120_127__i3/SR}                           
-                                        |           No arrival time
-{keypad1/Cols_i0_i3/SR   keypad1/Cols_i0_i4/SR}                           
-                                        |           No arrival time
-{keypad1/Cols_i0_i2/SR   keypad1/Cols_i0_i1/SR}                           
-                                        |           No arrival time
 sync1/dRows__i2/D                       |           No arrival time
 sync1/dRows__i3/D                       |           No arrival time
+{sync1/dRows__i3/SR   sync1/dRows__i2/SR}                           
+                                        |           No arrival time
+sync1/dRows__i0/D                       |           No arrival time
+sync1/dRows__i1/D                       |           No arrival time
+{sync1/dRows__i1/SR   sync1/dRows__i0/SR}                           
+                                        |           No arrival time
+ce_100hz_c/SR                           |           No arrival time
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
-ts                                      |                        15
+ts                                      |                         7
                                         |                          
 -------------------------------------------------------------------
 
@@ -134,19 +125,26 @@ Reset                                   |                     input
 debug                                   |                    output
 En2                                     |                    output
 En1                                     |                    output
-Cols[0]                                 |                    output
-Cols[1]                                 |                    output
+Seg[0]                                  |                    output
+Seg[1]                                  |                    output
 -------------------------------------------------------------------
                                         |                          
-Number of I/O ports without constraint  |                        12
+Number of I/O ports without constraint  |                        19
                                         |                          
 -------------------------------------------------------------------
 
 Nets without clock definition
 Define a clock on a top level port or a generated clock on a clock divider pin associated with this net(s).
---------------------------------------------------
-There is no instance satisfying reporting criteria
-
+-------------------------------------------------------------------
+            Listing 1 Net(s)            |        Source pin        
+-------------------------------------------------------------------
+ce_100hz                                |              ce_100hz_c/Q
+-------------------------------------------------------------------
+                                        |                          
+Number of clock nets without clock defi |                          
+nition                                  |                         1
+                                        |                          
+-------------------------------------------------------------------
 
 
 1.5  Combinational Loop
@@ -180,19 +178,23 @@ Clock Domain Crossing
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-DSevSeg/DispMux1/counter_121__i23/D      |  154.652 ns 
-DSevSeg/DispMux1/counter_121__i22/D      |  154.929 ns 
-DSevSeg/DispMux1/counter_121__i21/D      |  155.206 ns 
-DSevSeg/DispMux1/counter_121__i20/D      |  155.483 ns 
-DSevSeg/DispMux1/counter_121__i19/D      |  155.760 ns 
-DSevSeg/DispMux1/DivClk/D                |  155.842 ns 
-DSevSeg/DispMux1/counter_121__i18/D      |  156.037 ns 
-{DSevSeg/DispMux1/counter_121__i6/SR   DSevSeg/DispMux1/counter_121__i7/SR}              
-                                         |  156.093 ns 
-{DSevSeg/DispMux1/counter_121__i8/SR   DSevSeg/DispMux1/counter_121__i9/SR}              
-                                         |  156.093 ns 
-{DSevSeg/DispMux1/counter_121__i10/SR   DSevSeg/DispMux1/counter_121__i11/SR}              
-                                         |  156.093 ns 
+ce_counter_172__i15/SR                   |  153.859 ns 
+ce_counter_172__i0/SR                    |  153.938 ns 
+{ce_counter_172__i1/SR   ce_counter_172__i2/SR}              
+                                         |  153.938 ns 
+{ce_counter_172__i3/SR   ce_counter_172__i4/SR}              
+                                         |  153.938 ns 
+{ce_counter_172__i5/SR   ce_counter_172__i6/SR}              
+                                         |  153.938 ns 
+{ce_counter_172__i7/SR   ce_counter_172__i8/SR}              
+                                         |  153.938 ns 
+{ce_counter_172__i9/SR   ce_counter_172__i10/SR}              
+                                         |  153.938 ns 
+{ce_counter_172__i11/SR   ce_counter_172__i12/SR}              
+                                         |  153.938 ns 
+{ce_counter_172__i13/SR   ce_counter_172__i14/SR}              
+                                         |  153.938 ns 
+ce_100hz_c/D                             |  154.283 ns 
 -------------------------------------------------------
                                          |             
 Setup # of endpoints with negative slack:|           0 
@@ -215,901 +217,584 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i1/Q  (SLICE_R19C3A)
-Path End         : DSevSeg/DispMux1/counter_121__i23/D  (SLICE_R19C5D)
+Path Begin       : ce_counter_172__i10/Q  (SLICE_R17C4B)
+Path End         : ce_counter_172__i15/SR  (SLICE_R17C5A)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
-Logic Level      : 24
-Delay Ratio      : 32.1% (route), 67.9% (logic)
+Logic Level      : 5
+Delay Ratio      : 73.6% (route), 26.4% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 166.666 ns 
-Path Slack       : 154.651 ns  (Passed)
+Path Slack       : 153.858 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY               5.499                  5.499  25      
-DSevSeg/DispMux1/counter_121__i1/CK                          CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  26      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i1/CK->DSevSeg/DispMux1/counter_121__i1/Q
-                                          SLICE_R19C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
-DSevSeg/DispMux1/n23                                         NET DELAY               2.022                  8.909  1       
-DSevSeg/DispMux1/counter_121_add_4_1/C1->DSevSeg/DispMux1/counter_121_add_4_1/CO1
-                                          SLICE_R19C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-DSevSeg/DispMux1/n615                                        NET DELAY               0.000                  9.252  2       
-DSevSeg/DispMux1/counter_121_add_4_3/CI0->DSevSeg/DispMux1/counter_121_add_4_3/CO0
-                                          SLICE_R19C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-DSevSeg/DispMux1/n1115                                       NET DELAY               0.000                  9.529  2       
-DSevSeg/DispMux1/counter_121_add_4_3/CI1->DSevSeg/DispMux1/counter_121_add_4_3/CO1
-                                          SLICE_R19C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-DSevSeg/DispMux1/n617                                        NET DELAY               0.000                  9.806  2       
-DSevSeg/DispMux1/counter_121_add_4_5/CI0->DSevSeg/DispMux1/counter_121_add_4_5/CO0
-                                          SLICE_R19C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-DSevSeg/DispMux1/n1118                                       NET DELAY               0.000                 10.083  2       
-DSevSeg/DispMux1/counter_121_add_4_5/CI1->DSevSeg/DispMux1/counter_121_add_4_5/CO1
-                                          SLICE_R19C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-DSevSeg/DispMux1/n619                                        NET DELAY               0.000                 10.360  2       
-DSevSeg/DispMux1/counter_121_add_4_7/CI0->DSevSeg/DispMux1/counter_121_add_4_7/CO0
-                                          SLICE_R19C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-DSevSeg/DispMux1/n1121                                       NET DELAY               0.000                 10.637  2       
-DSevSeg/DispMux1/counter_121_add_4_7/CI1->DSevSeg/DispMux1/counter_121_add_4_7/CO1
-                                          SLICE_R19C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-DSevSeg/DispMux1/n621                                        NET DELAY               0.555                 11.469  2       
-DSevSeg/DispMux1/counter_121_add_4_9/CI0->DSevSeg/DispMux1/counter_121_add_4_9/CO0
-                                          SLICE_R19C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-DSevSeg/DispMux1/n1124                                       NET DELAY               0.000                 11.746  2       
-DSevSeg/DispMux1/counter_121_add_4_9/CI1->DSevSeg/DispMux1/counter_121_add_4_9/CO1
-                                          SLICE_R19C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-DSevSeg/DispMux1/n623                                        NET DELAY               0.000                 12.023  2       
-DSevSeg/DispMux1/counter_121_add_4_11/CI0->DSevSeg/DispMux1/counter_121_add_4_11/CO0
-                                          SLICE_R19C4B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-DSevSeg/DispMux1/n1127                                       NET DELAY               0.000                 12.300  2       
-DSevSeg/DispMux1/counter_121_add_4_11/CI1->DSevSeg/DispMux1/counter_121_add_4_11/CO1
-                                          SLICE_R19C4B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-DSevSeg/DispMux1/n625                                        NET DELAY               0.000                 12.577  2       
-DSevSeg/DispMux1/counter_121_add_4_13/CI0->DSevSeg/DispMux1/counter_121_add_4_13/CO0
-                                          SLICE_R19C4C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-DSevSeg/DispMux1/n1130                                       NET DELAY               0.000                 12.854  2       
-DSevSeg/DispMux1/counter_121_add_4_13/CI1->DSevSeg/DispMux1/counter_121_add_4_13/CO1
-                                          SLICE_R19C4C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-DSevSeg/DispMux1/n627                                        NET DELAY               0.000                 13.131  2       
-DSevSeg/DispMux1/counter_121_add_4_15/CI0->DSevSeg/DispMux1/counter_121_add_4_15/CO0
-                                          SLICE_R19C4D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-DSevSeg/DispMux1/n1133                                       NET DELAY               0.000                 13.408  2       
-DSevSeg/DispMux1/counter_121_add_4_15/CI1->DSevSeg/DispMux1/counter_121_add_4_15/CO1
-                                          SLICE_R19C4D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
-DSevSeg/DispMux1/n629                                        NET DELAY               0.555                 14.240  2       
-DSevSeg/DispMux1/counter_121_add_4_17/CI0->DSevSeg/DispMux1/counter_121_add_4_17/CO0
-                                          SLICE_R19C5A       CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
-DSevSeg/DispMux1/n1136                                       NET DELAY               0.000                 14.517  2       
-DSevSeg/DispMux1/counter_121_add_4_17/CI1->DSevSeg/DispMux1/counter_121_add_4_17/CO1
-                                          SLICE_R19C5A       CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
-DSevSeg/DispMux1/n631                                        NET DELAY               0.000                 14.794  2       
-DSevSeg/DispMux1/counter_121_add_4_19/CI0->DSevSeg/DispMux1/counter_121_add_4_19/CO0
-                                          SLICE_R19C5B       CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
-DSevSeg/DispMux1/n1139                                       NET DELAY               0.000                 15.071  2       
-DSevSeg/DispMux1/counter_121_add_4_19/CI1->DSevSeg/DispMux1/counter_121_add_4_19/CO1
-                                          SLICE_R19C5B       CIN1_TO_COUT1_DELAY     0.277                 15.348  2       
-DSevSeg/DispMux1/n633                                        NET DELAY               0.000                 15.348  2       
-DSevSeg/DispMux1/counter_121_add_4_21/CI0->DSevSeg/DispMux1/counter_121_add_4_21/CO0
-                                          SLICE_R19C5C       CIN0_TO_COUT0_DELAY     0.277                 15.625  2       
-DSevSeg/DispMux1/n1142                                       NET DELAY               0.000                 15.625  2       
-DSevSeg/DispMux1/counter_121_add_4_21/CI1->DSevSeg/DispMux1/counter_121_add_4_21/CO1
-                                          SLICE_R19C5C       CIN1_TO_COUT1_DELAY     0.277                 15.902  2       
-DSevSeg/DispMux1/n635                                        NET DELAY               0.000                 15.902  2       
-DSevSeg/DispMux1/counter_121_add_4_23/CI0->DSevSeg/DispMux1/counter_121_add_4_23/CO0
-                                          SLICE_R19C5D       CIN0_TO_COUT0_DELAY     0.277                 16.179  2       
-DSevSeg/DispMux1/n1145                                       NET DELAY               0.661                 16.840  2       
-DSevSeg/DispMux1/counter_121_add_4_23/D1->DSevSeg/DispMux1/counter_121_add_4_23/S1
-                                          SLICE_R19C5D       D1_TO_F1_DELAY          0.476                 17.316  1       
-DSevSeg/DispMux1/n97[22]                                     NET DELAY               0.000                 17.316  1       
-DSevSeg/DispMux1/counter_121__i23/D                          ENDPOINT                0.000                 17.316  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+ce_counter_172__i10/CK->ce_counter_172__i10/Q
+                                          SLICE_R17C4B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+ce_counter[10]                                               NET DELAY           2.617                  9.504  2       
+i7_4_lut/B->i7_4_lut/Z                    SLICE_R16C4A       C0_TO_F0_DELAY      0.449                  9.953  1       
+n17                                                          NET DELAY           2.485                 12.438  1       
+i9_4_lut/A->i9_4_lut/Z                    SLICE_R16C3A       B1_TO_F1_DELAY      0.476                 12.914  1       
+n1443                                                        NET DELAY           0.304                 13.218  1       
+i6_4_lut_adj_32/C->i6_4_lut_adj_32/Z      SLICE_R16C3B       C0_TO_F0_DELAY      0.476                 13.694  2       
+n645                                                         NET DELAY           0.304                 13.998  2       
+i1375_2_lut/A->i1375_2_lut/Z              SLICE_R16C3B       C1_TO_F1_DELAY      0.449                 14.447  9       
+n347                                                         NET DELAY           3.331                 17.778  9       
+ce_counter_172__i15/SR                                       ENDPOINT            0.000                 17.778  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                166.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                166.666  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY               5.499                172.165  25      
-{DSevSeg/DispMux1/counter_121__i22/CK   DSevSeg/DispMux1/counter_121__i23/CK}
-                                                             CLOCK PIN               0.000                172.165  1       
-                                                             Uncertainty          -(0.000)                172.165  
-                                                             Setup time           -(0.198)                171.967  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                             171.967  
-Arrival Time                                                                                            -(17.315)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                      154.651  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  26      
+ce_counter_172__i15/CK                                       CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.529)                171.636  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.636  
+Arrival Time                                                                                        -(17.777)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  153.858  
 
 
 
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i1/Q  (SLICE_R19C3A)
-Path End         : DSevSeg/DispMux1/counter_121__i22/D  (SLICE_R19C5D)
+Path Begin       : ce_counter_172__i10/Q  (SLICE_R17C4B)
+Path End         : ce_counter_172__i0/SR  (SLICE_R17C3A)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
-Logic Level      : 23
-Delay Ratio      : 32.9% (route), 67.1% (logic)
+Logic Level      : 5
+Delay Ratio      : 73.5% (route), 26.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 166.666 ns 
-Path Slack       : 154.928 ns  (Passed)
+Path Slack       : 153.937 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY               5.499                  5.499  25      
-DSevSeg/DispMux1/counter_121__i1/CK                          CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  26      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i1/CK->DSevSeg/DispMux1/counter_121__i1/Q
-                                          SLICE_R19C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
-DSevSeg/DispMux1/n23                                         NET DELAY               2.022                  8.909  1       
-DSevSeg/DispMux1/counter_121_add_4_1/C1->DSevSeg/DispMux1/counter_121_add_4_1/CO1
-                                          SLICE_R19C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-DSevSeg/DispMux1/n615                                        NET DELAY               0.000                  9.252  2       
-DSevSeg/DispMux1/counter_121_add_4_3/CI0->DSevSeg/DispMux1/counter_121_add_4_3/CO0
-                                          SLICE_R19C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-DSevSeg/DispMux1/n1115                                       NET DELAY               0.000                  9.529  2       
-DSevSeg/DispMux1/counter_121_add_4_3/CI1->DSevSeg/DispMux1/counter_121_add_4_3/CO1
-                                          SLICE_R19C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-DSevSeg/DispMux1/n617                                        NET DELAY               0.000                  9.806  2       
-DSevSeg/DispMux1/counter_121_add_4_5/CI0->DSevSeg/DispMux1/counter_121_add_4_5/CO0
-                                          SLICE_R19C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-DSevSeg/DispMux1/n1118                                       NET DELAY               0.000                 10.083  2       
-DSevSeg/DispMux1/counter_121_add_4_5/CI1->DSevSeg/DispMux1/counter_121_add_4_5/CO1
-                                          SLICE_R19C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-DSevSeg/DispMux1/n619                                        NET DELAY               0.000                 10.360  2       
-DSevSeg/DispMux1/counter_121_add_4_7/CI0->DSevSeg/DispMux1/counter_121_add_4_7/CO0
-                                          SLICE_R19C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-DSevSeg/DispMux1/n1121                                       NET DELAY               0.000                 10.637  2       
-DSevSeg/DispMux1/counter_121_add_4_7/CI1->DSevSeg/DispMux1/counter_121_add_4_7/CO1
-                                          SLICE_R19C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-DSevSeg/DispMux1/n621                                        NET DELAY               0.555                 11.469  2       
-DSevSeg/DispMux1/counter_121_add_4_9/CI0->DSevSeg/DispMux1/counter_121_add_4_9/CO0
-                                          SLICE_R19C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-DSevSeg/DispMux1/n1124                                       NET DELAY               0.000                 11.746  2       
-DSevSeg/DispMux1/counter_121_add_4_9/CI1->DSevSeg/DispMux1/counter_121_add_4_9/CO1
-                                          SLICE_R19C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-DSevSeg/DispMux1/n623                                        NET DELAY               0.000                 12.023  2       
-DSevSeg/DispMux1/counter_121_add_4_11/CI0->DSevSeg/DispMux1/counter_121_add_4_11/CO0
-                                          SLICE_R19C4B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-DSevSeg/DispMux1/n1127                                       NET DELAY               0.000                 12.300  2       
-DSevSeg/DispMux1/counter_121_add_4_11/CI1->DSevSeg/DispMux1/counter_121_add_4_11/CO1
-                                          SLICE_R19C4B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-DSevSeg/DispMux1/n625                                        NET DELAY               0.000                 12.577  2       
-DSevSeg/DispMux1/counter_121_add_4_13/CI0->DSevSeg/DispMux1/counter_121_add_4_13/CO0
-                                          SLICE_R19C4C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-DSevSeg/DispMux1/n1130                                       NET DELAY               0.000                 12.854  2       
-DSevSeg/DispMux1/counter_121_add_4_13/CI1->DSevSeg/DispMux1/counter_121_add_4_13/CO1
-                                          SLICE_R19C4C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-DSevSeg/DispMux1/n627                                        NET DELAY               0.000                 13.131  2       
-DSevSeg/DispMux1/counter_121_add_4_15/CI0->DSevSeg/DispMux1/counter_121_add_4_15/CO0
-                                          SLICE_R19C4D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-DSevSeg/DispMux1/n1133                                       NET DELAY               0.000                 13.408  2       
-DSevSeg/DispMux1/counter_121_add_4_15/CI1->DSevSeg/DispMux1/counter_121_add_4_15/CO1
-                                          SLICE_R19C4D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
-DSevSeg/DispMux1/n629                                        NET DELAY               0.555                 14.240  2       
-DSevSeg/DispMux1/counter_121_add_4_17/CI0->DSevSeg/DispMux1/counter_121_add_4_17/CO0
-                                          SLICE_R19C5A       CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
-DSevSeg/DispMux1/n1136                                       NET DELAY               0.000                 14.517  2       
-DSevSeg/DispMux1/counter_121_add_4_17/CI1->DSevSeg/DispMux1/counter_121_add_4_17/CO1
-                                          SLICE_R19C5A       CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
-DSevSeg/DispMux1/n631                                        NET DELAY               0.000                 14.794  2       
-DSevSeg/DispMux1/counter_121_add_4_19/CI0->DSevSeg/DispMux1/counter_121_add_4_19/CO0
-                                          SLICE_R19C5B       CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
-DSevSeg/DispMux1/n1139                                       NET DELAY               0.000                 15.071  2       
-DSevSeg/DispMux1/counter_121_add_4_19/CI1->DSevSeg/DispMux1/counter_121_add_4_19/CO1
-                                          SLICE_R19C5B       CIN1_TO_COUT1_DELAY     0.277                 15.348  2       
-DSevSeg/DispMux1/n633                                        NET DELAY               0.000                 15.348  2       
-DSevSeg/DispMux1/counter_121_add_4_21/CI0->DSevSeg/DispMux1/counter_121_add_4_21/CO0
-                                          SLICE_R19C5C       CIN0_TO_COUT0_DELAY     0.277                 15.625  2       
-DSevSeg/DispMux1/n1142                                       NET DELAY               0.000                 15.625  2       
-DSevSeg/DispMux1/counter_121_add_4_21/CI1->DSevSeg/DispMux1/counter_121_add_4_21/CO1
-                                          SLICE_R19C5C       CIN1_TO_COUT1_DELAY     0.277                 15.902  2       
-DSevSeg/DispMux1/n635                                        NET DELAY               0.661                 16.563  2       
-DSevSeg/DispMux1/counter_121_add_4_23/D0->DSevSeg/DispMux1/counter_121_add_4_23/S0
-                                          SLICE_R19C5D       D0_TO_F0_DELAY          0.476                 17.039  1       
-DSevSeg/DispMux1/n97[21]                                     NET DELAY               0.000                 17.039  1       
-DSevSeg/DispMux1/counter_121__i22/D                          ENDPOINT                0.000                 17.039  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+ce_counter_172__i10/CK->ce_counter_172__i10/Q
+                                          SLICE_R17C4B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+ce_counter[10]                                               NET DELAY           2.617                  9.504  2       
+i7_4_lut/B->i7_4_lut/Z                    SLICE_R16C4A       C0_TO_F0_DELAY      0.449                  9.953  1       
+n17                                                          NET DELAY           2.485                 12.438  1       
+i9_4_lut/A->i9_4_lut/Z                    SLICE_R16C3A       B1_TO_F1_DELAY      0.476                 12.914  1       
+n1443                                                        NET DELAY           0.304                 13.218  1       
+i6_4_lut_adj_32/C->i6_4_lut_adj_32/Z      SLICE_R16C3B       C0_TO_F0_DELAY      0.476                 13.694  2       
+n645                                                         NET DELAY           0.304                 13.998  2       
+i1375_2_lut/A->i1375_2_lut/Z              SLICE_R16C3B       C1_TO_F1_DELAY      0.449                 14.447  9       
+n347                                                         NET DELAY           3.252                 17.699  9       
+ce_counter_172__i0/SR                                        ENDPOINT            0.000                 17.699  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                166.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                166.666  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY               5.499                172.165  25      
-{DSevSeg/DispMux1/counter_121__i22/CK   DSevSeg/DispMux1/counter_121__i23/CK}
-                                                             CLOCK PIN               0.000                172.165  1       
-                                                             Uncertainty          -(0.000)                172.165  
-                                                             Setup time           -(0.198)                171.967  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                             171.967  
-Arrival Time                                                                                            -(17.038)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                      154.928  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  26      
+ce_counter_172__i0/CK                                        CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.529)                171.636  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.636  
+Arrival Time                                                                                        -(17.698)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  153.937  
 
 
 
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i1/Q  (SLICE_R19C3A)
-Path End         : DSevSeg/DispMux1/counter_121__i21/D  (SLICE_R19C5C)
+Path Begin       : ce_counter_172__i10/Q  (SLICE_R17C4B)
+Path End         : {ce_counter_172__i1/SR   ce_counter_172__i2/SR}  (SLICE_R17C3B)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
-Logic Level      : 22
-Delay Ratio      : 33.7% (route), 66.3% (logic)
+Logic Level      : 5
+Delay Ratio      : 73.5% (route), 26.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 166.666 ns 
-Path Slack       : 155.205 ns  (Passed)
+Path Slack       : 153.937 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY               5.499                  5.499  25      
-DSevSeg/DispMux1/counter_121__i1/CK                          CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  26      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i1/CK->DSevSeg/DispMux1/counter_121__i1/Q
-                                          SLICE_R19C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
-DSevSeg/DispMux1/n23                                         NET DELAY               2.022                  8.909  1       
-DSevSeg/DispMux1/counter_121_add_4_1/C1->DSevSeg/DispMux1/counter_121_add_4_1/CO1
-                                          SLICE_R19C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-DSevSeg/DispMux1/n615                                        NET DELAY               0.000                  9.252  2       
-DSevSeg/DispMux1/counter_121_add_4_3/CI0->DSevSeg/DispMux1/counter_121_add_4_3/CO0
-                                          SLICE_R19C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-DSevSeg/DispMux1/n1115                                       NET DELAY               0.000                  9.529  2       
-DSevSeg/DispMux1/counter_121_add_4_3/CI1->DSevSeg/DispMux1/counter_121_add_4_3/CO1
-                                          SLICE_R19C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-DSevSeg/DispMux1/n617                                        NET DELAY               0.000                  9.806  2       
-DSevSeg/DispMux1/counter_121_add_4_5/CI0->DSevSeg/DispMux1/counter_121_add_4_5/CO0
-                                          SLICE_R19C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-DSevSeg/DispMux1/n1118                                       NET DELAY               0.000                 10.083  2       
-DSevSeg/DispMux1/counter_121_add_4_5/CI1->DSevSeg/DispMux1/counter_121_add_4_5/CO1
-                                          SLICE_R19C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-DSevSeg/DispMux1/n619                                        NET DELAY               0.000                 10.360  2       
-DSevSeg/DispMux1/counter_121_add_4_7/CI0->DSevSeg/DispMux1/counter_121_add_4_7/CO0
-                                          SLICE_R19C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-DSevSeg/DispMux1/n1121                                       NET DELAY               0.000                 10.637  2       
-DSevSeg/DispMux1/counter_121_add_4_7/CI1->DSevSeg/DispMux1/counter_121_add_4_7/CO1
-                                          SLICE_R19C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-DSevSeg/DispMux1/n621                                        NET DELAY               0.555                 11.469  2       
-DSevSeg/DispMux1/counter_121_add_4_9/CI0->DSevSeg/DispMux1/counter_121_add_4_9/CO0
-                                          SLICE_R19C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-DSevSeg/DispMux1/n1124                                       NET DELAY               0.000                 11.746  2       
-DSevSeg/DispMux1/counter_121_add_4_9/CI1->DSevSeg/DispMux1/counter_121_add_4_9/CO1
-                                          SLICE_R19C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-DSevSeg/DispMux1/n623                                        NET DELAY               0.000                 12.023  2       
-DSevSeg/DispMux1/counter_121_add_4_11/CI0->DSevSeg/DispMux1/counter_121_add_4_11/CO0
-                                          SLICE_R19C4B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-DSevSeg/DispMux1/n1127                                       NET DELAY               0.000                 12.300  2       
-DSevSeg/DispMux1/counter_121_add_4_11/CI1->DSevSeg/DispMux1/counter_121_add_4_11/CO1
-                                          SLICE_R19C4B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-DSevSeg/DispMux1/n625                                        NET DELAY               0.000                 12.577  2       
-DSevSeg/DispMux1/counter_121_add_4_13/CI0->DSevSeg/DispMux1/counter_121_add_4_13/CO0
-                                          SLICE_R19C4C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-DSevSeg/DispMux1/n1130                                       NET DELAY               0.000                 12.854  2       
-DSevSeg/DispMux1/counter_121_add_4_13/CI1->DSevSeg/DispMux1/counter_121_add_4_13/CO1
-                                          SLICE_R19C4C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-DSevSeg/DispMux1/n627                                        NET DELAY               0.000                 13.131  2       
-DSevSeg/DispMux1/counter_121_add_4_15/CI0->DSevSeg/DispMux1/counter_121_add_4_15/CO0
-                                          SLICE_R19C4D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-DSevSeg/DispMux1/n1133                                       NET DELAY               0.000                 13.408  2       
-DSevSeg/DispMux1/counter_121_add_4_15/CI1->DSevSeg/DispMux1/counter_121_add_4_15/CO1
-                                          SLICE_R19C4D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
-DSevSeg/DispMux1/n629                                        NET DELAY               0.555                 14.240  2       
-DSevSeg/DispMux1/counter_121_add_4_17/CI0->DSevSeg/DispMux1/counter_121_add_4_17/CO0
-                                          SLICE_R19C5A       CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
-DSevSeg/DispMux1/n1136                                       NET DELAY               0.000                 14.517  2       
-DSevSeg/DispMux1/counter_121_add_4_17/CI1->DSevSeg/DispMux1/counter_121_add_4_17/CO1
-                                          SLICE_R19C5A       CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
-DSevSeg/DispMux1/n631                                        NET DELAY               0.000                 14.794  2       
-DSevSeg/DispMux1/counter_121_add_4_19/CI0->DSevSeg/DispMux1/counter_121_add_4_19/CO0
-                                          SLICE_R19C5B       CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
-DSevSeg/DispMux1/n1139                                       NET DELAY               0.000                 15.071  2       
-DSevSeg/DispMux1/counter_121_add_4_19/CI1->DSevSeg/DispMux1/counter_121_add_4_19/CO1
-                                          SLICE_R19C5B       CIN1_TO_COUT1_DELAY     0.277                 15.348  2       
-DSevSeg/DispMux1/n633                                        NET DELAY               0.000                 15.348  2       
-DSevSeg/DispMux1/counter_121_add_4_21/CI0->DSevSeg/DispMux1/counter_121_add_4_21/CO0
-                                          SLICE_R19C5C       CIN0_TO_COUT0_DELAY     0.277                 15.625  2       
-DSevSeg/DispMux1/n1142                                       NET DELAY               0.661                 16.286  2       
-DSevSeg/DispMux1/counter_121_add_4_21/D1->DSevSeg/DispMux1/counter_121_add_4_21/S1
-                                          SLICE_R19C5C       D1_TO_F1_DELAY          0.476                 16.762  1       
-DSevSeg/DispMux1/n97[20]                                     NET DELAY               0.000                 16.762  1       
-DSevSeg/DispMux1/counter_121__i21/D                          ENDPOINT                0.000                 16.762  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+ce_counter_172__i10/CK->ce_counter_172__i10/Q
+                                          SLICE_R17C4B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+ce_counter[10]                                               NET DELAY           2.617                  9.504  2       
+i7_4_lut/B->i7_4_lut/Z                    SLICE_R16C4A       C0_TO_F0_DELAY      0.449                  9.953  1       
+n17                                                          NET DELAY           2.485                 12.438  1       
+i9_4_lut/A->i9_4_lut/Z                    SLICE_R16C3A       B1_TO_F1_DELAY      0.476                 12.914  1       
+n1443                                                        NET DELAY           0.304                 13.218  1       
+i6_4_lut_adj_32/C->i6_4_lut_adj_32/Z      SLICE_R16C3B       C0_TO_F0_DELAY      0.476                 13.694  2       
+n645                                                         NET DELAY           0.304                 13.998  2       
+i1375_2_lut/A->i1375_2_lut/Z              SLICE_R16C3B       C1_TO_F1_DELAY      0.449                 14.447  9       
+n347                                                         NET DELAY           3.252                 17.699  9       
+{ce_counter_172__i1/SR   ce_counter_172__i2/SR}
+                                                             ENDPOINT            0.000                 17.699  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                166.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                166.666  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY               5.499                172.165  25      
-{DSevSeg/DispMux1/counter_121__i20/CK   DSevSeg/DispMux1/counter_121__i21/CK}
-                                                             CLOCK PIN               0.000                172.165  1       
-                                                             Uncertainty          -(0.000)                172.165  
-                                                             Setup time           -(0.198)                171.967  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                             171.967  
-Arrival Time                                                                                            -(16.761)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                      155.205  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  26      
+{ce_counter_172__i1/CK   ce_counter_172__i2/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.529)                171.636  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.636  
+Arrival Time                                                                                        -(17.698)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  153.937  
 
 
 
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i1/Q  (SLICE_R19C3A)
-Path End         : DSevSeg/DispMux1/counter_121__i20/D  (SLICE_R19C5C)
+Path Begin       : ce_counter_172__i10/Q  (SLICE_R17C4B)
+Path End         : {ce_counter_172__i3/SR   ce_counter_172__i4/SR}  (SLICE_R17C3C)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
-Logic Level      : 21
-Delay Ratio      : 34.5% (route), 65.5% (logic)
+Logic Level      : 5
+Delay Ratio      : 73.5% (route), 26.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 166.666 ns 
-Path Slack       : 155.482 ns  (Passed)
+Path Slack       : 153.937 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY               5.499                  5.499  25      
-DSevSeg/DispMux1/counter_121__i1/CK                          CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  26      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i1/CK->DSevSeg/DispMux1/counter_121__i1/Q
-                                          SLICE_R19C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
-DSevSeg/DispMux1/n23                                         NET DELAY               2.022                  8.909  1       
-DSevSeg/DispMux1/counter_121_add_4_1/C1->DSevSeg/DispMux1/counter_121_add_4_1/CO1
-                                          SLICE_R19C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-DSevSeg/DispMux1/n615                                        NET DELAY               0.000                  9.252  2       
-DSevSeg/DispMux1/counter_121_add_4_3/CI0->DSevSeg/DispMux1/counter_121_add_4_3/CO0
-                                          SLICE_R19C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-DSevSeg/DispMux1/n1115                                       NET DELAY               0.000                  9.529  2       
-DSevSeg/DispMux1/counter_121_add_4_3/CI1->DSevSeg/DispMux1/counter_121_add_4_3/CO1
-                                          SLICE_R19C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-DSevSeg/DispMux1/n617                                        NET DELAY               0.000                  9.806  2       
-DSevSeg/DispMux1/counter_121_add_4_5/CI0->DSevSeg/DispMux1/counter_121_add_4_5/CO0
-                                          SLICE_R19C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-DSevSeg/DispMux1/n1118                                       NET DELAY               0.000                 10.083  2       
-DSevSeg/DispMux1/counter_121_add_4_5/CI1->DSevSeg/DispMux1/counter_121_add_4_5/CO1
-                                          SLICE_R19C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-DSevSeg/DispMux1/n619                                        NET DELAY               0.000                 10.360  2       
-DSevSeg/DispMux1/counter_121_add_4_7/CI0->DSevSeg/DispMux1/counter_121_add_4_7/CO0
-                                          SLICE_R19C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-DSevSeg/DispMux1/n1121                                       NET DELAY               0.000                 10.637  2       
-DSevSeg/DispMux1/counter_121_add_4_7/CI1->DSevSeg/DispMux1/counter_121_add_4_7/CO1
-                                          SLICE_R19C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-DSevSeg/DispMux1/n621                                        NET DELAY               0.555                 11.469  2       
-DSevSeg/DispMux1/counter_121_add_4_9/CI0->DSevSeg/DispMux1/counter_121_add_4_9/CO0
-                                          SLICE_R19C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-DSevSeg/DispMux1/n1124                                       NET DELAY               0.000                 11.746  2       
-DSevSeg/DispMux1/counter_121_add_4_9/CI1->DSevSeg/DispMux1/counter_121_add_4_9/CO1
-                                          SLICE_R19C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-DSevSeg/DispMux1/n623                                        NET DELAY               0.000                 12.023  2       
-DSevSeg/DispMux1/counter_121_add_4_11/CI0->DSevSeg/DispMux1/counter_121_add_4_11/CO0
-                                          SLICE_R19C4B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-DSevSeg/DispMux1/n1127                                       NET DELAY               0.000                 12.300  2       
-DSevSeg/DispMux1/counter_121_add_4_11/CI1->DSevSeg/DispMux1/counter_121_add_4_11/CO1
-                                          SLICE_R19C4B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-DSevSeg/DispMux1/n625                                        NET DELAY               0.000                 12.577  2       
-DSevSeg/DispMux1/counter_121_add_4_13/CI0->DSevSeg/DispMux1/counter_121_add_4_13/CO0
-                                          SLICE_R19C4C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-DSevSeg/DispMux1/n1130                                       NET DELAY               0.000                 12.854  2       
-DSevSeg/DispMux1/counter_121_add_4_13/CI1->DSevSeg/DispMux1/counter_121_add_4_13/CO1
-                                          SLICE_R19C4C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-DSevSeg/DispMux1/n627                                        NET DELAY               0.000                 13.131  2       
-DSevSeg/DispMux1/counter_121_add_4_15/CI0->DSevSeg/DispMux1/counter_121_add_4_15/CO0
-                                          SLICE_R19C4D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-DSevSeg/DispMux1/n1133                                       NET DELAY               0.000                 13.408  2       
-DSevSeg/DispMux1/counter_121_add_4_15/CI1->DSevSeg/DispMux1/counter_121_add_4_15/CO1
-                                          SLICE_R19C4D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
-DSevSeg/DispMux1/n629                                        NET DELAY               0.555                 14.240  2       
-DSevSeg/DispMux1/counter_121_add_4_17/CI0->DSevSeg/DispMux1/counter_121_add_4_17/CO0
-                                          SLICE_R19C5A       CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
-DSevSeg/DispMux1/n1136                                       NET DELAY               0.000                 14.517  2       
-DSevSeg/DispMux1/counter_121_add_4_17/CI1->DSevSeg/DispMux1/counter_121_add_4_17/CO1
-                                          SLICE_R19C5A       CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
-DSevSeg/DispMux1/n631                                        NET DELAY               0.000                 14.794  2       
-DSevSeg/DispMux1/counter_121_add_4_19/CI0->DSevSeg/DispMux1/counter_121_add_4_19/CO0
-                                          SLICE_R19C5B       CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
-DSevSeg/DispMux1/n1139                                       NET DELAY               0.000                 15.071  2       
-DSevSeg/DispMux1/counter_121_add_4_19/CI1->DSevSeg/DispMux1/counter_121_add_4_19/CO1
-                                          SLICE_R19C5B       CIN1_TO_COUT1_DELAY     0.277                 15.348  2       
-DSevSeg/DispMux1/n633                                        NET DELAY               0.661                 16.009  2       
-DSevSeg/DispMux1/counter_121_add_4_21/D0->DSevSeg/DispMux1/counter_121_add_4_21/S0
-                                          SLICE_R19C5C       D0_TO_F0_DELAY          0.476                 16.485  1       
-DSevSeg/DispMux1/n97[19]                                     NET DELAY               0.000                 16.485  1       
-DSevSeg/DispMux1/counter_121__i20/D                          ENDPOINT                0.000                 16.485  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+ce_counter_172__i10/CK->ce_counter_172__i10/Q
+                                          SLICE_R17C4B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+ce_counter[10]                                               NET DELAY           2.617                  9.504  2       
+i7_4_lut/B->i7_4_lut/Z                    SLICE_R16C4A       C0_TO_F0_DELAY      0.449                  9.953  1       
+n17                                                          NET DELAY           2.485                 12.438  1       
+i9_4_lut/A->i9_4_lut/Z                    SLICE_R16C3A       B1_TO_F1_DELAY      0.476                 12.914  1       
+n1443                                                        NET DELAY           0.304                 13.218  1       
+i6_4_lut_adj_32/C->i6_4_lut_adj_32/Z      SLICE_R16C3B       C0_TO_F0_DELAY      0.476                 13.694  2       
+n645                                                         NET DELAY           0.304                 13.998  2       
+i1375_2_lut/A->i1375_2_lut/Z              SLICE_R16C3B       C1_TO_F1_DELAY      0.449                 14.447  9       
+n347                                                         NET DELAY           3.252                 17.699  9       
+{ce_counter_172__i3/SR   ce_counter_172__i4/SR}
+                                                             ENDPOINT            0.000                 17.699  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                166.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                166.666  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY               5.499                172.165  25      
-{DSevSeg/DispMux1/counter_121__i20/CK   DSevSeg/DispMux1/counter_121__i21/CK}
-                                                             CLOCK PIN               0.000                172.165  1       
-                                                             Uncertainty          -(0.000)                172.165  
-                                                             Setup time           -(0.198)                171.967  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                             171.967  
-Arrival Time                                                                                            -(16.484)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                      155.482  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  26      
+{ce_counter_172__i3/CK   ce_counter_172__i4/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.529)                171.636  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.636  
+Arrival Time                                                                                        -(17.698)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  153.937  
 
 
 
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i1/Q  (SLICE_R19C3A)
-Path End         : DSevSeg/DispMux1/counter_121__i19/D  (SLICE_R19C5B)
+Path Begin       : ce_counter_172__i10/Q  (SLICE_R17C4B)
+Path End         : {ce_counter_172__i5/SR   ce_counter_172__i6/SR}  (SLICE_R17C3D)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
-Logic Level      : 20
-Delay Ratio      : 35.4% (route), 64.6% (logic)
+Logic Level      : 5
+Delay Ratio      : 73.5% (route), 26.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 166.666 ns 
-Path Slack       : 155.759 ns  (Passed)
+Path Slack       : 153.937 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY               5.499                  5.499  25      
-DSevSeg/DispMux1/counter_121__i1/CK                          CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  26      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i1/CK->DSevSeg/DispMux1/counter_121__i1/Q
-                                          SLICE_R19C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
-DSevSeg/DispMux1/n23                                         NET DELAY               2.022                  8.909  1       
-DSevSeg/DispMux1/counter_121_add_4_1/C1->DSevSeg/DispMux1/counter_121_add_4_1/CO1
-                                          SLICE_R19C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-DSevSeg/DispMux1/n615                                        NET DELAY               0.000                  9.252  2       
-DSevSeg/DispMux1/counter_121_add_4_3/CI0->DSevSeg/DispMux1/counter_121_add_4_3/CO0
-                                          SLICE_R19C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-DSevSeg/DispMux1/n1115                                       NET DELAY               0.000                  9.529  2       
-DSevSeg/DispMux1/counter_121_add_4_3/CI1->DSevSeg/DispMux1/counter_121_add_4_3/CO1
-                                          SLICE_R19C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-DSevSeg/DispMux1/n617                                        NET DELAY               0.000                  9.806  2       
-DSevSeg/DispMux1/counter_121_add_4_5/CI0->DSevSeg/DispMux1/counter_121_add_4_5/CO0
-                                          SLICE_R19C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-DSevSeg/DispMux1/n1118                                       NET DELAY               0.000                 10.083  2       
-DSevSeg/DispMux1/counter_121_add_4_5/CI1->DSevSeg/DispMux1/counter_121_add_4_5/CO1
-                                          SLICE_R19C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-DSevSeg/DispMux1/n619                                        NET DELAY               0.000                 10.360  2       
-DSevSeg/DispMux1/counter_121_add_4_7/CI0->DSevSeg/DispMux1/counter_121_add_4_7/CO0
-                                          SLICE_R19C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-DSevSeg/DispMux1/n1121                                       NET DELAY               0.000                 10.637  2       
-DSevSeg/DispMux1/counter_121_add_4_7/CI1->DSevSeg/DispMux1/counter_121_add_4_7/CO1
-                                          SLICE_R19C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-DSevSeg/DispMux1/n621                                        NET DELAY               0.555                 11.469  2       
-DSevSeg/DispMux1/counter_121_add_4_9/CI0->DSevSeg/DispMux1/counter_121_add_4_9/CO0
-                                          SLICE_R19C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-DSevSeg/DispMux1/n1124                                       NET DELAY               0.000                 11.746  2       
-DSevSeg/DispMux1/counter_121_add_4_9/CI1->DSevSeg/DispMux1/counter_121_add_4_9/CO1
-                                          SLICE_R19C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-DSevSeg/DispMux1/n623                                        NET DELAY               0.000                 12.023  2       
-DSevSeg/DispMux1/counter_121_add_4_11/CI0->DSevSeg/DispMux1/counter_121_add_4_11/CO0
-                                          SLICE_R19C4B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-DSevSeg/DispMux1/n1127                                       NET DELAY               0.000                 12.300  2       
-DSevSeg/DispMux1/counter_121_add_4_11/CI1->DSevSeg/DispMux1/counter_121_add_4_11/CO1
-                                          SLICE_R19C4B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-DSevSeg/DispMux1/n625                                        NET DELAY               0.000                 12.577  2       
-DSevSeg/DispMux1/counter_121_add_4_13/CI0->DSevSeg/DispMux1/counter_121_add_4_13/CO0
-                                          SLICE_R19C4C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-DSevSeg/DispMux1/n1130                                       NET DELAY               0.000                 12.854  2       
-DSevSeg/DispMux1/counter_121_add_4_13/CI1->DSevSeg/DispMux1/counter_121_add_4_13/CO1
-                                          SLICE_R19C4C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-DSevSeg/DispMux1/n627                                        NET DELAY               0.000                 13.131  2       
-DSevSeg/DispMux1/counter_121_add_4_15/CI0->DSevSeg/DispMux1/counter_121_add_4_15/CO0
-                                          SLICE_R19C4D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-DSevSeg/DispMux1/n1133                                       NET DELAY               0.000                 13.408  2       
-DSevSeg/DispMux1/counter_121_add_4_15/CI1->DSevSeg/DispMux1/counter_121_add_4_15/CO1
-                                          SLICE_R19C4D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
-DSevSeg/DispMux1/n629                                        NET DELAY               0.555                 14.240  2       
-DSevSeg/DispMux1/counter_121_add_4_17/CI0->DSevSeg/DispMux1/counter_121_add_4_17/CO0
-                                          SLICE_R19C5A       CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
-DSevSeg/DispMux1/n1136                                       NET DELAY               0.000                 14.517  2       
-DSevSeg/DispMux1/counter_121_add_4_17/CI1->DSevSeg/DispMux1/counter_121_add_4_17/CO1
-                                          SLICE_R19C5A       CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
-DSevSeg/DispMux1/n631                                        NET DELAY               0.000                 14.794  2       
-DSevSeg/DispMux1/counter_121_add_4_19/CI0->DSevSeg/DispMux1/counter_121_add_4_19/CO0
-                                          SLICE_R19C5B       CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
-DSevSeg/DispMux1/n1139                                       NET DELAY               0.661                 15.732  2       
-DSevSeg/DispMux1/counter_121_add_4_19/D1->DSevSeg/DispMux1/counter_121_add_4_19/S1
-                                          SLICE_R19C5B       D1_TO_F1_DELAY          0.476                 16.208  1       
-DSevSeg/DispMux1/n97[18]                                     NET DELAY               0.000                 16.208  1       
-DSevSeg/DispMux1/counter_121__i19/D                          ENDPOINT                0.000                 16.208  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+ce_counter_172__i10/CK->ce_counter_172__i10/Q
+                                          SLICE_R17C4B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+ce_counter[10]                                               NET DELAY           2.617                  9.504  2       
+i7_4_lut/B->i7_4_lut/Z                    SLICE_R16C4A       C0_TO_F0_DELAY      0.449                  9.953  1       
+n17                                                          NET DELAY           2.485                 12.438  1       
+i9_4_lut/A->i9_4_lut/Z                    SLICE_R16C3A       B1_TO_F1_DELAY      0.476                 12.914  1       
+n1443                                                        NET DELAY           0.304                 13.218  1       
+i6_4_lut_adj_32/C->i6_4_lut_adj_32/Z      SLICE_R16C3B       C0_TO_F0_DELAY      0.476                 13.694  2       
+n645                                                         NET DELAY           0.304                 13.998  2       
+i1375_2_lut/A->i1375_2_lut/Z              SLICE_R16C3B       C1_TO_F1_DELAY      0.449                 14.447  9       
+n347                                                         NET DELAY           3.252                 17.699  9       
+{ce_counter_172__i5/SR   ce_counter_172__i6/SR}
+                                                             ENDPOINT            0.000                 17.699  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                166.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                166.666  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY               5.499                172.165  25      
-{DSevSeg/DispMux1/counter_121__i18/CK   DSevSeg/DispMux1/counter_121__i19/CK}
-                                                             CLOCK PIN               0.000                172.165  1       
-                                                             Uncertainty          -(0.000)                172.165  
-                                                             Setup time           -(0.198)                171.967  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                             171.967  
-Arrival Time                                                                                            -(16.207)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                      155.759  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  26      
+{ce_counter_172__i5/CK   ce_counter_172__i6/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.529)                171.636  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.636  
+Arrival Time                                                                                        -(17.698)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  153.937  
 
 
 
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i19/Q  (SLICE_R19C5B)
-Path End         : DSevSeg/DispMux1/DivClk/D  (SLICE_R16C4A)
+Path Begin       : ce_counter_172__i10/Q  (SLICE_R17C4B)
+Path End         : {ce_counter_172__i7/SR   ce_counter_172__i8/SR}  (SLICE_R17C4A)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
-Logic Level      : 4
-Delay Ratio      : 74.0% (route), 26.0% (logic)
+Logic Level      : 5
+Delay Ratio      : 73.5% (route), 26.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 166.666 ns 
-Path Slack       : 155.841 ns  (Passed)
+Path Slack       : 153.937 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  25      
-{DSevSeg/DispMux1/counter_121__i18/CK   DSevSeg/DispMux1/counter_121__i19/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  26      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
                                                              CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i19/CK->DSevSeg/DispMux1/counter_121__i19/Q
-                                          SLICE_R19C5B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
-DSevSeg/DispMux1/counter[18]                                 NET DELAY           2.670                  9.557  2       
-DSevSeg/DispMux1/i6_4_lut/C->DSevSeg/DispMux1/i6_4_lut/Z
-                                          SLICE_R18C5D       B0_TO_F0_DELAY      0.449                 10.006  1       
-DSevSeg/DispMux1/n14                                         NET DELAY           2.168                 12.174  1       
-DSevSeg/DispMux1/i7_4_lut/B->DSevSeg/DispMux1/i7_4_lut/Z
-                                          SLICE_R18C4C       D0_TO_F0_DELAY      0.449                 12.623  2       
-DSevSeg/DispMux1/n68                                         NET DELAY           3.027                 15.650  2       
-DSevSeg/DispMux1/i247_4_lut_4_lut_3_lut/C->DSevSeg/DispMux1/i247_4_lut_4_lut_3_lut/Z
-                                          SLICE_R16C4A       C1_TO_F1_DELAY      0.476                 16.126  1       
-DSevSeg/DispMux1/n408                                        NET DELAY           0.000                 16.126  1       
-DSevSeg/DispMux1/DivClk/D                                    ENDPOINT            0.000                 16.126  1       
+ce_counter_172__i10/CK->ce_counter_172__i10/Q
+                                          SLICE_R17C4B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+ce_counter[10]                                               NET DELAY           2.617                  9.504  2       
+i7_4_lut/B->i7_4_lut/Z                    SLICE_R16C4A       C0_TO_F0_DELAY      0.449                  9.953  1       
+n17                                                          NET DELAY           2.485                 12.438  1       
+i9_4_lut/A->i9_4_lut/Z                    SLICE_R16C3A       B1_TO_F1_DELAY      0.476                 12.914  1       
+n1443                                                        NET DELAY           0.304                 13.218  1       
+i6_4_lut_adj_32/C->i6_4_lut_adj_32/Z      SLICE_R16C3B       C0_TO_F0_DELAY      0.476                 13.694  2       
+n645                                                         NET DELAY           0.304                 13.998  2       
+i1375_2_lut/A->i1375_2_lut/Z              SLICE_R16C3B       C1_TO_F1_DELAY      0.449                 14.447  9       
+n347                                                         NET DELAY           3.252                 17.699  9       
+{ce_counter_172__i7/SR   ce_counter_172__i8/SR}
+                                                             ENDPOINT            0.000                 17.699  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
                                                              CONSTRAINT          0.000                166.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  25      
-DSevSeg/DispMux1/DivClk/CK                                   CLOCK PIN           0.000                172.165  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  26      
+{ce_counter_172__i7/CK   ce_counter_172__i8/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
                                                              Uncertainty      -(0.000)                172.165  
-                                                             Setup time       -(0.198)                171.967  
+                                                             Setup time       -(0.529)                171.636  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Required Time                                                                                         171.967  
-Arrival Time                                                                                        -(16.125)  
+Required Time                                                                                         171.636  
+Arrival Time                                                                                        -(17.698)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                  155.841  
+Path Slack  (Passed)                                                                                  153.937  
 
 
 
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i1/Q  (SLICE_R19C3A)
-Path End         : DSevSeg/DispMux1/counter_121__i18/D  (SLICE_R19C5B)
+Path Begin       : ce_counter_172__i10/Q  (SLICE_R17C4B)
+Path End         : {ce_counter_172__i9/SR   ce_counter_172__i10/SR}  (SLICE_R17C4B)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
-Logic Level      : 19
-Delay Ratio      : 36.4% (route), 63.6% (logic)
+Logic Level      : 5
+Delay Ratio      : 73.5% (route), 26.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 166.666 ns 
-Path Slack       : 156.036 ns  (Passed)
+Path Slack       : 153.937 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY               5.499                  5.499  25      
-DSevSeg/DispMux1/counter_121__i1/CK                          CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  26      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i1/CK->DSevSeg/DispMux1/counter_121__i1/Q
-                                          SLICE_R19C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
-DSevSeg/DispMux1/n23                                         NET DELAY               2.022                  8.909  1       
-DSevSeg/DispMux1/counter_121_add_4_1/C1->DSevSeg/DispMux1/counter_121_add_4_1/CO1
-                                          SLICE_R19C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-DSevSeg/DispMux1/n615                                        NET DELAY               0.000                  9.252  2       
-DSevSeg/DispMux1/counter_121_add_4_3/CI0->DSevSeg/DispMux1/counter_121_add_4_3/CO0
-                                          SLICE_R19C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-DSevSeg/DispMux1/n1115                                       NET DELAY               0.000                  9.529  2       
-DSevSeg/DispMux1/counter_121_add_4_3/CI1->DSevSeg/DispMux1/counter_121_add_4_3/CO1
-                                          SLICE_R19C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-DSevSeg/DispMux1/n617                                        NET DELAY               0.000                  9.806  2       
-DSevSeg/DispMux1/counter_121_add_4_5/CI0->DSevSeg/DispMux1/counter_121_add_4_5/CO0
-                                          SLICE_R19C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-DSevSeg/DispMux1/n1118                                       NET DELAY               0.000                 10.083  2       
-DSevSeg/DispMux1/counter_121_add_4_5/CI1->DSevSeg/DispMux1/counter_121_add_4_5/CO1
-                                          SLICE_R19C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-DSevSeg/DispMux1/n619                                        NET DELAY               0.000                 10.360  2       
-DSevSeg/DispMux1/counter_121_add_4_7/CI0->DSevSeg/DispMux1/counter_121_add_4_7/CO0
-                                          SLICE_R19C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-DSevSeg/DispMux1/n1121                                       NET DELAY               0.000                 10.637  2       
-DSevSeg/DispMux1/counter_121_add_4_7/CI1->DSevSeg/DispMux1/counter_121_add_4_7/CO1
-                                          SLICE_R19C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-DSevSeg/DispMux1/n621                                        NET DELAY               0.555                 11.469  2       
-DSevSeg/DispMux1/counter_121_add_4_9/CI0->DSevSeg/DispMux1/counter_121_add_4_9/CO0
-                                          SLICE_R19C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-DSevSeg/DispMux1/n1124                                       NET DELAY               0.000                 11.746  2       
-DSevSeg/DispMux1/counter_121_add_4_9/CI1->DSevSeg/DispMux1/counter_121_add_4_9/CO1
-                                          SLICE_R19C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-DSevSeg/DispMux1/n623                                        NET DELAY               0.000                 12.023  2       
-DSevSeg/DispMux1/counter_121_add_4_11/CI0->DSevSeg/DispMux1/counter_121_add_4_11/CO0
-                                          SLICE_R19C4B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-DSevSeg/DispMux1/n1127                                       NET DELAY               0.000                 12.300  2       
-DSevSeg/DispMux1/counter_121_add_4_11/CI1->DSevSeg/DispMux1/counter_121_add_4_11/CO1
-                                          SLICE_R19C4B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-DSevSeg/DispMux1/n625                                        NET DELAY               0.000                 12.577  2       
-DSevSeg/DispMux1/counter_121_add_4_13/CI0->DSevSeg/DispMux1/counter_121_add_4_13/CO0
-                                          SLICE_R19C4C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-DSevSeg/DispMux1/n1130                                       NET DELAY               0.000                 12.854  2       
-DSevSeg/DispMux1/counter_121_add_4_13/CI1->DSevSeg/DispMux1/counter_121_add_4_13/CO1
-                                          SLICE_R19C4C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-DSevSeg/DispMux1/n627                                        NET DELAY               0.000                 13.131  2       
-DSevSeg/DispMux1/counter_121_add_4_15/CI0->DSevSeg/DispMux1/counter_121_add_4_15/CO0
-                                          SLICE_R19C4D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-DSevSeg/DispMux1/n1133                                       NET DELAY               0.000                 13.408  2       
-DSevSeg/DispMux1/counter_121_add_4_15/CI1->DSevSeg/DispMux1/counter_121_add_4_15/CO1
-                                          SLICE_R19C4D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
-DSevSeg/DispMux1/n629                                        NET DELAY               0.555                 14.240  2       
-DSevSeg/DispMux1/counter_121_add_4_17/CI0->DSevSeg/DispMux1/counter_121_add_4_17/CO0
-                                          SLICE_R19C5A       CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
-DSevSeg/DispMux1/n1136                                       NET DELAY               0.000                 14.517  2       
-DSevSeg/DispMux1/counter_121_add_4_17/CI1->DSevSeg/DispMux1/counter_121_add_4_17/CO1
-                                          SLICE_R19C5A       CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
-DSevSeg/DispMux1/n631                                        NET DELAY               0.661                 15.455  2       
-DSevSeg/DispMux1/counter_121_add_4_19/D0->DSevSeg/DispMux1/counter_121_add_4_19/S0
-                                          SLICE_R19C5B       D0_TO_F0_DELAY          0.476                 15.931  1       
-DSevSeg/DispMux1/n97[17]                                     NET DELAY               0.000                 15.931  1       
-DSevSeg/DispMux1/counter_121__i18/D                          ENDPOINT                0.000                 15.931  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+ce_counter_172__i10/CK->ce_counter_172__i10/Q
+                                          SLICE_R17C4B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+ce_counter[10]                                               NET DELAY           2.617                  9.504  2       
+i7_4_lut/B->i7_4_lut/Z                    SLICE_R16C4A       C0_TO_F0_DELAY      0.449                  9.953  1       
+n17                                                          NET DELAY           2.485                 12.438  1       
+i9_4_lut/A->i9_4_lut/Z                    SLICE_R16C3A       B1_TO_F1_DELAY      0.476                 12.914  1       
+n1443                                                        NET DELAY           0.304                 13.218  1       
+i6_4_lut_adj_32/C->i6_4_lut_adj_32/Z      SLICE_R16C3B       C0_TO_F0_DELAY      0.476                 13.694  2       
+n645                                                         NET DELAY           0.304                 13.998  2       
+i1375_2_lut/A->i1375_2_lut/Z              SLICE_R16C3B       C1_TO_F1_DELAY      0.449                 14.447  9       
+n347                                                         NET DELAY           3.252                 17.699  9       
+{ce_counter_172__i9/SR   ce_counter_172__i10/SR}
+                                                             ENDPOINT            0.000                 17.699  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                166.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                166.666  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY               5.499                172.165  25      
-{DSevSeg/DispMux1/counter_121__i18/CK   DSevSeg/DispMux1/counter_121__i19/CK}
-                                                             CLOCK PIN               0.000                172.165  1       
-                                                             Uncertainty          -(0.000)                172.165  
-                                                             Setup time           -(0.198)                171.967  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                             171.967  
-Arrival Time                                                                                            -(15.930)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                      156.036  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                166.666  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  26      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
+                                                             CLOCK PIN           0.000                172.165  1       
+                                                             Uncertainty      -(0.000)                172.165  
+                                                             Setup time       -(0.529)                171.636  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                         171.636  
+Arrival Time                                                                                        -(17.698)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                  153.937  
 
 
 
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i19/Q  (SLICE_R19C5B)
-Path End         : {DSevSeg/DispMux1/counter_121__i6/SR   DSevSeg/DispMux1/counter_121__i7/SR}  (SLICE_R19C3D)
+Path Begin       : ce_counter_172__i10/Q  (SLICE_R17C4B)
+Path End         : {ce_counter_172__i11/SR   ce_counter_172__i12/SR}  (SLICE_R17C4C)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
-Logic Level      : 4
-Delay Ratio      : 72.5% (route), 27.5% (logic)
+Logic Level      : 5
+Delay Ratio      : 73.5% (route), 26.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 166.666 ns 
-Path Slack       : 156.092 ns  (Passed)
+Path Slack       : 153.937 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  25      
-{DSevSeg/DispMux1/counter_121__i18/CK   DSevSeg/DispMux1/counter_121__i19/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  26      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
                                                              CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i19/CK->DSevSeg/DispMux1/counter_121__i19/Q
-                                          SLICE_R19C5B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
-DSevSeg/DispMux1/counter[18]                                 NET DELAY           2.670                  9.557  2       
-DSevSeg/DispMux1/i6_4_lut/C->DSevSeg/DispMux1/i6_4_lut/Z
-                                          SLICE_R18C5D       B0_TO_F0_DELAY      0.449                 10.006  1       
-DSevSeg/DispMux1/n14                                         NET DELAY           2.168                 12.174  1       
-DSevSeg/DispMux1/i7_4_lut/B->DSevSeg/DispMux1/i7_4_lut/Z
-                                          SLICE_R18C4C       D0_TO_F0_DELAY      0.476                 12.650  2       
-DSevSeg/DispMux1/n68                                         NET DELAY           0.304                 12.954  2       
-DSevSeg/DispMux1/i86_2_lut_2_lut/B->DSevSeg/DispMux1/i86_2_lut_2_lut/Z
-                                          SLICE_R18C4C       C1_TO_F1_DELAY      0.449                 13.403  12      
-DSevSeg/DispMux1/n195                                        NET DELAY           2.141                 15.544  12      
-{DSevSeg/DispMux1/counter_121__i6/SR   DSevSeg/DispMux1/counter_121__i7/SR}
-                                                             ENDPOINT            0.000                 15.544  1       
+ce_counter_172__i10/CK->ce_counter_172__i10/Q
+                                          SLICE_R17C4B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+ce_counter[10]                                               NET DELAY           2.617                  9.504  2       
+i7_4_lut/B->i7_4_lut/Z                    SLICE_R16C4A       C0_TO_F0_DELAY      0.449                  9.953  1       
+n17                                                          NET DELAY           2.485                 12.438  1       
+i9_4_lut/A->i9_4_lut/Z                    SLICE_R16C3A       B1_TO_F1_DELAY      0.476                 12.914  1       
+n1443                                                        NET DELAY           0.304                 13.218  1       
+i6_4_lut_adj_32/C->i6_4_lut_adj_32/Z      SLICE_R16C3B       C0_TO_F0_DELAY      0.476                 13.694  2       
+n645                                                         NET DELAY           0.304                 13.998  2       
+i1375_2_lut/A->i1375_2_lut/Z              SLICE_R16C3B       C1_TO_F1_DELAY      0.449                 14.447  9       
+n347                                                         NET DELAY           3.252                 17.699  9       
+{ce_counter_172__i11/SR   ce_counter_172__i12/SR}
+                                                             ENDPOINT            0.000                 17.699  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
                                                              CONSTRAINT          0.000                166.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  25      
-{DSevSeg/DispMux1/counter_121__i6/CK   DSevSeg/DispMux1/counter_121__i7/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  26      
+{ce_counter_172__i11/CK   ce_counter_172__i12/CK}
                                                              CLOCK PIN           0.000                172.165  1       
                                                              Uncertainty      -(0.000)                172.165  
                                                              Setup time       -(0.529)                171.636  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                         171.636  
-Arrival Time                                                                                        -(15.543)  
+Arrival Time                                                                                        -(17.698)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                  156.092  
+Path Slack  (Passed)                                                                                  153.937  
 
 
 
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i19/Q  (SLICE_R19C5B)
-Path End         : {DSevSeg/DispMux1/counter_121__i8/SR   DSevSeg/DispMux1/counter_121__i9/SR}  (SLICE_R19C4A)
+Path Begin       : ce_counter_172__i10/Q  (SLICE_R17C4B)
+Path End         : {ce_counter_172__i13/SR   ce_counter_172__i14/SR}  (SLICE_R17C4D)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
-Logic Level      : 4
-Delay Ratio      : 72.5% (route), 27.5% (logic)
+Logic Level      : 5
+Delay Ratio      : 73.5% (route), 26.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 166.666 ns 
-Path Slack       : 156.092 ns  (Passed)
+Path Slack       : 153.937 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  25      
-{DSevSeg/DispMux1/counter_121__i18/CK   DSevSeg/DispMux1/counter_121__i19/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  26      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
                                                              CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i19/CK->DSevSeg/DispMux1/counter_121__i19/Q
-                                          SLICE_R19C5B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
-DSevSeg/DispMux1/counter[18]                                 NET DELAY           2.670                  9.557  2       
-DSevSeg/DispMux1/i6_4_lut/C->DSevSeg/DispMux1/i6_4_lut/Z
-                                          SLICE_R18C5D       B0_TO_F0_DELAY      0.449                 10.006  1       
-DSevSeg/DispMux1/n14                                         NET DELAY           2.168                 12.174  1       
-DSevSeg/DispMux1/i7_4_lut/B->DSevSeg/DispMux1/i7_4_lut/Z
-                                          SLICE_R18C4C       D0_TO_F0_DELAY      0.476                 12.650  2       
-DSevSeg/DispMux1/n68                                         NET DELAY           0.304                 12.954  2       
-DSevSeg/DispMux1/i86_2_lut_2_lut/B->DSevSeg/DispMux1/i86_2_lut_2_lut/Z
-                                          SLICE_R18C4C       C1_TO_F1_DELAY      0.449                 13.403  12      
-DSevSeg/DispMux1/n195                                        NET DELAY           2.141                 15.544  12      
-{DSevSeg/DispMux1/counter_121__i8/SR   DSevSeg/DispMux1/counter_121__i9/SR}
-                                                             ENDPOINT            0.000                 15.544  1       
+ce_counter_172__i10/CK->ce_counter_172__i10/Q
+                                          SLICE_R17C4B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+ce_counter[10]                                               NET DELAY           2.617                  9.504  2       
+i7_4_lut/B->i7_4_lut/Z                    SLICE_R16C4A       C0_TO_F0_DELAY      0.449                  9.953  1       
+n17                                                          NET DELAY           2.485                 12.438  1       
+i9_4_lut/A->i9_4_lut/Z                    SLICE_R16C3A       B1_TO_F1_DELAY      0.476                 12.914  1       
+n1443                                                        NET DELAY           0.304                 13.218  1       
+i6_4_lut_adj_32/C->i6_4_lut_adj_32/Z      SLICE_R16C3B       C0_TO_F0_DELAY      0.476                 13.694  2       
+n645                                                         NET DELAY           0.304                 13.998  2       
+i1375_2_lut/A->i1375_2_lut/Z              SLICE_R16C3B       C1_TO_F1_DELAY      0.449                 14.447  9       
+n347                                                         NET DELAY           3.252                 17.699  9       
+{ce_counter_172__i13/SR   ce_counter_172__i14/SR}
+                                                             ENDPOINT            0.000                 17.699  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
                                                              CONSTRAINT          0.000                166.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  25      
-{DSevSeg/DispMux1/counter_121__i8/CK   DSevSeg/DispMux1/counter_121__i9/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  26      
+{ce_counter_172__i13/CK   ce_counter_172__i14/CK}
                                                              CLOCK PIN           0.000                172.165  1       
                                                              Uncertainty      -(0.000)                172.165  
                                                              Setup time       -(0.529)                171.636  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
 Required Time                                                                                         171.636  
-Arrival Time                                                                                        -(15.543)  
+Arrival Time                                                                                        -(17.698)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                  156.092  
+Path Slack  (Passed)                                                                                  153.937  
 
 
 
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i19/Q  (SLICE_R19C5B)
-Path End         : {DSevSeg/DispMux1/counter_121__i10/SR   DSevSeg/DispMux1/counter_121__i11/SR}  (SLICE_R19C4B)
+Path Begin       : ce_counter_172__i10/Q  (SLICE_R17C4B)
+Path End         : ce_100hz_c/D  (SLICE_R13C2B)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
-Logic Level      : 4
-Delay Ratio      : 72.5% (route), 27.5% (logic)
+Logic Level      : 5
+Delay Ratio      : 73.4% (route), 26.6% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 166.666 ns 
-Path Slack       : 156.092 ns  (Passed)
+Path Slack       : 154.282 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  25      
-{DSevSeg/DispMux1/counter_121__i18/CK   DSevSeg/DispMux1/counter_121__i19/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                  5.499  26      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
                                                              CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i19/CK->DSevSeg/DispMux1/counter_121__i19/Q
-                                          SLICE_R19C5B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
-DSevSeg/DispMux1/counter[18]                                 NET DELAY           2.670                  9.557  2       
-DSevSeg/DispMux1/i6_4_lut/C->DSevSeg/DispMux1/i6_4_lut/Z
-                                          SLICE_R18C5D       B0_TO_F0_DELAY      0.449                 10.006  1       
-DSevSeg/DispMux1/n14                                         NET DELAY           2.168                 12.174  1       
-DSevSeg/DispMux1/i7_4_lut/B->DSevSeg/DispMux1/i7_4_lut/Z
-                                          SLICE_R18C4C       D0_TO_F0_DELAY      0.476                 12.650  2       
-DSevSeg/DispMux1/n68                                         NET DELAY           0.304                 12.954  2       
-DSevSeg/DispMux1/i86_2_lut_2_lut/B->DSevSeg/DispMux1/i86_2_lut_2_lut/Z
-                                          SLICE_R18C4C       C1_TO_F1_DELAY      0.449                 13.403  12      
-DSevSeg/DispMux1/n195                                        NET DELAY           2.141                 15.544  12      
-{DSevSeg/DispMux1/counter_121__i10/SR   DSevSeg/DispMux1/counter_121__i11/SR}
-                                                             ENDPOINT            0.000                 15.544  1       
+ce_counter_172__i10/CK->ce_counter_172__i10/Q
+                                          SLICE_R17C4B       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+ce_counter[10]                                               NET DELAY           2.617                  9.504  2       
+i7_4_lut/B->i7_4_lut/Z                    SLICE_R16C4A       C0_TO_F0_DELAY      0.449                  9.953  1       
+n17                                                          NET DELAY           2.485                 12.438  1       
+i9_4_lut/A->i9_4_lut/Z                    SLICE_R16C3A       B1_TO_F1_DELAY      0.476                 12.914  1       
+n1443                                                        NET DELAY           0.304                 13.218  1       
+i6_4_lut_adj_32/C->i6_4_lut_adj_32/Z      SLICE_R16C3B       C0_TO_F0_DELAY      0.449                 13.667  2       
+n645                                                         NET DELAY           3.542                 17.209  2       
+i1_2_lut/B->i1_2_lut/Z                    SLICE_R13C2B       C0_TO_F0_DELAY      0.476                 17.685  1       
+n659                                                         NET DELAY           0.000                 17.685  1       
+ce_100hz_c/D                                                 ENDPOINT            0.000                 17.685  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
                                                              CONSTRAINT          0.000                166.666  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  25      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  25      
-{DSevSeg/DispMux1/counter_121__i10/CK   DSevSeg/DispMux1/counter_121__i11/CK}
-                                                             CLOCK PIN           0.000                172.165  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                166.666  26      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY           5.499                172.165  26      
+ce_100hz_c/CK                                                CLOCK PIN           0.000                172.165  1       
                                                              Uncertainty      -(0.000)                172.165  
-                                                             Setup time       -(0.529)                171.636  
+                                                             Setup time       -(0.198)                171.967  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Required Time                                                                                         171.636  
-Arrival Time                                                                                        -(15.543)  
+Required Time                                                                                         171.967  
+Arrival Time                                                                                        -(17.684)  
 ----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                  156.092  
+Path Slack  (Passed)                                                                                  154.282  
 
 
 
@@ -1132,15 +817,15 @@ Path Slack  (Passed)                                                            
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
 DSevSeg/DispMux1/DivClk/D                |    1.743 ns 
-keypad1/Cols_i0_i2/D                     |    1.743 ns 
-keypad1/Cols_i0_i1/D                     |    1.743 ns 
-keypad1/Cols_i0_i3/D                     |    1.743 ns 
-keypad1/Cols_i0_i4/D                     |    1.743 ns 
-keypad1/State_FSM_i2/D                   |    1.743 ns 
-DSevSeg/DispMux1/counter_121__i8/D       |    1.913 ns 
-DSevSeg/DispMux1/counter_121__i9/D       |    1.913 ns 
-DSevSeg/DispMux1/counter_121__i10/D      |    1.913 ns 
-DSevSeg/DispMux1/counter_121__i11/D      |    1.913 ns 
+ce_100hz_c/D                             |    1.743 ns 
+ce_counter_172__i8/D                     |    1.913 ns 
+ce_counter_172__i9/D                     |    1.913 ns 
+ce_counter_172__i10/D                    |    1.913 ns 
+ce_counter_172__i11/D                    |    1.913 ns 
+ce_counter_172__i12/D                    |    1.913 ns 
+ce_counter_172__i13/D                    |    1.913 ns 
+ce_counter_172__i14/D                    |    1.913 ns 
+ce_counter_172__i15/D                    |    1.913 ns 
 -------------------------------------------------------
                                          |             
 Hold # of endpoints with negative slack: |           0 
@@ -1163,8 +848,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : DSevSeg/DispMux1/DivClk/Q  (SLICE_R16C4A)
-Path End         : DSevSeg/DispMux1/DivClk/D  (SLICE_R16C4A)
+Path Begin       : DSevSeg/DispMux1/DivClk/Q  (SLICE_R15C3A)
+Path End         : DSevSeg/DispMux1/DivClk/D  (SLICE_R15C3A)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
 Logic Level      : 2
@@ -1177,8 +862,8 @@ Path Slack       : 1.743 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
 DSevSeg/DispMux1/DivClk/CK                                   CLOCK PIN        0.000                  3.084  1       
 
 
@@ -1186,11 +871,11 @@ Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 DSevSeg/DispMux1/DivClk/CK->DSevSeg/DispMux1/DivClk/Q
-                                          SLICE_R16C4A       CLK_TO_Q1_DELAY  0.779                  3.863  3       
-DSevSeg/DispMux1/En2_c                                       NET DELAY        0.712                  4.575  3       
-DSevSeg/DispMux1/i247_4_lut_4_lut_3_lut/B->DSevSeg/DispMux1/i247_4_lut_4_lut_3_lut/Z
-                                          SLICE_R16C4A       D1_TO_F1_DELAY   0.252                  4.827  1       
-DSevSeg/DispMux1/n408                                        NET DELAY        0.000                  4.827  1       
+                                          SLICE_R15C3A       CLK_TO_Q1_DELAY  0.779                  3.863  7       
+DSevSeg/DispMux1/En2_c                                       NET DELAY        0.712                  4.575  7       
+DSevSeg/DispMux1/i439_4_lut_3_lut/B->DSevSeg/DispMux1/i439_4_lut_3_lut/Z
+                                          SLICE_R15C3A       D1_TO_F1_DELAY   0.252                  4.827  1       
+DSevSeg/DispMux1/n724                                        NET DELAY        0.000                  4.827  1       
 DSevSeg/DispMux1/DivClk/D                                    ENDPOINT         0.000                  4.827  1       
 
 
@@ -1198,8 +883,8 @@ Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
 DSevSeg/DispMux1/DivClk/CK                                   CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1214,8 +899,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : keypad1/State_FSM_i2/Q  (SLICE_R8C4A)
-Path End         : keypad1/Cols_i0_i2/D  (SLICE_R8C3B)
+Path Begin       : ce_100hz_c/Q  (SLICE_R13C2B)
+Path End         : ce_100hz_c/D  (SLICE_R13C2B)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
 Logic Level      : 2
@@ -1228,32 +913,28 @@ Path Slack       : 1.743 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{keypad1/State_FSM_i2/CK   keypad1/State_FSM_i3/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+ce_100hz_c/CK                                                CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-keypad1/State_FSM_i2/CK->keypad1/State_FSM_i2/Q
-                                          SLICE_R8C4A        CLK_TO_Q0_DELAY  0.779                  3.863  5       
-keypad1/n77[1]                                               NET DELAY        0.712                  4.575  5       
-keypad1/i1_4_lut_adj_2/C->keypad1/i1_4_lut_adj_2/Z
-                                          SLICE_R8C3B        D0_TO_F0_DELAY   0.252                  4.827  1       
-keypad1/n392                                                 NET DELAY        0.000                  4.827  1       
-keypad1/Cols_i0_i2/D                                         ENDPOINT         0.000                  4.827  1       
+ce_100hz_c/CK->ce_100hz_c/Q               SLICE_R13C2B       CLK_TO_Q0_DELAY  0.779                  3.863  16      
+keypad1/ce_100hz                                             NET DELAY        0.712                  4.575  16      
+i1_2_lut/A->i1_2_lut/Z                    SLICE_R13C2B       D0_TO_F0_DELAY   0.252                  4.827  1       
+n659                                                         NET DELAY        0.000                  4.827  1       
+ce_100hz_c/D                                                 ENDPOINT         0.000                  4.827  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{keypad1/Cols_i0_i2/CK   keypad1/Cols_i0_i1/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+ce_100hz_c/CK                                                CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1267,218 +948,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : keypad1/State_FSM_i4/Q  (SLICE_R8C4D)
-Path End         : keypad1/Cols_i0_i1/D  (SLICE_R8C3B)
-Source Clock     : IntOsc (R)
-Destination Clock: IntOsc (R)
-Logic Level      : 2
-Delay Ratio      : 40.8% (route), 59.2% (logic)
-Clock Skew       : 0.000 ns 
-Hold Constraint  : 0.000 ns 
-Path Slack       : 1.743 ns  (Passed)
-
-
-Source Clock Path
-Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{keypad1/State_FSM_i4/CK   keypad1/State_FSM_i5/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
-
-
-Data Path
-Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-keypad1/State_FSM_i4/CK->keypad1/State_FSM_i4/Q
-                                          SLICE_R8C4D        CLK_TO_Q0_DELAY  0.779                  3.863  6       
-keypad1/n77[3]                                               NET DELAY        0.712                  4.575  6       
-keypad1/i1_3_lut_3_lut/B->keypad1/i1_3_lut_3_lut/Z
-                                          SLICE_R8C3B        D1_TO_F1_DELAY   0.252                  4.827  1       
-keypad1/n251[0]                                              NET DELAY        0.000                  4.827  1       
-keypad1/Cols_i0_i1/D                                         ENDPOINT         0.000                  4.827  1       
-
-
-Destination Clock Path
-Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-                                                             CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{keypad1/Cols_i0_i2/CK   keypad1/Cols_i0_i1/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
-                                                             Uncertainty      0.000                  3.084  
-                                                             Hold time        0.000                  3.084  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Required Time                                                                                       -3.084  
-Arrival Time                                                                                         4.827  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Path Slack  (Passed)                                                                                 1.743  
-
-
-
-
-++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
-Path Begin       : keypad1/State_FSM_i2/Q  (SLICE_R8C4A)
-Path End         : keypad1/Cols_i0_i3/D  (SLICE_R8C3D)
-Source Clock     : IntOsc (R)
-Destination Clock: IntOsc (R)
-Logic Level      : 2
-Delay Ratio      : 40.8% (route), 59.2% (logic)
-Clock Skew       : 0.000 ns 
-Hold Constraint  : 0.000 ns 
-Path Slack       : 1.743 ns  (Passed)
-
-
-Source Clock Path
-Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{keypad1/State_FSM_i2/CK   keypad1/State_FSM_i3/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
-
-
-Data Path
-Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-keypad1/State_FSM_i2/CK->keypad1/State_FSM_i2/Q
-                                          SLICE_R8C4A        CLK_TO_Q0_DELAY  0.779                  3.863  5       
-keypad1/n77[1]                                               NET DELAY        0.712                  4.575  5       
-keypad1/i354_3_lut_4_lut/C->keypad1/i354_3_lut_4_lut/Z
-                                          SLICE_R8C3D        D0_TO_F0_DELAY   0.252                  4.827  1       
-keypad1/n251[2]                                              NET DELAY        0.000                  4.827  1       
-keypad1/Cols_i0_i3/D                                         ENDPOINT         0.000                  4.827  1       
-
-
-Destination Clock Path
-Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-                                                             CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{keypad1/Cols_i0_i3/CK   keypad1/Cols_i0_i4/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
-                                                             Uncertainty      0.000                  3.084  
-                                                             Hold time        0.000                  3.084  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Required Time                                                                                       -3.084  
-Arrival Time                                                                                         4.827  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Path Slack  (Passed)                                                                                 1.743  
-
-
-
-
-++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
-Path Begin       : keypad1/State_FSM_i4/Q  (SLICE_R8C4D)
-Path End         : keypad1/Cols_i0_i4/D  (SLICE_R8C3D)
-Source Clock     : IntOsc (R)
-Destination Clock: IntOsc (R)
-Logic Level      : 2
-Delay Ratio      : 40.8% (route), 59.2% (logic)
-Clock Skew       : 0.000 ns 
-Hold Constraint  : 0.000 ns 
-Path Slack       : 1.743 ns  (Passed)
-
-
-Source Clock Path
-Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{keypad1/State_FSM_i4/CK   keypad1/State_FSM_i5/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
-
-
-Data Path
-Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-keypad1/State_FSM_i4/CK->keypad1/State_FSM_i4/Q
-                                          SLICE_R8C4D        CLK_TO_Q0_DELAY  0.779                  3.863  6       
-keypad1/n77[3]                                               NET DELAY        0.712                  4.575  6       
-keypad1/i12_4_lut/B->keypad1/i12_4_lut/Z  SLICE_R8C3D        D1_TO_F1_DELAY   0.252                  4.827  1       
-keypad1/n767                                                 NET DELAY        0.000                  4.827  1       
-keypad1/Cols_i0_i4/D                                         ENDPOINT         0.000                  4.827  1       
-
-
-Destination Clock Path
-Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-                                                             CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{keypad1/Cols_i0_i3/CK   keypad1/Cols_i0_i4/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
-                                                             Uncertainty      0.000                  3.084  
-                                                             Hold time        0.000                  3.084  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Required Time                                                                                       -3.084  
-Arrival Time                                                                                         4.827  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Path Slack  (Passed)                                                                                 1.743  
-
-
-
-
-++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
-Path Begin       : keypad1/State_FSM_i1/Q  (SLICE_R8C4C)
-Path End         : keypad1/State_FSM_i2/D  (SLICE_R8C4A)
-Source Clock     : IntOsc (R)
-Destination Clock: IntOsc (R)
-Logic Level      : 2
-Delay Ratio      : 40.8% (route), 59.2% (logic)
-Clock Skew       : 0.000 ns 
-Hold Constraint  : 0.000 ns 
-Path Slack       : 1.743 ns  (Passed)
-
-
-Source Clock Path
-Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-keypad1/State_FSM_i1/CK                                      CLOCK PIN        0.000                  3.084  1       
-
-
-Data Path
-Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-keypad1/State_FSM_i1/CK->keypad1/State_FSM_i1/Q
-                                          SLICE_R8C4C        CLK_TO_Q1_DELAY  0.779                  3.863  3       
-keypad1/debug_c                                              NET DELAY        0.712                  4.575  3       
-keypad1/i1_2_lut_adj_12/B->keypad1/i1_2_lut_adj_12/Z
-                                          SLICE_R8C4A        D0_TO_F0_DELAY   0.252                  4.827  1       
-keypad1/n91                                                  NET DELAY        0.000                  4.827  1       
-keypad1/State_FSM_i2/D                                       ENDPOINT         0.000                  4.827  1       
-
-
-Destination Clock Path
-Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-                                                             CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{keypad1/State_FSM_i2/CK   keypad1/State_FSM_i3/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
-                                                             Uncertainty      0.000                  3.084  
-                                                             Hold time        0.000                  3.084  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Required Time                                                                                       -3.084  
-Arrival Time                                                                                         4.827  
-----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Path Slack  (Passed)                                                                                 1.743  
-
-
-
-
-++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
-Path Begin       : DSevSeg/DispMux1/counter_121__i8/Q  (SLICE_R19C4A)
-Path End         : DSevSeg/DispMux1/counter_121__i8/D  (SLICE_R19C4A)
+Path Begin       : ce_counter_172__i8/Q  (SLICE_R17C4A)
+Path End         : ce_counter_172__i8/D  (SLICE_R17C4A)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
 Logic Level      : 2
@@ -1491,31 +962,243 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{DSevSeg/DispMux1/counter_121__i8/CK   DSevSeg/DispMux1/counter_121__i9/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i7/CK   ce_counter_172__i8/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i8/CK->DSevSeg/DispMux1/counter_121__i8/Q
-                                          SLICE_R19C4A       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-DSevSeg/DispMux1/counter[7]                                  NET DELAY        0.882                  4.745  2       
-DSevSeg/DispMux1/counter_121_add_4_9/C0->DSevSeg/DispMux1/counter_121_add_4_9/S0
-                                          SLICE_R19C4A       C0_TO_F0_DELAY   0.252                  4.997  1       
-DSevSeg/DispMux1/n97[7]                                      NET DELAY        0.000                  4.997  1       
-DSevSeg/DispMux1/counter_121__i8/D                           ENDPOINT         0.000                  4.997  1       
+ce_counter_172__i8/CK->ce_counter_172__i8/Q
+                                          SLICE_R17C4A       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+ce_counter[8]                                                NET DELAY        0.882                  4.745  2       
+ce_counter_172_add_4_9/C1->ce_counter_172_add_4_9/S1
+                                          SLICE_R17C4A       C1_TO_F1_DELAY   0.252                  4.997  1       
+n69[8]                                                       NET DELAY        0.000                  4.997  1       
+ce_counter_172__i8/D                                         ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{DSevSeg/DispMux1/counter_121__i8/CK   DSevSeg/DispMux1/counter_121__i9/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i7/CK   ce_counter_172__i8/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ce_counter_172__i9/Q  (SLICE_R17C4B)
+Path End         : ce_counter_172__i9/D  (SLICE_R17C4B)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+ce_counter_172__i9/CK->ce_counter_172__i9/Q
+                                          SLICE_R17C4B       CLK_TO_Q0_DELAY  0.779                  3.863  2       
+ce_counter[9]                                                NET DELAY        0.882                  4.745  2       
+ce_counter_172_add_4_11/C0->ce_counter_172_add_4_11/S0
+                                          SLICE_R17C4B       C0_TO_F0_DELAY   0.252                  4.997  1       
+n69[9]                                                       NET DELAY        0.000                  4.997  1       
+ce_counter_172__i9/D                                         ENDPOINT         0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ce_counter_172__i10/Q  (SLICE_R17C4B)
+Path End         : ce_counter_172__i10/D  (SLICE_R17C4B)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+ce_counter_172__i10/CK->ce_counter_172__i10/Q
+                                          SLICE_R17C4B       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+ce_counter[10]                                               NET DELAY        0.882                  4.745  2       
+ce_counter_172_add_4_11/C1->ce_counter_172_add_4_11/S1
+                                          SLICE_R17C4B       C1_TO_F1_DELAY   0.252                  4.997  1       
+n69[10]                                                      NET DELAY        0.000                  4.997  1       
+ce_counter_172__i10/D                                        ENDPOINT         0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i9/CK   ce_counter_172__i10/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ce_counter_172__i11/Q  (SLICE_R17C4C)
+Path End         : ce_counter_172__i11/D  (SLICE_R17C4C)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i11/CK   ce_counter_172__i12/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+ce_counter_172__i11/CK->ce_counter_172__i11/Q
+                                          SLICE_R17C4C       CLK_TO_Q0_DELAY  0.779                  3.863  2       
+ce_counter[11]                                               NET DELAY        0.882                  4.745  2       
+ce_counter_172_add_4_13/C0->ce_counter_172_add_4_13/S0
+                                          SLICE_R17C4C       C0_TO_F0_DELAY   0.252                  4.997  1       
+n69[11]                                                      NET DELAY        0.000                  4.997  1       
+ce_counter_172__i11/D                                        ENDPOINT         0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i11/CK   ce_counter_172__i12/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ce_counter_172__i12/Q  (SLICE_R17C4C)
+Path End         : ce_counter_172__i12/D  (SLICE_R17C4C)
+Source Clock     : IntOsc (R)
+Destination Clock: IntOsc (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i11/CK   ce_counter_172__i12/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+ce_counter_172__i12/CK->ce_counter_172__i12/Q
+                                          SLICE_R17C4C       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+ce_counter[12]                                               NET DELAY        0.882                  4.745  2       
+ce_counter_172_add_4_13/C1->ce_counter_172_add_4_13/S1
+                                          SLICE_R17C4C       C1_TO_F1_DELAY   0.252                  4.997  1       
+n69[12]                                                      NET DELAY        0.000                  4.997  1       
+ce_counter_172__i12/D                                        ENDPOINT         0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i11/CK   ce_counter_172__i12/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1530,8 +1213,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i9/Q  (SLICE_R19C4A)
-Path End         : DSevSeg/DispMux1/counter_121__i9/D  (SLICE_R19C4A)
+Path Begin       : ce_counter_172__i13/Q  (SLICE_R17C4D)
+Path End         : ce_counter_172__i13/D  (SLICE_R17C4D)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
 Logic Level      : 2
@@ -1544,31 +1227,31 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{DSevSeg/DispMux1/counter_121__i8/CK   DSevSeg/DispMux1/counter_121__i9/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i13/CK   ce_counter_172__i14/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i9/CK->DSevSeg/DispMux1/counter_121__i9/Q
-                                          SLICE_R19C4A       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-DSevSeg/DispMux1/counter[8]                                  NET DELAY        0.882                  4.745  2       
-DSevSeg/DispMux1/counter_121_add_4_9/C1->DSevSeg/DispMux1/counter_121_add_4_9/S1
-                                          SLICE_R19C4A       C1_TO_F1_DELAY   0.252                  4.997  1       
-DSevSeg/DispMux1/n97[8]                                      NET DELAY        0.000                  4.997  1       
-DSevSeg/DispMux1/counter_121__i9/D                           ENDPOINT         0.000                  4.997  1       
+ce_counter_172__i13/CK->ce_counter_172__i13/Q
+                                          SLICE_R17C4D       CLK_TO_Q0_DELAY  0.779                  3.863  2       
+ce_counter[13]                                               NET DELAY        0.882                  4.745  2       
+ce_counter_172_add_4_15/C0->ce_counter_172_add_4_15/S0
+                                          SLICE_R17C4D       C0_TO_F0_DELAY   0.252                  4.997  1       
+n69[13]                                                      NET DELAY        0.000                  4.997  1       
+ce_counter_172__i13/D                                        ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{DSevSeg/DispMux1/counter_121__i8/CK   DSevSeg/DispMux1/counter_121__i9/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i13/CK   ce_counter_172__i14/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1583,8 +1266,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i10/Q  (SLICE_R19C4B)
-Path End         : DSevSeg/DispMux1/counter_121__i10/D  (SLICE_R19C4B)
+Path Begin       : ce_counter_172__i14/Q  (SLICE_R17C4D)
+Path End         : ce_counter_172__i14/D  (SLICE_R17C4D)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
 Logic Level      : 2
@@ -1597,31 +1280,31 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{DSevSeg/DispMux1/counter_121__i10/CK   DSevSeg/DispMux1/counter_121__i11/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i13/CK   ce_counter_172__i14/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i10/CK->DSevSeg/DispMux1/counter_121__i10/Q
-                                          SLICE_R19C4B       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-DSevSeg/DispMux1/counter[9]                                  NET DELAY        0.882                  4.745  2       
-DSevSeg/DispMux1/counter_121_add_4_11/C0->DSevSeg/DispMux1/counter_121_add_4_11/S0
-                                          SLICE_R19C4B       C0_TO_F0_DELAY   0.252                  4.997  1       
-DSevSeg/DispMux1/n97[9]                                      NET DELAY        0.000                  4.997  1       
-DSevSeg/DispMux1/counter_121__i10/D                          ENDPOINT         0.000                  4.997  1       
+ce_counter_172__i14/CK->ce_counter_172__i14/Q
+                                          SLICE_R17C4D       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+ce_counter[14]                                               NET DELAY        0.882                  4.745  2       
+ce_counter_172_add_4_15/C1->ce_counter_172_add_4_15/S1
+                                          SLICE_R17C4D       C1_TO_F1_DELAY   0.252                  4.997  1       
+n69[14]                                                      NET DELAY        0.000                  4.997  1       
+ce_counter_172__i14/D                                        ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{DSevSeg/DispMux1/counter_121__i10/CK   DSevSeg/DispMux1/counter_121__i11/CK}
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+{ce_counter_172__i13/CK   ce_counter_172__i14/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1636,8 +1319,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : DSevSeg/DispMux1/counter_121__i11/Q  (SLICE_R19C4B)
-Path End         : DSevSeg/DispMux1/counter_121__i11/D  (SLICE_R19C4B)
+Path Begin       : ce_counter_172__i15/Q  (SLICE_R17C5A)
+Path End         : ce_counter_172__i15/D  (SLICE_R17C5A)
 Source Clock     : IntOsc (R)
 Destination Clock: IntOsc (R)
 Logic Level      : 2
@@ -1650,32 +1333,30 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{DSevSeg/DispMux1/counter_121__i10/CK   DSevSeg/DispMux1/counter_121__i11/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+ce_counter_172__i15/CK                                       CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-DSevSeg/DispMux1/counter_121__i11/CK->DSevSeg/DispMux1/counter_121__i11/Q
-                                          SLICE_R19C4B       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-DSevSeg/DispMux1/counter[10]                                 NET DELAY        0.882                  4.745  2       
-DSevSeg/DispMux1/counter_121_add_4_11/C1->DSevSeg/DispMux1/counter_121_add_4_11/S1
-                                          SLICE_R19C4B       C1_TO_F1_DELAY   0.252                  4.997  1       
-DSevSeg/DispMux1/n97[10]                                     NET DELAY        0.000                  4.997  1       
-DSevSeg/DispMux1/counter_121__i11/D                          ENDPOINT         0.000                  4.997  1       
+ce_counter_172__i15/CK->ce_counter_172__i15/Q
+                                          SLICE_R17C5A       CLK_TO_Q0_DELAY  0.779                  3.863  2       
+ce_counter[15]                                               NET DELAY        0.882                  4.745  2       
+ce_counter_172_add_4_17/C0->ce_counter_172_add_4_17/S0
+                                          SLICE_R17C5A       C0_TO_F0_DELAY   0.252                  4.997  1       
+n69[15]                                                      NET DELAY        0.000                  4.997  1       
+ce_counter_172__i15/D                                        ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  26      
-DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  26      
-{DSevSeg/DispMux1/counter_121__i10/CK   DSevSeg/DispMux1/counter_121__i11/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
+hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  27      
+DSevSeg/DispMux1/IntOsc                                      NET DELAY        3.084                  3.084  27      
+ce_counter_172__i15/CK                                       CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
