@@ -37,7 +37,34 @@ Figure 2 shows the top level Block diagram. For a more detailed explination of t
 
 Figure 3 shows the FSM transaction diagram for the Keypad FSM module shown in Figure 2.
 
-![Figure 4: Lab 3 Keypad FSM Transition Table, By Roman De Santos, 11/2/25] (images/)
+![Figure 4: Lab 3 Keypad FSM Transition Table, By Roman De Santos, 11/2/25](images/KeypadFSMTransitionTable.png)
+
+## Testbench Results
+
+Keypad FSM results
+
+![Figure 5: Keypad FSM Testbench Terminal](images/KeypadFSMTerminal.png)
+
+Figure 5 shows that the Keypad was able to succesfully assign the correct values to the hexadecimal display based on a couple of button presses.
+
+![Figure 6: Keypad FSM Testbench Waves](images/KeypadFSMWaves.png)
+
+Figure 6 show Column scanning stops when a button is pressed preventing double pressing of the same button press.
+
+![Figure 7: Sync Module Testbench Terminal](images/SyncTerminal.png)
+
+Figure 7 shows that the sync module was checked to make sure all of the inputs were delayed by two cycles for various row values. They all passed.
+
+![Figure 8: Sync Module Testbench Waves](images/SyncWaves.png)
+
+Figure 8 shows the delay of the syncronizer visually on waves.
+
+![Figure 9: Top Module Testbench Terminal]
+
+![Figure 10: Top Module Testbench Waves]
+
+For the Dual Seven Segment Display module you can find that in [Lab2](https://roman-de-santos.github.io/E155/labs/lab2/lab2.html).
+
 
 ## Challenges
 
@@ -51,7 +78,10 @@ You could extend the 2-flop syncronizer to an n-flop syncronizer where each addi
 
 Other syncronizers do not apply to this specific case of the button. Other syncronizers between different clock domains require call and responses such as handshakes or FIFO buffers (such as SPI). The button is much more simple and does not need a complex syncronizer.
 
-## Testbench Results
+![Figure 11: Incorrect State logic](images/Challenges.png)
+
+Firgure 11 shows my state transition logic for the scanner part of the fsm at state 1. NextState should be s4 since I OR reduced my row column to check if any key was pressed. But it shows that the hardware transitions to s2 (the second scanning state), and then it moves to the debouncer with the wrong column value. Adding a clock divider to slow down the FSM fixed this issue.
+
 
 ## Results and Discussion
 
@@ -61,7 +91,7 @@ Time spent on the lab: 30 hours
 
 The video of the working set up can be found below.
 
-[![Watch the video](IMAGE)](LINK)
+[![Watch the video](https://img.youtube.com/shorts/hVvOILbWpI4/maxresdefault.jpg)](https://youtube.com/shorts/hVvOILbWpI4?feature=share)
 
 ## AI Prototype Reflection
 
