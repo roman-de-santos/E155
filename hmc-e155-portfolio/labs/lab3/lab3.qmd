@@ -51,6 +51,8 @@ You could extend the 2-flop syncronizer to an n-flop syncronizer where each addi
 
 Other syncronizers do not apply to this specific case of the button. Other syncronizers between different clock domains require call and responses such as handshakes or FIFO buffers (such as SPI). The button is much more simple and does not need a complex syncronizer.
 
+## Testbench Results
+
 ## Results and Discussion
 
 Overall the design was able to meet all of the design constraints. Each button press is registered once and while one button is pressed the display is latched untill the button is released ( other presses are ignored while another button is pressed). When two buttons in the same row are pressed in the same debounce cycle a priority encoder takes the largest of the two.
@@ -95,3 +97,10 @@ Update the displayed digits only when a new key is registered.
 Ensure equal apparent brightness and no visible flicker.
 Keep all logic synthesizable and synchronous; use idiomatic SystemVerilog constructs.
 Provide any small clock‑enable or divider logic you need. You can also assume that a sevenSegment module exists that takes a 4 bit input and outputs the 7 segments.
+
+
+Both of the prompts generated verilog files that at first glance look reasonable to implement. However, I'm sure there are a lot of minor bugs. Prompt A seemed to be better at producing more structured files since I assume it was able to breakdown the complex problem into categories it deemed acceptable. Prompt B on the other hand had to follow a specific structure. Both of the prompts had a very cluttered top module. 
+
+I tried feeding gemini my modified files. I removed the top module's clock divider feeding into the keypadFSM and instead fed it the internal oscillator as a clock. This caused a racing condition where the next state would not transition correctly based on the inputs. Gemini was not able to understand why this was causing an issue and it lacked the understanding of how the code is compiled into hardware.
+
+I assume there are other very small bugs that lead to timing that is slightly off throught this code. But the general logic of how you would apporach this problem given the prompts is solid and can be a great starting point.
