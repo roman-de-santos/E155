@@ -1,5 +1,4 @@
 module top_tb();
-    logic           clk;       // system clock
     logic           reset;     // active high reset
     tri     [3:0]   rows;      // 4-bit row input
     tri     [3:0]   cols;      // 4-bit column output

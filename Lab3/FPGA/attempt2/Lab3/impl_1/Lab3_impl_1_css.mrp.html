@@ -49,7 +49,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2025.1.0.39.0
-Mapped on: Sun Nov  2 22:30:34 2025
+Mapped on: Mon Nov  3 13:37:09 2025
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
 
@@ -62,8 +62,8 @@ Command line:   map -pdc C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/L
 
    Number of slice registers:  73 out of  5280 (1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           152 out of  5280 (3%)
-      Number of logic LUT4s:              92
+   Number of LUT4s:           150 out of  5280 (3%)
+      Number of logic LUT4s:              90
       Number of inserted feedthru LUT4s:   8
       Number of ripple logic:             26 (52 LUT4s)
    Number of IO sites used:   19 out of 39 (49%)
@@ -88,28 +88,27 @@ Command line:   map -pdc C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/L
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  2
-      Net IntOsc: 27 loads, 27 rising, 0 falling (Driver: Pin
-     hf_osc.osc_inst/CLKHF)
+      Net IntOsc: 27 loads, 27 rising, 0 falling (Driver: Pin hf_osc/CLKHF)
       Net ce_100hz: 28 loads, 28 rising, 0 falling (Driver: Pin ce_100hz_c/Q)
    Number of Clock Enables:  4
       Net VCC_net: 1 loads, 0 SLICEs
       Net keypad1.n223[5]: 8 loads, 8 SLICEs
-      Net keypad1.n716: 8 loads, 8 SLICEs
-      Net keypad1.n717: 4 loads, 4 SLICEs
+      Net keypad1.n729: 4 loads, 4 SLICEs
+      Net keypad1.n732: 8 loads, 8 SLICEs
    Number of LSRs:  3
-      Net n347: 9 loads, 9 SLICEs
       Net Reset_c_N_69: 33 loads, 33 SLICEs
+      Net n347: 9 loads, 9 SLICEs
       Net DSevSeg.DispMux1.n352: 12 loads, 12 SLICEs
    Top 10 highest fanout non-clock nets:
       Net Reset_c_N_69: 33 loads
-      Net dRows[3]: 15 loads
       Net keypad1.count[7]: 14 loads
+      Net Cols_c_0: 13 loads
       Net debug_c: 13 loads
-      Net Cols_c_3: 12 loads
+      Net dRows[3]: 13 loads
+      Net Cols_c_1: 12 loads
       Net DSevSeg.DispMux1.n352: 12 loads
       Net keypad1.n223[4]: 12 loads
       Net Cols_c_2: 11 loads
-      Net dRows[0]: 11 loads
       Net dRows[2]: 11 loads
 
    Number of warnings:  0
@@ -172,7 +171,7 @@ Block i1 was optimized away.
 <A name="mrp_osc"></A><B><U><big>OSC Summary</big></U></B>
 
 OSC 1:                                 Pin/Node Value
-  OSC Instance Name:                            hf_osc.osc_inst
+  OSC Instance Name:                            hf_osc
   Power UP:                            NODE     VCC_net
   Enable Signal:                       NODE     VCC_net
   OSC Output:                          NODE     IntOsc
@@ -180,7 +179,7 @@ OSC 1:                                 Pin/Node Value
 
 <A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
 
-Instance Name: hf_osc.osc_inst
+Instance Name: hf_osc
          Type: HFOSC
 
 <A name="mrp_consum"></A><B><U><big>Constraint Summary</big></U></B>
@@ -190,10 +189,10 @@ Instance Name: hf_osc.osc_inst
 
 <A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
 
-   Total CPU Time: 1 secs
+   Total CPU Time: 0 secs
    Total REAL Time: 2 secs
-   Peak Memory Usage: 70 MB
-Checksum -- map: 806cc16b70c6176540daaceffa2ac5472bd07a35
+   Peak Memory Usage: 71 MB
+Checksum -- map: 9c31d514a2f16fd692a2aacbd3623a97c7e44419
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995
      AT&amp;T Corp.   All rights reserved.

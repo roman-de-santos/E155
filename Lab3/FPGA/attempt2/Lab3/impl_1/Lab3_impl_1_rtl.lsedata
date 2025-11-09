@@ -1,8 +1,8 @@
 <top name = "top"  library = "work"  arch = ""  entry = "Verilog">
 
 <clocks>
-    <clockitem name = "ce_100hz"  type = "net" />
     <clockitem name = "IntOsc"  type = "net" />
+    <clockitem name = "ce_100hz"  type = "net" />
 </clocks>
 
 <!--

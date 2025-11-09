@@ -1120,3 +1120,265 @@ run -all
 # Errors: 0, Warnings: 1
 # End time: 15:47:51 on Nov 02,2025, Elapsed time: 0:06:25
 # Errors: 0, Warnings: 3
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 13:12:42 on Nov 03,2025
+# Loading sv_std.std
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /KeypadFSM_tb/dut File: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 13
+# ** Warning: (vsim-3722) C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(13): [TFMPC] - Missing connection for port 'debug'.
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftd18v7m".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftd18v7m
+# run -all
+# ** Error: FAILED!: First key press -- got sw1=6 sw2=0 expected sw1=0 sw2=6 at time 50122.
+#    Time: 50122 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 44
+# ** Error: FAILED!: Second key press -- got sw1=8 sw2=6 expected sw1=6 sw2=8 at time 150272.
+#    Time: 150272 ns  Scope: KeypadFSM_tb.check_key File: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 44
+# ** Note: $stop    : C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(76)
+#    Time: 200422 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 76
+# End time: 13:15:01 on Nov 03,2025, Elapsed time: 0:02:19
+# Errors: 2, Warnings: 4
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 13:15:57 on Nov 03,2025
+# Loading sv_std.std
+# Loading work.KeypadFSM_tb(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+#    Time: 0 ns  Iteration: 0  Instance: /KeypadFSM_tb/dut File: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv Line: 13
+# ** Warning: (vsim-3722) C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(13): [TFMPC] - Missing connection for port 'debug'.
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftz5wxth".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftz5wxth
+# run -all
+# PASSED!: First key press -- got sw1=6 sw2=0 expected sw1=6 Sw2=0 at time 50122.
+# PASSED!: Second key press -- got sw1=8 sw2=6 expected sw1=8 Sw2=6 at time 150272.
+# ** Note: $stop    : C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv(76)
+#    Time: 200422 ns  Iteration: 0  Instance: /KeypadFSM_tb
+# Break in Module KeypadFSM_tb at C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv line 76
+# Causality operation skipped due to absence of debug database file
+# End time: 13:25:55 on Nov 03,2025, Elapsed time: 0:09:58
+# Errors: 0, Warnings: 4
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 13:30:59 on Nov 03,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 13
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlft2htqxa".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft2htqxa
+# run -all
+# ** Note: $stop    : C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(59)
+#    Time: 200127 ps  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 59
+add wave -position end  sim:/top_tb/dut/Sw1
+add wave -position end  sim:/top_tb/dut/Sw2
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 13
+run -all
+# ** Note: $stop    : C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(59)
+#    Time: 200127 ps  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 59
+add wave -position end  sim:/top_tb/dut/keypad1/State
+add wave -position end  sim:/top_tb/dut/keypad1/NextState
+add wave -position end  sim:/top_tb/dut/keypad1/Clk
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 13
+run -all
+# ** Note: $stop    : C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(59)
+#    Time: 200127 ps  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 59
+# End time: 13:35:56 on Nov 03,2025, Elapsed time: 0:04:57
+# Errors: 0, Warnings: 1
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   2
+#   Totals: Errors:   0, Warnings:   2
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 13:38:50 on Nov 03,2025
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.top(fast)
+# Loading ovi_ice40up.HSOSC(fast)
+# Loading work.Sync(fast)
+# Loading work.DualSevSeg(fast)
+# Loading work.DispMux(fast)
+# Loading work.SegDisp(fast)
+# Loading work.KeypadFSM(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (1) for port 'Seg'. The port definition is at: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv Line: 13
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlft17r1i1".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft17r1i1
+# run -all
+# ** Note: $stop    : C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv(59)
+#    Time: 200127 ps  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv line 59
+# End time: 13:51:45 on Nov 03,2025, Elapsed time: 0:12:55
+# Errors: 0, Warnings: 3
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 13:52:55 on Nov 03,2025
+# Loading sv_std.std
+# Loading work.tb_Sync(fast)
+# Loading work.Sync(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlftqg9q2d".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftqg9q2d
+# run -all
+# Starting Testbench...
+# Time=0 | Clk=0 Reset=1 | Rows=0 | dRows_out=x
+# Time=5000 | Clk=1 Reset=1 | Rows=0 | dRows_out=0
+# Time=10000 | Clk=0 Reset=1 | Rows=0 | dRows_out=0
+# Time 15000: Reset de-asserted. Output dRows = 0
+# Time=15000 | Clk=1 Reset=0 | Rows=0 | dRows_out=0
+# Time=20000 | Clk=0 Reset=0 | Rows=0 | dRows_out=0
+# Time 25000: [Cycle 1] Applying Rows = a. Output dRows = 0
+# Time=25000 | Clk=1 Reset=0 | Rows=a | dRows_out=0
+# Time=30000 | Clk=0 Reset=0 | Rows=a | dRows_out=0
+# Time 35000: [Cycle 2] Applying Rows = b. Output dRows = 0
+# Time=35000 | Clk=1 Reset=0 | Rows=b | dRows_out=a
+# Time=40000 | Clk=0 Reset=0 | Rows=b | dRows_out=a
+# Time 45000: [Cycle 3] Applying Rows = c. Output dRows = a
+# Time=45000 | Clk=1 Reset=0 | Rows=c | dRows_out=b
+# Time=50000 | Clk=0 Reset=0 | Rows=c | dRows_out=b
+# Time 55000: [Cycle 4] Applying Rows = c. Output dRows = b
+# Time=55000 | Clk=1 Reset=0 | Rows=c | dRows_out=c
+# Time=60000 | Clk=0 Reset=0 | Rows=c | dRows_out=c
+# Time 65000: [Cycle 5] Applying Rows = c. Output dRows = c
+# Time=65000 | Clk=1 Reset=0 | Rows=c | dRows_out=c
+# Time=70000 | Clk=0 Reset=0 | Rows=c | dRows_out=c
+# Time 75000: Asserting Reset.
+# Time=75000 | Clk=1 Reset=1 | Rows=c | dRows_out=c
+# Time=80000 | Clk=0 Reset=1 | Rows=c | dRows_out=c
+# Time 85000: After reset edge. Output dRows = c
+# ** Error: FAIL: Reset did not clear dRows
+#    Time: 85 ns  Scope: tb_Sync File: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv Line: 75
+# Test Complete. All checks passed.
+# ** Note: $finish    : C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv(78)
+#    Time: 85 ns  Iteration: 1  Instance: /tb_Sync
+# 1
+# Break in Module tb_Sync at C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv line 78
+# End time: 13:58:03 on Nov 03,2025, Elapsed time: 0:05:08
+# Errors: 1, Warnings: 2
+# *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   3
+#   Totals: Errors:   0, Warnings:   3
+# vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do "view wave" -do "add wave /*" -do "run -all" -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log 
+# Start time: 13:58:42 on Nov 03,2025
+# Loading sv_std.std
+# Loading work.tb_Sync(fast)
+# Loading work.Sync(fast)
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# add wave /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: rdesantos  Hostname: 8FMZ0R3  ProcessID: 18264
+#           Attempting to use alternate WLF file "./wlft7c5t61".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft7c5t61
+# run -all
+# Starting Testbench...
+# Time=0 | Clk=0 Reset=1 | Rows=0 | dRows_out=x
+# Time=5000 | Clk=1 Reset=1 | Rows=0 | dRows_out=0
+# Time=10000 | Clk=0 Reset=1 | Rows=0 | dRows_out=0
+# Time 15000: Reset de-asserted. Output dRows = 0
+# Time=15000 | Clk=1 Reset=0 | Rows=0 | dRows_out=0
+# Time=20000 | Clk=0 Reset=0 | Rows=0 | dRows_out=0
+# Time 25000: [Cycle 1] Applying Rows = a. Output dRows = 0
+# Time=25000 | Clk=1 Reset=0 | Rows=a | dRows_out=0
+# Time=30000 | Clk=0 Reset=0 | Rows=a | dRows_out=0
+# Time 35000: [Cycle 2] Applying Rows = b. Output dRows = 0
+# Time=35000 | Clk=1 Reset=0 | Rows=b | dRows_out=a
+# Time=40000 | Clk=0 Reset=0 | Rows=b | dRows_out=a
+# Time 45000: [Cycle 3] Applying Rows = c. Output dRows = a
+# Time=45000 | Clk=1 Reset=0 | Rows=c | dRows_out=b
+# Time=50000 | Clk=0 Reset=0 | Rows=c | dRows_out=b
+# Time 55000: [Cycle 4] Applying Rows = c. Output dRows = b
+# Time=55000 | Clk=1 Reset=0 | Rows=c | dRows_out=c
+# Time=60000 | Clk=0 Reset=0 | Rows=c | dRows_out=c
+# Time 65000: [Cycle 5] Applying Rows = c. Output dRows = c
+# Test Complete. All checks passed.
+# ** Note: $finish    : C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv(69)
+#    Time: 65 ns  Iteration: 1  Instance: /tb_Sync
+# 1
+# Break in Module tb_Sync at C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv line 69
+# End time: 14:01:54 on Nov 03,2025, Elapsed time: 0:03:12
+# Errors: 0, Warnings: 2
