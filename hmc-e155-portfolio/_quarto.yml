@@ -13,6 +13,8 @@ website:
         text: Labs
       - href: resources.qmd
         text: Resources
+      - href: project.qmd
+        text: Final Project
 
 format:
   html:

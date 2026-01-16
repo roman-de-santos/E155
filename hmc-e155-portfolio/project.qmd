@@ -1,0 +1,26 @@
+---
+title: "Final Project: Guitar Chorus Pedal"
+---
+
+## Project Website
+
+The full website can be found [here](https://roman-de-santos.github.io/E155Project/)
+
+## Abstract
+
+This project implements a digital guitar pedal capable of applying a real-time chorus effect to an instrument input. 
+The system utilizes a hybrid architecture featuring a microcontroller (MCU), an FPGA, an external DAC, and custom analog circuitry. 
+The analog front-end passes the guitar input through gain scaling and offset adjustment, followed by 4th-order anti-aliasing filters. 
+The signal is then digitized by the MCU’s internal ADC and transferred via DMA to an SAI module for output in I2S format.
+
+The FPGA decodes the incoming I2S data and routes it to a DSP module, which utilizes SRAM to generate the chorus modulation.
+Finally, the processed audio is packaged and transmitted out to an external DAC via I2S,
+converted back to an analog signal, and scaled to a safe output range suitable for a standard guitar amplifier.
+
+## Final Project picture
+
+![Figure 1: Final project in its enclosure](images/FinalProject.png)
+
+## Video Demonstration
+
+{{< video https://youtube.com/watch?v=/Rw8HaAM1LVo?feature=share >}}
