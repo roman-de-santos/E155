@@ -12,15 +12,199 @@
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# qrun -clean -f "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.f"
+# do C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.vdo
 # Deleting directory qrun.out...
 # Creating library 'qrun.out/work'.
 # Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 # 
 # 
-# Start time: 12:58:09 on Nov 02,2025
+# Start time: 13:12:37 on Nov 03,2025
 # 
-# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+# 
+# -- Compiling module top
+# 
+# -- Compiling module DispMux
+# 
+# -- Compiling module DualSevSeg
+# 
+# -- Compiling module SegDisp
+# 
+# -- Compiling module KeypadFSM
+# 
+# -- Compiling module Sync
+# 
+# -- Compiling module KeypadFSM_tb
+# 
+# 
+# 
+# Top level modules:
+# 
+# 	top
+# 
+# 	KeypadFSM_tb
+# 
+# End time: 13:12:37 on Nov 03,2025, Elapsed time: 0:00:00
+# 
+# Errors: 0, Warnings: 0
+# 
+# Questa Lattice OEM Edition-64 vopt 2024.2 Compiler 2024.05 May 20 2024
+# 
+# 
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# 
+# Start time: 13:12:39 on Nov 03,2025
+# 
+# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up KeypadFSM_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
+# 
+# 
+# 
+# Top level modules:
+# 
+# 	KeypadFSM_tb
+# 
+# 
+# 
+# Analyzing design...
+# 
+# -- Loading module KeypadFSM_tb
+# 
+# -- Loading module KeypadFSM
+# 
+# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
+# 
+# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
+# 
+# Optimizing 2 design-units (inlining 0/2 module instances):
+# 
+# -- Optimizing module KeypadFSM_tb(fast)
+# 
+# -- Optimizing module KeypadFSM(fast)
+# 
+# ** Note: (vopt-143) Recognized 1 FSM in module "KeypadFSM(fast)".
+# 
+# Optimized design name is qrun_opt
+# 
+# End time: 13:12:41 on Nov 03,2025, Elapsed time: 0:00:02
+# 
+# Errors: 0, Warnings: 3
+# 
+vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log
+# //  Questa Lattice OEM Edition-64
+# //  Version 2024.2 win64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.vdo
+# Deleting directory qrun.out...
+# Creating library 'qrun.out/work'.
+# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# 
+# 
+# Start time: 13:15:55 on Nov 03,2025
+# 
+# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+# 
+# -- Compiling module top
+# 
+# -- Compiling module DispMux
+# 
+# -- Compiling module DualSevSeg
+# 
+# -- Compiling module SegDisp
+# 
+# -- Compiling module KeypadFSM
+# 
+# -- Compiling module Sync
+# 
+# -- Compiling module KeypadFSM_tb
+# 
+# 
+# 
+# Top level modules:
+# 
+# 	top
+# 
+# 	KeypadFSM_tb
+# 
+# End time: 13:15:56 on Nov 03,2025, Elapsed time: 0:00:01
+# 
+# Errors: 0, Warnings: 0
+# 
+# Questa Lattice OEM Edition-64 vopt 2024.2 Compiler 2024.05 May 20 2024
+# 
+# 
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# 
+# Start time: 13:15:56 on Nov 03,2025
+# 
+# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up KeypadFSM_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
+# 
+# 
+# 
+# Top level modules:
+# 
+# 	KeypadFSM_tb
+# 
+# 
+# 
+# Analyzing design...
+# 
+# -- Loading module KeypadFSM_tb
+# 
+# -- Loading module KeypadFSM
+# 
+# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
+# 
+# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
+# 
+# Optimizing 2 design-units (inlining 0/2 module instances):
+# 
+# -- Optimizing module KeypadFSM_tb(fast)
+# 
+# -- Optimizing module KeypadFSM(fast)
+# 
+# ** Note: (vopt-143) Recognized 1 FSM in module "KeypadFSM(fast)".
+# 
+# Optimized design name is qrun_opt
+# 
+# End time: 13:15:57 on Nov 03,2025, Elapsed time: 0:00:01
+# 
+# Errors: 0, Warnings: 3
+# 
+vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log
+# //  Questa Lattice OEM Edition-64
+# //  Version 2024.2 win64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.vdo
+# Deleting directory qrun.out...
+# Creating library 'qrun.out/work'.
+# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# 
+# 
+# Start time: 13:30:57 on Nov 03,2025
+# 
+# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
 # 
 # -- Compiling module top
 # 
@@ -42,7 +226,7 @@
 # 
 # 	top_tb
 # 
-# End time: 12:58:09 on Nov 02,2025, Elapsed time: 0:00:00
+# End time: 13:30:57 on Nov 03,2025, Elapsed time: 0:00:00
 # 
 # Errors: 0, Warnings: 0
 # 
@@ -51,7 +235,7 @@
 # 
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # 
-# Start time: 12:58:09 on Nov 02,2025
+# Start time: 13:30:57 on Nov 03,2025
 # 
 # vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up top_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
 # 
@@ -121,7 +305,7 @@
 # 
 # Optimized design name is qrun_opt
 # 
-# End time: 12:58:10 on Nov 02,2025, Elapsed time: 0:00:01
+# End time: 13:30:59 on Nov 03,2025, Elapsed time: 0:00:02
 # 
 # Errors: 0, Warnings: 2
 # 
@@ -140,15 +324,15 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# qrun -clean -f "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.f"
+# do C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.vdo
 # Deleting directory qrun.out...
 # Creating library 'qrun.out/work'.
 # Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 # 
 # 
-# Start time: 13:04:38 on Nov 02,2025
+# Start time: 13:38:48 on Nov 03,2025
 # 
-# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
 # 
 # -- Compiling module top
 # 
@@ -170,7 +354,7 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # 
 # 	top_tb
 # 
-# End time: 13:04:38 on Nov 02,2025, Elapsed time: 0:00:00
+# End time: 13:38:48 on Nov 03,2025, Elapsed time: 0:00:00
 # 
 # Errors: 0, Warnings: 0
 # 
@@ -179,7 +363,7 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # 
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # 
-# Start time: 13:04:38 on Nov 02,2025
+# Start time: 13:38:48 on Nov 03,2025
 # 
 # vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up top_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
 # 
@@ -249,7 +433,7 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # 
 # Optimized design name is qrun_opt
 # 
-# End time: 13:04:39 on Nov 02,2025, Elapsed time: 0:00:01
+# End time: 13:38:50 on Nov 03,2025, Elapsed time: 0:00:02
 # 
 # Errors: 0, Warnings: 2
 # 
@@ -268,15 +452,15 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# qrun -clean -f "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.f"
+# do C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.vdo
 # Deleting directory qrun.out...
 # Creating library 'qrun.out/work'.
 # Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 # 
 # 
-# Start time: 13:08:57 on Nov 02,2025
+# Start time: 13:52:54 on Nov 03,2025
 # 
-# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
 # 
 # -- Compiling module top
 # 
@@ -290,15 +474,17 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # 
 # -- Compiling module Sync
 # 
-# -- Compiling module top_tb
+# -- Compiling module tb_Sync
 # 
 # 
 # 
 # Top level modules:
 # 
-# 	top_tb
+# 	top
 # 
-# End time: 13:08:57 on Nov 02,2025, Elapsed time: 0:00:00
+# 	tb_Sync
+# 
+# End time: 13:52:54 on Nov 03,2025, Elapsed time: 0:00:00
 # 
 # Errors: 0, Warnings: 0
 # 
@@ -307,79 +493,39 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # 
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # 
-# Start time: 13:08:57 on Nov 02,2025
+# Start time: 13:52:54 on Nov 03,2025
 # 
-# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up top_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
+# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up tb_Sync -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
 # 
 # 
 # 
 # Top level modules:
 # 
-# 	top_tb
+# 	tb_Sync
 # 
 # 
 # 
 # Analyzing design...
 # 
-# -- Loading module top_tb
-# 
-# -- Loading module top
-# 
-# -- Loading module ovi_ice40up.HSOSC
-# 
-# -- Loading module ovi_ice40up.VLO
-# 
-# -- Loading module ovi_ice40up.HSOSC_CORE
-# 
-# -- Loading module ovi_ice40up.HFOSC
-# 
-# -- Loading module ovi_ice40up.HFOSC_CORE
+# -- Loading module tb_Sync
 # 
 # -- Loading module Sync
 # 
-# -- Loading module DualSevSeg
-# 
-# -- Loading module DispMux
-# 
-# -- Loading module SegDisp
-# 
-# -- Loading module KeypadFSM
+# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
 # 
 # ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
 # 
-# Optimizing 12 design-units (inlining 4/12 module instances):
+# Optimizing 2 design-units (inlining 0/2 module instances):
 # 
-# -- Inlining module ovi_ice40up.VLO(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC_CORE(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC(fast)
-# 
-# -- Inlining module ovi_ice40up.HSOSC_CORE(fast)
-# 
-# -- Optimizing module ovi_ice40up.HSOSC(fast)
-# 
-# -- Optimizing module top_tb(fast)
-# 
-# -- Optimizing module KeypadFSM(fast)
-# 
-# ** Note: (vopt-143) Recognized 1 FSM in module "KeypadFSM(fast)".
-# 
-# -- Optimizing module top(fast)
-# 
-# -- Optimizing module DispMux(fast)
-# 
-# -- Optimizing module SegDisp(fast)
+# -- Optimizing module tb_Sync(fast)
 # 
 # -- Optimizing module Sync(fast)
 # 
-# -- Optimizing module DualSevSeg(fast)
-# 
 # Optimized design name is qrun_opt
 # 
-# End time: 13:08:58 on Nov 02,2025, Elapsed time: 0:00:01
+# End time: 13:52:55 on Nov 03,2025, Elapsed time: 0:00:01
 # 
-# Errors: 0, Warnings: 2
+# Errors: 0, Warnings: 3
 # 
 vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log
 # //  Questa Lattice OEM Edition-64
@@ -396,15 +542,15 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# qrun -clean -f "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.f"
+# do C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.vdo
 # Deleting directory qrun.out...
 # Creating library 'qrun.out/work'.
 # Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 # 
 # 
-# Start time: 14:26:10 on Nov 02,2025
+# Start time: 13:58:41 on Nov 03,2025
 # 
-# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
 # 
 # -- Compiling module top
 # 
@@ -418,15 +564,17 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # 
 # -- Compiling module Sync
 # 
-# -- Compiling module top_tb
+# -- Compiling module tb_Sync
 # 
 # 
 # 
 # Top level modules:
 # 
-# 	top_tb
+# 	top
 # 
-# End time: 14:26:10 on Nov 02,2025, Elapsed time: 0:00:00
+# 	tb_Sync
+# 
+# End time: 13:58:41 on Nov 03,2025, Elapsed time: 0:00:00
 # 
 # Errors: 0, Warnings: 0
 # 
@@ -435,736 +583,38 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # 
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # 
-# Start time: 14:26:10 on Nov 02,2025
+# Start time: 13:58:41 on Nov 03,2025
 # 
-# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up top_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
+# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up tb_Sync -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
 # 
 # 
 # 
 # Top level modules:
 # 
-# 	top_tb
+# 	tb_Sync
 # 
 # 
 # 
 # Analyzing design...
 # 
-# -- Loading module top_tb
-# 
-# -- Loading module top
-# 
-# -- Loading module ovi_ice40up.HSOSC
-# 
-# -- Loading module ovi_ice40up.VLO
-# 
-# -- Loading module ovi_ice40up.HSOSC_CORE
-# 
-# -- Loading module ovi_ice40up.HFOSC
-# 
-# -- Loading module ovi_ice40up.HFOSC_CORE
+# -- Loading module tb_Sync
 # 
 # -- Loading module Sync
 # 
-# -- Loading module DualSevSeg
-# 
-# -- Loading module DispMux
-# 
-# -- Loading module SegDisp
-# 
-# -- Loading module KeypadFSM
+# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
 # 
 # ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
 # 
-# Optimizing 12 design-units (inlining 4/12 module instances):
+# Optimizing 2 design-units (inlining 0/2 module instances):
 # 
-# -- Inlining module ovi_ice40up.VLO(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC_CORE(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC(fast)
-# 
-# -- Inlining module ovi_ice40up.HSOSC_CORE(fast)
-# 
-# -- Optimizing module ovi_ice40up.HSOSC(fast)
-# 
-# -- Optimizing module top_tb(fast)
-# 
-# -- Optimizing module KeypadFSM(fast)
-# 
-# ** Note: (vopt-143) Recognized 1 FSM in module "KeypadFSM(fast)".
-# 
-# -- Optimizing module top(fast)
-# 
-# -- Optimizing module DispMux(fast)
-# 
-# -- Optimizing module SegDisp(fast)
+# -- Optimizing module tb_Sync(fast)
 # 
 # -- Optimizing module Sync(fast)
 # 
-# -- Optimizing module DualSevSeg(fast)
-# 
 # Optimized design name is qrun_opt
 # 
-# End time: 14:26:10 on Nov 02,2025, Elapsed time: 0:00:00
+# End time: 13:58:42 on Nov 03,2025, Elapsed time: 0:00:01
 # 
-# Errors: 0, Warnings: 2
-# 
-vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log
-# //  Questa Lattice OEM Edition-64
-# //  Version 2024.2 win64 May 20 2024
-# //
-# // Unpublished work. Copyright 2024 Siemens
-# //
-# // This material contains trade secrets or otherwise confidential information
-# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-# // "SISW"), or its licensors. Access to and use of this information is strictly
-# // limited as set forth in the Customer's applicable agreements with SISW.
-# //
-# // This material may not be copied, distributed, or otherwise disclosed outside
-# // of the Customer's facilities without the express written permission of SISW,
-# // and may not be used in any way not expressly authorized by SISW.
-# //
-# qrun -clean -f "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.f"
-# Deleting directory qrun.out...
-# Creating library 'qrun.out/work'.
-# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
-# 
-# 
-# Start time: 14:37:47 on Nov 02,2025
-# 
-# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
-# 
-# -- Compiling module top
-# 
-# -- Compiling module DispMux
-# 
-# -- Compiling module DualSevSeg
-# 
-# -- Compiling module SegDisp
-# 
-# -- Compiling module KeypadFSM
-# 
-# -- Compiling module Sync
-# 
-# -- Compiling module top_tb
-# 
-# 
-# 
-# Top level modules:
-# 
-# 	top_tb
-# 
-# End time: 14:37:47 on Nov 02,2025, Elapsed time: 0:00:00
-# 
-# Errors: 0, Warnings: 0
-# 
-# Questa Lattice OEM Edition-64 vopt 2024.2 Compiler 2024.05 May 20 2024
-# 
-# 
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# 
-# Start time: 14:37:47 on Nov 02,2025
-# 
-# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up top_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
-# 
-# 
-# 
-# Top level modules:
-# 
-# 	top_tb
-# 
-# 
-# 
-# Analyzing design...
-# 
-# -- Loading module top_tb
-# 
-# -- Loading module top
-# 
-# -- Loading module ovi_ice40up.HSOSC
-# 
-# -- Loading module ovi_ice40up.VLO
-# 
-# -- Loading module ovi_ice40up.HSOSC_CORE
-# 
-# -- Loading module ovi_ice40up.HFOSC
-# 
-# -- Loading module ovi_ice40up.HFOSC_CORE
-# 
-# -- Loading module Sync
-# 
-# -- Loading module DualSevSeg
-# 
-# -- Loading module DispMux
-# 
-# -- Loading module SegDisp
-# 
-# -- Loading module KeypadFSM
-# 
-# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
-# 
-# Optimizing 12 design-units (inlining 4/12 module instances):
-# 
-# -- Inlining module ovi_ice40up.VLO(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC_CORE(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC(fast)
-# 
-# -- Inlining module ovi_ice40up.HSOSC_CORE(fast)
-# 
-# -- Optimizing module ovi_ice40up.HSOSC(fast)
-# 
-# -- Optimizing module top_tb(fast)
-# 
-# -- Optimizing module KeypadFSM(fast)
-# 
-# ** Note: (vopt-143) Recognized 1 FSM in module "KeypadFSM(fast)".
-# 
-# -- Optimizing module top(fast)
-# 
-# -- Optimizing module DispMux(fast)
-# 
-# -- Optimizing module SegDisp(fast)
-# 
-# -- Optimizing module Sync(fast)
-# 
-# -- Optimizing module DualSevSeg(fast)
-# 
-# Optimized design name is qrun_opt
-# 
-# End time: 14:37:48 on Nov 02,2025, Elapsed time: 0:00:01
-# 
-# Errors: 0, Warnings: 2
-# 
-vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log
-# //  Questa Lattice OEM Edition-64
-# //  Version 2024.2 win64 May 20 2024
-# //
-# // Unpublished work. Copyright 2024 Siemens
-# //
-# // This material contains trade secrets or otherwise confidential information
-# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-# // "SISW"), or its licensors. Access to and use of this information is strictly
-# // limited as set forth in the Customer's applicable agreements with SISW.
-# //
-# // This material may not be copied, distributed, or otherwise disclosed outside
-# // of the Customer's facilities without the express written permission of SISW,
-# // and may not be used in any way not expressly authorized by SISW.
-# //
-# qrun -clean -f "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.f"
-# Deleting directory qrun.out...
-# Creating library 'qrun.out/work'.
-# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
-# 
-# 
-# Start time: 15:12:08 on Nov 02,2025
-# 
-# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
-# 
-# -- Compiling module top
-# 
-# -- Compiling module DispMux
-# 
-# -- Compiling module DualSevSeg
-# 
-# -- Compiling module SegDisp
-# 
-# -- Compiling module KeypadFSM
-# 
-# -- Compiling module Sync
-# 
-# -- Compiling module top_tb
-# 
-# 
-# 
-# Top level modules:
-# 
-# 	top_tb
-# 
-# End time: 15:12:08 on Nov 02,2025, Elapsed time: 0:00:00
-# 
-# Errors: 0, Warnings: 0
-# 
-# Questa Lattice OEM Edition-64 vopt 2024.2 Compiler 2024.05 May 20 2024
-# 
-# 
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# 
-# Start time: 15:12:08 on Nov 02,2025
-# 
-# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up top_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
-# 
-# 
-# 
-# Top level modules:
-# 
-# 	top_tb
-# 
-# 
-# 
-# Analyzing design...
-# 
-# -- Loading module top_tb
-# 
-# -- Loading module top
-# 
-# -- Loading module ovi_ice40up.HSOSC
-# 
-# -- Loading module ovi_ice40up.VLO
-# 
-# -- Loading module ovi_ice40up.HSOSC_CORE
-# 
-# -- Loading module ovi_ice40up.HFOSC
-# 
-# -- Loading module ovi_ice40up.HFOSC_CORE
-# 
-# -- Loading module Sync
-# 
-# -- Loading module DualSevSeg
-# 
-# -- Loading module DispMux
-# 
-# -- Loading module SegDisp
-# 
-# -- Loading module KeypadFSM
-# 
-# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
-# 
-# Optimizing 12 design-units (inlining 4/12 module instances):
-# 
-# -- Inlining module ovi_ice40up.VLO(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC_CORE(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC(fast)
-# 
-# -- Inlining module ovi_ice40up.HSOSC_CORE(fast)
-# 
-# -- Optimizing module ovi_ice40up.HSOSC(fast)
-# 
-# -- Optimizing module top_tb(fast)
-# 
-# -- Optimizing module KeypadFSM(fast)
-# 
-# ** Note: (vopt-143) Recognized 1 FSM in module "KeypadFSM(fast)".
-# 
-# -- Optimizing module top(fast)
-# 
-# -- Optimizing module DispMux(fast)
-# 
-# -- Optimizing module SegDisp(fast)
-# 
-# -- Optimizing module Sync(fast)
-# 
-# -- Optimizing module DualSevSeg(fast)
-# 
-# Optimized design name is qrun_opt
-# 
-# End time: 15:12:09 on Nov 02,2025, Elapsed time: 0:00:01
-# 
-# Errors: 0, Warnings: 2
-# 
-vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log
-# //  Questa Lattice OEM Edition-64
-# //  Version 2024.2 win64 May 20 2024
-# //
-# // Unpublished work. Copyright 2024 Siemens
-# //
-# // This material contains trade secrets or otherwise confidential information
-# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-# // "SISW"), or its licensors. Access to and use of this information is strictly
-# // limited as set forth in the Customer's applicable agreements with SISW.
-# //
-# // This material may not be copied, distributed, or otherwise disclosed outside
-# // of the Customer's facilities without the express written permission of SISW,
-# // and may not be used in any way not expressly authorized by SISW.
-# //
-# qrun -clean -f "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.f"
-# Deleting directory qrun.out...
-# Creating library 'qrun.out/work'.
-# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
-# 
-# 
-# Start time: 15:15:54 on Nov 02,2025
-# 
-# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
-# 
-# -- Compiling module top
-# 
-# -- Compiling module DispMux
-# 
-# -- Compiling module DualSevSeg
-# 
-# -- Compiling module SegDisp
-# 
-# -- Compiling module KeypadFSM
-# 
-# -- Compiling module Sync
-# 
-# -- Compiling module top_tb
-# 
-# 
-# 
-# Top level modules:
-# 
-# 	top_tb
-# 
-# End time: 15:15:54 on Nov 02,2025, Elapsed time: 0:00:00
-# 
-# Errors: 0, Warnings: 0
-# 
-# Questa Lattice OEM Edition-64 vopt 2024.2 Compiler 2024.05 May 20 2024
-# 
-# 
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# 
-# Start time: 15:15:55 on Nov 02,2025
-# 
-# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up top_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
-# 
-# 
-# 
-# Top level modules:
-# 
-# 	top_tb
-# 
-# 
-# 
-# Analyzing design...
-# 
-# -- Loading module top_tb
-# 
-# -- Loading module top
-# 
-# -- Loading module ovi_ice40up.HSOSC
-# 
-# -- Loading module ovi_ice40up.VLO
-# 
-# -- Loading module ovi_ice40up.HSOSC_CORE
-# 
-# -- Loading module ovi_ice40up.HFOSC
-# 
-# -- Loading module ovi_ice40up.HFOSC_CORE
-# 
-# -- Loading module Sync
-# 
-# -- Loading module DualSevSeg
-# 
-# -- Loading module DispMux
-# 
-# -- Loading module SegDisp
-# 
-# -- Loading module KeypadFSM
-# 
-# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
-# 
-# Optimizing 12 design-units (inlining 4/12 module instances):
-# 
-# -- Inlining module ovi_ice40up.VLO(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC_CORE(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC(fast)
-# 
-# -- Inlining module ovi_ice40up.HSOSC_CORE(fast)
-# 
-# -- Optimizing module ovi_ice40up.HSOSC(fast)
-# 
-# -- Optimizing module top_tb(fast)
-# 
-# -- Optimizing module KeypadFSM(fast)
-# 
-# ** Note: (vopt-143) Recognized 1 FSM in module "KeypadFSM(fast)".
-# 
-# -- Optimizing module top(fast)
-# 
-# -- Optimizing module DispMux(fast)
-# 
-# -- Optimizing module SegDisp(fast)
-# 
-# -- Optimizing module Sync(fast)
-# 
-# -- Optimizing module DualSevSeg(fast)
-# 
-# Optimized design name is qrun_opt
-# 
-# End time: 15:15:56 on Nov 02,2025, Elapsed time: 0:00:01
-# 
-# Errors: 0, Warnings: 2
-# 
-vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log
-# //  Questa Lattice OEM Edition-64
-# //  Version 2024.2 win64 May 20 2024
-# //
-# // Unpublished work. Copyright 2024 Siemens
-# //
-# // This material contains trade secrets or otherwise confidential information
-# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-# // "SISW"), or its licensors. Access to and use of this information is strictly
-# // limited as set forth in the Customer's applicable agreements with SISW.
-# //
-# // This material may not be copied, distributed, or otherwise disclosed outside
-# // of the Customer's facilities without the express written permission of SISW,
-# // and may not be used in any way not expressly authorized by SISW.
-# //
-# qrun -clean -f "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.f"
-# Deleting directory qrun.out...
-# Creating library 'qrun.out/work'.
-# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
-# 
-# 
-# Start time: 15:24:15 on Nov 02,2025
-# 
-# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
-# 
-# -- Compiling module top
-# 
-# -- Compiling module DispMux
-# 
-# -- Compiling module DualSevSeg
-# 
-# -- Compiling module SegDisp
-# 
-# -- Compiling module KeypadFSM
-# 
-# -- Compiling module Sync
-# 
-# -- Compiling module top_tb
-# 
-# 
-# 
-# Top level modules:
-# 
-# 	top_tb
-# 
-# End time: 15:24:15 on Nov 02,2025, Elapsed time: 0:00:00
-# 
-# Errors: 0, Warnings: 0
-# 
-# Questa Lattice OEM Edition-64 vopt 2024.2 Compiler 2024.05 May 20 2024
-# 
-# 
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# 
-# Start time: 15:24:15 on Nov 02,2025
-# 
-# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up top_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
-# 
-# 
-# 
-# Top level modules:
-# 
-# 	top_tb
-# 
-# 
-# 
-# Analyzing design...
-# 
-# -- Loading module top_tb
-# 
-# -- Loading module top
-# 
-# -- Loading module ovi_ice40up.HSOSC
-# 
-# -- Loading module ovi_ice40up.VLO
-# 
-# -- Loading module ovi_ice40up.HSOSC_CORE
-# 
-# -- Loading module ovi_ice40up.HFOSC
-# 
-# -- Loading module ovi_ice40up.HFOSC_CORE
-# 
-# -- Loading module Sync
-# 
-# -- Loading module DualSevSeg
-# 
-# -- Loading module DispMux
-# 
-# -- Loading module SegDisp
-# 
-# -- Loading module KeypadFSM
-# 
-# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
-# 
-# Optimizing 12 design-units (inlining 4/12 module instances):
-# 
-# -- Inlining module ovi_ice40up.VLO(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC_CORE(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC(fast)
-# 
-# -- Inlining module ovi_ice40up.HSOSC_CORE(fast)
-# 
-# -- Optimizing module ovi_ice40up.HSOSC(fast)
-# 
-# -- Optimizing module top_tb(fast)
-# 
-# -- Optimizing module KeypadFSM(fast)
-# 
-# ** Note: (vopt-143) Recognized 1 FSM in module "KeypadFSM(fast)".
-# 
-# -- Optimizing module top(fast)
-# 
-# -- Optimizing module DispMux(fast)
-# 
-# -- Optimizing module SegDisp(fast)
-# 
-# -- Optimizing module Sync(fast)
-# 
-# -- Optimizing module DualSevSeg(fast)
-# 
-# Optimized design name is qrun_opt
-# 
-# End time: 15:24:15 on Nov 02,2025, Elapsed time: 0:00:00
-# 
-# Errors: 0, Warnings: 2
-# 
-vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log
-# //  Questa Lattice OEM Edition-64
-# //  Version 2024.2 win64 May 20 2024
-# //
-# // Unpublished work. Copyright 2024 Siemens
-# //
-# // This material contains trade secrets or otherwise confidential information
-# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-# // "SISW"), or its licensors. Access to and use of this information is strictly
-# // limited as set forth in the Customer's applicable agreements with SISW.
-# //
-# // This material may not be copied, distributed, or otherwise disclosed outside
-# // of the Customer's facilities without the express written permission of SISW,
-# // and may not be used in any way not expressly authorized by SISW.
-# //
-# qrun -clean -f "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.f"
-# Deleting directory qrun.out...
-# Creating library 'qrun.out/work'.
-# Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
-# 
-# 
-# Start time: 15:41:25 on Nov 02,2025
-# 
-# vlog -reportprogress 300 -L work -sv "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
-# 
-# -- Compiling module top
-# 
-# -- Compiling module DispMux
-# 
-# -- Compiling module DualSevSeg
-# 
-# -- Compiling module SegDisp
-# 
-# -- Compiling module KeypadFSM
-# 
-# -- Compiling module Sync
-# 
-# -- Compiling module top_tb
-# 
-# 
-# 
-# Top level modules:
-# 
-# 	top_tb
-# 
-# End time: 15:41:25 on Nov 02,2025, Elapsed time: 0:00:00
-# 
-# Errors: 0, Warnings: 0
-# 
-# Questa Lattice OEM Edition-64 vopt 2024.2 Compiler 2024.05 May 20 2024
-# 
-# 
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# 
-# Start time: 15:41:25 on Nov 02,2025
-# 
-# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up top_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
-# 
-# ** Warning: (vopt-31) Unable to unlink file "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/qrun.out/work/qrun_opt/_lib.qdb".
-# 
-# ** Warning: (vopt-31) Unable to unlink file "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/qrun.out/work/qrun_opt/_lib3_0.qdb".
-# 
-# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
-# 
-# ** Warning: (vopt-31) Unable to unlink file "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/qrun.out/work/qrun_opt/_lib3_0.qpg".
-# 
-# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
-# 
-# ** Warning: (vopt-31) Unable to unlink file "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/qrun.out/work/qrun_opt/_lib3_0.qtl".
-# 
-# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
-# 
-# ** Warning: (vopt-133) Unable to remove directory "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/qrun.out/work/qrun_opt".
-# 
-# 
-# 
-# Top level modules:
-# 
-# 	top_tb
-# 
-# 
-# 
-# Analyzing design...
-# 
-# -- Loading module top_tb
-# 
-# -- Loading module top
-# 
-# -- Loading module ovi_ice40up.HSOSC
-# 
-# -- Loading module ovi_ice40up.VLO
-# 
-# -- Loading module ovi_ice40up.HSOSC_CORE
-# 
-# -- Loading module ovi_ice40up.HFOSC
-# 
-# -- Loading module ovi_ice40up.HFOSC_CORE
-# 
-# -- Loading module Sync
-# 
-# -- Loading module DualSevSeg
-# 
-# -- Loading module DispMux
-# 
-# -- Loading module SegDisp
-# 
-# -- Loading module KeypadFSM
-# 
-# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
-# 
-# init_auxdbinfo(): INTERNAL ERROR: Cannot open page file "C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim/qrun.out/work/qrun_opt/_lib1_0.qpg" in read mode
-# 
-# Optimizing 12 design-units (inlining 4/12 module instances):
-# 
-# -- Inlining module ovi_ice40up.VLO(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC_CORE(fast)
-# 
-# -- Inlining module ovi_ice40up.HFOSC(fast)
-# 
-# -- Inlining module ovi_ice40up.HSOSC_CORE(fast)
-# 
-# -- Optimizing module ovi_ice40up.HSOSC(fast)
-# 
-# -- Optimizing module top_tb(fast)
-# 
-# -- Optimizing module KeypadFSM(fast)
-# 
-# ** Note: (vopt-143) Recognized 1 FSM in module "KeypadFSM(fast)".
-# 
-# -- Optimizing module top(fast)
-# 
-# -- Optimizing module DispMux(fast)
-# 
-# -- Optimizing module SegDisp(fast)
-# 
-# -- Optimizing module Sync(fast)
-# 
-# -- Optimizing module DualSevSeg(fast)
-# 
-# Optimized design name is qrun_opt
-# 
-# End time: 15:41:26 on Nov 02,2025, Elapsed time: 0:00:01
-# 
-# Errors: 0, Warnings: 7
+# Errors: 0, Warnings: 3
 # 
 vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log

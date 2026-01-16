@@ -9,32 +9,32 @@ Z0 !s99 nomlopt
 !i10e 25
 !i10f 100
 cModel Technology
-Z1 dC:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/Sim
+Z1 dC:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim
 vDispMux
-Z2 2C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv
+Z2 2C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv
 Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z4 !s110 1762126885
+Z4 !s110 1762207121
 !i10b 1
 !s100 ZZZQ=ZB]nQP0:Gz8PPdPf2
-I^i@:f>nli`jREh=bYU@851
+IBkL@<J2=ZmIYN;X:P?>J@2
 S1
 R1
-w1762057132
-8C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv
-FC:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv
+Z5 w1762151349
+8C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv
+FC:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv
 !i122 0
 L0 14 33
-Z5 VDg1SIo80bB@j0V0VzS_@n1
-Z6 OL;L;2024.2;79
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2024.2;79
 r1
 !s85 0
 31
-Z7 !s108 1762126885.000000
-Z8 !s107 C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv|
-Z9 !s90 -reportprogress|300|-L|work|-sv|+noacc+pmi_work.*|+noacc+ovi_ice40up.*|-L|pmi_work|-L|ovi_ice40up|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv|C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv|-work|qrun.out/work|-statslog|qrun.out/stats_log|-writesessionid|+qrun.out/top_dus|-csession=incr|
+Z8 !s108 1762207121.000000
+Z9 !s107 C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv|
+Z10 !s90 -reportprogress|300|-L|work|-sv|+noacc+pmi_work.*|+noacc+ovi_ice40up.*|-L|pmi_work|-L|ovi_ice40up|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv|C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv|-work|qrun.out/work|-statslog|qrun.out/stats_log|-writesessionid|+qrun.out/top_dus|-csession=incr|
 !i113 0
-Z10 o-L work -sv +noacc+pmi_work.* +noacc+ovi_ice40up.* -L pmi_work -L ovi_ice40up -work qrun.out/work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z11 tCvgOpt 0
+Z11 o-L work -sv +noacc+pmi_work.* +noacc+ovi_ice40up.* -L pmi_work -L ovi_ice40up -work qrun.out/work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 tCvgOpt 0
 n@disp@mux
 vDualSevSeg
 R2
@@ -42,63 +42,63 @@ R3
 R4
 !i10b 1
 !s100 oEB774K2fC[MFLU`dmmR?2
-IKBUcgg9F^>f_oZ>MnoCg20
+IDdPhnJGlRJj5g`a[FN;mR0
 S1
 R1
-w1762049059
-8C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv
-FC:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv
+Z13 w1760409282
+8C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv
+FC:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv
 !i122 0
 L0 12 14
-R5
 R6
+R7
 r1
 !s85 0
 31
-R7
 R8
 R9
-!i113 0
 R10
+!i113 0
 R11
+R12
 n@dual@sev@seg
 vKeypadFSM
 R2
 R3
 R4
 !i10b 1
-!s100 L52W0lfbWAeHbO8LV3Y<L2
-IZe`;;UGC?N>mRLUZ5m4W^0
+!s100 W`X3Di^R2iR3PJk^_CJhk2
+I_f`LKg3bQ@EUen=I53b5M1
 S1
 R1
-w1762126880
-8C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv
-FC:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv
+R5
+8C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv
+FC:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv
 !i122 0
 L0 1 190
-R5
 R6
+R7
 r1
 !s85 0
 31
-R7
 R8
 R9
-!i113 0
 R10
+!i113 0
 R11
+R12
 n@keypad@f@s@m
 Tqrun_opt
-!s110 1762126886
-VTCZ8Fzb_>l_en:cEo0WL21
-04 6 4 work top_tb fast 0
+R4
+VzJdmQAV8CQe2JUn9dnQj?1
+04 7 4 work tb_Sync fast 0
 R0
-!s12f OEM25U6 
+!s12f OEM25U2 
 !s12b OEM100
 !s124 OEM100
 !s135 nogc
 o-suppress vopt-7033 -L work +acc +noacc+pmi_work.* +noacc+ovi_ice40up.* -L pmi_work -L ovi_ice40up -work qrun.out/work
-R11
+R12
 nqrun_opt
 OL;O;2024.2;79
 vSegDisp
@@ -107,25 +107,25 @@ R3
 R4
 !i10b 1
 !s100 6`5nk`bCIZIWXPc@[ilmz2
-I2PQfV@7VFcmGo8kdU5gD<2
+I8gE2a;[e2lE`^SMB9P:P81
 S1
 R1
-w1762057084
-8C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv
-FC:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv
+R13
+8C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv
+FC:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv
 !i122 0
 L0 10 27
-R5
 R6
+R7
 r1
 !s85 0
 31
-R7
 R8
 R9
-!i113 0
 R10
+!i113 0
 R11
+R12
 n@seg@disp
 vSync
 R2
@@ -133,73 +133,74 @@ R3
 R4
 !i10b 1
 !s100 :[Qb6P05WbH0lQZSmKaHn1
-II>B1Z:JHaBTonY5HU8I@40
+Ih0fo2<V>PTgJmSFf0<oA?3
 S1
 R1
-w1762123809
-8C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv
-FC:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv
+w1762205733
+8C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv
+FC:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv
 !i122 0
 L0 1 20
-R5
 R6
+R7
 r1
 !s85 0
 31
-R7
 R8
 R9
-!i113 0
 R10
+!i113 0
 R11
+R12
 n@sync
+vtb_Sync
+R2
+R3
+R4
+!i10b 1
+!s100 6mRMF>9=>OmnU4c6Mc?4`0
+I9cQ`:M6Eg50edMEmkDY5m3
+S1
+R1
+w1762207077
+8C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv
+FC:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv
+!i122 0
+L0 3 76
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+ntb_@sync
 vtop
 R2
 R3
 R4
 !i10b 1
 !s100 MkZ>h5jP;h^UU7I;JRIEH0
-IR4S_Dd<Vn<M^4AM7EGj1:2
+IInRh7knmnzW>0i[3:l9e30
 S1
 R1
-w1762125736
-8C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv
-FC:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv
+R5
+8C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv
+FC:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv
 !i122 0
 L0 1 45
-R5
 R6
+R7
 r1
 !s85 0
 31
-R7
 R8
 R9
-!i113 0
 R10
-R11
-vtop_tb
-R2
-R3
-R4
-!i10b 1
-!s100 lJ6ebD?7z3mPaVaN=d]<>2
-IX]oQEDli6ei5mXbE[An2H2
-S1
-R1
-w1762125304
-8C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv
-FC:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv
-!i122 0
-L0 3 63
-R5
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
 !i113 0
-R10
 R11
+R12

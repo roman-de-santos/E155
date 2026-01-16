@@ -57,7 +57,7 @@ module KeypadFSM_tb();
         // press key at row=1, col=2
         keys[1][2] = 1;
 		#50000
-        check_key(4'h0, 4'h6, "First key press");
+        check_key(4'h6, 4'h0, "First key press");
 
         // release button
         keys[1][2] = 0;
@@ -66,7 +66,7 @@ module KeypadFSM_tb();
 		// press key at row=1, col=2
         keys[2][1] = 1;
 		#50000
-        check_key(4'h6, 4'h8, "Second key press");
+        check_key(4'h8, 4'h6, "Second key press");
 		
 		// release button
         keys[1][2] = 0;

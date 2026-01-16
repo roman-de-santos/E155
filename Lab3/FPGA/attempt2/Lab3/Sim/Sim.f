@@ -3,13 +3,13 @@
 -reflib ovi_ice40up
 
 
-"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv" 
-"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv" 
-"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv" 
-"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv" 
-"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv" 
-"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv" 
-"C:/Users/rdesantos/Documents/GitHub/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top_tb.sv" 
+"C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/top.sv" 
+"C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DispMux.sv" 
+"C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/DualSevSeg.sv" 
+"C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/SegDisp.sv" 
+"C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/KeypadFSM.sv" 
+"C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync.sv" 
+"C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/source/impl_1/Sync_tb.sv" 
 -sv
 -optionset VOPTDEBUG
 +noacc+pmi_work.*
@@ -20,7 +20,7 @@
 -end
 
 -gui
--top top_tb
+-top tb_Sync
 -vsim.options
   -suppress vsim-7033,vsim-8630,3009,3389
 -end

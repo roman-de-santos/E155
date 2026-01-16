@@ -1,0 +1,13 @@
+#Start recording tcl command: 11/3/2025 13:11:05
+#Project Location: C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3; Project name: Lab3
+prj_open "C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Lab3.rdf"
+prj_add_source "C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.spf"
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.spf"
+prj_add_source "C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.spf"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.spf"
+prj_add_source "C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.spf"
+prj_add_source "C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/Sim/Sim.spf"
+#Stop recording: 11/3/2025 19:07:20

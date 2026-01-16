@@ -4,7 +4,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2025 Lattice Semiconductor Corporation,  All rights reserved.
-Sun Nov  2 22:32:08 2025
+Mon Nov  3 13:37:56 2025
 
 
 Command: bitgen -w -gui -msgset C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/promote.xml -freq 0 Lab3_impl_1.udb C:/Users/roman/Documents/E155/E155/Lab3/FPGA/attempt2/Lab3/impl_1/Lab3_impl_1 

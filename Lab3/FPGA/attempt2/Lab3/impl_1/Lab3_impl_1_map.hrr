@@ -3,14 +3,14 @@ Report for cell top
    Instance path: top
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        152        100.0
-                               LUTGATE	        100        100.0
+                                  LUT4	        150        100.0
+                               LUTGATE	         98        100.0
                                 LUTCCU	         52        100.0
                                  IOBUF	         19        100.0
                                 PFUREG	         73        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                            DualSevSeg	          1        28.9
+                            DualSevSeg	          1        29.3
                              KeypadFSM	          1        44.7
                                   Sync	          1         0.0
 ---------------------------------------------------
@@ -18,36 +18,30 @@ Report for cell KeypadFSM
    Instance path: top/keypad1
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         68        44.7
-                               LUTGATE	         58        58.0
+                                  LUT4	         67        44.7
+                               LUTGATE	         57        58.2
                                 LUTCCU	         10        19.2
                                 PFUREG	         28        38.4
----------------------------------------------------
-Report for cell Sync
-   Instance path: top/sync1
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                PFUREG	          4         5.5
 ---------------------------------------------------
 Report for cell DualSevSeg
    Instance path: top/DSevSeg
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         44        28.9
-                               LUTGATE	         20        20.0
+                                  LUT4	         44        29.3
+                               LUTGATE	         20        20.4
                                 LUTCCU	         24        46.2
                                 PFUREG	         24        32.9
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                               DispMux	          1        24.3
-                               SegDisp	          1         4.6
+                               DispMux	          1        24.7
+                               SegDisp	          1         4.7
 ---------------------------------------------------
 Report for cell DispMux
    Instance path: top/DSevSeg/DispMux1
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         37        24.3
-                               LUTGATE	         13        13.0
+                                  LUT4	         37        24.7
+                               LUTGATE	         13        13.3
                                 LUTCCU	         24        46.2
                                 PFUREG	         24        32.9
 ---------------------------------------------------
@@ -55,5 +49,11 @@ Report for cell SegDisp
    Instance path: top/DSevSeg/DispDecoder
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	          7         4.6
-                               LUTGATE	          7         7.0
+                                  LUT4	          7         4.7
+                               LUTGATE	          7         7.1
+---------------------------------------------------
+Report for cell Sync
+   Instance path: top/sync1
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                PFUREG	          4         5.5
