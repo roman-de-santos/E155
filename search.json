@@ -14,53 +14,256 @@
     "text": "E155 Course Page"
   },
   {
-    "objectID": "labs.html",
-    "href": "labs.html",
-    "title": "E155 Lab Reports",
+    "objectID": "posts/first-post.html",
+    "href": "posts/first-post.html",
+    "title": "Excited for Micro P’s",
     "section": "",
-    "text": "Lab 6: The Internet of Things and Serial Peripheral Interface\n\n\nInternet-accessible device to control an onboard LED and measure ambient temperature\n\n\n\n\n\nOct 23, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 5: Interrupts\n\n\nIn this lab you will use your MCU to determine the speed of a motor by reading from a quadrature encoder using interrupts.\n\n\n\n\n\nOct 9, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 4: Digital Audio\n\n\nIn this lab you will use your MCU to play music by using timers to generate square waves by toggling a GPIO pin at a specific frequency for specified durations.\n\n\n\n\n\nOct 2, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Keypad Scanner\n\n\nIn this lab you will learn how to use an FPGA to scan inputs from a keypad.\n\n\n\n\n\nSep 18, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 2: Multiplexed 7-Segment Display\n\n\nIn this lab you will learn how to use time multiplexing to efficiently use the I/O on your FPGA.\n\n\n\n\n\nSep 11, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 1: FPGA and MCU Setup and Testing\n\n\nIn this lab you will familiarize yourself with the microcontroller unit (MCU) and field-programmable gate array (FPGA) development boards we will be using this semester.\n\n\n\n\n\nSep 4, 2025\n\n\nRoman De Santos\n\n\n\n\n\nNo matching items"
+    "text": "I am excited to learn more about how Micro Processors are used to integrate computing with the real world. I have worked with fpgas and MCU devices before but most of the work has been very surface level. This class will allow me to interact with harware close to bare metal operations. I am excited to learn more about embedded engineering. I heard that lab 3 is more challenging than expected so I will try to start that lab extra early. Other than that I am excited to learn and design my own project at the end of this course. 😄"
   },
   {
-    "objectID": "labs/lab5/lab5.html",
-    "href": "labs/lab5/lab5.html",
-    "title": "Lab 5: Interrupts",
+    "objectID": "posts/first-post.html#initial-reflection",
+    "href": "posts/first-post.html#initial-reflection",
+    "title": "Excited for Micro P’s",
     "section": "",
-    "text": "Measuring the rotational speed and direction of a motor is a foundational task in control systems, robotics, and automation. This lab focuses on developing a system to determine the angular velocity of a brushed DC motor by interfacing an STM32L432KC microcontroller with a quadrature encoder. Quadrature encoders are sensors that use two output signals, commonly referred to as channels A and B, to track rotation. These signals are 90° out of phase, a crucial feature that allows for the determination of both the motor’s speed and its direction of spin.\nTo efficiently process the rapid pulses from the encoder, this system will be built around interrupts. An interrupt is a hardware signal that directs the microcontroller to pause its main program loop and execute a specialized function, known as an Interrupt Service Routine (ISR). Instead of continuously “polling” the encoder’s output pins, which is computationally wasteful, interrupts allow the MCU to respond immediately to changes in the encoder signals. This interrupt-driven approach enables accurate pulse counting even at high motor speeds, while freeing the processor to perform other tasks, such as calculating velocity and updating a display. The goal is to build a robust system that accurately measures and displays the motor’s angular velocity in revolutions per second (rev/s) across a wide range of speeds."
+    "text": "I am excited to learn more about how Micro Processors are used to integrate computing with the real world. I have worked with fpgas and MCU devices before but most of the work has been very surface level. This class will allow me to interact with harware close to bare metal operations. I am excited to learn more about embedded engineering. I heard that lab 3 is more challenging than expected so I will try to start that lab extra early. Other than that I am excited to learn and design my own project at the end of this course. 😄"
   },
   {
-    "objectID": "labs/lab5/lab5.html#introduction",
-    "href": "labs/lab5/lab5.html#introduction",
-    "title": "Lab 5: Interrupts",
+    "objectID": "labs/lab6/lab6.html",
+    "href": "labs/lab6/lab6.html",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
     "section": "",
-    "text": "Measuring the rotational speed and direction of a motor is a foundational task in control systems, robotics, and automation. This lab focuses on developing a system to determine the angular velocity of a brushed DC motor by interfacing an STM32L432KC microcontroller with a quadrature encoder. Quadrature encoders are sensors that use two output signals, commonly referred to as channels A and B, to track rotation. These signals are 90° out of phase, a crucial feature that allows for the determination of both the motor’s speed and its direction of spin.\nTo efficiently process the rapid pulses from the encoder, this system will be built around interrupts. An interrupt is a hardware signal that directs the microcontroller to pause its main program loop and execute a specialized function, known as an Interrupt Service Routine (ISR). Instead of continuously “polling” the encoder’s output pins, which is computationally wasteful, interrupts allow the MCU to respond immediately to changes in the encoder signals. This interrupt-driven approach enables accurate pulse counting even at high motor speeds, while freeing the processor to perform other tasks, such as calculating velocity and updating a display. The goal is to build a robust system that accurately measures and displays the motor’s angular velocity in revolutions per second (rev/s) across a wide range of speeds."
+    "text": "The goal of this lab is to to build a functional, internet-accessible Internet of Things (IoT) device. The main objective is to create a system where a user can remotely control an onboard LED and view ambient temperature via a custom webpage. To accomplish this, a C library was written using CMSIS device templates to implement the MCU’s Serial Peripheral Interface (SPI), which will be used to interface with a DS1722 temperature sensor. Concurrently, the MCU must communicate with an ESP8266 Wi-Fi module over a UART link to host and serve a dynamically generated HTML webpage. Finally, a logic analyzer was used to capture and analyze the SPI communication signals for debugging and documentation."
   },
   {
-    "objectID": "labs/lab5/lab5.html#technical-documentation",
-    "href": "labs/lab5/lab5.html#technical-documentation",
-    "title": "Lab 5: Interrupts",
+    "objectID": "labs/lab6/lab6.html#introduction",
+    "href": "labs/lab6/lab6.html#introduction",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
+    "section": "",
+    "text": "The goal of this lab is to to build a functional, internet-accessible Internet of Things (IoT) device. The main objective is to create a system where a user can remotely control an onboard LED and view ambient temperature via a custom webpage. To accomplish this, a C library was written using CMSIS device templates to implement the MCU’s Serial Peripheral Interface (SPI), which will be used to interface with a DS1722 temperature sensor. Concurrently, the MCU must communicate with an ESP8266 Wi-Fi module over a UART link to host and serve a dynamically generated HTML webpage. Finally, a logic analyzer was used to capture and analyze the SPI communication signals for debugging and documentation."
+  },
+  {
+    "objectID": "labs/lab6/lab6.html#technical-documentation",
+    "href": "labs/lab6/lab6.html#technical-documentation",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
     "section": "Technical Documentation:",
-    "text": "Technical Documentation:\nThe source code can be found on my GitHub\nThe datasheet for the encoder can be found here. Note that the PPR is 408 not 120."
+    "text": "Technical Documentation:\nThe source code can be found on my GitHub\nThe datasheet for the temperature sensor (DS1722) can be found here."
   },
   {
-    "objectID": "labs/lab5/lab5.html#schematic",
-    "href": "labs/lab5/lab5.html#schematic",
-    "title": "Lab 5: Interrupts",
+    "objectID": "labs/lab6/lab6.html#schematic",
+    "href": "labs/lab6/lab6.html#schematic",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
     "section": "Schematic",
-    "text": "Schematic\n\n\n\nFigure 1: Lab 5 Schematic, By Roman De Santos, 10/9/25\n\n\nApart from the schematic calculations are shown in Figure 2. These show the conversion between pulse counts of the encoder and revolutions per second.\n\n\n\nFigure 2: Revs per Second Calculations\n\n\nInturrupting is more efficient and adaptable compared to manual highspeed polling. Interrups let you handle other tasks when not needed. For example in my code, I am able to calculate the revs/sec when an inturrupt is not taking up the processer’s time. Manual high speed polling takes up a lot of the processor’s compute time depending on how its designed. It is possible to context switch but it gets trickier if you are just running the polling in a while loop. You also need to be aware of the max frequency supported by manual polling which is 2minimum_frequency (nyquist theorem). This means that for 2 rev’s per second you need to poll for at least 48042 (ppm  state changes * 2) = 3840 times in one seconds. This also limits your upper range to only 2 revs/second, so if you want to increase this range you have to update the code. As you can see Interrupts are more flexible since they are not fixed and are triggered only as needed. This reduces the amount of updates the processor has to handle and allows the processor to have a more dynamic range of frequencies in our motor/encoder context.\n\n\n\nFigure 3: Timing Scope for Interrupt routine, Polling, and encoder pulses\n\n\nFigure 3 shows the encoder pulses in yellow, the intterupt service in purple, and the polling in cyan.\n\n\n\nFigure 4: Timing Scope for Polling\n\n\nFigure 4 shows the fastest polling with our current STM32L432KC configuration (Running the polling in a while loop). And from the scope, we can see it takes 484 µs. Thus this only supports a maximum encoder pulse frequency of \\(\\frac{1}{T_polling} * 0.5 = 1033.06 Hz\\) since you must sample twice as fast as your highest frequency (Nyquist theorem).\n\n\n\nFigure 5: Timing Scope for Interrupts\n\n\nFigure 5 shows that the interrupt service time is 148 µs and since we only inturrupt when there is a rising or falling edge, this means that our theoretical maximum frequency of encoder pulses we can detect is \\(\\frac{1}{T_interrupt} = 3378.38 Hz\\)\nThus we can see that the intterupt method supports a higher frequency of encoder pulses. ## Diagram\n\n\n\nFigure 3: Code Flow Diagram"
+    "text": "Schematic\n\n\n\nFigure 1: Lab 6 Schematic, By Roman De Santos, 10/26/25"
   },
   {
-    "objectID": "labs/lab5/lab5.html#results-and-discussion",
-    "href": "labs/lab5/lab5.html#results-and-discussion",
-    "title": "Lab 5: Interrupts",
+    "objectID": "labs/lab6/lab6.html#website",
+    "href": "labs/lab6/lab6.html#website",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
+    "section": "Website",
+    "text": "Website\n\n\n\nFigure 2: Lab 6 Website\n\n\nAbove the website is shown. It allows the user to toggle the LED and change the resolution of the temperature sensor."
+  },
+  {
+    "objectID": "labs/lab6/lab6.html#logic-analyzer-for-spi-traces",
+    "href": "labs/lab6/lab6.html#logic-analyzer-for-spi-traces",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
+    "section": "Logic Analyzer for SPI traces",
+    "text": "Logic Analyzer for SPI traces\n\n\n\nFigure 3: Logic Analyzer for SPI traces"
+  },
+  {
+    "objectID": "labs/lab6/lab6.html#results-and-discussion",
+    "href": "labs/lab6/lab6.html#results-and-discussion",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\nOverall, the design was able to accuratly display the revs/sec of the motor. This is shown by the fact that at 10V input to the motor the design displays around 2 revs/sec which is accurate to this motor.\nThe design met all design objectives requested.\nThe image of the working set up can be found below.\n\n\n\nFigure 4: Final project\n\n\nI spent around 5 hours on this lab."
+    "text": "Results and Discussion\nThe design implemented meets all the design constraints requested. The STM is able to communicate via UART with the ESP to host the webserver. The webpage correctly toggles the LED and shows the correct status of the LED. The STM also correctly communicates with the DS1722 temperature sensor via SPI. The design correctly toggles and displays the different temperature resolutions.\nI spent 12 hours on this lab."
   },
   {
-    "objectID": "labs/lab5/lab5.html#ai-prototype-reflection",
-    "href": "labs/lab5/lab5.html#ai-prototype-reflection",
-    "title": "Lab 5: Interrupts",
+    "objectID": "labs/lab6/lab6.html#ai-prototype-reflection",
+    "href": "labs/lab6/lab6.html#ai-prototype-reflection",
+    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
     "section": "AI Prototype Reflection",
-    "text": "AI Prototype Reflection\nLLM prompt fed to Gemini:\n\nWrite me interrupt handlers to interface with a quadrature encoder. I’m using the STM32L432KC, what pins should I connect the encoder to in order to allow it to easily trigger the interrupts?\n\nThe output of the LLM can be found on GitHub\nI was surprised to see that Gemini offered a better alternative to using manual inturrupts like we did in this lab. The STM32L432KC has an encoder mode that can use the timers to offload computation from the cpu to these timers. It also took care in choosing the pins that were 5V tolerant and were connected to the correct channel inputs. On top of this it also wrote code for the manual interrupt method."
+    "text": "AI Prototype Reflection\nThe design met all design objectives requested.\nThe image of the working set up can be found below.\nLLM prompt 1 fed to Gemini:\n\nI’m making a web portal to interface with a temperature sensor. Create a HTML page that looks good and is intuitive to show the temperature, control an LED, and change the precision of the readout.\n\nThe HTML produced a very nice asthetic since it used some CSS to define a slider and card widget. The output can be seen below. The HTML generated is currently not functional since its using static values but it would be easy to update and integrate this html with our project.\n\n\n\nFigure 2: Lab 6 AI Prototype Website\n\n\nLLM prompt 2 fed to Gemini:\n\nWrite me a C function to carry out a SPI transaction to retrieve a temperature reading from a DS1722 sensor. Make use of CMSIS libraries for the STM32L432KC.\n\nIt got mostly there since the process is outlined pretty well online, but it forgot to write an initialization function for the SPI. The SPI temp read funciton also used the SPI busy bits in the control register but the LLM already added a waiting feature by checking flags in the spi_send_recieve function so it was a little redundant. But overall a good first pass.\nThe output of both prompts from the LLM can be found on GitHub"
+  },
+  {
+    "objectID": "labs/lab4/lab4.html",
+    "href": "labs/lab4/lab4.html",
+    "title": "Lab 4: Digital Audio",
+    "section": "",
+    "text": "This report focuses on the fundamental principles of sound generation using a microcontroller unit (MCU). The primary goal is to play a musical piece, “Für Elise,” by programming the MCU to produce a sequence of square waves with specific frequencies and durations. This is achieved by configuring an internal hardware timer to toggle a General-Purpose Input/Output (GPIO) pin at precise intervals corresponding to musical notes. Due to the MCU’s limited current output, an LM386 audio amplifier is used to strengthen the signal before it drives an 8-ohm speaker. A core challenge of this lab is to develop the necessary C-language drivers from scratch, relying solely on the MCU’s technical datasheet to understand and manipulate the memory-mapped registers for the timer and GPIO peripherals. This process provides practical experience in low-level hardware programming and interfacing."
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#introduction",
+    "href": "labs/lab4/lab4.html#introduction",
+    "title": "Lab 4: Digital Audio",
+    "section": "",
+    "text": "This report focuses on the fundamental principles of sound generation using a microcontroller unit (MCU). The primary goal is to play a musical piece, “Für Elise,” by programming the MCU to produce a sequence of square waves with specific frequencies and durations. This is achieved by configuring an internal hardware timer to toggle a General-Purpose Input/Output (GPIO) pin at precise intervals corresponding to musical notes. Due to the MCU’s limited current output, an LM386 audio amplifier is used to strengthen the signal before it drives an 8-ohm speaker. A core challenge of this lab is to develop the necessary C-language drivers from scratch, relying solely on the MCU’s technical datasheet to understand and manipulate the memory-mapped registers for the timer and GPIO peripherals. This process provides practical experience in low-level hardware programming and interfacing."
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#design-and-testing-methodology",
+    "href": "labs/lab4/lab4.html#design-and-testing-methodology",
+    "title": "Lab 4: Digital Audio",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThe internal MSI clock was fed to the PLL clock module to generate an 80MHz system clock in the RCC module. The system clock was then divided by the APB2 and AHB prescalers and sent to TIM15 and TIM16. TIM15 was used to design an upcounter where the UIF flag was set to enable after 1ms to serve as a delay counter. TIM16 was enabled to generate a PWM wave using the capture/compare registers and ouputted to pin A6."
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#technical-documentation",
+    "href": "labs/lab4/lab4.html#technical-documentation",
+    "title": "Lab 4: Digital Audio",
+    "section": "Technical Documentation:",
+    "text": "Technical Documentation:\nThe source code can be found on my GitHub\nThe STM32L432KC Data sheet can be found here\nThe STM32L432KC Reference manual can be found here"
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#schematic",
+    "href": "labs/lab4/lab4.html#schematic",
+    "title": "Lab 4: Digital Audio",
+    "section": "Schematic",
+    "text": "Schematic\n\n\n\nFigure 2: Lab 4 Schematic, By Roman De Santos, 10/2/25\n\n\nIn addition to the Schematic I also calculated the minimum/maximum delay TIM15 supports (Figure 3), and the minimum/maximum frequency TIM16 supports (Figure 4).\n\n\n\nFigure 3: Lab 4 Delay Calculations\n\n\n\n\n\nFigure 4: Lab 4 Frequency Calculations\n\n\nSince only discrete values can be held by the counters this leads to some error in the frequency. The design implemented with a 5MHz clock, has less than a 0.01% error for each note, shown in Figure 5.\n\n\n\nFigure 5: Lab 4 Frequency Error"
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#timer-set-up",
+    "href": "labs/lab4/lab4.html#timer-set-up",
+    "title": "Lab 4: Digital Audio",
+    "section": "Timer Set Up",
+    "text": "Timer Set Up\nI sketched out the path for each timer on the BD to show how I implemented PWM and Upcounting at a high level.\n\n\n\nFigure 6: Clock Tree Diagram\n\n\n\n\n\nFigure 7: TIM15 (Upcounting) Diagram\n\n\n\n\n\nFigure 8: TIM16 (PWM) Diagram"
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#results-and-discussion",
+    "href": "labs/lab4/lab4.html#results-and-discussion",
+    "title": "Lab 4: Digital Audio",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\nOverall, the design was able to play Für Elise with accurate pitches and delays. In addition I tried to transpose the Super Mario Bros theme from memory and it was able to play it but it sounded a little off.\nThe design met all design objectives requested. In the future, I would prescale the clock entering TIM16 to lower the minimum HZ at the expense of the upper range since 2.5MHz is very high pitched.\nThe video of the working set up can be found below.\n\n\n\nWatch the video\n\n\nI spent around 17 hours on this lab."
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#ai-prototype-reflection",
+    "href": "labs/lab4/lab4.html#ai-prototype-reflection",
+    "title": "Lab 4: Digital Audio",
+    "section": "AI Prototype Reflection",
+    "text": "AI Prototype Reflection\nLLM prompt fed to Gemini:\n\nWhat timers should I use on the STM32L432KC to generate frequencies ranging from 220Hz to 1kHz? What’s the best choice of timer if I want to easily connect it to a GPIO pin? What formulae are relevant, and what registers need to be set to configure them properly?\n\nThe output of the LLM can be found on GitHub\nI expected AI to be good at this task since it invloives a lot of summarization of text. It chose TIM2,15,and 16 which all seem like great choices. The AI also correctly identified the necessary formulas and registers needed to set up the timer.\nOverall very good."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html",
+    "href": "labs/lab2/lab2.html",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "",
+    "text": "This report details the design and implementation of a time-multiplexed driver for a dual 7-segment display using a field-programmable gate array (FPGA). The primary objective was to efficiently utilize limited FPGA I/O resources by sharing a single Verilog 7-segment decoder module between two separate digits. This was achieved by rapidly alternating which digit’s common anode was energized, creating a persistent, flicker-free image for the observer. A critical component of the hardware design was a PNP transistor circuit, which served as a high-current switch for the display anodes, as the FPGA’s output pins were incapable of sourcing the required current directly. The final system successfully accepts two 4-bit hexadecimal inputs from DIP switches, displays them on the multiplexed display, and simultaneously calculates and shows their sum on a separate bank of five LEDs."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#introduction",
+    "href": "labs/lab2/lab2.html#introduction",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "",
+    "text": "This report details the design and implementation of a time-multiplexed driver for a dual 7-segment display using a field-programmable gate array (FPGA). The primary objective was to efficiently utilize limited FPGA I/O resources by sharing a single Verilog 7-segment decoder module between two separate digits. This was achieved by rapidly alternating which digit’s common anode was energized, creating a persistent, flicker-free image for the observer. A critical component of the hardware design was a PNP transistor circuit, which served as a high-current switch for the display anodes, as the FPGA’s output pins were incapable of sourcing the required current directly. The final system successfully accepts two 4-bit hexadecimal inputs from DIP switches, displays them on the multiplexed display, and simultaneously calculates and shows their sum on a separate bank of five LEDs."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#design-and-testing-methodology",
+    "href": "labs/lab2/lab2.html#design-and-testing-methodology",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nFour onboard dip switches were used to represent a binary number, where combinational logic was used to decode the input of the dip switches to the 7-segment display module.\nThe on-board high-speed oscillator (HSOSC) from the iCE40 UltraPlus primitive library was used to generate a clock signal at 6 MHz. Then, a clock divider was used to divide the high-frequency clock signal down to 60Hz.\nThe divided clock signal was used to control a Mux to switch between the two 4-pin dip switch inputs what was being passed through the 7 segment display. The clock was also used to generate Enable bits to control which of the two seven segment displays was on.\n5 LEDs were used to display the sum of the two hex numbers on the 4 dip switches."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#technical-documentation",
+    "href": "labs/lab2/lab2.html#technical-documentation",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "Technical Documentation:",
+    "text": "Technical Documentation:\nThe source code can be found on my GitHub\n\nBlock Diagram\n\n\n\nFigure 1: Lab 2 Block Diagram, By Roman De Santos, 9/11/25\n\n\nFigure 1 shows the Block Diagram for Lab 2 of the top Verilog module grouped by function. There are two submodules in the top module. SegDisp for the 7-segment display decoder and the DisplayMux."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#schematic",
+    "href": "labs/lab2/lab2.html#schematic",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "Schematic",
+    "text": "Schematic\n\n\n\nFigure 2: Lab 2 Schematic, By Roman De Santos, 9/11/25,\n\n\n\n\n\nFigure 3: Calculations for 7-Seg Resitor Value\n\n\n\n\n\nFigure 4: Calculations for PNP Transistor Limiting Resistor\n\n\nFigure 2 shows the physical implementation of the design. All of the dip switches have an internal pull-up resistor (100kΩ). All of the output LEDs have a 1k limiting resistor to ensure that the FPGA I/O current draw does not exceed ~2.6mA (Calculations are shown in Figure 3). The PNP transistor has a 2.6kΩ limiting resistor to be safe and put it well above the minimum of 300Ω. Figure 4 shows the derivation of the resistor value for the PNP transistor.\n\n\n\nFigure 5: Calculations for LEDs Resistor Values"
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#results-and-discussion",
+    "href": "labs/lab2/lab2.html#results-and-discussion",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\n \nFigure 6 shows the Testbench Wave output for the top module.\nFigure 7 shows the console output for the testbench, we can see all 256 unique tests pass with 0 errors.\n\n\n\nFigure 8: DispMux_tb Waves\n\n\nFigure 8 shows the testbench wave output for the DispMux. We can see that the clock succesfuly drives the clock divider and all of its dependent signals.\n\n\n\nFigure 9: SegDispTB\n\n\nFigure 9 shows the testbench wave output for the seven segment decoder and all of the testcases passed.\nThe design met all design objectives requested. In the future, I would probably spend more time designing the clock divider to simplify the RTL, however, it might not be possible since the clock is being divided by a number that is not a power of two."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#conclusion",
+    "href": "labs/lab2/lab2.html#conclusion",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "Conclusion",
+    "text": "Conclusion\n\n\n\nFigure 10: Completed Board\n\n\nThe project successfully timemultiplexed the inputs to drive the display, the dip switches accurately controlled a hex 7-segment display, and the LEDs successfully represented the sum of the dip switches. I spent around 20 hours on this lab."
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#ai-prototype-reflection",
+    "href": "labs/lab2/lab2.html#ai-prototype-reflection",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "section": "AI Prototype Reflection",
+    "text": "AI Prototype Reflection\nLLM prompt fed to Gemini:\n\nWrite SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits.\n\nThe output of the LLM can be found on GitHub\nI was surprised to see that it was able to effectivly seperate this logic into two modules. One module was for the timer,clock divider, and enable logic. The other module was for the seven segment display.\nHowever, there were some odd decisions in the logic. For example, Mux_15 could be optimised out by connecting existing nets to the output.\nOverall very good for a first pass.\nFor the next LLM prompt on Gemini\n\nUsing my files as reference, Write SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits. Use the seven segment decoder and oscillator provided in the attached files.\n\nThe output of the LLM can be found on GitHub\nThe LLM was not able to produce working code. I tried feeding the error outputs from radiant back into the LLM but this did not resolve the issue.\nThe syntaxed used by the LLM does not seem like what an actual person would use. I think the LLM also tried to insert citations for my project but failed to extract relevant context. This led there to being a lot of “[cite_start]” artifacts in the output code."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "E155 Portfolio",
+    "section": "",
+    "text": "Hello, I’m Roman a student who is passionate about low-level systems. This includes C, Assembly, and IC/circuit design. I have been a TA for Computer Science, Physics, and Intro IC Lab. I am comfortable with many common Engineering software programs (Solidworks, ComSol, and Fusion) and computer languages (Matlab, Python, Java, Java Script, HTML, and C). So far, my favorite project I’ve worked on is my 32-bit CPU verification project."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "E155 Blog",
+    "section": "",
+    "text": "Excited for Micro P’s\n\n\nInitial reflection on the upcoming semester for Micro P’s\n\n\n\n\n\nAug 29, 2025\n\n\nRoman De Santos\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "labs/lab1/lab1.html",
+    "href": "labs/lab1/lab1.html",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "",
+    "text": "In this lab, we learned general soldering tips, including soldering removable components, pin-through, and SMD components onto a PCB. Using the board, we tested it to make sure that the FPGA and MCU were functioning properly and could communicate with each other as a demo. Our goal in this lab was to test the functionality of our internal High Speed Oscillator (HSOSC module) and divide the clock output to generate a 2.4Hz clock to blink an LED. Another goal was to test that our 4 dip input switches could be read, and with some combinational logic, it was converted to a hex figure on a 7-segment display. Another goal was to understand the truth table provided and convert it to an equivalent logic gate. The 4-dip input switch, while controlling the 7-segment display, also controlled the output to two separate LEDs that represented different logic operations on the dip switch."
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#introduction",
+    "href": "labs/lab1/lab1.html#introduction",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "",
+    "text": "In this lab, we learned general soldering tips, including soldering removable components, pin-through, and SMD components onto a PCB. Using the board, we tested it to make sure that the FPGA and MCU were functioning properly and could communicate with each other as a demo. Our goal in this lab was to test the functionality of our internal High Speed Oscillator (HSOSC module) and divide the clock output to generate a 2.4Hz clock to blink an LED. Another goal was to test that our 4 dip input switches could be read, and with some combinational logic, it was converted to a hex figure on a 7-segment display. Another goal was to understand the truth table provided and convert it to an equivalent logic gate. The 4-dip input switch, while controlling the 7-segment display, also controlled the output to two separate LEDs that represented different logic operations on the dip switch."
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#design-and-testing-methodology",
+    "href": "labs/lab1/lab1.html#design-and-testing-methodology",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Design and Testing Methodology",
+    "text": "Design and Testing Methodology\nThe on-board high-speed oscillator (HSOSC) from the iCE40 UltraPlus primitive library was used to generate a clock signal at 24 MHz. Then, a clock divider was used to divide the high-frequency clock signal down to 2.4Hz.\nFour onboard dip switches were used to represent a binary number, where combinational logic was used to decode the input of the dip switches to the 7-segment display module. The XOR of the first two dip switches, [1:0], was computed and outputted to an LED. Similarly, the last two dip switches, [3:2], were ANDed together and outputted to another LED."
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#technical-documentation",
+    "href": "labs/lab1/lab1.html#technical-documentation",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Technical Documentation:",
+    "text": "Technical Documentation:\nThe source code can be found on my GitHub\n\nBlock Diagram\n\n\n\nFigure 1: Lab 1 Block Diagram, By Roman De Santos, 9/4/25\n\n\nFigure 1 shows the Block Diagram for Lab 1 of the top Verilog module grouped by function. There are two submodules in the top module. SegDisp for the 7-segment display decoder and the HSOSC for the built-in oscillator. The counter module is a representation of the RTL in the top module that has been functionally grouped for simplicity."
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#schematic",
+    "href": "labs/lab1/lab1.html#schematic",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Schematic",
+    "text": "Schematic\n\n\n\nFigure 2: Lab 1 Schematic, By Roman De Santos, 9/4/25,\n\n\n\n\n\nFigure 3: Calculations for 7-Seg Resitor Value\n\n\nFigure 2 shows the physical implementation of the design. All of the dip switches have an internal pull-up resistor (100kΩ). All of the output LEDs have a 1k limiting resistor to ensure that the FPGA I/O current draw does not exceed ~2.6mA (Calculations are shown in Figure 3)"
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#results-and-discussion",
+    "href": "labs/lab1/lab1.html#results-and-discussion",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Results and Discussion",
+    "text": "Results and Discussion\n\n\n\nFigure 4: top_tb Run\n\n\nFigure 3 shows the Testbench results for the seven segment hex display. From the waveforms and the console output we can see that all 16 unique inputs output the correct signals on the hex display\n\n\n\nFigure 5: SegDisp_tb Run\n\n\nFigure 4 shows the testbench results for the 7-segment hex display and the logic LEDs. The blinking LED was omitted in the test, but can be visually inspected.\nThe design met all design objectives requested. In the future, I would probably spend more time designing the clock divider to simplify the RTL, however, it might not be possible since the clock is being divided by a number that is not a power of two."
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#conclusion",
+    "href": "labs/lab1/lab1.html#conclusion",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Conclusion",
+    "text": "Conclusion\n\n\n\nFigure 6: Completed Board\n\n\nThe project successfully blinked an LED at 2.4Hz, the dip switches accurately controlled a hex 7-segment display, and two LEDs successfully represented the AND and XOR between pairs of dip switches. I spent around 20 hours on this lab."
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#ai-prototype-reflection",
+    "href": "labs/lab1/lab1.html#ai-prototype-reflection",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "AI Prototype Reflection",
+    "text": "AI Prototype Reflection\nInitial Code Generated By ChatGPT:\n//=============================================================\n// Blink LED @ 2 Hz using UP5K Internal HFOSC (48 MHz)\n//=============================================================\nmodule blink_led (\n    output logic led   // drive LED pin\n);\n\n    // ---------------------------------------------------------\n    // Internal High-Frequency Oscillator (HFOSC)\n    // UP5K HFOSC can be configured for 48, 24, 12, or 6 MHz.\n    // ---------------------------------------------------------\n    logic clk_hfosc;\n\n    SB_HFOSC #(\n        .CLKHF_DIV(\"0b00\")  // \"00\" = 48 MHz, \"01\" = 24 MHz, \"10\" = 12 MHz, \"11\" = 6 MHz\n    ) hfosc_inst (\n        .CLKHFEN(1'b1),     // enable HFOSC\n        .CLKHFPU(1'b1),     // power up HFOSC\n        .CLKHF(clk_hfosc)\n    );\n\n    // ---------------------------------------------------------\n    // Clock divider\n    // We want 2 Hz blinking from 48 MHz input.\n    //\n    // Half-period = 0.5s\n    // 48 MHz * 0.5s = 24,000,000 cycles\n    //\n    // Counter counts to 24,000,000 - 1, then toggles LED.\n    // ---------------------------------------------------------\n    localparam int HALF_PERIOD = 24_000_000;\n\n    logic [$clog2(HALF_PERIOD)-1:0] counter = '0;\n\n    always_ff @(posedge clk_hfosc) begin\n        if (counter == HALF_PERIOD-1) begin\n            counter &lt;= '0;\n            led     &lt;= ~led;   // toggle LED\n        end else begin\n            counter &lt;= counter + 1;\n        end\n    end\n\nendmodule\n\nI tried feeding in the AI prompt:\n“Write SystemVerilog HDL to leverage the internal high speed oscillator in the Lattice UP5K FPGA and blink an LED at 2 Hz. Take full advantage of SystemVerilog syntax, for example, using logic instead of wire and reg.”\nBut I was not able to synthesize the design even after feeding the error prompts from radiance back to chat gpt with the code.\nFinal code after 4 iterations:\n//=============================================================\n// Blink LED @ 2 Hz using UP5K Internal HFOSC (48 MHz)\n//=============================================================\nmodule blink_led (\n    output logic led   // drive LED pin\n);\n\n    // ---------------------------------------------------------\n    // Internal High-Frequency Oscillator (HFOSC)\n    // UP5K HFOSC can be configured for 48, 24, 12, or 6 MHz.\n    // ---------------------------------------------------------\n    logic clk_hfosc;\n\n    SB_HFOSC #(\n        .CLKHF_DIV(\"0b00\")  // \"00\" = 48 MHz, \"01\" = 24 MHz, \"10\" = 12 MHz, \"11\" = 6 MHz\n    ) hfosc_inst (\n        .CLKHFEN(1'b1),     // enable HFOSC\n        .CLKHFPU(1'b1),     // power up HFOSC\n        .CLKHF(clk_hfosc)\n    );\n\n    // ---------------------------------------------------------\n    // Clock divider\n    // We want 2 Hz blinking from 48 MHz input.\n    //\n    // Half-period = 0.5s\n    // 48 MHz * 0.5s = 24,000,000 cycles\n    //\n    // Counter counts to 24,000,000 - 1, then toggles LED.\n    // ---------------------------------------------------------\n    localparam int HALF_PERIOD = 24_000_000;\n\n    logic [$clog2(HALF_PERIOD)-1:0] counter = 0;\n\n    always @(posedge clk_hfosc) begin\n        if (counter == HALF_PERIOD-1) begin\n            if (counter == HALF_PERIOD-1) begin\n                counter &lt;= 0;\n            led     &lt;= ~led;   // toggle LED\n        end else begin\n            counter &lt;= counter + 1;\n        end\n    end\n\nendmodule\n\nWe can see that AI currently does not have very good HDL design capabilities. This might be due to the fact that most HDL code is proprietary or more difficult to access compared to non HDL code like C or Python. It seems like ChatGPT tried to make the code dynamic, similar to software, which is tricky to do. ChatGPT used $Clog2 to find the minimum number of bits needed to represent the HALF_PERIOD number. Most HDL programers would make this a fixed value since the clock is hard set at 48MHz when using the clock div = 00.\nIn general, AI is not good at fully constructing code from the ground up but it can be used to catch minor syntax errors. I think anything beyond that, such as conceptual knowledge in HDL, is not currently done well by AI."
   },
   {
     "objectID": "labs/lab3/lab3.html",
@@ -133,255 +336,87 @@
     "text": "AI Prototype Reflection\nLLM prompt A fed to Gemini:\n\nTarget device: Lattice iCE40 UP5K FPGA with internal high-speed oscillator (~20 MHz). Write synthesizable SystemVerilog to scan a 4x4 matrix keypad and display the last two hex keys pressed on a dual 7‑segment display. Implement: A clock divider that derives a scan clock on the order of 100–200 Hz from the internal oscillator. A keypad scanning controller that iterates one active‑low column at a time and samples active‑low rows, registering at most one key per press (debounce‑by‑design), ignoring additional presses while any key is held, and allowing a new registration only after release. A top level that updates two hex digits (older and most recent) when a new key is registered and drives a time‑multiplexed two‑digit 7‑segment display without visible flicker and with balanced brightness.Use idiomatic SystemVerilog (e.g., logic, always_ff, enumerated states for FSMs). Provide clean module boundaries and keep all state synchronous. Include brief comments explaining the design choices.\n\nCompare to breaking the problem down into multiple prompts\nPrompt B1:\n\nTarget device: Lattice iCE40 UP5K FPGA. Overall Goal: Write SystemVerilog to scan a 4x4 matrix keypad and display the last two hex keys pressed on a dual 7 segment display. Current Goal: Write a synthesizable SystemVerilog module that produces a one‑shot registration signal for the keypad system. Behavior: When a key press is first detected, capture the current key code and assert a single‑cycle “new key” pulse. While any key remains pressed, do not accept additional keys. Only after keys are released should a subsequent press be recognized. This should handle debouncing of the keys. Implement as a small synchronous FSM with enumerated states and glitch‑free outputs. Keep names and interfaces reasonable; do not assume any hidden modules beyond what you define here.\n\nPrompt B2:\n\nTarget device: Lattice iCE40 UP5K FPGA. Write a synthesizable SystemVerilog module that cycles through keypad columns (active‑low, one at a time) and samples rows (active‑low) to detect a single key at a time. Behavior: Iterate columns at a suitable scan rate derived from the divided clock and sample rows. When a key is detected, report a stable key code consistent with a standard 4x4 keypad layout and maintain it while the key remains pressed. Provide a boolean signal indicating whether any key is currently pressed. Use clean state encoding and synchronous logic; avoid combinational feedback and latches.\n\nPrompt B3:\n\nTarget device: Lattice iCE40 UP5K FPGA with internal oscillator as the root clock source. Write a top‑level SystemVerilog module that instantiates the scanner and one‑shot modules, shifts the last two keys (older ← most recent; most recent ← new), and drives a multiplexed two‑digit seven‑segment display. Requirements: Update the displayed digits only when a new key is registered. Ensure equal apparent brightness and no visible flicker. Keep all logic synthesizable and synchronous; use idiomatic SystemVerilog constructs. Provide any small clock‑enable or divider logic you need. You can also assume that a sevenSegment module exists that takes a 4 bit input and outputs the 7 segments.\n\nBoth of the prompts generated verilog files that at first glance look reasonable to implement. However, I’m sure there are a lot of minor bugs. Prompt A seemed to be better at producing more structured files since I assume it was able to breakdown the complex problem into categories it deemed acceptable. Prompt B on the other hand had to follow a specific structure. Both of the prompts had a very cluttered top module.\nI tried feeding gemini my modified files. I removed the top module’s clock divider feeding into the keypadFSM and instead fed it the internal oscillator as a clock. This caused a racing condition where the next state would not transition correctly based on the inputs. Gemini was not able to understand why this was causing an issue and it lacked the understanding of how the code is compiled into hardware.\nI assume there are other very small bugs that lead to timing that is slightly off throught this code. But the general logic of how you would apporach this problem given the prompts is solid and can be a great starting point."
   },
   {
-    "objectID": "labs/lab1/lab1.html",
-    "href": "labs/lab1/lab1.html",
-    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "objectID": "labs/lab5/lab5.html",
+    "href": "labs/lab5/lab5.html",
+    "title": "Lab 5: Interrupts",
     "section": "",
-    "text": "In this lab, we learned general soldering tips, including soldering removable components, pin-through, and SMD components onto a PCB. Using the board, we tested it to make sure that the FPGA and MCU were functioning properly and could communicate with each other as a demo. Our goal in this lab was to test the functionality of our internal High Speed Oscillator (HSOSC module) and divide the clock output to generate a 2.4Hz clock to blink an LED. Another goal was to test that our 4 dip input switches could be read, and with some combinational logic, it was converted to a hex figure on a 7-segment display. Another goal was to understand the truth table provided and convert it to an equivalent logic gate. The 4-dip input switch, while controlling the 7-segment display, also controlled the output to two separate LEDs that represented different logic operations on the dip switch."
+    "text": "Measuring the rotational speed and direction of a motor is a foundational task in control systems, robotics, and automation. This lab focuses on developing a system to determine the angular velocity of a brushed DC motor by interfacing an STM32L432KC microcontroller with a quadrature encoder. Quadrature encoders are sensors that use two output signals, commonly referred to as channels A and B, to track rotation. These signals are 90° out of phase, a crucial feature that allows for the determination of both the motor’s speed and its direction of spin.\nTo efficiently process the rapid pulses from the encoder, this system will be built around interrupts. An interrupt is a hardware signal that directs the microcontroller to pause its main program loop and execute a specialized function, known as an Interrupt Service Routine (ISR). Instead of continuously “polling” the encoder’s output pins, which is computationally wasteful, interrupts allow the MCU to respond immediately to changes in the encoder signals. This interrupt-driven approach enables accurate pulse counting even at high motor speeds, while freeing the processor to perform other tasks, such as calculating velocity and updating a display. The goal is to build a robust system that accurately measures and displays the motor’s angular velocity in revolutions per second (rev/s) across a wide range of speeds."
   },
   {
-    "objectID": "labs/lab1/lab1.html#introduction",
-    "href": "labs/lab1/lab1.html#introduction",
-    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "objectID": "labs/lab5/lab5.html#introduction",
+    "href": "labs/lab5/lab5.html#introduction",
+    "title": "Lab 5: Interrupts",
     "section": "",
-    "text": "In this lab, we learned general soldering tips, including soldering removable components, pin-through, and SMD components onto a PCB. Using the board, we tested it to make sure that the FPGA and MCU were functioning properly and could communicate with each other as a demo. Our goal in this lab was to test the functionality of our internal High Speed Oscillator (HSOSC module) and divide the clock output to generate a 2.4Hz clock to blink an LED. Another goal was to test that our 4 dip input switches could be read, and with some combinational logic, it was converted to a hex figure on a 7-segment display. Another goal was to understand the truth table provided and convert it to an equivalent logic gate. The 4-dip input switch, while controlling the 7-segment display, also controlled the output to two separate LEDs that represented different logic operations on the dip switch."
+    "text": "Measuring the rotational speed and direction of a motor is a foundational task in control systems, robotics, and automation. This lab focuses on developing a system to determine the angular velocity of a brushed DC motor by interfacing an STM32L432KC microcontroller with a quadrature encoder. Quadrature encoders are sensors that use two output signals, commonly referred to as channels A and B, to track rotation. These signals are 90° out of phase, a crucial feature that allows for the determination of both the motor’s speed and its direction of spin.\nTo efficiently process the rapid pulses from the encoder, this system will be built around interrupts. An interrupt is a hardware signal that directs the microcontroller to pause its main program loop and execute a specialized function, known as an Interrupt Service Routine (ISR). Instead of continuously “polling” the encoder’s output pins, which is computationally wasteful, interrupts allow the MCU to respond immediately to changes in the encoder signals. This interrupt-driven approach enables accurate pulse counting even at high motor speeds, while freeing the processor to perform other tasks, such as calculating velocity and updating a display. The goal is to build a robust system that accurately measures and displays the motor’s angular velocity in revolutions per second (rev/s) across a wide range of speeds."
   },
   {
-    "objectID": "labs/lab1/lab1.html#design-and-testing-methodology",
-    "href": "labs/lab1/lab1.html#design-and-testing-methodology",
-    "title": "Lab 1: FPGA and MCU Setup and Testing",
-    "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nThe on-board high-speed oscillator (HSOSC) from the iCE40 UltraPlus primitive library was used to generate a clock signal at 24 MHz. Then, a clock divider was used to divide the high-frequency clock signal down to 2.4Hz.\nFour onboard dip switches were used to represent a binary number, where combinational logic was used to decode the input of the dip switches to the 7-segment display module. The XOR of the first two dip switches, [1:0], was computed and outputted to an LED. Similarly, the last two dip switches, [3:2], were ANDed together and outputted to another LED."
-  },
-  {
-    "objectID": "labs/lab1/lab1.html#technical-documentation",
-    "href": "labs/lab1/lab1.html#technical-documentation",
-    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "objectID": "labs/lab5/lab5.html#technical-documentation",
+    "href": "labs/lab5/lab5.html#technical-documentation",
+    "title": "Lab 5: Interrupts",
     "section": "Technical Documentation:",
-    "text": "Technical Documentation:\nThe source code can be found on my GitHub\n\nBlock Diagram\n\n\n\nFigure 1: Lab 1 Block Diagram, By Roman De Santos, 9/4/25\n\n\nFigure 1 shows the Block Diagram for Lab 1 of the top Verilog module grouped by function. There are two submodules in the top module. SegDisp for the 7-segment display decoder and the HSOSC for the built-in oscillator. The counter module is a representation of the RTL in the top module that has been functionally grouped for simplicity."
+    "text": "Technical Documentation:\nThe source code can be found on my GitHub\nThe datasheet for the encoder can be found here. Note that the PPR is 408 not 120."
   },
   {
-    "objectID": "labs/lab1/lab1.html#schematic",
-    "href": "labs/lab1/lab1.html#schematic",
-    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "objectID": "labs/lab5/lab5.html#schematic",
+    "href": "labs/lab5/lab5.html#schematic",
+    "title": "Lab 5: Interrupts",
     "section": "Schematic",
-    "text": "Schematic\n\n\n\nFigure 2: Lab 1 Schematic, By Roman De Santos, 9/4/25,\n\n\n\n\n\nFigure 3: Calculations for 7-Seg Resitor Value\n\n\nFigure 2 shows the physical implementation of the design. All of the dip switches have an internal pull-up resistor (100kΩ). All of the output LEDs have a 1k limiting resistor to ensure that the FPGA I/O current draw does not exceed ~2.6mA (Calculations are shown in Figure 3)"
+    "text": "Schematic\n\n\n\nFigure 1: Lab 5 Schematic, By Roman De Santos, 10/9/25\n\n\nApart from the schematic calculations are shown in Figure 2. These show the conversion between pulse counts of the encoder and revolutions per second.\n\n\n\nFigure 2: Revs per Second Calculations\n\n\nInturrupting is more efficient and adaptable compared to manual highspeed polling. Interrups let you handle other tasks when not needed. For example in my code, I am able to calculate the revs/sec when an inturrupt is not taking up the processer’s time. Manual high speed polling takes up a lot of the processor’s compute time depending on how its designed. It is possible to context switch but it gets trickier if you are just running the polling in a while loop. You also need to be aware of the max frequency supported by manual polling which is 2minimum_frequency (nyquist theorem). This means that for 2 rev’s per second you need to poll for at least 48042 (ppm  state changes * 2) = 3840 times in one seconds. This also limits your upper range to only 2 revs/second, so if you want to increase this range you have to update the code. As you can see Interrupts are more flexible since they are not fixed and are triggered only as needed. This reduces the amount of updates the processor has to handle and allows the processor to have a more dynamic range of frequencies in our motor/encoder context.\n\n\n\nFigure 3: Timing Scope for Interrupt routine, Polling, and encoder pulses\n\n\nFigure 3 shows the encoder pulses in yellow, the intterupt service in purple, and the polling in cyan.\n\n\n\nFigure 4: Timing Scope for Polling\n\n\nFigure 4 shows the fastest polling with our current STM32L432KC configuration (Running the polling in a while loop). And from the scope, we can see it takes 484 µs. Thus this only supports a maximum encoder pulse frequency of \\(\\frac{1}{T_polling} * 0.5 = 1033.06 Hz\\) since you must sample twice as fast as your highest frequency (Nyquist theorem).\n\n\n\nFigure 5: Timing Scope for Interrupts\n\n\nFigure 5 shows that the interrupt service time is 148 µs and since we only inturrupt when there is a rising or falling edge, this means that our theoretical maximum frequency of encoder pulses we can detect is \\(\\frac{1}{T_interrupt} = 3378.38 Hz\\)\nThus we can see that the intterupt method supports a higher frequency of encoder pulses. ## Diagram\n\n\n\nFigure 3: Code Flow Diagram"
   },
   {
-    "objectID": "labs/lab1/lab1.html#results-and-discussion",
-    "href": "labs/lab1/lab1.html#results-and-discussion",
-    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "objectID": "labs/lab5/lab5.html#results-and-discussion",
+    "href": "labs/lab5/lab5.html#results-and-discussion",
+    "title": "Lab 5: Interrupts",
     "section": "Results and Discussion",
-    "text": "Results and Discussion\n\n\n\nFigure 4: top_tb Run\n\n\nFigure 3 shows the Testbench results for the seven segment hex display. From the waveforms and the console output we can see that all 16 unique inputs output the correct signals on the hex display\n\n\n\nFigure 5: SegDisp_tb Run\n\n\nFigure 4 shows the testbench results for the 7-segment hex display and the logic LEDs. The blinking LED was omitted in the test, but can be visually inspected.\nThe design met all design objectives requested. In the future, I would probably spend more time designing the clock divider to simplify the RTL, however, it might not be possible since the clock is being divided by a number that is not a power of two."
+    "text": "Results and Discussion\nOverall, the design was able to accuratly display the revs/sec of the motor. This is shown by the fact that at 10V input to the motor the design displays around 2 revs/sec which is accurate to this motor.\nThe design met all design objectives requested.\nThe image of the working set up can be found below.\n\n\n\nFigure 4: Final project\n\n\nI spent around 5 hours on this lab."
   },
   {
-    "objectID": "labs/lab1/lab1.html#conclusion",
-    "href": "labs/lab1/lab1.html#conclusion",
-    "title": "Lab 1: FPGA and MCU Setup and Testing",
-    "section": "Conclusion",
-    "text": "Conclusion\n\n\n\nFigure 6: Completed Board\n\n\nThe project successfully blinked an LED at 2.4Hz, the dip switches accurately controlled a hex 7-segment display, and two LEDs successfully represented the AND and XOR between pairs of dip switches. I spent around 20 hours on this lab."
-  },
-  {
-    "objectID": "labs/lab1/lab1.html#ai-prototype-reflection",
-    "href": "labs/lab1/lab1.html#ai-prototype-reflection",
-    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "objectID": "labs/lab5/lab5.html#ai-prototype-reflection",
+    "href": "labs/lab5/lab5.html#ai-prototype-reflection",
+    "title": "Lab 5: Interrupts",
     "section": "AI Prototype Reflection",
-    "text": "AI Prototype Reflection\nInitial Code Generated By ChatGPT:\n//=============================================================\n// Blink LED @ 2 Hz using UP5K Internal HFOSC (48 MHz)\n//=============================================================\nmodule blink_led (\n    output logic led   // drive LED pin\n);\n\n    // ---------------------------------------------------------\n    // Internal High-Frequency Oscillator (HFOSC)\n    // UP5K HFOSC can be configured for 48, 24, 12, or 6 MHz.\n    // ---------------------------------------------------------\n    logic clk_hfosc;\n\n    SB_HFOSC #(\n        .CLKHF_DIV(\"0b00\")  // \"00\" = 48 MHz, \"01\" = 24 MHz, \"10\" = 12 MHz, \"11\" = 6 MHz\n    ) hfosc_inst (\n        .CLKHFEN(1'b1),     // enable HFOSC\n        .CLKHFPU(1'b1),     // power up HFOSC\n        .CLKHF(clk_hfosc)\n    );\n\n    // ---------------------------------------------------------\n    // Clock divider\n    // We want 2 Hz blinking from 48 MHz input.\n    //\n    // Half-period = 0.5s\n    // 48 MHz * 0.5s = 24,000,000 cycles\n    //\n    // Counter counts to 24,000,000 - 1, then toggles LED.\n    // ---------------------------------------------------------\n    localparam int HALF_PERIOD = 24_000_000;\n\n    logic [$clog2(HALF_PERIOD)-1:0] counter = '0;\n\n    always_ff @(posedge clk_hfosc) begin\n        if (counter == HALF_PERIOD-1) begin\n            counter &lt;= '0;\n            led     &lt;= ~led;   // toggle LED\n        end else begin\n            counter &lt;= counter + 1;\n        end\n    end\n\nendmodule\n\nI tried feeding in the AI prompt:\n“Write SystemVerilog HDL to leverage the internal high speed oscillator in the Lattice UP5K FPGA and blink an LED at 2 Hz. Take full advantage of SystemVerilog syntax, for example, using logic instead of wire and reg.”\nBut I was not able to synthesize the design even after feeding the error prompts from radiance back to chat gpt with the code.\nFinal code after 4 iterations:\n//=============================================================\n// Blink LED @ 2 Hz using UP5K Internal HFOSC (48 MHz)\n//=============================================================\nmodule blink_led (\n    output logic led   // drive LED pin\n);\n\n    // ---------------------------------------------------------\n    // Internal High-Frequency Oscillator (HFOSC)\n    // UP5K HFOSC can be configured for 48, 24, 12, or 6 MHz.\n    // ---------------------------------------------------------\n    logic clk_hfosc;\n\n    SB_HFOSC #(\n        .CLKHF_DIV(\"0b00\")  // \"00\" = 48 MHz, \"01\" = 24 MHz, \"10\" = 12 MHz, \"11\" = 6 MHz\n    ) hfosc_inst (\n        .CLKHFEN(1'b1),     // enable HFOSC\n        .CLKHFPU(1'b1),     // power up HFOSC\n        .CLKHF(clk_hfosc)\n    );\n\n    // ---------------------------------------------------------\n    // Clock divider\n    // We want 2 Hz blinking from 48 MHz input.\n    //\n    // Half-period = 0.5s\n    // 48 MHz * 0.5s = 24,000,000 cycles\n    //\n    // Counter counts to 24,000,000 - 1, then toggles LED.\n    // ---------------------------------------------------------\n    localparam int HALF_PERIOD = 24_000_000;\n\n    logic [$clog2(HALF_PERIOD)-1:0] counter = 0;\n\n    always @(posedge clk_hfosc) begin\n        if (counter == HALF_PERIOD-1) begin\n            if (counter == HALF_PERIOD-1) begin\n                counter &lt;= 0;\n            led     &lt;= ~led;   // toggle LED\n        end else begin\n            counter &lt;= counter + 1;\n        end\n    end\n\nendmodule\n\nWe can see that AI currently does not have very good HDL design capabilities. This might be due to the fact that most HDL code is proprietary or more difficult to access compared to non HDL code like C or Python. It seems like ChatGPT tried to make the code dynamic, similar to software, which is tricky to do. ChatGPT used $Clog2 to find the minimum number of bits needed to represent the HALF_PERIOD number. Most HDL programers would make this a fixed value since the clock is hard set at 48MHz when using the clock div = 00.\nIn general, AI is not good at fully constructing code from the ground up but it can be used to catch minor syntax errors. I think anything beyond that, such as conceptual knowledge in HDL, is not currently done well by AI."
+    "text": "AI Prototype Reflection\nLLM prompt fed to Gemini:\n\nWrite me interrupt handlers to interface with a quadrature encoder. I’m using the STM32L432KC, what pins should I connect the encoder to in order to allow it to easily trigger the interrupts?\n\nThe output of the LLM can be found on GitHub\nI was surprised to see that Gemini offered a better alternative to using manual inturrupts like we did in this lab. The STM32L432KC has an encoder mode that can use the timers to offload computation from the cpu to these timers. It also took care in choosing the pins that were 5V tolerant and were connected to the correct channel inputs. On top of this it also wrote code for the manual interrupt method."
   },
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "E155 Blog",
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "E155 Lab Reports",
     "section": "",
-    "text": "Excited for Micro P’s\n\n\nInitial reflection on the upcoming semester for Micro P’s\n\n\n\n\n\nAug 29, 2025\n\n\nRoman De Santos\n\n\n\n\n\nNo matching items"
+    "text": "Lab 6: The Internet of Things and Serial Peripheral Interface\n\n\nInternet-accessible device to control an onboard LED and measure ambient temperature\n\n\n\n\n\nOct 23, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 5: Interrupts\n\n\nIn this lab you will use your MCU to determine the speed of a motor by reading from a quadrature encoder using interrupts.\n\n\n\n\n\nOct 9, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 4: Digital Audio\n\n\nIn this lab you will use your MCU to play music by using timers to generate square waves by toggling a GPIO pin at a specific frequency for specified durations.\n\n\n\n\n\nOct 2, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 3: Keypad Scanner\n\n\nIn this lab you will learn how to use an FPGA to scan inputs from a keypad.\n\n\n\n\n\nSep 18, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 2: Multiplexed 7-Segment Display\n\n\nIn this lab you will learn how to use time multiplexing to efficiently use the I/O on your FPGA.\n\n\n\n\n\nSep 11, 2025\n\n\nRoman De Santos\n\n\n\n\n\n\n\n\n\n\n\n\nLab 1: FPGA and MCU Setup and Testing\n\n\nIn this lab you will familiarize yourself with the microcontroller unit (MCU) and field-programmable gate array (FPGA) development boards we will be using this semester.\n\n\n\n\n\nSep 4, 2025\n\n\nRoman De Santos\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "E155 Portfolio",
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Final Project: Guitar Chorus Pedal",
     "section": "",
-    "text": "Hello, I’m Roman a student who is passionate about low-level systems. This includes C, Assembly, and IC/circuit design. I have been a TA for Computer Science, Physics, and Intro IC Lab. I am comfortable with many common Engineering software programs (Solidworks, ComSol, and Fusion) and computer languages (Matlab, Python, Java, Java Script, HTML, and C). So far, my favorite project I’ve worked on is my 32-bit CPU verification project."
+    "text": "The full website can be found here"
   },
   {
-    "objectID": "labs/lab2/lab2.html",
-    "href": "labs/lab2/lab2.html",
-    "title": "Lab 2: Multiplexed 7-Segment Display",
+    "objectID": "project.html#project-website",
+    "href": "project.html#project-website",
+    "title": "Final Project: Guitar Chorus Pedal",
     "section": "",
-    "text": "This report details the design and implementation of a time-multiplexed driver for a dual 7-segment display using a field-programmable gate array (FPGA). The primary objective was to efficiently utilize limited FPGA I/O resources by sharing a single Verilog 7-segment decoder module between two separate digits. This was achieved by rapidly alternating which digit’s common anode was energized, creating a persistent, flicker-free image for the observer. A critical component of the hardware design was a PNP transistor circuit, which served as a high-current switch for the display anodes, as the FPGA’s output pins were incapable of sourcing the required current directly. The final system successfully accepts two 4-bit hexadecimal inputs from DIP switches, displays them on the multiplexed display, and simultaneously calculates and shows their sum on a separate bank of five LEDs."
+    "text": "The full website can be found here"
   },
   {
-    "objectID": "labs/lab2/lab2.html#introduction",
-    "href": "labs/lab2/lab2.html#introduction",
-    "title": "Lab 2: Multiplexed 7-Segment Display",
-    "section": "",
-    "text": "This report details the design and implementation of a time-multiplexed driver for a dual 7-segment display using a field-programmable gate array (FPGA). The primary objective was to efficiently utilize limited FPGA I/O resources by sharing a single Verilog 7-segment decoder module between two separate digits. This was achieved by rapidly alternating which digit’s common anode was energized, creating a persistent, flicker-free image for the observer. A critical component of the hardware design was a PNP transistor circuit, which served as a high-current switch for the display anodes, as the FPGA’s output pins were incapable of sourcing the required current directly. The final system successfully accepts two 4-bit hexadecimal inputs from DIP switches, displays them on the multiplexed display, and simultaneously calculates and shows their sum on a separate bank of five LEDs."
+    "objectID": "project.html#abstract",
+    "href": "project.html#abstract",
+    "title": "Final Project: Guitar Chorus Pedal",
+    "section": "Abstract",
+    "text": "Abstract\nThis project implements a digital guitar pedal capable of applying a real-time chorus effect to an instrument input. The system utilizes a hybrid architecture featuring a microcontroller (MCU), an FPGA, an external DAC, and custom analog circuitry. The analog front-end passes the guitar input through gain scaling and offset adjustment, followed by 4th-order anti-aliasing filters. The signal is then digitized by the MCU’s internal ADC and transferred via DMA to an SAI module for output in I2S format.\nThe FPGA decodes the incoming I2S data and routes it to a DSP module, which utilizes SRAM to generate the chorus modulation. Finally, the processed audio is packaged and transmitted out to an external DAC via I2S, converted back to an analog signal, and scaled to a safe output range suitable for a standard guitar amplifier."
   },
   {
-    "objectID": "labs/lab2/lab2.html#design-and-testing-methodology",
-    "href": "labs/lab2/lab2.html#design-and-testing-methodology",
-    "title": "Lab 2: Multiplexed 7-Segment Display",
-    "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nFour onboard dip switches were used to represent a binary number, where combinational logic was used to decode the input of the dip switches to the 7-segment display module.\nThe on-board high-speed oscillator (HSOSC) from the iCE40 UltraPlus primitive library was used to generate a clock signal at 6 MHz. Then, a clock divider was used to divide the high-frequency clock signal down to 60Hz.\nThe divided clock signal was used to control a Mux to switch between the two 4-pin dip switch inputs what was being passed through the 7 segment display. The clock was also used to generate Enable bits to control which of the two seven segment displays was on.\n5 LEDs were used to display the sum of the two hex numbers on the 4 dip switches."
+    "objectID": "project.html#final-project-picture",
+    "href": "project.html#final-project-picture",
+    "title": "Final Project: Guitar Chorus Pedal",
+    "section": "Final Project picture",
+    "text": "Final Project picture\n\n\n\nFigure 1: Final project in its enclosure"
   },
   {
-    "objectID": "labs/lab2/lab2.html#technical-documentation",
-    "href": "labs/lab2/lab2.html#technical-documentation",
-    "title": "Lab 2: Multiplexed 7-Segment Display",
-    "section": "Technical Documentation:",
-    "text": "Technical Documentation:\nThe source code can be found on my GitHub\n\nBlock Diagram\n\n\n\nFigure 1: Lab 2 Block Diagram, By Roman De Santos, 9/11/25\n\n\nFigure 1 shows the Block Diagram for Lab 2 of the top Verilog module grouped by function. There are two submodules in the top module. SegDisp for the 7-segment display decoder and the DisplayMux."
-  },
-  {
-    "objectID": "labs/lab2/lab2.html#schematic",
-    "href": "labs/lab2/lab2.html#schematic",
-    "title": "Lab 2: Multiplexed 7-Segment Display",
-    "section": "Schematic",
-    "text": "Schematic\n\n\n\nFigure 2: Lab 2 Schematic, By Roman De Santos, 9/11/25,\n\n\n\n\n\nFigure 3: Calculations for 7-Seg Resitor Value\n\n\n\n\n\nFigure 4: Calculations for PNP Transistor Limiting Resistor\n\n\nFigure 2 shows the physical implementation of the design. All of the dip switches have an internal pull-up resistor (100kΩ). All of the output LEDs have a 1k limiting resistor to ensure that the FPGA I/O current draw does not exceed ~2.6mA (Calculations are shown in Figure 3). The PNP transistor has a 2.6kΩ limiting resistor to be safe and put it well above the minimum of 300Ω. Figure 4 shows the derivation of the resistor value for the PNP transistor.\n\n\n\nFigure 5: Calculations for LEDs Resistor Values"
-  },
-  {
-    "objectID": "labs/lab2/lab2.html#results-and-discussion",
-    "href": "labs/lab2/lab2.html#results-and-discussion",
-    "title": "Lab 2: Multiplexed 7-Segment Display",
-    "section": "Results and Discussion",
-    "text": "Results and Discussion\n \nFigure 6 shows the Testbench Wave output for the top module.\nFigure 7 shows the console output for the testbench, we can see all 256 unique tests pass with 0 errors.\n\n\n\nFigure 8: DispMux_tb Waves\n\n\nFigure 8 shows the testbench wave output for the DispMux. We can see that the clock succesfuly drives the clock divider and all of its dependent signals.\n\n\n\nFigure 9: SegDispTB\n\n\nFigure 9 shows the testbench wave output for the seven segment decoder and all of the testcases passed.\nThe design met all design objectives requested. In the future, I would probably spend more time designing the clock divider to simplify the RTL, however, it might not be possible since the clock is being divided by a number that is not a power of two."
-  },
-  {
-    "objectID": "labs/lab2/lab2.html#conclusion",
-    "href": "labs/lab2/lab2.html#conclusion",
-    "title": "Lab 2: Multiplexed 7-Segment Display",
-    "section": "Conclusion",
-    "text": "Conclusion\n\n\n\nFigure 10: Completed Board\n\n\nThe project successfully timemultiplexed the inputs to drive the display, the dip switches accurately controlled a hex 7-segment display, and the LEDs successfully represented the sum of the dip switches. I spent around 20 hours on this lab."
-  },
-  {
-    "objectID": "labs/lab2/lab2.html#ai-prototype-reflection",
-    "href": "labs/lab2/lab2.html#ai-prototype-reflection",
-    "title": "Lab 2: Multiplexed 7-Segment Display",
-    "section": "AI Prototype Reflection",
-    "text": "AI Prototype Reflection\nLLM prompt fed to Gemini:\n\nWrite SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits.\n\nThe output of the LLM can be found on GitHub\nI was surprised to see that it was able to effectivly seperate this logic into two modules. One module was for the timer,clock divider, and enable logic. The other module was for the seven segment display.\nHowever, there were some odd decisions in the logic. For example, Mux_15 could be optimised out by connecting existing nets to the output.\nOverall very good for a first pass.\nFor the next LLM prompt on Gemini\n\nUsing my files as reference, Write SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits. Use the seven segment decoder and oscillator provided in the attached files.\n\nThe output of the LLM can be found on GitHub\nThe LLM was not able to produce working code. I tried feeding the error outputs from radiant back into the LLM but this did not resolve the issue.\nThe syntaxed used by the LLM does not seem like what an actual person would use. I think the LLM also tried to insert citations for my project but failed to extract relevant context. This led there to being a lot of “[cite_start]” artifacts in the output code."
-  },
-  {
-    "objectID": "labs/lab4/lab4.html",
-    "href": "labs/lab4/lab4.html",
-    "title": "Lab 4: Digital Audio",
-    "section": "",
-    "text": "This report focuses on the fundamental principles of sound generation using a microcontroller unit (MCU). The primary goal is to play a musical piece, “Für Elise,” by programming the MCU to produce a sequence of square waves with specific frequencies and durations. This is achieved by configuring an internal hardware timer to toggle a General-Purpose Input/Output (GPIO) pin at precise intervals corresponding to musical notes. Due to the MCU’s limited current output, an LM386 audio amplifier is used to strengthen the signal before it drives an 8-ohm speaker. A core challenge of this lab is to develop the necessary C-language drivers from scratch, relying solely on the MCU’s technical datasheet to understand and manipulate the memory-mapped registers for the timer and GPIO peripherals. This process provides practical experience in low-level hardware programming and interfacing."
-  },
-  {
-    "objectID": "labs/lab4/lab4.html#introduction",
-    "href": "labs/lab4/lab4.html#introduction",
-    "title": "Lab 4: Digital Audio",
-    "section": "",
-    "text": "This report focuses on the fundamental principles of sound generation using a microcontroller unit (MCU). The primary goal is to play a musical piece, “Für Elise,” by programming the MCU to produce a sequence of square waves with specific frequencies and durations. This is achieved by configuring an internal hardware timer to toggle a General-Purpose Input/Output (GPIO) pin at precise intervals corresponding to musical notes. Due to the MCU’s limited current output, an LM386 audio amplifier is used to strengthen the signal before it drives an 8-ohm speaker. A core challenge of this lab is to develop the necessary C-language drivers from scratch, relying solely on the MCU’s technical datasheet to understand and manipulate the memory-mapped registers for the timer and GPIO peripherals. This process provides practical experience in low-level hardware programming and interfacing."
-  },
-  {
-    "objectID": "labs/lab4/lab4.html#design-and-testing-methodology",
-    "href": "labs/lab4/lab4.html#design-and-testing-methodology",
-    "title": "Lab 4: Digital Audio",
-    "section": "Design and Testing Methodology",
-    "text": "Design and Testing Methodology\nThe internal MSI clock was fed to the PLL clock module to generate an 80MHz system clock in the RCC module. The system clock was then divided by the APB2 and AHB prescalers and sent to TIM15 and TIM16. TIM15 was used to design an upcounter where the UIF flag was set to enable after 1ms to serve as a delay counter. TIM16 was enabled to generate a PWM wave using the capture/compare registers and ouputted to pin A6."
-  },
-  {
-    "objectID": "labs/lab4/lab4.html#technical-documentation",
-    "href": "labs/lab4/lab4.html#technical-documentation",
-    "title": "Lab 4: Digital Audio",
-    "section": "Technical Documentation:",
-    "text": "Technical Documentation:\nThe source code can be found on my GitHub\nThe STM32L432KC Data sheet can be found here\nThe STM32L432KC Reference manual can be found here"
-  },
-  {
-    "objectID": "labs/lab4/lab4.html#schematic",
-    "href": "labs/lab4/lab4.html#schematic",
-    "title": "Lab 4: Digital Audio",
-    "section": "Schematic",
-    "text": "Schematic\n\n\n\nFigure 2: Lab 4 Schematic, By Roman De Santos, 10/2/25\n\n\nIn addition to the Schematic I also calculated the minimum/maximum delay TIM15 supports (Figure 3), and the minimum/maximum frequency TIM16 supports (Figure 4).\n\n\n\nFigure 3: Lab 4 Delay Calculations\n\n\n\n\n\nFigure 4: Lab 4 Frequency Calculations\n\n\nSince only discrete values can be held by the counters this leads to some error in the frequency. The design implemented with a 5MHz clock, has less than a 0.01% error for each note, shown in Figure 5.\n\n\n\nFigure 5: Lab 4 Frequency Error"
-  },
-  {
-    "objectID": "labs/lab4/lab4.html#timer-set-up",
-    "href": "labs/lab4/lab4.html#timer-set-up",
-    "title": "Lab 4: Digital Audio",
-    "section": "Timer Set Up",
-    "text": "Timer Set Up\nI sketched out the path for each timer on the BD to show how I implemented PWM and Upcounting at a high level.\n\n\n\nFigure 6: Clock Tree Diagram\n\n\n\n\n\nFigure 7: TIM15 (Upcounting) Diagram\n\n\n\n\n\nFigure 8: TIM16 (PWM) Diagram"
-  },
-  {
-    "objectID": "labs/lab4/lab4.html#results-and-discussion",
-    "href": "labs/lab4/lab4.html#results-and-discussion",
-    "title": "Lab 4: Digital Audio",
-    "section": "Results and Discussion",
-    "text": "Results and Discussion\nOverall, the design was able to play Für Elise with accurate pitches and delays. In addition I tried to transpose the Super Mario Bros theme from memory and it was able to play it but it sounded a little off.\nThe design met all design objectives requested. In the future, I would prescale the clock entering TIM16 to lower the minimum HZ at the expense of the upper range since 2.5MHz is very high pitched.\nThe video of the working set up can be found below.\n\n\n\nWatch the video\n\n\nI spent around 17 hours on this lab."
-  },
-  {
-    "objectID": "labs/lab4/lab4.html#ai-prototype-reflection",
-    "href": "labs/lab4/lab4.html#ai-prototype-reflection",
-    "title": "Lab 4: Digital Audio",
-    "section": "AI Prototype Reflection",
-    "text": "AI Prototype Reflection\nLLM prompt fed to Gemini:\n\nWhat timers should I use on the STM32L432KC to generate frequencies ranging from 220Hz to 1kHz? What’s the best choice of timer if I want to easily connect it to a GPIO pin? What formulae are relevant, and what registers need to be set to configure them properly?\n\nThe output of the LLM can be found on GitHub\nI expected AI to be good at this task since it invloives a lot of summarization of text. It chose TIM2,15,and 16 which all seem like great choices. The AI also correctly identified the necessary formulas and registers needed to set up the timer.\nOverall very good."
-  },
-  {
-    "objectID": "labs/lab6/lab6.html",
-    "href": "labs/lab6/lab6.html",
-    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
-    "section": "",
-    "text": "The goal of this lab is to to build a functional, internet-accessible Internet of Things (IoT) device. The main objective is to create a system where a user can remotely control an onboard LED and view ambient temperature via a custom webpage. To accomplish this, a C library was written using CMSIS device templates to implement the MCU’s Serial Peripheral Interface (SPI), which will be used to interface with a DS1722 temperature sensor. Concurrently, the MCU must communicate with an ESP8266 Wi-Fi module over a UART link to host and serve a dynamically generated HTML webpage. Finally, a logic analyzer was used to capture and analyze the SPI communication signals for debugging and documentation."
-  },
-  {
-    "objectID": "labs/lab6/lab6.html#introduction",
-    "href": "labs/lab6/lab6.html#introduction",
-    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
-    "section": "",
-    "text": "The goal of this lab is to to build a functional, internet-accessible Internet of Things (IoT) device. The main objective is to create a system where a user can remotely control an onboard LED and view ambient temperature via a custom webpage. To accomplish this, a C library was written using CMSIS device templates to implement the MCU’s Serial Peripheral Interface (SPI), which will be used to interface with a DS1722 temperature sensor. Concurrently, the MCU must communicate with an ESP8266 Wi-Fi module over a UART link to host and serve a dynamically generated HTML webpage. Finally, a logic analyzer was used to capture and analyze the SPI communication signals for debugging and documentation."
-  },
-  {
-    "objectID": "labs/lab6/lab6.html#technical-documentation",
-    "href": "labs/lab6/lab6.html#technical-documentation",
-    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
-    "section": "Technical Documentation:",
-    "text": "Technical Documentation:\nThe source code can be found on my GitHub\nThe datasheet for the temperature sensor (DS1722) can be found here."
-  },
-  {
-    "objectID": "labs/lab6/lab6.html#schematic",
-    "href": "labs/lab6/lab6.html#schematic",
-    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
-    "section": "Schematic",
-    "text": "Schematic\n\n\n\nFigure 1: Lab 6 Schematic, By Roman De Santos, 10/26/25"
-  },
-  {
-    "objectID": "labs/lab6/lab6.html#website",
-    "href": "labs/lab6/lab6.html#website",
-    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
-    "section": "Website",
-    "text": "Website\n\n\n\nFigure 2: Lab 6 Website\n\n\nAbove the website is shown. It allows the user to toggle the LED and change the resolution of the temperature sensor."
-  },
-  {
-    "objectID": "labs/lab6/lab6.html#logic-analyzer-for-spi-traces",
-    "href": "labs/lab6/lab6.html#logic-analyzer-for-spi-traces",
-    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
-    "section": "Logic Analyzer for SPI traces",
-    "text": "Logic Analyzer for SPI traces\n\n\n\nFigure 3: Logic Analyzer for SPI traces"
-  },
-  {
-    "objectID": "labs/lab6/lab6.html#results-and-discussion",
-    "href": "labs/lab6/lab6.html#results-and-discussion",
-    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
-    "section": "Results and Discussion",
-    "text": "Results and Discussion\nThe design implemented meets all the design constraints requested. The STM is able to communicate via UART with the ESP to host the webserver. The webpage correctly toggles the LED and shows the correct status of the LED. The STM also correctly communicates with the DS1722 temperature sensor via SPI. The design correctly toggles and displays the different temperature resolutions.\nI spent 12 hours on this lab."
-  },
-  {
-    "objectID": "labs/lab6/lab6.html#ai-prototype-reflection",
-    "href": "labs/lab6/lab6.html#ai-prototype-reflection",
-    "title": "Lab 6: The Internet of Things and Serial Peripheral Interface",
-    "section": "AI Prototype Reflection",
-    "text": "AI Prototype Reflection\nThe design met all design objectives requested.\nThe image of the working set up can be found below.\nLLM prompt 1 fed to Gemini:\n\nI’m making a web portal to interface with a temperature sensor. Create a HTML page that looks good and is intuitive to show the temperature, control an LED, and change the precision of the readout.\n\nThe HTML produced a very nice asthetic since it used some CSS to define a slider and card widget. The output can be seen below. The HTML generated is currently not functional since its using static values but it would be easy to update and integrate this html with our project.\n\n\n\nFigure 2: Lab 6 AI Prototype Website\n\n\nLLM prompt 2 fed to Gemini:\n\nWrite me a C function to carry out a SPI transaction to retrieve a temperature reading from a DS1722 sensor. Make use of CMSIS libraries for the STM32L432KC.\n\nIt got mostly there since the process is outlined pretty well online, but it forgot to write an initialization function for the SPI. The SPI temp read funciton also used the SPI busy bits in the control register but the LLM already added a waiting feature by checking flags in the spi_send_recieve function so it was a little redundant. But overall a good first pass.\nThe output of both prompts from the LLM can be found on GitHub"
-  },
-  {
-    "objectID": "posts/first-post.html",
-    "href": "posts/first-post.html",
-    "title": "Excited for Micro P’s",
-    "section": "",
-    "text": "I am excited to learn more about how Micro Processors are used to integrate computing with the real world. I have worked with fpgas and MCU devices before but most of the work has been very surface level. This class will allow me to interact with harware close to bare metal operations. I am excited to learn more about embedded engineering. I heard that lab 3 is more challenging than expected so I will try to start that lab extra early. Other than that I am excited to learn and design my own project at the end of this course. 😄"
-  },
-  {
-    "objectID": "posts/first-post.html#initial-reflection",
-    "href": "posts/first-post.html#initial-reflection",
-    "title": "Excited for Micro P’s",
-    "section": "",
-    "text": "I am excited to learn more about how Micro Processors are used to integrate computing with the real world. I have worked with fpgas and MCU devices before but most of the work has been very surface level. This class will allow me to interact with harware close to bare metal operations. I am excited to learn more about embedded engineering. I heard that lab 3 is more challenging than expected so I will try to start that lab extra early. Other than that I am excited to learn and design my own project at the end of this course. 😄"
+    "objectID": "project.html#video-demonstration",
+    "href": "project.html#video-demonstration",
+    "title": "Final Project: Guitar Chorus Pedal",
+    "section": "Video Demonstration",
+    "text": "Video Demonstration"
   }
 ]
